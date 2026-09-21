@@ -1,0 +1,209 @@
+[gd_scene load_steps=39 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/door.tscn" id="Door"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/drawer.tscn" id="Drawer"]
+[ext_resource type="Script" path="res://scripts/interaction/test_unlock_control.gd" id="Unlock"]
+[sub_resource type="Environment" id="Environment"]
+background_mode = 1
+background_color = Color(0.12, 0.16, 0.22, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.7, 0.8, 1, 1)
+ambient_light_energy = 0.6
+[sub_resource type="StandardMaterial3D" id="M0"]
+albedo_color = Color(0.3, 0.34, 0.38, 1)
+[sub_resource type="BoxMesh" id="B0"]
+material = SubResource("M0")
+size = Vector3(16, 0.5, 16)
+[sub_resource type="BoxShape3D" id="S0"]
+size = Vector3(16, 0.5, 16)
+[sub_resource type="StandardMaterial3D" id="M1"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+[sub_resource type="BoxMesh" id="B1"]
+material = SubResource("M1")
+size = Vector3(0.3, 2.6, 0.4)
+[sub_resource type="BoxShape3D" id="S1"]
+size = Vector3(0.3, 2.6, 0.4)
+[sub_resource type="StandardMaterial3D" id="M2"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+[sub_resource type="BoxMesh" id="B2"]
+material = SubResource("M2")
+size = Vector3(0.3, 2.6, 0.4)
+[sub_resource type="BoxShape3D" id="S2"]
+size = Vector3(0.3, 2.6, 0.4)
+[sub_resource type="StandardMaterial3D" id="M3"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+[sub_resource type="BoxMesh" id="B3"]
+material = SubResource("M3")
+size = Vector3(1.4, 0.3, 0.4)
+[sub_resource type="BoxShape3D" id="S3"]
+size = Vector3(1.4, 0.3, 0.4)
+[sub_resource type="StandardMaterial3D" id="M4"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+[sub_resource type="BoxMesh" id="B4"]
+material = SubResource("M4")
+size = Vector3(0.3, 2.6, 0.4)
+[sub_resource type="BoxShape3D" id="S4"]
+size = Vector3(0.3, 2.6, 0.4)
+[sub_resource type="StandardMaterial3D" id="M5"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+[sub_resource type="BoxMesh" id="B5"]
+material = SubResource("M5")
+size = Vector3(0.3, 2.6, 0.4)
+[sub_resource type="BoxShape3D" id="S5"]
+size = Vector3(0.3, 2.6, 0.4)
+[sub_resource type="StandardMaterial3D" id="M6"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+[sub_resource type="BoxMesh" id="B6"]
+material = SubResource("M6")
+size = Vector3(1.4, 0.3, 0.4)
+[sub_resource type="BoxShape3D" id="S6"]
+size = Vector3(1.4, 0.3, 0.4)
+[sub_resource type="StandardMaterial3D" id="M7"]
+albedo_color = Color(0.45, 0.45, 0.45, 1)
+[sub_resource type="BoxMesh" id="B7"]
+material = SubResource("M7")
+size = Vector3(1.3, 0.8, 1)
+[sub_resource type="BoxShape3D" id="S7"]
+size = Vector3(1.3, 0.8, 1)
+[sub_resource type="StandardMaterial3D" id="M8"]
+albedo_color = Color(0.45, 0.45, 0.45, 1)
+[sub_resource type="BoxMesh" id="B8"]
+material = SubResource("M8")
+size = Vector3(1.3, 0.8, 1)
+[sub_resource type="BoxShape3D" id="S8"]
+size = Vector3(1.3, 0.8, 1)
+[sub_resource type="StandardMaterial3D" id="M9"]
+albedo_color = Color(0.3, 0.85, 0.4, 1)
+[sub_resource type="BoxMesh" id="B9"]
+material = SubResource("M9")
+size = Vector3(0.35, 0.35, 0.2)
+[sub_resource type="BoxShape3D" id="S9"]
+size = Vector3(0.35, 0.35, 0.2)
+[sub_resource type="StandardMaterial3D" id="M10"]
+albedo_color = Color(0.3, 0.85, 0.4, 1)
+[sub_resource type="BoxMesh" id="B10"]
+material = SubResource("M10")
+size = Vector3(0.35, 0.35, 0.2)
+[sub_resource type="BoxShape3D" id="S10"]
+size = Vector3(0.35, 0.35, 0.2)
+
+[node name="DoorDrawerTest" type="Node3D"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")
+[node name="Light" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, -30, 0)
+shadow_enabled = true
+[node name="Player" parent="." instance=ExtResource("Player")]
+position = Vector3(0, 0.05, 6)
+[node name="UnlockedDoor" parent="." instance=ExtResource("Door")]
+position = Vector3(-6, 0, 0)
+[node name="LockedDoor" parent="." instance=ExtResource("Door")]
+position = Vector3(-2.5, 0, 0)
+starts_locked = true
+lock_id = &"test_door"
+[node name="UnlockedDrawer" parent="." instance=ExtResource("Drawer")]
+position = Vector3(2, 0, 0)
+[node name="LockedDrawer" parent="." instance=ExtResource("Drawer")]
+position = Vector3(5, 0, 0)
+starts_locked = true
+lock_id = &"test_drawer"
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.25, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("B0")
+[node name="Collision" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("S0")
+[node name="FrameALeft" type="StaticBody3D" parent="."]
+position = Vector3(-6.15, 1.3, 0)
+[node name="Mesh" type="MeshInstance3D" parent="FrameALeft"]
+mesh = SubResource("B1")
+[node name="Collision" type="CollisionShape3D" parent="FrameALeft"]
+shape = SubResource("S1")
+[node name="FrameARight" type="StaticBody3D" parent="."]
+position = Vector3(-4.45, 1.3, 0)
+[node name="Mesh" type="MeshInstance3D" parent="FrameARight"]
+mesh = SubResource("B2")
+[node name="Collision" type="CollisionShape3D" parent="FrameARight"]
+shape = SubResource("S2")
+[node name="FrameATop" type="StaticBody3D" parent="."]
+position = Vector3(-5.3, 2.55, 0)
+[node name="Mesh" type="MeshInstance3D" parent="FrameATop"]
+mesh = SubResource("B3")
+[node name="Collision" type="CollisionShape3D" parent="FrameATop"]
+shape = SubResource("S3")
+[node name="FrameBLeft" type="StaticBody3D" parent="."]
+position = Vector3(-2.65, 1.3, 0)
+[node name="Mesh" type="MeshInstance3D" parent="FrameBLeft"]
+mesh = SubResource("B4")
+[node name="Collision" type="CollisionShape3D" parent="FrameBLeft"]
+shape = SubResource("S4")
+[node name="FrameBRight" type="StaticBody3D" parent="."]
+position = Vector3(-0.95, 1.3, 0)
+[node name="Mesh" type="MeshInstance3D" parent="FrameBRight"]
+mesh = SubResource("B5")
+[node name="Collision" type="CollisionShape3D" parent="FrameBRight"]
+shape = SubResource("S5")
+[node name="FrameBTop" type="StaticBody3D" parent="."]
+position = Vector3(-1.8, 2.55, 0)
+[node name="Mesh" type="MeshInstance3D" parent="FrameBTop"]
+mesh = SubResource("B6")
+[node name="Collision" type="CollisionShape3D" parent="FrameBTop"]
+shape = SubResource("S6")
+[node name="DrawerStandA" type="StaticBody3D" parent="."]
+position = Vector3(2, 0.4, 0)
+[node name="Mesh" type="MeshInstance3D" parent="DrawerStandA"]
+mesh = SubResource("B7")
+[node name="Collision" type="CollisionShape3D" parent="DrawerStandA"]
+shape = SubResource("S7")
+[node name="DrawerStandB" type="StaticBody3D" parent="."]
+position = Vector3(5, 0.4, 0)
+[node name="Mesh" type="MeshInstance3D" parent="DrawerStandB"]
+mesh = SubResource("B8")
+[node name="Collision" type="CollisionShape3D" parent="DrawerStandB"]
+shape = SubResource("S8")
+[node name="DoorUnlock" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+position = Vector3(-0.5, 1.3, 0.4)
+script = ExtResource("Unlock")
+target = NodePath("../LockedDoor")
+[node name="Control" type="StaticBody3D" parent="DoorUnlock"]
+position = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="DoorUnlock/Control"]
+mesh = SubResource("B9")
+[node name="Collision" type="CollisionShape3D" parent="DoorUnlock/Control"]
+shape = SubResource("S9")
+[node name="DrawerUnlock" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+position = Vector3(6.3, 1.3, 0.4)
+script = ExtResource("Unlock")
+target = NodePath("../LockedDrawer")
+[node name="Control" type="StaticBody3D" parent="DrawerUnlock"]
+position = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="DrawerUnlock/Control"]
+mesh = SubResource("B10")
+[node name="Collision" type="CollisionShape3D" parent="DrawerUnlock/Control"]
+shape = SubResource("S10")
+[node name="LabelDoorA" type="Label3D" parent="."]
+position = Vector3(-5.3, 2.95, 0.5)
+text = "UNLOCKED DOOR"
+font_size = 32
+[node name="LabelDoorB" type="Label3D" parent="."]
+position = Vector3(-1.8, 2.95, 0.5)
+text = "LOCKED DOOR"
+font_size = 32
+[node name="LabelDrawerA" type="Label3D" parent="."]
+position = Vector3(2, 1.65, 0.5)
+text = "UNLOCKED DRAWER"
+font_size = 32
+[node name="LabelDrawerB" type="Label3D" parent="."]
+position = Vector3(5, 1.65, 0.5)
+text = "LOCKED DRAWER"
+font_size = 32
+[node name="LabelUnlockA" type="Label3D" parent="."]
+position = Vector3(-0.5, 1.75, 0.5)
+text = "TEST UNLOCK"
+font_size = 32
+[node name="LabelUnlockB" type="Label3D" parent="."]
+position = Vector3(6.3, 1.95, 0.5)
+text = "TEST UNLOCK"
+font_size = 32
+
