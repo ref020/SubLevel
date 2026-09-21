@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="PackedScene" path="res://scenes/interactables/photograph.tscn" id="Photo"]
+[node name="ObservationPhotograph" instance=ExtResource("Photo")]
+[node name="BackMarkA" parent="Visual"]
+visible = false
+[node name="BackMarkB" parent="Visual"]
+visible = false

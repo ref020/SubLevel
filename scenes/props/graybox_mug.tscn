@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/inspectable.gd" id="Inspectable"]
+
+[sub_resource type="StandardMaterial3D" id="Ceramic"]
+albedo_color = Color(0.66, 0.62, 0.48, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Inside"]
+albedo_color = Color(0.14, 0.13, 0.1, 1)
+roughness = 0.85
+
+
+[sub_resource type="BoxShape3D" id="Shape"]
+size = Vector3(0.15, 0.1, 0.09)
+
+[sub_resource type="CylinderMesh" id="Geo4"]
+material = SubResource("Ceramic")
+top_radius = 0.045
+bottom_radius = 0.045
+height = 0.1
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="Geo5"]
+material = SubResource("Inside")
+top_radius = 0.036
+bottom_radius = 0.036
+height = 0.001
+radial_segments = 32
+
+[sub_resource type="TorusMesh" id="HandleMesh"]
+material = SubResource("Ceramic")
+inner_radius = 0.023
+outer_radius = 0.033
+rings = 20
+ring_segments = 12
+
+[node name="Mug" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Inspectable")
+interaction_prompt = "Inspect Mug"
+visual_root = NodePath("Visual")
+initial_inspection_rotation = Vector3(15, -25, 0)
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.025, 0, 0)
+shape = SubResource("Shape")
+
+[node name="Visual" type="Node3D" parent="."]
+
+
+[node name="Cup" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+rotation_degrees = Vector3(0, 0, 0)
+mesh = SubResource("Geo4")
+
+[node name="Opening" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.0505, 0)
+rotation_degrees = Vector3(0, 0, 0)
+mesh = SubResource("Geo5")
+
+[node name="Handle" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.06, 0.005, 0)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("HandleMesh")

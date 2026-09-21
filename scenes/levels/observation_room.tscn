@@ -1,0 +1,2646 @@
+[gd_scene load_steps=311 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/door.tscn" id="Door"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/drawer.tscn" id="Drawer"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/observation_photograph.tscn" id="Photo"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/graybox_mug.tscn" id="Mug"]
+
+[sub_resource type="StandardMaterial3D" id="Plaster"]
+albedo_color = Color(0.54, 0.53, 0.46, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Dado"]
+albedo_color = Color(0.29, 0.36, 0.31, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Concrete"]
+albedo_color = Color(0.35, 0.36, 0.33, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Floor"]
+albedo_color = Color(0.29, 0.3, 0.26, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Seam"]
+albedo_color = Color(0.22, 0.24, 0.21, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.25, 0.28, 0.27, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Dark"]
+albedo_color = Color(0.055, 0.065, 0.062, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Wood"]
+albedo_color = Color(0.33, 0.23, 0.14, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Beige"]
+albedo_color = Color(0.56, 0.53, 0.42, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.78, 0.75, 0.62, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.09, 0.1, 0.085, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Rust"]
+albedo_color = Color(0.29, 0.18, 0.11, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Screen"]
+albedo_color = Color(0.08, 0.15, 0.12, 1)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="Glass"]
+albedo_color = Color(0.15, 0.22, 0.21, 0.3)
+roughness = 0.85
+transparency = 1
+metallic = 0.2
+
+[sub_resource type="StandardMaterial3D" id="Fluorescent"]
+albedo_color = Color(0.8, 0.86, 0.73, 1)
+roughness = 0.85
+emission_enabled = true
+emission = Color(0.65, 0.75, 0.6, 1)
+emission_energy_multiplier = 1.4
+
+[sub_resource type="Environment" id="RoomEnvironment"]
+background_mode = 1
+background_color = Color(0.035, 0.04, 0.035, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.68, 0.73, 0.62, 1)
+ambient_light_energy = 0.38
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="Geo21"]
+material = SubResource("Floor")
+size = Vector3(9.6, 0.3, 7.6)
+
+[sub_resource type="BoxShape3D" id="Geo21Shape"]
+size = Vector3(9.6, 0.3, 7.6)
+
+[sub_resource type="BoxMesh" id="Geo23"]
+material = SubResource("Concrete")
+size = Vector3(9.6, 0.3, 7.6)
+
+[sub_resource type="BoxShape3D" id="Geo23Shape"]
+size = Vector3(9.6, 0.3, 7.6)
+
+[sub_resource type="BoxMesh" id="Geo25"]
+material = SubResource("Plaster")
+size = Vector3(0.3, 3.2, 7.6)
+
+[sub_resource type="BoxShape3D" id="Geo25Shape"]
+size = Vector3(0.3, 3.2, 7.6)
+
+[sub_resource type="BoxMesh" id="Geo27"]
+material = SubResource("Plaster")
+size = Vector3(0.3, 3.2, 4.65)
+
+[sub_resource type="BoxShape3D" id="Geo27Shape"]
+size = Vector3(0.3, 3.2, 4.65)
+
+[sub_resource type="BoxMesh" id="Geo29"]
+material = SubResource("Plaster")
+size = Vector3(0.3, 3.2, 1.25)
+
+[sub_resource type="BoxShape3D" id="Geo29Shape"]
+size = Vector3(0.3, 3.2, 1.25)
+
+[sub_resource type="BoxMesh" id="Geo31"]
+material = SubResource("Plaster")
+size = Vector3(0.3, 0.8, 1.4)
+
+[sub_resource type="BoxShape3D" id="Geo31Shape"]
+size = Vector3(0.3, 0.8, 1.4)
+
+[sub_resource type="BoxMesh" id="Geo33"]
+material = SubResource("Plaster")
+size = Vector3(3.05, 3.2, 0.3)
+
+[sub_resource type="BoxShape3D" id="Geo33Shape"]
+size = Vector3(3.05, 3.2, 0.3)
+
+[sub_resource type="BoxMesh" id="Geo35"]
+material = SubResource("Plaster")
+size = Vector3(3.05, 3.2, 0.3)
+
+[sub_resource type="BoxShape3D" id="Geo35Shape"]
+size = Vector3(3.05, 3.2, 0.3)
+
+[sub_resource type="BoxMesh" id="Geo37"]
+material = SubResource("Dado")
+size = Vector3(3.2, 1, 0.3)
+
+[sub_resource type="BoxShape3D" id="Geo37Shape"]
+size = Vector3(3.2, 1, 0.3)
+
+[sub_resource type="BoxMesh" id="Geo39"]
+material = SubResource("Plaster")
+size = Vector3(3.2, 0.75, 0.3)
+
+[sub_resource type="BoxShape3D" id="Geo39Shape"]
+size = Vector3(3.2, 0.75, 0.3)
+
+[sub_resource type="BoxMesh" id="Geo41"]
+material = SubResource("Plaster")
+size = Vector3(5.65, 3.2, 0.3)
+
+[sub_resource type="BoxShape3D" id="Geo41Shape"]
+size = Vector3(5.65, 3.2, 0.3)
+
+[sub_resource type="BoxMesh" id="Geo43"]
+material = SubResource("Plaster")
+size = Vector3(2.45, 3.2, 0.3)
+
+[sub_resource type="BoxShape3D" id="Geo43Shape"]
+size = Vector3(2.45, 3.2, 0.3)
+
+[sub_resource type="BoxMesh" id="Geo45"]
+material = SubResource("Dado")
+size = Vector3(1.2, 0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="Geo45Shape"]
+size = Vector3(1.2, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="Geo47"]
+material = SubResource("Plaster")
+size = Vector3(1.2, 2.2, 0.3)
+
+[sub_resource type="BoxShape3D" id="Geo47Shape"]
+size = Vector3(1.2, 2.2, 0.3)
+
+[sub_resource type="BoxMesh" id="Geo49"]
+material = SubResource("Dado")
+size = Vector3(0.014, 1.1, 7)
+
+[sub_resource type="BoxMesh" id="Geo50"]
+material = SubResource("Dado")
+size = Vector3(2.9, 1.1, 0.014)
+
+[sub_resource type="BoxMesh" id="Geo51"]
+material = SubResource("Dado")
+size = Vector3(2.9, 1.1, 0.014)
+
+[sub_resource type="BoxMesh" id="Geo52"]
+material = SubResource("Dado")
+size = Vector3(0.014, 1.1, 4.5)
+
+[sub_resource type="BoxMesh" id="Geo53"]
+material = SubResource("Dado")
+size = Vector3(0.014, 1.1, 1.1)
+
+[sub_resource type="BoxMesh" id="Geo54"]
+material = SubResource("Dado")
+size = Vector3(5.5, 1.1, 0.014)
+
+[sub_resource type="BoxMesh" id="Geo55"]
+material = SubResource("Dado")
+size = Vector3(2.3, 1.1, 0.014)
+
+[sub_resource type="BoxMesh" id="Geo56"]
+material = SubResource("Metal")
+size = Vector3(0.06, 0.16, 7)
+
+[sub_resource type="BoxMesh" id="Geo57"]
+material = SubResource("Metal")
+size = Vector3(9, 0.16, 0.06)
+
+[sub_resource type="BoxMesh" id="Geo58"]
+material = SubResource("Metal")
+size = Vector3(9, 0.16, 0.06)
+
+[sub_resource type="BoxMesh" id="Geo59"]
+material = SubResource("Metal")
+size = Vector3(0.06, 0.16, 4.5)
+
+[sub_resource type="BoxMesh" id="Geo60"]
+material = SubResource("Metal")
+size = Vector3(0.06, 0.16, 1.1)
+
+[sub_resource type="BoxMesh" id="Geo61"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo62"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo63"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo64"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo65"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo66"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo67"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo68"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo69"]
+material = SubResource("Seam")
+size = Vector3(0.008, 0.002, 7)
+
+[sub_resource type="BoxMesh" id="Geo70"]
+material = SubResource("Seam")
+size = Vector3(9, 0.002, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo71"]
+material = SubResource("Seam")
+size = Vector3(9, 0.002, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo72"]
+material = SubResource("Seam")
+size = Vector3(9, 0.002, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo73"]
+material = SubResource("Seam")
+size = Vector3(9, 0.002, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo74"]
+material = SubResource("Seam")
+size = Vector3(9, 0.002, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo75"]
+material = SubResource("Seam")
+size = Vector3(9, 0.002, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo76"]
+material = SubResource("Seam")
+size = Vector3(9, 0.002, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo77"]
+material = SubResource("Glass")
+size = Vector3(3.15, 1.45, 0.05)
+
+[sub_resource type="BoxShape3D" id="Geo77Shape"]
+size = Vector3(3.15, 1.45, 0.05)
+
+[sub_resource type="BoxMesh" id="Geo79"]
+material = SubResource("Metal")
+size = Vector3(3.4, 0.1, 0.16)
+
+[sub_resource type="BoxShape3D" id="Geo79Shape"]
+size = Vector3(3.4, 0.1, 0.16)
+
+[sub_resource type="BoxMesh" id="Geo81"]
+material = SubResource("Metal")
+size = Vector3(3.4, 0.1, 0.16)
+
+[sub_resource type="BoxShape3D" id="Geo81Shape"]
+size = Vector3(3.4, 0.1, 0.16)
+
+[sub_resource type="BoxMesh" id="Geo83"]
+material = SubResource("Metal")
+size = Vector3(0.1, 1.53, 0.16)
+
+[sub_resource type="BoxShape3D" id="Geo83Shape"]
+size = Vector3(0.1, 1.53, 0.16)
+
+[sub_resource type="BoxMesh" id="Geo85"]
+material = SubResource("Metal")
+size = Vector3(0.1, 1.53, 0.16)
+
+[sub_resource type="BoxShape3D" id="Geo85Shape"]
+size = Vector3(0.1, 1.53, 0.16)
+
+[sub_resource type="BoxMesh" id="Geo87"]
+material = SubResource("Dark")
+size = Vector3(3.6, 3.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="Geo87Shape"]
+size = Vector3(3.6, 3.2, 0.2)
+
+[sub_resource type="BoxMesh" id="Geo89"]
+material = SubResource("Dark")
+size = Vector3(3.6, 0.2, 2)
+
+[sub_resource type="BoxShape3D" id="Geo89Shape"]
+size = Vector3(3.6, 0.2, 2)
+
+[sub_resource type="BoxMesh" id="Geo91"]
+material = SubResource("Dark")
+size = Vector3(3.6, 0.2, 2)
+
+[sub_resource type="BoxShape3D" id="Geo91Shape"]
+size = Vector3(3.6, 0.2, 2)
+
+[sub_resource type="BoxMesh" id="Geo93"]
+material = SubResource("Dark")
+size = Vector3(0.2, 3.2, 2)
+
+[sub_resource type="BoxShape3D" id="Geo93Shape"]
+size = Vector3(0.2, 3.2, 2)
+
+[sub_resource type="BoxMesh" id="Geo95"]
+material = SubResource("Dark")
+size = Vector3(0.2, 3.2, 2)
+
+[sub_resource type="BoxShape3D" id="Geo95Shape"]
+size = Vector3(0.2, 3.2, 2)
+
+[sub_resource type="BoxMesh" id="Geo97"]
+material = SubResource("Metal")
+size = Vector3(0.8, 1.4, 0.4)
+
+[sub_resource type="BoxShape3D" id="Geo97Shape"]
+size = Vector3(0.8, 1.4, 0.4)
+
+[sub_resource type="BoxMesh" id="Geo99"]
+material = SubResource("Metal")
+size = Vector3(0.2, 2.44, 0.08)
+
+[sub_resource type="BoxMesh" id="Geo100"]
+material = SubResource("Metal")
+size = Vector3(0.2, 2.44, 0.08)
+
+[sub_resource type="BoxMesh" id="Geo101"]
+material = SubResource("Metal")
+size = Vector3(0.2, 0.08, 1.54)
+
+[sub_resource type="BoxMesh" id="Geo102"]
+material = SubResource("Paper")
+size = Vector3(0.025, 0.22, 0.8)
+
+[sub_resource type="BoxMesh" id="Geo103"]
+material = SubResource("Wood")
+size = Vector3(2.2, 0.08, 0.95)
+
+[sub_resource type="BoxShape3D" id="Geo103Shape"]
+size = Vector3(2.2, 0.08, 0.95)
+
+[sub_resource type="BoxMesh" id="Geo105"]
+material = SubResource("Metal")
+size = Vector3(0.25, 0.72, 0.85)
+
+[sub_resource type="BoxShape3D" id="Geo105Shape"]
+size = Vector3(0.25, 0.72, 0.85)
+
+[sub_resource type="BoxMesh" id="Geo107"]
+material = SubResource("Metal")
+size = Vector3(0.08, 0.72, 0.85)
+
+[sub_resource type="BoxShape3D" id="Geo107Shape"]
+size = Vector3(0.08, 0.72, 0.85)
+
+[sub_resource type="BoxMesh" id="Geo109"]
+material = SubResource("Metal")
+size = Vector3(1.8, 0.22, 0.05)
+
+[sub_resource type="BoxShape3D" id="Geo109Shape"]
+size = Vector3(1.8, 0.22, 0.05)
+
+[sub_resource type="BoxMesh" id="Geo111"]
+material = SubResource("Metal")
+size = Vector3(0.16, 0.028, 0.025)
+
+[sub_resource type="BoxMesh" id="Geo112"]
+material = SubResource("Beige")
+size = Vector3(0.35, 0.1, 0.28)
+
+[sub_resource type="BoxShape3D" id="Geo112Shape"]
+size = Vector3(0.35, 0.1, 0.28)
+
+[sub_resource type="BoxMesh" id="Geo114"]
+material = SubResource("Beige")
+size = Vector3(0.5, 0.39, 0.42)
+
+[sub_resource type="BoxShape3D" id="Geo114Shape"]
+size = Vector3(0.5, 0.39, 0.42)
+
+[sub_resource type="BoxMesh" id="Geo116"]
+material = SubResource("Dark")
+size = Vector3(0.43, 0.32, 0.022)
+
+[sub_resource type="BoxMesh" id="Geo117"]
+material = SubResource("Screen")
+size = Vector3(0.36, 0.25, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo118"]
+material = SubResource("Beige")
+size = Vector3(0.48, 0.045, 0.16)
+
+[sub_resource type="BoxShape3D" id="Geo118Shape"]
+size = Vector3(0.48, 0.045, 0.16)
+
+[sub_resource type="BoxMesh" id="Geo120"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo121"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo122"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo123"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo124"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo125"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo126"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo127"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo128"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo129"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo130"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo131"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo132"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo133"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo134"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo135"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo136"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo137"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo138"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo139"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo140"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo141"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo142"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo143"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo144"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo145"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo146"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo147"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo148"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo149"]
+material = SubResource("Paper")
+size = Vector3(0.033, 0.014, 0.026)
+
+[sub_resource type="BoxMesh" id="Geo150"]
+material = SubResource("Beige")
+size = Vector3(0.008, 0.009, 0.17)
+
+[sub_resource type="BoxMesh" id="Geo151"]
+material = SubResource("Paper")
+size = Vector3(0.086, 0.007, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo152"]
+material = SubResource("Dark")
+size = Vector3(0.005, 0.002, 0.061)
+
+[sub_resource type="BoxMesh" id="Geo153"]
+material = SubResource("Dado")
+size = Vector3(0.015, 0.002, 0.034)
+
+[sub_resource type="BoxMesh" id="Geo154"]
+material = SubResource("Dado")
+size = Vector3(0.5, 0.09, 0.48)
+
+[sub_resource type="BoxShape3D" id="Geo154Shape"]
+size = Vector3(0.5, 0.09, 0.48)
+
+[sub_resource type="BoxMesh" id="Geo156"]
+material = SubResource("Dado")
+size = Vector3(0.5, 0.56, 0.08)
+
+[sub_resource type="BoxShape3D" id="Geo156Shape"]
+size = Vector3(0.5, 0.56, 0.08)
+
+[sub_resource type="BoxMesh" id="Geo158"]
+material = SubResource("Metal")
+size = Vector3(0.035, 0.44, 0.035)
+
+[sub_resource type="BoxShape3D" id="Geo158Shape"]
+size = Vector3(0.035, 0.44, 0.035)
+
+[sub_resource type="BoxMesh" id="Geo160"]
+material = SubResource("Metal")
+size = Vector3(0.035, 0.44, 0.035)
+
+[sub_resource type="BoxShape3D" id="Geo160Shape"]
+size = Vector3(0.035, 0.44, 0.035)
+
+[sub_resource type="BoxMesh" id="Geo162"]
+material = SubResource("Metal")
+size = Vector3(0.035, 0.44, 0.035)
+
+[sub_resource type="BoxShape3D" id="Geo162Shape"]
+size = Vector3(0.035, 0.44, 0.035)
+
+[sub_resource type="BoxMesh" id="Geo164"]
+material = SubResource("Metal")
+size = Vector3(0.035, 0.44, 0.035)
+
+[sub_resource type="BoxShape3D" id="Geo164Shape"]
+size = Vector3(0.035, 0.44, 0.035)
+
+[sub_resource type="BoxMesh" id="Geo166"]
+material = SubResource("Dado")
+size = Vector3(1.9, 0.14, 0.5)
+
+[sub_resource type="BoxShape3D" id="Geo166Shape"]
+size = Vector3(1.9, 0.14, 0.5)
+
+[sub_resource type="BoxMesh" id="Geo168"]
+material = SubResource("Metal")
+size = Vector3(0.08, 0.4, 0.4)
+
+[sub_resource type="BoxShape3D" id="Geo168Shape"]
+size = Vector3(0.08, 0.4, 0.4)
+
+[sub_resource type="BoxMesh" id="Geo170"]
+material = SubResource("Metal")
+size = Vector3(0.08, 0.4, 0.4)
+
+[sub_resource type="BoxShape3D" id="Geo170Shape"]
+size = Vector3(0.08, 0.4, 0.4)
+
+[sub_resource type="BoxMesh" id="Geo172"]
+material = SubResource("Metal")
+size = Vector3(1.1, 2, 0.6)
+
+[sub_resource type="BoxShape3D" id="Geo172Shape"]
+size = Vector3(1.1, 2, 0.6)
+
+[sub_resource type="BoxMesh" id="Geo174"]
+material = SubResource("Dado")
+size = Vector3(1.01, 1.8, 0.04)
+
+[sub_resource type="BoxMesh" id="Geo175"]
+material = SubResource("Beige")
+size = Vector3(0.3, 0.43, 0.045)
+
+[sub_resource type="BoxMesh" id="Geo176"]
+material = SubResource("Dark")
+size = Vector3(0.045, 0.07, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo177"]
+material = SubResource("Dark")
+size = Vector3(0.045, 0.07, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo178"]
+material = SubResource("Dark")
+size = Vector3(0.045, 0.07, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo179"]
+material = SubResource("Dark")
+size = Vector3(0.045, 0.07, 0.008)
+
+[sub_resource type="BoxMesh" id="Geo180"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo181"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo182"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo183"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo184"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo185"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo186"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo187"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo188"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo189"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo190"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo191"]
+material = SubResource("Metal")
+size = Vector3(0.055, 0.045, 0.012)
+
+[sub_resource type="BoxMesh" id="Geo192"]
+material = SubResource("Beige")
+size = Vector3(0.045, 0.22, 0.06)
+
+[sub_resource type="BoxMesh" id="Geo193"]
+material = SubResource("Paper")
+size = Vector3(0.025, 1.02, 0.95)
+
+[sub_resource type="CylinderMesh" id="Geo194"]
+material = SubResource("Metal")
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.07
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="Geo195"]
+material = SubResource("Paper")
+top_radius = 0.228
+bottom_radius = 0.228
+height = 0.006
+radial_segments = 32
+
+[sub_resource type="BoxMesh" id="Geo196"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo197"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo198"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo199"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo200"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo201"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo202"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo203"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo204"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo205"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo206"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo207"]
+material = SubResource("Ink")
+size = Vector3(0.012, 0.026, 0.004)
+
+[sub_resource type="BoxMesh" id="Geo208"]
+material = SubResource("Ink")
+size = Vector3(0.014, 0.182, 0.007)
+
+[sub_resource type="BoxMesh" id="Geo209"]
+material = SubResource("Ink")
+size = Vector3(0.021, 0.13, 0.008)
+
+[sub_resource type="CylinderMesh" id="Geo210"]
+material = SubResource("Metal")
+top_radius = 0.023
+bottom_radius = 0.023
+height = 0.016
+radial_segments = 32
+
+[sub_resource type="BoxMesh" id="Geo211"]
+material = SubResource("Dark")
+size = Vector3(1.2, 0.7, 0.08)
+
+[sub_resource type="BoxShape3D" id="Geo211Shape"]
+size = Vector3(1.2, 0.7, 0.08)
+
+[sub_resource type="BoxMesh" id="Geo213"]
+material = SubResource("Metal")
+size = Vector3(1.2, 0.04, 0.5)
+
+[sub_resource type="BoxShape3D" id="Geo213Shape"]
+size = Vector3(1.2, 0.04, 0.5)
+
+[sub_resource type="BoxMesh" id="Geo215"]
+material = SubResource("Metal")
+size = Vector3(1.2, 0.04, 0.5)
+
+[sub_resource type="BoxShape3D" id="Geo215Shape"]
+size = Vector3(1.2, 0.04, 0.5)
+
+[sub_resource type="BoxMesh" id="Geo217"]
+material = SubResource("Metal")
+size = Vector3(0.04, 0.7, 0.5)
+
+[sub_resource type="BoxShape3D" id="Geo217Shape"]
+size = Vector3(0.04, 0.7, 0.5)
+
+[sub_resource type="BoxMesh" id="Geo219"]
+material = SubResource("Metal")
+size = Vector3(0.04, 0.7, 0.5)
+
+[sub_resource type="BoxShape3D" id="Geo219Shape"]
+size = Vector3(0.04, 0.7, 0.5)
+
+[sub_resource type="BoxMesh" id="Geo221"]
+material = SubResource("Dark")
+size = Vector3(1.22, 0.72, 0.045)
+
+[sub_resource type="BoxShape3D" id="Geo221Shape"]
+size = Vector3(1.22, 0.72, 0.045)
+
+[sub_resource type="BoxMesh" id="Geo223"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo224"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo225"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo226"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo227"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo228"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo229"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo230"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="BoxMesh" id="Geo231"]
+material = SubResource("Metal")
+size = Vector3(1.17, 0.043, 0.055)
+
+[sub_resource type="CylinderMesh" id="Geo232"]
+material = SubResource("Beige")
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.008
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="Geo233"]
+material = SubResource("Beige")
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.008
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="Geo234"]
+material = SubResource("Beige")
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.008
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="Geo235"]
+material = SubResource("Beige")
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.008
+radial_segments = 32
+
+[sub_resource type="BoxMesh" id="Geo236"]
+material = SubResource("Beige")
+size = Vector3(0.3, 0.45, 0.16)
+
+[sub_resource type="BoxShape3D" id="Geo236Shape"]
+size = Vector3(0.3, 0.45, 0.16)
+
+[sub_resource type="BoxMesh" id="Geo238"]
+material = SubResource("Dark")
+size = Vector3(0.21, 0.012, 0.006)
+
+[sub_resource type="BoxMesh" id="Geo239"]
+material = SubResource("Dark")
+size = Vector3(0.21, 0.012, 0.006)
+
+[sub_resource type="BoxMesh" id="Geo240"]
+material = SubResource("Dark")
+size = Vector3(0.21, 0.012, 0.006)
+
+[sub_resource type="BoxMesh" id="Geo241"]
+material = SubResource("Dark")
+size = Vector3(0.21, 0.012, 0.006)
+
+[sub_resource type="BoxMesh" id="Geo242"]
+material = SubResource("Dark")
+size = Vector3(0.21, 0.012, 0.006)
+
+[sub_resource type="BoxMesh" id="Geo243"]
+material = SubResource("Dark")
+size = Vector3(0.21, 0.012, 0.006)
+
+[sub_resource type="BoxMesh" id="Geo244"]
+material = SubResource("Metal")
+size = Vector3(0.1, 0.055, 0.015)
+
+[sub_resource type="BoxMesh" id="Geo245"]
+material = SubResource("Metal")
+size = Vector3(0.65, 1.36, 0.65)
+
+[sub_resource type="BoxShape3D" id="Geo245Shape"]
+size = Vector3(0.65, 1.36, 0.65)
+
+[sub_resource type="BoxMesh" id="Geo247"]
+material = SubResource("Dado")
+size = Vector3(0.58, 0.37, 0.025)
+
+[sub_resource type="BoxMesh" id="Geo248"]
+material = SubResource("Beige")
+size = Vector3(0.18, 0.035, 0.04)
+
+[sub_resource type="BoxMesh" id="Geo249"]
+material = SubResource("Dado")
+size = Vector3(0.58, 0.37, 0.025)
+
+[sub_resource type="BoxMesh" id="Geo250"]
+material = SubResource("Beige")
+size = Vector3(0.18, 0.035, 0.04)
+
+[sub_resource type="BoxMesh" id="Geo251"]
+material = SubResource("Dado")
+size = Vector3(0.58, 0.37, 0.025)
+
+[sub_resource type="BoxMesh" id="Geo252"]
+material = SubResource("Beige")
+size = Vector3(0.18, 0.035, 0.04)
+
+[sub_resource type="BoxMesh" id="Geo253"]
+material = SubResource("Metal")
+size = Vector3(0.32, 0.4, 0.32)
+
+[sub_resource type="BoxShape3D" id="Geo253Shape"]
+size = Vector3(0.32, 0.4, 0.32)
+
+[sub_resource type="BoxMesh" id="Geo255"]
+material = SubResource("Dark")
+size = Vector3(0.26, 0.005, 0.26)
+
+[sub_resource type="BoxMesh" id="Geo256"]
+material = SubResource("Paper")
+size = Vector3(0.13, 0.01, 0.16)
+
+[sub_resource type="BoxMesh" id="Geo257"]
+material = SubResource("Metal")
+size = Vector3(0.18, 0.45, 0.32)
+
+[sub_resource type="BoxShape3D" id="Geo257Shape"]
+size = Vector3(0.18, 0.45, 0.32)
+
+[sub_resource type="BoxMesh" id="Geo259"]
+material = SubResource("Metal")
+size = Vector3(0.03, 0.95, 0.03)
+
+[sub_resource type="BoxMesh" id="Geo260"]
+material = SubResource("Metal")
+size = Vector3(8.76, 0.035, 0.035)
+
+[sub_resource type="BoxMesh" id="Geo261"]
+material = SubResource("Rust")
+size = Vector3(8.8, 0.08, 0.08)
+
+[sub_resource type="BoxMesh" id="Geo262"]
+material = SubResource("Metal")
+size = Vector3(0.045, 0.15, 0.2)
+
+[sub_resource type="BoxMesh" id="Geo263"]
+material = SubResource("Metal")
+size = Vector3(0.045, 0.15, 0.2)
+
+[sub_resource type="BoxMesh" id="Geo264"]
+material = SubResource("Metal")
+size = Vector3(0.045, 0.15, 0.2)
+
+[sub_resource type="BoxMesh" id="Geo265"]
+material = SubResource("Metal")
+size = Vector3(0.045, 0.15, 0.2)
+
+[sub_resource type="BoxMesh" id="Geo266"]
+material = SubResource("Concrete")
+size = Vector3(1.2, 0.55, 0.006)
+
+[sub_resource type="BoxMesh" id="Geo267"]
+material = SubResource("Metal")
+size = Vector3(1.4, 0.12, 0.32)
+
+[sub_resource type="BoxMesh" id="Geo268"]
+material = SubResource("Fluorescent")
+size = Vector3(1.27, 0.045, 0.045)
+
+[sub_resource type="BoxMesh" id="Geo269"]
+material = SubResource("Fluorescent")
+size = Vector3(1.27, 0.045, 0.045)
+
+[sub_resource type="BoxMesh" id="Geo270"]
+material = SubResource("Metal")
+size = Vector3(1.4, 0.12, 0.32)
+
+[sub_resource type="BoxMesh" id="Geo271"]
+material = SubResource("Fluorescent")
+size = Vector3(1.27, 0.045, 0.045)
+
+[sub_resource type="BoxMesh" id="Geo272"]
+material = SubResource("Fluorescent")
+size = Vector3(1.27, 0.045, 0.045)
+
+[sub_resource type="BoxMesh" id="Geo273"]
+material = SubResource("Metal")
+size = Vector3(1.4, 0.12, 0.32)
+
+[sub_resource type="BoxMesh" id="Geo274"]
+material = SubResource("Fluorescent")
+size = Vector3(1.27, 0.045, 0.045)
+
+[sub_resource type="BoxMesh" id="Geo275"]
+material = SubResource("Fluorescent")
+size = Vector3(1.27, 0.045, 0.045)
+
+[sub_resource type="BoxMesh" id="Revision_RoomPlacardBacking"]
+material = SubResource("Metal")
+size = Vector3(0.04, 0.43, 0.88)
+
+[sub_resource type="BoxMesh" id="Revision_RoomPlacardFace"]
+material = SubResource("Paper")
+size = Vector3(0.008, 0.39, 0.84)
+
+[sub_resource type="BoxMesh" id="Revision_PlacardFastener0"]
+material = SubResource("Metal")
+size = Vector3(0.012, 0.014, 0.014)
+
+[sub_resource type="BoxMesh" id="Revision_PlacardFastener1"]
+material = SubResource("Metal")
+size = Vector3(0.012, 0.014, 0.014)
+
+[sub_resource type="BoxMesh" id="Revision_JunctionBox"]
+material = SubResource("Metal")
+size = Vector3(0.32, 0.38, 0.2)
+
+[sub_resource type="BoxShape3D" id="Revision_JunctionBoxShape"]
+size = Vector3(0.32, 0.38, 0.2)
+
+[sub_resource type="BoxMesh" id="Revision_BoxCover"]
+material = SubResource("Dado")
+size = Vector3(0.28, 0.34, 0.025)
+
+[sub_resource type="BoxMesh" id="Revision_Riser"]
+material = SubResource("Metal")
+size = Vector3(0.035, 1.52, 0.035)
+
+[sub_resource type="BoxMesh" id="Revision_ConduitRun"]
+material = SubResource("Metal")
+size = Vector3(2.4, 0.035, 0.035)
+
+[sub_resource type="BoxMesh" id="Revision_ReturnPipe"]
+material = SubResource("Rust")
+size = Vector3(0.065, 1.15, 0.065)
+
+[sub_resource type="BoxMesh" id="Revision_PipeClamp0_3"]
+material = SubResource("Metal")
+size = Vector3(0.13, 0.04, 0.12)
+
+[sub_resource type="BoxMesh" id="Revision_PipeClamp1_2"]
+material = SubResource("Metal")
+size = Vector3(0.13, 0.04, 0.12)
+
+[sub_resource type="BoxMesh" id="Revision_Top"]
+material = SubResource("Wood")
+size = Vector3(0.95, 0.055, 0.55)
+
+[sub_resource type="BoxShape3D" id="Revision_TopShape"]
+size = Vector3(0.95, 0.055, 0.55)
+
+[sub_resource type="BoxMesh" id="Revision_LowerShelf"]
+material = SubResource("Metal")
+size = Vector3(0.88, 0.04, 0.5)
+
+[sub_resource type="BoxShape3D" id="Revision_LowerShelfShape"]
+size = Vector3(0.88, 0.04, 0.5)
+
+[sub_resource type="BoxMesh" id="Revision_LeftSupport"]
+material = SubResource("Metal")
+size = Vector3(0.04, 0.64, 0.5)
+
+[sub_resource type="BoxShape3D" id="Revision_LeftSupportShape"]
+size = Vector3(0.04, 0.64, 0.5)
+
+[sub_resource type="BoxMesh" id="Revision_RightSupport"]
+material = SubResource("Metal")
+size = Vector3(0.04, 0.64, 0.5)
+
+[sub_resource type="BoxShape3D" id="Revision_RightSupportShape"]
+size = Vector3(0.04, 0.64, 0.5)
+
+[sub_resource type="BoxMesh" id="Revision_StorageBox"]
+material = SubResource("Beige")
+size = Vector3(0.46, 0.25, 0.36)
+
+[sub_resource type="BoxShape3D" id="Revision_StorageBoxShape"]
+size = Vector3(0.46, 0.25, 0.36)
+
+[sub_resource type="BoxMesh" id="Revision_BoxLid"]
+material = SubResource("Wood")
+size = Vector3(0.48, 0.025, 0.38)
+
+[sub_resource type="BoxMesh" id="Revision_BinderA"]
+material = SubResource("Dado")
+size = Vector3(0.3, 0.05, 0.36)
+
+[sub_resource type="BoxMesh" id="Revision_BinderB"]
+material = SubResource("Metal")
+size = Vector3(0.3, 0.04, 0.36)
+
+[sub_resource type="BoxMesh" id="Revision_Clipboard"]
+material = SubResource("Beige")
+size = Vector3(0.25, 0.02, 0.34)
+
+[sub_resource type="BoxMesh" id="Revision_BlankPaper"]
+material = SubResource("Paper")
+size = Vector3(0.21, 0.003, 0.29)
+
+[sub_resource type="BoxMesh" id="Revision_ClipboardClip"]
+material = SubResource("Metal")
+size = Vector3(0.09, 0.015, 0.025)
+
+[sub_resource type="BoxMesh" id="Revision_BlankDeskPaperStack"]
+material = SubResource("Paper")
+size = Vector3(0.18, 0.02, 0.27)
+
+[sub_resource type="BoxMesh" id="Revision_LooseDeskSheet"]
+material = SubResource("Paper")
+size = Vector3(0.18, 0.003, 0.25)
+
+[sub_resource type="BoxMesh" id="Revision_StaplerBase"]
+material = SubResource("Metal")
+size = Vector3(0.045, 0.016, 0.13)
+
+[sub_resource type="BoxMesh" id="Revision_StaplerTop"]
+material = SubResource("Dark")
+size = Vector3(0.042, 0.022, 0.11)
+
+[sub_resource type="BoxMesh" id="Revision_EastFixture"]
+material = SubResource("Metal")
+size = Vector3(0.85, 0.1, 0.24)
+
+[sub_resource type="BoxMesh" id="Revision_EastDiffuser"]
+material = SubResource("Fluorescent")
+size = Vector3(0.76, 0.03, 0.16)
+
+[node name="ObservationRoom" type="Node3D"]
+
+
+[node name="Environment" type="Node3D" parent="."]
+
+
+[node name="Architecture" type="Node3D" parent="."]
+
+
+[node name="Furniture" type="Node3D" parent="."]
+
+
+[node name="PuzzleProps" type="Node3D" parent="."]
+
+
+[node name="Lighting" type="Node3D" parent="."]
+
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("RoomEnvironment")
+
+[node name="Floor" type="StaticBody3D" parent="Architecture"]
+position = Vector3(0, -0.15, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/Floor"]
+mesh = SubResource("Geo21")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/Floor"]
+shape = SubResource("Geo21Shape")
+
+[node name="Ceiling" type="StaticBody3D" parent="Architecture"]
+position = Vector3(0, 3.35, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/Ceiling"]
+mesh = SubResource("Geo23")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/Ceiling"]
+shape = SubResource("Geo23Shape")
+
+[node name="WestWall" type="StaticBody3D" parent="Architecture"]
+position = Vector3(-4.65, 1.6, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/WestWall"]
+mesh = SubResource("Geo25")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/WestWall"]
+shape = SubResource("Geo25Shape")
+
+[node name="EastWallNorth" type="StaticBody3D" parent="Architecture"]
+position = Vector3(4.65, 1.6, -1.325)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/EastWallNorth"]
+mesh = SubResource("Geo27")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/EastWallNorth"]
+shape = SubResource("Geo27Shape")
+
+[node name="EastWallSouth" type="StaticBody3D" parent="Architecture"]
+position = Vector3(4.65, 1.6, 3.025)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/EastWallSouth"]
+mesh = SubResource("Geo29")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/EastWallSouth"]
+shape = SubResource("Geo29Shape")
+
+[node name="ExitLintel" type="StaticBody3D" parent="Architecture"]
+position = Vector3(4.65, 2.8, 1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitLintel"]
+mesh = SubResource("Geo31")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitLintel"]
+shape = SubResource("Geo31Shape")
+
+[node name="NorthWallWest" type="StaticBody3D" parent="Architecture"]
+position = Vector3(-3.125, 1.6, -3.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/NorthWallWest"]
+mesh = SubResource("Geo33")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/NorthWallWest"]
+shape = SubResource("Geo33Shape")
+
+[node name="NorthWallEast" type="StaticBody3D" parent="Architecture"]
+position = Vector3(3.125, 1.6, -3.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/NorthWallEast"]
+mesh = SubResource("Geo35")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/NorthWallEast"]
+shape = SubResource("Geo35Shape")
+
+[node name="WindowSillWall" type="StaticBody3D" parent="Architecture"]
+position = Vector3(0, 0.5, -3.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/WindowSillWall"]
+mesh = SubResource("Geo37")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/WindowSillWall"]
+shape = SubResource("Geo37Shape")
+
+[node name="WindowHeader" type="StaticBody3D" parent="Architecture"]
+position = Vector3(0, 2.825, -3.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/WindowHeader"]
+mesh = SubResource("Geo39")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/WindowHeader"]
+shape = SubResource("Geo39Shape")
+
+[node name="SouthWallWest" type="StaticBody3D" parent="Architecture"]
+position = Vector3(-1.825, 1.6, 3.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/SouthWallWest"]
+mesh = SubResource("Geo41")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/SouthWallWest"]
+shape = SubResource("Geo41Shape")
+
+[node name="SouthWallEast" type="StaticBody3D" parent="Architecture"]
+position = Vector3(3.425, 1.6, 3.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/SouthWallEast"]
+mesh = SubResource("Geo43")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/SouthWallEast"]
+shape = SubResource("Geo43Shape")
+
+[node name="VentLowerWall" type="StaticBody3D" parent="Architecture"]
+position = Vector3(1.6, 0.15, 3.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/VentLowerWall"]
+mesh = SubResource("Geo45")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/VentLowerWall"]
+shape = SubResource("Geo45Shape")
+
+[node name="VentUpperWall" type="StaticBody3D" parent="Architecture"]
+position = Vector3(1.6, 2.1, 3.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/VentUpperWall"]
+mesh = SubResource("Geo47")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/VentUpperWall"]
+shape = SubResource("Geo47Shape")
+
+[node name="WestDado" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4.491, 0.55, 0)
+mesh = SubResource("Geo49")
+
+[node name="NorthWestDado" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-3.05, 0.55, -3.491)
+mesh = SubResource("Geo50")
+
+[node name="NorthEastDado" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(3.05, 0.55, -3.491)
+mesh = SubResource("Geo51")
+
+[node name="EastNorthDado" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.491, 0.55, -1.25)
+mesh = SubResource("Geo52")
+
+[node name="EastSouthDado" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.491, 0.55, 2.95)
+mesh = SubResource("Geo53")
+
+[node name="SouthWestDado" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-1.75, 0.55, 3.491)
+mesh = SubResource("Geo54")
+
+[node name="SouthEastDado" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(3.35, 0.55, 3.491)
+mesh = SubResource("Geo55")
+
+[node name="WestSkirting" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4.47, 0.08, 0)
+mesh = SubResource("Geo56")
+
+[node name="NorthSkirting" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.08, -3.47)
+mesh = SubResource("Geo57")
+
+[node name="SouthSkirting" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.08, 3.47)
+mesh = SubResource("Geo58")
+
+[node name="EastSkirtingA" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.47, 0.08, -1.25)
+mesh = SubResource("Geo59")
+
+[node name="EastSkirtingB" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.47, 0.08, 2.95)
+mesh = SubResource("Geo60")
+
+[node name="FloorJointX0" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4, 0.001, 0)
+mesh = SubResource("Geo61")
+
+[node name="FloorJointX1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-3, 0.001, 0)
+mesh = SubResource("Geo62")
+
+[node name="FloorJointX2" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-2, 0.001, 0)
+mesh = SubResource("Geo63")
+
+[node name="FloorJointX3" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-1, 0.001, 0)
+mesh = SubResource("Geo64")
+
+[node name="FloorJointX4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.001, 0)
+mesh = SubResource("Geo65")
+
+[node name="FloorJointX5" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(1, 0.001, 0)
+mesh = SubResource("Geo66")
+
+[node name="FloorJointX6" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(2, 0.001, 0)
+mesh = SubResource("Geo67")
+
+[node name="FloorJointX7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(3, 0.001, 0)
+mesh = SubResource("Geo68")
+
+[node name="FloorJointX8" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4, 0.001, 0)
+mesh = SubResource("Geo69")
+
+[node name="FloorJointZ0" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.001, -3)
+mesh = SubResource("Geo70")
+
+[node name="FloorJointZ1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.001, -2)
+mesh = SubResource("Geo71")
+
+[node name="FloorJointZ2" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.001, -1)
+mesh = SubResource("Geo72")
+
+[node name="FloorJointZ3" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.001, 0)
+mesh = SubResource("Geo73")
+
+[node name="FloorJointZ4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.001, 1)
+mesh = SubResource("Geo74")
+
+[node name="FloorJointZ5" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.001, 2)
+mesh = SubResource("Geo75")
+
+[node name="FloorJointZ6" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.001, 3)
+mesh = SubResource("Geo76")
+
+[node name="ObservationWindow" type="Node3D" parent="PuzzleProps"]
+
+
+[node name="Glass" type="StaticBody3D" parent="PuzzleProps/ObservationWindow"]
+position = Vector3(0, 1.725, -3.62)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/ObservationWindow/Glass"]
+mesh = SubResource("Geo77")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/ObservationWindow/Glass"]
+shape = SubResource("Geo77Shape")
+
+[node name="LowerFrame" type="StaticBody3D" parent="PuzzleProps/ObservationWindow"]
+position = Vector3(0, 1.02, -3.48)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/ObservationWindow/LowerFrame"]
+mesh = SubResource("Geo79")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/ObservationWindow/LowerFrame"]
+shape = SubResource("Geo79Shape")
+
+[node name="UpperFrame" type="StaticBody3D" parent="PuzzleProps/ObservationWindow"]
+position = Vector3(0, 2.45, -3.48)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/ObservationWindow/UpperFrame"]
+mesh = SubResource("Geo81")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/ObservationWindow/UpperFrame"]
+shape = SubResource("Geo81Shape")
+
+[node name="LeftFrame" type="StaticBody3D" parent="PuzzleProps/ObservationWindow"]
+position = Vector3(-1.6, 1.735, -3.48)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/ObservationWindow/LeftFrame"]
+mesh = SubResource("Geo83")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/ObservationWindow/LeftFrame"]
+shape = SubResource("Geo83Shape")
+
+[node name="RightFrame" type="StaticBody3D" parent="PuzzleProps/ObservationWindow"]
+position = Vector3(1.6, 1.735, -3.48)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/ObservationWindow/RightFrame"]
+mesh = SubResource("Geo85")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/ObservationWindow/RightFrame"]
+shape = SubResource("Geo85Shape")
+
+[node name="ObservationBay" type="Node3D" parent="Architecture"]
+
+
+[node name="Back" type="StaticBody3D" parent="Architecture/ObservationBay"]
+position = Vector3(0, 1.6, -5.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ObservationBay/Back"]
+mesh = SubResource("Geo87")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ObservationBay/Back"]
+shape = SubResource("Geo87Shape")
+
+[node name="Floor" type="StaticBody3D" parent="Architecture/ObservationBay"]
+position = Vector3(0, -0.1, -4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ObservationBay/Floor"]
+mesh = SubResource("Geo89")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ObservationBay/Floor"]
+shape = SubResource("Geo89Shape")
+
+[node name="Ceiling" type="StaticBody3D" parent="Architecture/ObservationBay"]
+position = Vector3(0, 3.3, -4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ObservationBay/Ceiling"]
+mesh = SubResource("Geo91")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ObservationBay/Ceiling"]
+shape = SubResource("Geo91Shape")
+
+[node name="Left" type="StaticBody3D" parent="Architecture/ObservationBay"]
+position = Vector3(-1.75, 1.6, -4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ObservationBay/Left"]
+mesh = SubResource("Geo93")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ObservationBay/Left"]
+shape = SubResource("Geo93Shape")
+
+[node name="Right" type="StaticBody3D" parent="Architecture/ObservationBay"]
+position = Vector3(1.75, 1.6, -4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ObservationBay/Right"]
+mesh = SubResource("Geo95")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ObservationBay/Right"]
+shape = SubResource("Geo95Shape")
+
+[node name="EquipmentSilhouette" type="StaticBody3D" parent="Architecture/ObservationBay"]
+position = Vector3(0.7, 0.7, -5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ObservationBay/EquipmentSilhouette"]
+mesh = SubResource("Geo97")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ObservationBay/EquipmentSilhouette"]
+shape = SubResource("Geo97Shape")
+
+[node name="BayFill" type="OmniLight3D" parent="Lighting"]
+position = Vector3(0, 2.5, -4.7)
+light_color = Color(0.5, 0.6, 0.52, 1)
+light_energy = 0.12
+omni_range = 2.5
+
+[node name="ExitDoor" parent="PuzzleProps" instance=ExtResource("Door")]
+position = Vector3(4.5, 0, 2.4)
+rotation_degrees = Vector3(0, 90, 0)
+starts_locked = true
+lock_id = &"observation_room_exit"
+
+[node name="ExitFrameA" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.43, 1.22, 0.97)
+mesh = SubResource("Geo99")
+
+[node name="ExitFrameB" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.43, 1.22, 2.43)
+mesh = SubResource("Geo100")
+
+[node name="ExitFrameTop" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.43, 2.43, 1.7)
+mesh = SubResource("Geo101")
+
+[node name="ExitSign" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.47, 2.75, 1.7)
+mesh = SubResource("Geo102")
+
+[node name="ExitText" type="Label3D" parent="Architecture"]
+position = Vector3(4.448, 2.75, 1.7)
+rotation_degrees = Vector3(0, -90, 0)
+text = "EXIT"
+font_size = 40
+pixel_size = 0.003
+modulate = Color(0.1, 0.12, 0.11, 1)
+outline_size = 0
+no_depth_test = false
+
+[node name="RoomIdentity" type="Label3D" parent="Architecture"]
+position = Vector3(4.436, 1.8, 2.95)
+rotation_degrees = Vector3(0, -90, 0)
+text = "HALCYON RESEARCH FACILITY\nSUBLEVEL 6\nOBSERVATION 06\nAUTHORIZED PERSONNEL ONLY"
+font_size = 25
+pixel_size = 0.002
+modulate = Color(0.1, 0.12, 0.11, 1)
+outline_size = 0
+no_depth_test = false
+
+[node name="Desk" type="Node3D" parent="Furniture"]
+position = Vector3(-2.65, 0, -2)
+
+[node name="Desktop" type="StaticBody3D" parent="Furniture/Desk"]
+position = Vector3(0, 0.78, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/Desktop"]
+mesh = SubResource("Geo103")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/Desktop"]
+shape = SubResource("Geo103Shape")
+
+[node name="LeftPedestal" type="StaticBody3D" parent="Furniture/Desk"]
+position = Vector3(-0.89, 0.36, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/LeftPedestal"]
+mesh = SubResource("Geo105")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/LeftPedestal"]
+shape = SubResource("Geo105Shape")
+
+[node name="RightLeg" type="StaticBody3D" parent="Furniture/Desk"]
+position = Vector3(0.9, 0.36, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/RightLeg"]
+mesh = SubResource("Geo107")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/RightLeg"]
+shape = SubResource("Geo107Shape")
+
+[node name="BackBrace" type="StaticBody3D" parent="Furniture/Desk"]
+position = Vector3(0, 0.47, -0.42)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/BackBrace"]
+mesh = SubResource("Geo109")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/BackBrace"]
+shape = SubResource("Geo109Shape")
+
+[node name="LockedDrawer" parent="Furniture/Desk" instance=ExtResource("Drawer")]
+position = Vector3(-0.44, 0.04, 0.28)
+scale = Vector3(0.55, 0.55, 0.55)
+starts_locked = true
+lock_id = &"observation_desk_drawer"
+
+[node name="DrawerHandle" type="MeshInstance3D" parent="Furniture/Desk/LockedDrawer/Body"]
+position = Vector3(0, 0.2, 0.54)
+mesh = SubResource("Geo111")
+
+[node name="Computer" type="Node3D" parent="Furniture/Desk"]
+position = Vector3(-0.55, 0.82, -0.15)
+
+[node name="Stand" type="StaticBody3D" parent="Furniture/Desk/Computer"]
+position = Vector3(0, 0.05, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/Computer/Stand"]
+mesh = SubResource("Geo112")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/Computer/Stand"]
+shape = SubResource("Geo112Shape")
+
+[node name="Housing" type="StaticBody3D" parent="Furniture/Desk/Computer"]
+position = Vector3(0, 0.29, -0.04)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/Computer/Housing"]
+mesh = SubResource("Geo114")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/Computer/Housing"]
+shape = SubResource("Geo114Shape")
+
+[node name="Bezel" type="MeshInstance3D" parent="Furniture/Desk/Computer"]
+position = Vector3(0, 0.3, 0.176)
+mesh = SubResource("Geo116")
+
+[node name="Screen" type="MeshInstance3D" parent="Furniture/Desk/Computer"]
+position = Vector3(0, 0.3, 0.19)
+mesh = SubResource("Geo117")
+
+[node name="Keyboard" type="StaticBody3D" parent="Furniture/Desk"]
+position = Vector3(-0.5, 0.844, 0.28)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/Keyboard"]
+mesh = SubResource("Geo118")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/Keyboard"]
+shape = SubResource("Geo118Shape")
+
+[node name="Key0_0" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.7, 0.873, 0.23)
+mesh = SubResource("Geo120")
+
+[node name="Key0_1" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.6569999999999999, 0.873, 0.23)
+mesh = SubResource("Geo121")
+
+[node name="Key0_2" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.614, 0.873, 0.23)
+mesh = SubResource("Geo122")
+
+[node name="Key0_3" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.571, 0.873, 0.23)
+mesh = SubResource("Geo123")
+
+[node name="Key0_4" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.528, 0.873, 0.23)
+mesh = SubResource("Geo124")
+
+[node name="Key0_5" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.485, 0.873, 0.23)
+mesh = SubResource("Geo125")
+
+[node name="Key0_6" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.44199999999999995, 0.873, 0.23)
+mesh = SubResource("Geo126")
+
+[node name="Key0_7" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.39899999999999997, 0.873, 0.23)
+mesh = SubResource("Geo127")
+
+[node name="Key0_8" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.356, 0.873, 0.23)
+mesh = SubResource("Geo128")
+
+[node name="Key0_9" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.313, 0.873, 0.23)
+mesh = SubResource("Geo129")
+
+[node name="Key1_0" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.7, 0.873, 0.272)
+mesh = SubResource("Geo130")
+
+[node name="Key1_1" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.6569999999999999, 0.873, 0.272)
+mesh = SubResource("Geo131")
+
+[node name="Key1_2" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.614, 0.873, 0.272)
+mesh = SubResource("Geo132")
+
+[node name="Key1_3" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.571, 0.873, 0.272)
+mesh = SubResource("Geo133")
+
+[node name="Key1_4" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.528, 0.873, 0.272)
+mesh = SubResource("Geo134")
+
+[node name="Key1_5" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.485, 0.873, 0.272)
+mesh = SubResource("Geo135")
+
+[node name="Key1_6" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.44199999999999995, 0.873, 0.272)
+mesh = SubResource("Geo136")
+
+[node name="Key1_7" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.39899999999999997, 0.873, 0.272)
+mesh = SubResource("Geo137")
+
+[node name="Key1_8" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.356, 0.873, 0.272)
+mesh = SubResource("Geo138")
+
+[node name="Key1_9" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.313, 0.873, 0.272)
+mesh = SubResource("Geo139")
+
+[node name="Key2_0" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.7, 0.873, 0.314)
+mesh = SubResource("Geo140")
+
+[node name="Key2_1" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.6569999999999999, 0.873, 0.314)
+mesh = SubResource("Geo141")
+
+[node name="Key2_2" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.614, 0.873, 0.314)
+mesh = SubResource("Geo142")
+
+[node name="Key2_3" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.571, 0.873, 0.314)
+mesh = SubResource("Geo143")
+
+[node name="Key2_4" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.528, 0.873, 0.314)
+mesh = SubResource("Geo144")
+
+[node name="Key2_5" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.485, 0.873, 0.314)
+mesh = SubResource("Geo145")
+
+[node name="Key2_6" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.44199999999999995, 0.873, 0.314)
+mesh = SubResource("Geo146")
+
+[node name="Key2_7" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.39899999999999997, 0.873, 0.314)
+mesh = SubResource("Geo147")
+
+[node name="Key2_8" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.356, 0.873, 0.314)
+mesh = SubResource("Geo148")
+
+[node name="Key2_9" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.313, 0.873, 0.314)
+mesh = SubResource("Geo149")
+
+[node name="Photograph" parent="Furniture/Desk" instance=ExtResource("Photo")]
+position = Vector3(0.23, 0.835, 0.16)
+rotation_degrees = Vector3(-90, 0, -12)
+scale = Vector3(0.4, 0.4, 0.4)
+
+[node name="Mug" parent="Furniture/Desk" instance=ExtResource("Mug")]
+position = Vector3(0.72, 0.87, -0.22)
+
+[node name="Pencil" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(0.65, 0.825, 0.07)
+rotation_degrees = Vector3(0, -20, 0)
+mesh = SubResource("Geo150")
+
+[node name="Badge" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(0.8, 0.825, 0.29)
+rotation_degrees = Vector3(0, 15, 0)
+mesh = SubResource("Geo151")
+
+[node name="BadgeDamage" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(0.81, 0.829, 0.29)
+rotation_degrees = Vector3(0, -20, 0)
+mesh = SubResource("Geo152")
+
+[node name="BadgeStripe" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(0.775, 0.83, 0.286)
+rotation_degrees = Vector3(0, 15, 0)
+mesh = SubResource("Geo153")
+
+[node name="DeskSymbolOrder" type="Label3D" parent="Furniture/Desk"]
+position = Vector3(0.45, 0.823, -0.04)
+rotation_degrees = Vector3(-90, 0, 0)
+text = "FIRE  ELECTRICAL  CHEMICAL  CONTAINMENT"
+font_size = 24
+pixel_size = 0.0012
+modulate = Color(0.1, 0.12, 0.11, 1)
+outline_size = 0
+no_depth_test = false
+
+[node name="Chair" type="Node3D" parent="Furniture"]
+position = Vector3(-3.1, 0, -0.8)
+rotation_degrees = Vector3(0, -12, 0)
+
+[node name="Seat" type="StaticBody3D" parent="Furniture/Chair"]
+position = Vector3(0, 0.46, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Chair/Seat"]
+mesh = SubResource("Geo154")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Chair/Seat"]
+shape = SubResource("Geo154Shape")
+
+[node name="Back" type="StaticBody3D" parent="Furniture/Chair"]
+position = Vector3(0, 0.77, 0.21)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Chair/Back"]
+mesh = SubResource("Geo156")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Chair/Back"]
+shape = SubResource("Geo156Shape")
+
+[node name="LegLF" type="StaticBody3D" parent="Furniture/Chair"]
+position = Vector3(-0.2, 0.22, -0.18)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Chair/LegLF"]
+mesh = SubResource("Geo158")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Chair/LegLF"]
+shape = SubResource("Geo158Shape")
+
+[node name="LegLB" type="StaticBody3D" parent="Furniture/Chair"]
+position = Vector3(-0.2, 0.22, 0.18)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Chair/LegLB"]
+mesh = SubResource("Geo160")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Chair/LegLB"]
+shape = SubResource("Geo160Shape")
+
+[node name="LegRF" type="StaticBody3D" parent="Furniture/Chair"]
+position = Vector3(0.2, 0.22, -0.18)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Chair/LegRF"]
+mesh = SubResource("Geo162")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Chair/LegRF"]
+shape = SubResource("Geo162Shape")
+
+[node name="LegRB" type="StaticBody3D" parent="Furniture/Chair"]
+position = Vector3(0.2, 0.22, 0.18)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Chair/LegRB"]
+mesh = SubResource("Geo164")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Chair/LegRB"]
+shape = SubResource("Geo164Shape")
+
+[node name="Bench" type="StaticBody3D" parent="Furniture"]
+position = Vector3(-2.8, 0.42, 2.95)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Bench"]
+mesh = SubResource("Geo166")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Bench"]
+shape = SubResource("Geo166Shape")
+
+[node name="BenchLegA" type="StaticBody3D" parent="Furniture"]
+position = Vector3(-3.5, 0.2, 2.95)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/BenchLegA"]
+mesh = SubResource("Geo168")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/BenchLegA"]
+shape = SubResource("Geo168Shape")
+
+[node name="BenchLegB" type="StaticBody3D" parent="Furniture"]
+position = Vector3(-2.1, 0.2, 2.95)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/BenchLegB"]
+mesh = SubResource("Geo170")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/BenchLegB"]
+shape = SubResource("Geo170Shape")
+
+[node name="Cabinet" type="Node3D" parent="PuzzleProps"]
+position = Vector3(-4.08, 0, 0.95)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="Case" type="StaticBody3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0, 1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/Cabinet/Case"]
+mesh = SubResource("Geo172")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/Cabinet/Case"]
+shape = SubResource("Geo172Shape")
+
+[node name="DoorPanel" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0, 1.05, 0.31)
+mesh = SubResource("Geo174")
+
+[node name="Interface" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.26, 1.27, 0.34)
+mesh = SubResource("Geo175")
+
+[node name="BlankDigit0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.165, 1.415, 0.37)
+mesh = SubResource("Geo176")
+
+[node name="BlankDigit1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.228, 1.415, 0.37)
+mesh = SubResource("Geo177")
+
+[node name="BlankDigit2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.29100000000000004, 1.415, 0.37)
+mesh = SubResource("Geo178")
+
+[node name="BlankDigit3" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.354, 1.415, 0.37)
+mesh = SubResource("Geo179")
+
+[node name="Key0_0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.185, 1.31, 0.37)
+mesh = SubResource("Geo180")
+
+[node name="Key0_1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.257, 1.31, 0.37)
+mesh = SubResource("Geo181")
+
+[node name="Key0_2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.32899999999999996, 1.31, 0.37)
+mesh = SubResource("Geo182")
+
+[node name="Key1_0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.185, 1.245, 0.37)
+mesh = SubResource("Geo183")
+
+[node name="Key1_1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.257, 1.245, 0.37)
+mesh = SubResource("Geo184")
+
+[node name="Key1_2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.32899999999999996, 1.245, 0.37)
+mesh = SubResource("Geo185")
+
+[node name="Key2_0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.185, 1.1800000000000002, 0.37)
+mesh = SubResource("Geo186")
+
+[node name="Key2_1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.257, 1.1800000000000002, 0.37)
+mesh = SubResource("Geo187")
+
+[node name="Key2_2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.32899999999999996, 1.1800000000000002, 0.37)
+mesh = SubResource("Geo188")
+
+[node name="Key3_0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.185, 1.115, 0.37)
+mesh = SubResource("Geo189")
+
+[node name="Key3_1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.257, 1.115, 0.37)
+mesh = SubResource("Geo190")
+
+[node name="Key3_2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0.32899999999999996, 1.115, 0.37)
+mesh = SubResource("Geo191")
+
+[node name="Pull" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(-0.32, 1.1, 0.37)
+mesh = SubResource("Geo192")
+
+[node name="CabinetLabel" type="Label3D" parent="PuzzleProps/Cabinet"]
+position = Vector3(0, 1.8, 0.338)
+rotation_degrees = Vector3(0, 0, 0)
+text = "EMERGENCY EQUIPMENT"
+font_size = 25
+pixel_size = 0.002
+modulate = Color(0.8, 0.8, 0.7, 1)
+outline_size = 0
+no_depth_test = false
+
+[node name="ProcedurePoster" type="Node3D" parent="PuzzleProps"]
+
+
+[node name="Panel" type="MeshInstance3D" parent="PuzzleProps/ProcedurePoster"]
+position = Vector3(4.475, 1.9, -1.4)
+mesh = SubResource("Geo193")
+
+[node name="Text" type="Label3D" parent="PuzzleProps/ProcedurePoster"]
+position = Vector3(4.45, 1.9, -1.4)
+rotation_degrees = Vector3(0, -90, 0)
+text = "EMERGENCY RESPONSE\nPROCEDURE\n\nFIRE ................. 4\nCHEMICAL ............. 7\nELECTRICAL ........... 3\nCONTAINMENT .......... 1"
+font_size = 30
+pixel_size = 0.0028
+modulate = Color(0.1, 0.12, 0.11, 1)
+outline_size = 0
+no_depth_test = false
+
+[node name="WallClock" type="Node3D" parent="PuzzleProps"]
+position = Vector3(-2.9, 2.6, -3.43)
+
+[node name="Rim" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0, 0, 0)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Geo194")
+
+[node name="Face" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0, 0, 0.038)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Geo195")
+
+[node name="Tick0" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0, 0.202, 0.044)
+rotation_degrees = Vector3(0, 0, 0)
+mesh = SubResource("Geo196")
+
+[node name="Tick1" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0.10099999999999999, 0.17493713156445664, 0.044)
+rotation_degrees = Vector3(0, 0, -30)
+mesh = SubResource("Geo197")
+
+[node name="Tick2" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0.17493713156445662, 0.10100000000000003, 0.044)
+rotation_degrees = Vector3(0, 0, -60)
+mesh = SubResource("Geo198")
+
+[node name="Tick3" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0.202, 1.2368932671388268e-17, 0.044)
+rotation_degrees = Vector3(0, 0, -90)
+mesh = SubResource("Geo199")
+
+[node name="Tick4" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0.17493713156445664, -0.10099999999999996, 0.044)
+rotation_degrees = Vector3(0, 0, -120)
+mesh = SubResource("Geo200")
+
+[node name="Tick5" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0.10099999999999999, -0.17493713156445664, 0.044)
+rotation_degrees = Vector3(0, 0, -150)
+mesh = SubResource("Geo201")
+
+[node name="Tick6" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(2.4737865342776535e-17, -0.202, 0.044)
+rotation_degrees = Vector3(0, 0, -180)
+mesh = SubResource("Geo202")
+
+[node name="Tick7" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(-0.10099999999999995, -0.17493713156445664, 0.044)
+rotation_degrees = Vector3(0, 0, -210)
+mesh = SubResource("Geo203")
+
+[node name="Tick8" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(-0.17493713156445656, -0.10100000000000009, 0.044)
+rotation_degrees = Vector3(0, 0, -240)
+mesh = SubResource("Geo204")
+
+[node name="Tick9" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(-0.202, -3.71067980141648e-17, 0.044)
+rotation_degrees = Vector3(0, 0, -270)
+mesh = SubResource("Geo205")
+
+[node name="Tick10" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(-0.17493713156445662, 0.10100000000000003, 0.044)
+rotation_degrees = Vector3(0, 0, -300)
+mesh = SubResource("Geo206")
+
+[node name="Tick11" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(-0.10100000000000009, 0.17493713156445656, 0.044)
+rotation_degrees = Vector3(0, 0, -330)
+mesh = SubResource("Geo207")
+
+[node name="MinuteHand" type="Node3D" parent="PuzzleProps/WallClock"]
+rotation_degrees = Vector3(0, 0, -222)
+
+[node name="Hand" type="MeshInstance3D" parent="PuzzleProps/WallClock/MinuteHand"]
+position = Vector3(0, 0.091, 0.051)
+mesh = SubResource("Geo208")
+
+[node name="HourHand" type="Node3D" parent="PuzzleProps/WallClock"]
+rotation_degrees = Vector3(0, 0, -138.5)
+
+[node name="Hand" type="MeshInstance3D" parent="PuzzleProps/WallClock/HourHand"]
+position = Vector3(0, 0.065, 0.061)
+mesh = SubResource("Geo209")
+
+[node name="Hub" type="MeshInstance3D" parent="PuzzleProps/WallClock"]
+position = Vector3(0, 0, 0.071)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Geo210")
+
+[node name="VentilationGrate" type="Node3D" parent="PuzzleProps"]
+
+
+[node name="Back" type="StaticBody3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.65, 4.02)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate/Back"]
+mesh = SubResource("Geo211")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/VentilationGrate/Back"]
+shape = SubResource("Geo211Shape")
+
+[node name="RecessFloor" type="StaticBody3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.28, 3.77)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate/RecessFloor"]
+mesh = SubResource("Geo213")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/VentilationGrate/RecessFloor"]
+shape = SubResource("Geo213Shape")
+
+[node name="RecessRoof" type="StaticBody3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 1.02, 3.77)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate/RecessRoof"]
+mesh = SubResource("Geo215")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/VentilationGrate/RecessRoof"]
+shape = SubResource("Geo215Shape")
+
+[node name="RecessLeft" type="StaticBody3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(0.98, 0.65, 3.77)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate/RecessLeft"]
+mesh = SubResource("Geo217")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/VentilationGrate/RecessLeft"]
+shape = SubResource("Geo217Shape")
+
+[node name="RecessRight" type="StaticBody3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(2.22, 0.65, 3.77)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate/RecessRight"]
+mesh = SubResource("Geo219")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/VentilationGrate/RecessRight"]
+shape = SubResource("Geo219Shape")
+
+[node name="FixedGrateBacking" type="StaticBody3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.65, 3.46)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate/FixedGrateBacking"]
+mesh = SubResource("Geo221")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/VentilationGrate/FixedGrateBacking"]
+shape = SubResource("Geo221Shape")
+
+[node name="Slat0" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.34, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo223")
+
+[node name="Slat1" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.41700000000000004, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo224")
+
+[node name="Slat2" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.494, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo225")
+
+[node name="Slat3" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.571, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo226")
+
+[node name="Slat4" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.648, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo227")
+
+[node name="Slat5" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.7250000000000001, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo228")
+
+[node name="Slat6" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.802, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo229")
+
+[node name="Slat7" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.879, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo230")
+
+[node name="Slat8" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.6, 0.956, 3.423)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Geo231")
+
+[node name="Screw1.04_0.34" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.04, 0.34, 3.39)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Geo232")
+
+[node name="Screw1.04_0.96" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.04, 0.96, 3.39)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Geo233")
+
+[node name="Screw2.16_0.34" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(2.16, 0.34, 3.39)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Geo234")
+
+[node name="Screw2.16_0.96" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(2.16, 0.96, 3.39)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Geo235")
+
+[node name="Intercom" type="Node3D" parent="PuzzleProps"]
+position = Vector3(2.13, 1.45, -3.39)
+
+[node name="Housing" type="StaticBody3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/Intercom/Housing"]
+mesh = SubResource("Geo236")
+
+[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/Intercom/Housing"]
+shape = SubResource("Geo236Shape")
+
+[node name="SpeakerSlot0" type="MeshInstance3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0, 0.16, 0.083)
+mesh = SubResource("Geo238")
+
+[node name="SpeakerSlot1" type="MeshInstance3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0, 0.123, 0.083)
+mesh = SubResource("Geo239")
+
+[node name="SpeakerSlot2" type="MeshInstance3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0, 0.08600000000000001, 0.083)
+mesh = SubResource("Geo240")
+
+[node name="SpeakerSlot3" type="MeshInstance3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0, 0.049000000000000016, 0.083)
+mesh = SubResource("Geo241")
+
+[node name="SpeakerSlot4" type="MeshInstance3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0, 0.01200000000000001, 0.083)
+mesh = SubResource("Geo242")
+
+[node name="SpeakerSlot5" type="MeshInstance3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0, -0.024999999999999994, 0.083)
+mesh = SubResource("Geo243")
+
+[node name="CallButton" type="MeshInstance3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0, -0.145, 0.09)
+mesh = SubResource("Geo244")
+
+[node name="FilingCabinet" type="StaticBody3D" parent="Furniture"]
+position = Vector3(3.7, 0.68, -2.85)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/FilingCabinet"]
+mesh = SubResource("Geo245")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/FilingCabinet"]
+shape = SubResource("Geo245Shape")
+
+[node name="FileFront0" type="MeshInstance3D" parent="Furniture"]
+position = Vector3(3.7, 0.24, -2.516)
+mesh = SubResource("Geo247")
+
+[node name="FileHandle0" type="MeshInstance3D" parent="Furniture"]
+position = Vector3(3.7, 0.29, -2.487)
+mesh = SubResource("Geo248")
+
+[node name="FileFront1" type="MeshInstance3D" parent="Furniture"]
+position = Vector3(3.7, 0.6499999999999999, -2.516)
+mesh = SubResource("Geo249")
+
+[node name="FileHandle1" type="MeshInstance3D" parent="Furniture"]
+position = Vector3(3.7, 0.7, -2.487)
+mesh = SubResource("Geo250")
+
+[node name="FileFront2" type="MeshInstance3D" parent="Furniture"]
+position = Vector3(3.7, 1.06, -2.516)
+mesh = SubResource("Geo251")
+
+[node name="FileHandle2" type="MeshInstance3D" parent="Furniture"]
+position = Vector3(3.7, 1.1099999999999999, -2.487)
+mesh = SubResource("Geo252")
+
+[node name="WasteBin" type="StaticBody3D" parent="Furniture"]
+position = Vector3(-4.03, 0.2, -2.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/WasteBin"]
+mesh = SubResource("Geo253")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/WasteBin"]
+shape = SubResource("Geo253Shape")
+
+[node name="WasteBinOpening" type="MeshInstance3D" parent="Furniture"]
+position = Vector3(-4.03, 0.401, -2.7)
+mesh = SubResource("Geo255")
+
+[node name="PaperScrap" type="MeshInstance3D" parent="Furniture"]
+position = Vector3(-4.02, 0.408, -2.68)
+rotation_degrees = Vector3(0, 30, 0)
+mesh = SubResource("Geo256")
+
+[node name="ElectricalBox" type="StaticBody3D" parent="Architecture"]
+position = Vector3(4.39, 1.9, -0.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ElectricalBox"]
+mesh = SubResource("Geo257")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ElectricalBox"]
+shape = SubResource("Geo257Shape")
+
+[node name="ConduitVertical" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.37, 2.61, -0.2)
+mesh = SubResource("Geo259")
+
+[node name="ConduitCeiling" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 3.08, -0.2)
+mesh = SubResource("Geo260")
+
+[node name="NorthPipe" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 2.99, -3.35)
+mesh = SubResource("Geo261")
+
+[node name="PipeBracket-4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4, 2.99, -3.39)
+mesh = SubResource("Geo262")
+
+[node name="PipeBracket-1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-1, 2.99, -3.39)
+mesh = SubResource("Geo263")
+
+[node name="PipeBracket2" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(2, 2.99, -3.39)
+mesh = SubResource("Geo264")
+
+[node name="PipeBracket4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4, 2.99, -3.39)
+mesh = SubResource("Geo265")
+
+[node name="PlasterDiscoloration" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(3.4, 2.1, 3.491)
+mesh = SubResource("Geo266")
+
+[node name="FixtureDesk" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(-2, 3.1, -1)
+mesh = SubResource("Geo267")
+
+[node name="TubeDeskB" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(-2, 3.027, -1.085)
+mesh = SubResource("Geo268")
+
+[node name="TubeDeskA" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(-2, 3.027, -0.915)
+mesh = SubResource("Geo269")
+
+[node name="LightDesk" type="OmniLight3D" parent="Lighting"]
+position = Vector3(-2, 2.82, -1)
+light_color = Color(0.86, 0.92, 0.79, 1)
+light_energy = 1.05
+omni_range = 5.5
+omni_attenuation = 1.2
+shadow_enabled = true
+
+[node name="FixtureCenter" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(1, 3.1, 0.5)
+mesh = SubResource("Geo270")
+
+[node name="TubeCenterB" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(1, 3.027, 0.415)
+mesh = SubResource("Geo271")
+
+[node name="TubeCenterA" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(1, 3.027, 0.585)
+mesh = SubResource("Geo272")
+
+[node name="LightCenter" type="OmniLight3D" parent="Lighting"]
+position = Vector3(1, 2.82, 0.5)
+light_color = Color(0.86, 0.92, 0.79, 1)
+light_energy = 1.05
+omni_range = 5.5
+omni_attenuation = 1.2
+shadow_enabled = true
+
+[node name="FixtureEntry" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(-1, 3.1, 2.2)
+mesh = SubResource("Geo273")
+
+[node name="TubeEntryB" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(-1, 3.027, 2.115)
+mesh = SubResource("Geo274")
+
+[node name="TubeEntryA" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(-1, 3.027, 2.285)
+mesh = SubResource("Geo275")
+
+[node name="LightEntry" type="OmniLight3D" parent="Lighting"]
+position = Vector3(-1, 2.82, 2.2)
+light_color = Color(0.86, 0.92, 0.79, 1)
+light_energy = 0.65
+omni_range = 5.5
+omni_attenuation = 1.2
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("Player")]
+position = Vector3(-1.1, 0.05, 2.5)
+rotation_degrees = Vector3(0, -12, 0)
+
+[node name="RoomPlacardBacking" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.465, 1.8, 2.95)
+mesh = SubResource("Revision_RoomPlacardBacking")
+
+[node name="RoomPlacardFace" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.44, 1.8, 2.95)
+mesh = SubResource("Revision_RoomPlacardFace")
+
+[node name="PlacardFastener0" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.431, 1.96, 2.58)
+mesh = SubResource("Revision_PlacardFastener0")
+
+[node name="PlacardFastener1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.431, 1.96, 3.32)
+mesh = SubResource("Revision_PlacardFastener1")
+
+[node name="SouthUtilities" type="Node3D" parent="Architecture"]
+
+[node name="JunctionBox" type="StaticBody3D" parent="Architecture/SouthUtilities"]
+position = Vector3(2.85, 1.3, 3.39)
+
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/SouthUtilities/JunctionBox"]
+mesh = SubResource("Revision_JunctionBox")
+
+[node name="Collision" type="CollisionShape3D" parent="Architecture/SouthUtilities/JunctionBox"]
+shape = SubResource("Revision_JunctionBoxShape")
+
+[node name="BoxCover" type="MeshInstance3D" parent="Architecture/SouthUtilities"]
+position = Vector3(2.85, 1.3, 3.28)
+mesh = SubResource("Revision_BoxCover")
+
+[node name="Riser" type="MeshInstance3D" parent="Architecture/SouthUtilities"]
+position = Vector3(2.85, 2.25, 3.4)
+mesh = SubResource("Revision_Riser")
+
+[node name="ConduitRun" type="MeshInstance3D" parent="Architecture/SouthUtilities"]
+position = Vector3(1.65, 1.31, 3.4)
+mesh = SubResource("Revision_ConduitRun")
+
+[node name="ReturnPipe" type="MeshInstance3D" parent="Architecture/SouthUtilities"]
+position = Vector3(0.55, 0.75, 3.38)
+mesh = SubResource("Revision_ReturnPipe")
+
+[node name="PipeClamp0_3" type="MeshInstance3D" parent="Architecture/SouthUtilities"]
+position = Vector3(0.55, 0.3, 3.42)
+mesh = SubResource("Revision_PipeClamp0_3")
+
+[node name="PipeClamp1_2" type="MeshInstance3D" parent="Architecture/SouthUtilities"]
+position = Vector3(0.55, 1.2, 3.42)
+mesh = SubResource("Revision_PipeClamp1_2")
+
+[node name="UtilityShelf" type="Node3D" parent="Furniture"]
+position = Vector3(1.15, 0, 0.8)
+rotation_degrees = Vector3(0, -12, 0)
+
+[node name="Top" type="StaticBody3D" parent="Furniture/UtilityShelf"]
+position = Vector3(0, 0.67, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/UtilityShelf/Top"]
+mesh = SubResource("Revision_Top")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/UtilityShelf/Top"]
+shape = SubResource("Revision_TopShape")
+
+[node name="LowerShelf" type="StaticBody3D" parent="Furniture/UtilityShelf"]
+position = Vector3(0, 0.16, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/UtilityShelf/LowerShelf"]
+mesh = SubResource("Revision_LowerShelf")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/UtilityShelf/LowerShelf"]
+shape = SubResource("Revision_LowerShelfShape")
+
+[node name="LeftSupport" type="StaticBody3D" parent="Furniture/UtilityShelf"]
+position = Vector3(-0.43, 0.32, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/UtilityShelf/LeftSupport"]
+mesh = SubResource("Revision_LeftSupport")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/UtilityShelf/LeftSupport"]
+shape = SubResource("Revision_LeftSupportShape")
+
+[node name="RightSupport" type="StaticBody3D" parent="Furniture/UtilityShelf"]
+position = Vector3(0.43, 0.32, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/UtilityShelf/RightSupport"]
+mesh = SubResource("Revision_RightSupport")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/UtilityShelf/RightSupport"]
+shape = SubResource("Revision_RightSupportShape")
+
+[node name="StorageBox" type="StaticBody3D" parent="Furniture/UtilityShelf"]
+position = Vector3(-0.16, 0.305, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/UtilityShelf/StorageBox"]
+mesh = SubResource("Revision_StorageBox")
+
+[node name="Collision" type="CollisionShape3D" parent="Furniture/UtilityShelf/StorageBox"]
+shape = SubResource("Revision_StorageBoxShape")
+
+[node name="BoxLid" type="MeshInstance3D" parent="Furniture/UtilityShelf"]
+position = Vector3(-0.16, 0.44, 0)
+mesh = SubResource("Revision_BoxLid")
+
+[node name="BinderA" type="MeshInstance3D" parent="Furniture/UtilityShelf"]
+position = Vector3(-0.23, 0.722, 0)
+mesh = SubResource("Revision_BinderA")
+
+[node name="BinderB" type="MeshInstance3D" parent="Furniture/UtilityShelf"]
+position = Vector3(-0.21, 0.767, 0.01)
+rotation_degrees = Vector3(0, 7, 0)
+mesh = SubResource("Revision_BinderB")
+
+[node name="Clipboard" type="MeshInstance3D" parent="Furniture/UtilityShelf"]
+position = Vector3(0.23, 0.708, 0)
+rotation_degrees = Vector3(0, -8, 0)
+mesh = SubResource("Revision_Clipboard")
+
+[node name="BlankPaper" type="MeshInstance3D" parent="Furniture/UtilityShelf"]
+position = Vector3(0.23, 0.72, 0)
+rotation_degrees = Vector3(0, -8, 0)
+mesh = SubResource("Revision_BlankPaper")
+
+[node name="ClipboardClip" type="MeshInstance3D" parent="Furniture/UtilityShelf"]
+position = Vector3(0.21, 0.725, -0.14)
+rotation_degrees = Vector3(0, -8, 0)
+mesh = SubResource("Revision_ClipboardClip")
+
+[node name="BlankDeskPaperStack" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.96, 0.83, -0.24)
+mesh = SubResource("Revision_BlankDeskPaperStack")
+
+[node name="LooseDeskSheet" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.94, 0.842, -0.23)
+rotation_degrees = Vector3(0, -9, 0)
+mesh = SubResource("Revision_LooseDeskSheet")
+
+[node name="StaplerBase" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.96, 0.828, 0.15)
+mesh = SubResource("Revision_StaplerBase")
+
+[node name="StaplerTop" type="MeshInstance3D" parent="Furniture/Desk"]
+position = Vector3(-0.96, 0.844, 0.14)
+rotation_degrees = Vector3(-7, 0, 0)
+mesh = SubResource("Revision_StaplerTop")
+
+[node name="EastFixture" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(3.4, 3.1, -0.8)
+mesh = SubResource("Revision_EastFixture")
+
+[node name="EastDiffuser" type="MeshInstance3D" parent="Lighting"]
+position = Vector3(3.4, 3.038, -0.8)
+mesh = SubResource("Revision_EastDiffuser")
+
+[node name="EastFill" type="OmniLight3D" parent="Lighting"]
+position = Vector3(3.4, 2.75, -0.8)
+light_color = Color(0.82, 0.91, 0.72, 1)
+light_energy = 0.48
+omni_range = 3.5
+omni_attenuation = 1.4
+shadow_enabled = true
