@@ -7,6 +7,7 @@ signal prompt_changed(prompt: String)
 @export var player_body: CollisionObject3D
 
 var current_target: Interactable
+var gameplay_enabled: bool = true
 var _displayed_prompt: String = ""
 
 
@@ -26,7 +27,7 @@ func is_gameplay_input_active() -> bool:
 
 func refresh_target() -> void:
 	current_target = null
-	if is_gameplay_input_active():
+	if gameplay_enabled and is_gameplay_input_active():
 		target_position = Vector3(0.0, 0.0, -interaction_range)
 		force_raycast_update()
 		if is_colliding():

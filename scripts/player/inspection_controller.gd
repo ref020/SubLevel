@@ -1,0 +1,190 @@
+extends Node
+## Single local-player input owner. Presentation uses an isolated 3D world.
+
+signal inspection_started(item: Inspectable)
+signal inspection_ended
+
+@export var player: CharacterBody3D
+@export var interaction_ray: RayCast3D
+@export var interaction_hud: CanvasLayer
+
+var active_item: Inspectable
+var inspecting: bool = false
+var distance: float = 1.4
+var _minimum: float
+var _maximum: float
+var _dragging: bool = false
+var _visual_was_visible: bool
+var _player_physics: bool
+var _player_input: bool
+var _ray_process: bool
+var _ray_input: bool
+var _ray_enabled: bool
+var _hud_visible: bool
+var _mouse_mode: Input.MouseMode
+
+@onready var overlay: CanvasLayer = $Overlay
+@onready var pivot: Node3D = $Overlay/ViewportContainer/Viewport/Stage/Pivot
+
+
+func _ready() -> void:
+	add_to_group("inspection_presenter")
+	overlay.hide()
+
+
+func inspect(item: Inspectable) -> void:
+	if inspecting or not is_instance_valid(item.visual_root):
+		return
+	var copy: Node3D = _copy_meshes(item.visual_root)
+	pivot.add_child(copy)
+	# The visual root defines object-local axes; ignore its world placement.
+	copy.transform = Transform3D.IDENTITY
+	var bounds: AABB = _mesh_bounds(copy)
+	var longest: float = maxf(bounds.size.x, maxf(bounds.size.y, bounds.size.z))
+	if longest <= 0.0001:
+		pivot.remove_child(copy)
+		copy.queue_free()
+		push_warning("Inspectable has no non-empty static mesh visuals.")
+		return
+	var fit_scale: float = 0.8 / longest
+	copy.scale = Vector3.ONE * fit_scale
+	copy.position = -bounds.get_center() * fit_scale
+	active_item = item
+	inspecting = true
+	_visual_was_visible = item.visual_root.visible
+	item.visual_root.hide()
+	item.tree_exiting.connect(_on_item_exiting, CONNECT_ONE_SHOT)
+	_minimum = maxf(0.85, item.minimum_distance)
+	_maximum = maxf(_minimum, item.maximum_distance)
+	distance = clampf(item.inspection_distance, _minimum, _maximum)
+	pivot.position = Vector3(0, 0, -distance)
+	pivot.rotation_degrees = item.initial_inspection_rotation
+	_player_physics = player.is_physics_processing()
+	_player_input = player.is_processing_unhandled_input()
+	_ray_process = interaction_ray.is_processing()
+	_ray_input = interaction_ray.is_processing_unhandled_input()
+	_ray_enabled = interaction_ray.gameplay_enabled
+	_hud_visible = interaction_hud.visible
+	_mouse_mode = Input.mouse_mode
+	player.set_physics_process(false)
+	player.set_process_unhandled_input(false)
+	interaction_ray.gameplay_enabled = false
+	interaction_ray.refresh_target()
+	interaction_ray.set_process(false)
+	interaction_ray.set_process_unhandled_input(false)
+	interaction_hud.hide()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	overlay.show()
+	inspection_started.emit(item)
+
+
+func finish_inspection(restore_mouse: bool = true) -> void:
+	if not inspecting:
+		return
+	if is_instance_valid(active_item):
+		if is_instance_valid(active_item.visual_root):
+			active_item.visual_root.visible = _visual_was_visible
+		if active_item.tree_exiting.is_connected(_on_item_exiting):
+			active_item.tree_exiting.disconnect(_on_item_exiting)
+	active_item = null
+	inspecting = false
+	_dragging = false
+	for child: Node in pivot.get_children():
+		pivot.remove_child(child)
+		child.queue_free()
+	overlay.hide()
+	player.set_physics_process(_player_physics)
+	player.set_process_unhandled_input(_player_input)
+	interaction_ray.gameplay_enabled = _ray_enabled
+	interaction_ray.set_process(_ray_process)
+	interaction_ray.set_process_unhandled_input(_ray_input)
+	interaction_hud.visible = _hud_visible
+	Input.mouse_mode = _mouse_mode if restore_mouse else Input.MOUSE_MODE_VISIBLE
+	inspection_ended.emit()
+
+
+func _input(event: InputEvent) -> void:
+	if not inspecting:
+		return
+	# Consume the exit event before normal Escape handling can see it.
+	get_viewport().set_input_as_handled()
+	if event.is_action_pressed("toggle_mouse_capture"):
+		finish_inspection()
+	elif event is InputEventMouseButton:
+		match event.button_index:
+			MOUSE_BUTTON_RIGHT:
+				if event.pressed:
+					finish_inspection()
+			MOUSE_BUTTON_LEFT:
+				_dragging = event.pressed
+			MOUSE_BUTTON_WHEEL_UP:
+				if event.pressed:
+					zoom(-0.1)
+			MOUSE_BUTTON_WHEEL_DOWN:
+				if event.pressed:
+					zoom(0.1)
+	elif event is InputEventMouseMotion and _dragging:
+		rotate_object(event.relative)
+
+
+func rotate_object(motion: Vector2) -> void:
+	if inspecting and is_instance_valid(active_item):
+		var sensitivity: float = deg_to_rad(active_item.rotation_sensitivity)
+		# Camera-space axes allow tumbling freely, including the underside/back.
+		pivot.basis = (Basis(Vector3.UP, motion.x * sensitivity)
+			* Basis(Vector3.RIGHT, motion.y * sensitivity) * pivot.basis).orthonormalized()
+
+
+func zoom(amount: float) -> void:
+	if inspecting:
+		distance = clampf(distance + amount, _minimum, _maximum)
+		pivot.position.z = -distance
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and inspecting:
+		finish_inspection(false)
+
+
+func _on_item_exiting() -> void:
+	finish_inspection()
+
+
+func _exit_tree() -> void:
+	if inspecting:
+		finish_inspection(false)
+
+
+func _copy_meshes(source: Node3D) -> Node3D:
+	var copy: Node3D = Node3D.new()
+	if source is MeshInstance3D:
+		var mesh_copy: MeshInstance3D = MeshInstance3D.new()
+		mesh_copy.mesh = source.mesh
+		mesh_copy.material_override = source.material_override
+		mesh_copy.material_overlay = source.material_overlay
+		if source.mesh != null:
+			for index: int in source.mesh.get_surface_count():
+				mesh_copy.set_surface_override_material(index, source.get_surface_override_material(index))
+		copy.free()
+		copy = mesh_copy
+	copy.transform = source.transform
+	copy.visible = source.visible
+	for child: Node in source.get_children():
+		if child is Node3D:
+			copy.add_child(_copy_meshes(child))
+	return copy
+
+
+func _mesh_bounds(root: Node3D) -> AABB:
+	var bounds: AABB
+	var found: bool = false
+	var nodes: Array[Node] = [root]
+	while not nodes.is_empty():
+		var node: Node = nodes.pop_back()
+		nodes.append_array(node.get_children())
+		if node is MeshInstance3D and node.mesh != null and node.is_visible_in_tree():
+			var local_transform: Transform3D = root.global_transform.affine_inverse() * node.global_transform
+			var mesh_bounds: AABB = local_transform * node.get_aabb()
+			bounds = bounds.merge(mesh_bounds) if found else mesh_bounds
+			found = true
+	return bounds
