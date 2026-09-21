@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/test_button.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/interaction/test_switch.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/interaction/test_object.gd" id="3"]
+
+[sub_resource type="StandardMaterial3D" id="BaseMaterial"]
+albedo_color = Color(0.22, 0.28, 0.34, 1)
+
+[sub_resource type="StandardMaterial3D" id="ButtonMaterial"]
+albedo_color = Color(0.9, 0.28, 0.18, 1)
+
+[sub_resource type="StandardMaterial3D" id="SwitchMaterial"]
+albedo_color = Color(0.95, 0.75, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BaseMesh"]
+material = SubResource("BaseMaterial")
+size = Vector3(0.9, 0.9, 0.3)
+
+[sub_resource type="BoxShape3D" id="TargetShape"]
+size = Vector3(0.9, 0.9, 0.65)
+
+[sub_resource type="BoxMesh" id="ButtonMesh"]
+material = SubResource("ButtonMaterial")
+size = Vector3(0.55, 0.55, 0.2)
+
+[sub_resource type="BoxMesh" id="HandleMesh"]
+material = SubResource("SwitchMaterial")
+size = Vector3(0.14, 0.65, 0.18)
+
+[sub_resource type="BoxMesh" id="ObjectMesh"]
+material = SubResource("SwitchMaterial")
+size = Vector3(0.65, 0.65, 0.65)
+
+[node name="InteractionTests" type="Node3D"]
+
+[node name="Button" type="Node3D" parent="."]
+position = Vector3(-2, 1.4, 1)
+script = ExtResource("1")
+interaction_prompt = "Press Button"
+
+[node name="Body" type="StaticBody3D" parent="Button"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button/Body"]
+shape = SubResource("TargetShape")
+
+[node name="Base" type="MeshInstance3D" parent="Button"]
+mesh = SubResource("BaseMesh")
+
+[node name="ButtonCap" type="MeshInstance3D" parent="Button"]
+position = Vector3(0, 0, 0.24)
+mesh = SubResource("ButtonMesh")
+
+[node name="Label" type="Label3D" parent="Button"]
+position = Vector3(0, 0.75, 0)
+text = "BUTTON"
+font_size = 40
+
+[node name="Switch" type="Node3D" parent="."]
+position = Vector3(0, 1.4, 1)
+script = ExtResource("2")
+interaction_prompt = "Toggle Switch"
+
+[node name="Body" type="StaticBody3D" parent="Switch"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Switch/Body"]
+shape = SubResource("TargetShape")
+
+[node name="Base" type="MeshInstance3D" parent="Switch"]
+mesh = SubResource("BaseMesh")
+
+[node name="Handle" type="MeshInstance3D" parent="Switch"]
+position = Vector3(0, 0, 0.24)
+rotation_degrees = Vector3(0, 0, 35)
+mesh = SubResource("HandleMesh")
+
+[node name="Label" type="Label3D" parent="Switch"]
+position = Vector3(0, 0.75, 0)
+text = "SWITCH"
+font_size = 40
+
+[node name="TestObject" type="Node3D" parent="."]
+position = Vector3(2, 1.4, 1)
+script = ExtResource("3")
+
+[node name="Body" type="StaticBody3D" parent="TestObject"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestObject/Body"]
+shape = SubResource("TargetShape")
+
+[node name="Mesh" type="MeshInstance3D" parent="TestObject"]
+mesh = SubResource("ObjectMesh")
+
+[node name="Label" type="Label3D" parent="TestObject"]
+position = Vector3(0, 0.75, 0)
+text = "TEST OBJECT"
+font_size = 40

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scripts/player/first_person_player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/interaction/player_interaction.gd" id="2_interaction"]
+[ext_resource type="PackedScene" path="res://ui/interaction_hud.tscn" id="3_hud"]
 
 [sub_resource type="CapsuleShape3D" id="Capsule_player"]
 radius = 0.3
@@ -19,3 +21,12 @@ position = Vector3(0, 1.6, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 current = true
 near = 0.05
+
+[node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D" node_paths=PackedStringArray("player_body")]
+target_position = Vector3(0, 0, -3)
+script = ExtResource("2_interaction")
+player_body = NodePath("../../..")
+
+[node name="InteractionHUD" parent="." instance=ExtResource("3_hud")]
+
+[connection signal="prompt_changed" from="Head/Camera3D/InteractionRay" to="InteractionHUD" method="show_prompt"]
