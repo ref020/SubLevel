@@ -1,9 +1,12 @@
-[gd_scene load_steps=30 format=3]
+[gd_scene load_steps=28 format=3]
 
 [ext_resource type="Script" path="res://scripts/interaction/cabinet.gd" id="Script"]
 
 [ext_resource type="PackedScene" path="res://scenes/interactables/keypad.tscn" id="Keypad"]
 
+[ext_resource type="PackedScene" path="res://scenes/items/screwdriver.tscn" id="Screwdriver"]
+[ext_resource type="PackedScene" path="res://scenes/items/cassette_tape.tscn" id="Cassette"]
+[ext_resource type="PackedScene" path="res://scenes/items/cabinet_note.tscn" id="Note"]
 [sub_resource type="StandardMaterial3D" id="Metal"]
 albedo_color = Color(0.25, 0.28, 0.27, 1)
 roughness = 0.85
@@ -83,26 +86,6 @@ size = Vector3(0.69, 1.8, 0.045)
 [sub_resource type="BoxMesh" id="Box8"]
 material = SubResource("Beige")
 size = Vector3(0.045, 0.22, 0.07)
-
-[sub_resource type="BoxMesh" id="Box9"]
-material = SubResource("Beige")
-size = Vector3(0.065, 0.04, 0.13)
-
-[sub_resource type="BoxMesh" id="Box10"]
-material = SubResource("Metal")
-size = Vector3(0.012, 0.012, 0.12)
-
-[sub_resource type="BoxMesh" id="Box11"]
-material = SubResource("Dark")
-size = Vector3(0.105, 0.04, 0.068)
-
-[sub_resource type="BoxMesh" id="Box12"]
-material = SubResource("Paper")
-size = Vector3(0.08, 0.003, 0.035)
-
-[sub_resource type="BoxMesh" id="Box13"]
-material = SubResource("Paper")
-size = Vector3(0.15, 0.005, 0.2)
 
 [node name="Cabinet" type="Node3D"]
 
@@ -201,26 +184,14 @@ position = Vector3(0.35, 1.27, 0.39)
 [node name="Contents" type="Node3D" parent="."]
 
 
-[node name="ScrewdriverHandle" type="MeshInstance3D" parent="Contents"]
-position = Vector3(-0.28, 0.993, 0.04)
-mesh = SubResource("Box9")
+[node name="Screwdriver" parent="Contents" instance=ExtResource("Screwdriver")]
+position = Vector3(-0.32, 0.994, 0.1)
 
-[node name="ScrewdriverShaft" type="MeshInstance3D" parent="Contents"]
-position = Vector3(-0.28, 0.99, -0.08)
-mesh = SubResource("Box10")
+[node name="Cassette" parent="Contents" instance=ExtResource("Cassette")]
+position = Vector3(-0.13, 0.99, 0.15)
 
-[node name="Cassette" type="MeshInstance3D" parent="Contents"]
-position = Vector3(-0.03, 0.997, 0)
-mesh = SubResource("Box11")
-
-[node name="CassetteLabel" type="MeshInstance3D" parent="Contents"]
-position = Vector3(-0.03, 1.018, 0)
-mesh = SubResource("Box12")
-
-[node name="BlankNote" type="MeshInstance3D" parent="Contents"]
-position = Vector3(-0.17, 0.203, 0)
-mesh = SubResource("Box13")
-
+[node name="Note" parent="Contents" instance=ExtResource("Note")]
+position = Vector3(0.04, 1.065, 0.16)
 [node name="EquipmentLabel" type="Label3D" parent="Door/Body"]
 position = Vector3(0.345, 1.76, 0.025)
 text = "EMERGENCY\nEQUIPMENT"

@@ -1,7 +1,7 @@
 # Milestone 4: inspection and pickup metadata
 
 Open `scenes/levels/inspection_test.tscn` and press F6. No manual configuration
-is required. F5 continues to run the original controller test scene.
+is required. F5 now runs the Observation Room.
 
 ## Controls and interactive verification
 
@@ -14,8 +14,8 @@ is required. F5 continues to run the original controller test scene.
    reveal the red X on its cream-colored back.
 4. Asymmetric block: turn it upside down to find the two cyan underside stripes.
    The yellow side tab provides an orientation reference.
-5. Test Item: inspect the purple/yellow placeholder. It exposes pickup metadata
-   but remains in the world; no take action or inventory exists yet.
+5. Test Item: inspect the purple/yellow placeholder. Milestone 6B adds F to take
+   it and Tab to view inventory; see inventory.md.
 6. During inspection try WASD, Space, ordinary mouse movement, and E: the player
    and camera should stay still and no other object should activate.
 7. Press RMB or Escape to return. Normal gameplay and captured mouse resume.
@@ -40,8 +40,8 @@ invalid maximum is raised to the minimum. Initial distance is clamped too.
 
 PickupItem extends Inspectable with item_id, display_name, and description.
 Use `item is PickupItem` to identify pickup capability. The photo/block use
-Inspectable directly. No collection, storage, ownership, key matching, item use,
-or inventory UI is implemented.
+Inspectable directly. Collection and inventory are described in inventory.md;
+key matching and item use remain unimplemented.
 
 ## Input and presentation architecture
 

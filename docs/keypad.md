@@ -16,8 +16,8 @@ The canonical poster, desk order, and clock are unchanged. No new clues exist.
 4. Enter 4371. ACCESS GRANTED appears briefly; the cabinet unlocks immediately
    and the UI returns to gameplay after 0.8 seconds. Aim at the left door and
    press E to open it smoothly. Press E on the open leaf to close it.
-5. Inspect the revealed interior visually: screwdriver, cassette, and blank
-   note are nonfunctional geometry. Nothing is collectible or usable yet.
+5. Milestone 6B replaces the interior placeholders with collectible screwdriver,
+   cassette, and folded note: E inspects, F takes. See inventory.md.
 6. Revisit the keypad: it displays UNLOCKED and requires no further code. It
    remains unlocked for this scene instance; restarting the scene resets it.
 7. Open `scenes/levels/keypad_test.tscn` and press F6 to test an independent
@@ -76,5 +76,5 @@ git diff --check
 Headless tests simulate mouse capture, so physical capture and final visual feel
 still need interactive review. The existing openable motion has no obstruction
 reversal; stand clear of the swinging leaf. Prototype UI assumes a normal game
-window size. No save persistence, item collection/use, vent/switch functionality,
+window size. No save persistence, item use, vent/switch functionality,
 dialogue, or later puzzle logic is included.

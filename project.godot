@@ -22,6 +22,15 @@ window/stretch/aspect="expand"
 
 [input]
 
+inventory={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":4194306)]
+}
+take_item={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":70)]
+}
+
 interact={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"physical_keycode":69)]

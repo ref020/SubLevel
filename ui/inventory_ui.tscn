@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://ui/inventory_ui.gd" id="Script"]
+[sub_resource type="StyleBoxFlat" id="Panel"]
+bg_color = Color(0.17, 0.19, 0.15, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.37, 0.38, 0.29, 1)
+[node name="InventoryUI" type="CanvasLayer"]
+layer = 9
+visible = false
+script = ExtResource("Script")
+[node name="Backdrop" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.025, 0.03, 0.02, 0.94)
+[node name="Center" type="CenterContainer" parent="Backdrop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="Panel" type="PanelContainer" parent="Backdrop/Center"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("Panel")
+[node name="Margin" type="MarginContainer" parent="Backdrop/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+[node name="Content" type="VBoxContainer" parent="Backdrop/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+[node name="Title" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "INVENTORY"
+horizontal_alignment = 1
+[node name="Items" type="ItemList" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+custom_minimum_size = Vector2(460, 200)
+[node name="Details" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+custom_minimum_size = Vector2(460, 100)
+autowrap_mode = 2
+text = "Inventory is empty."
+[node name="Inspect" type="Button" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "INSPECT"
+[node name="Return" type="Button" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "RETURN — Tab / Esc"

@@ -3,7 +3,8 @@
 F5 now launches `scenes/levels/observation_room.tscn`. No editor configuration or
 external assets are required. All earlier test scenes remain available with F6.
 
-The graybox now includes the Milestone 6A cabinet keypad puzzle (see keypad.md).
+The graybox includes the Milestone 6A cabinet keypad (see keypad.md) and
+Milestone 6B collectible cabinet items (see inventory.md).
 The room cannot be escaped yet.
 
 ## Scale and provisional layout
@@ -58,8 +59,8 @@ Existing systems used:
   hides its test-only red X without modifying the original test asset.
 - Mug: new primitive prop using the existing Inspectable script. No clue marks.
 
-The exit, desk drawer, photograph, mug, cabinet leaf, and keypad are interactable.
-There are no debug unlock controls or pickup-capable items in this level.
+The exit, desk drawer, photograph, mug, cabinet leaf, keypad, and three cabinet
+items are interactable. There are no debug unlock controls.
 
 The cabinet has a functional four-digit keypad and an openable leaf. The
 poster reads FIRE 4 / CHEMICAL 7 / ELECTRICAL 3 / CONTAINMENT 1. Desktop labels

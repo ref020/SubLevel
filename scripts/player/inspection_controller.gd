@@ -5,6 +5,7 @@ signal inspection_started(item: Inspectable)
 signal inspection_ended
 
 @export var input_session: PlayerModalInput
+@export var inventory: PlayerInventory
 
 var active_item: Inspectable
 var inspecting: bool = false
@@ -13,6 +14,7 @@ var _minimum: float
 var _maximum: float
 var _dragging: bool = false
 var _visual_was_visible: bool
+var _return_owner: Node
 
 @onready var overlay: CanvasLayer = $Overlay
 @onready var pivot: Node3D = $Overlay/ViewportContainer/Viewport/Stage/Pivot
@@ -23,8 +25,10 @@ func _ready() -> void:
 	overlay.hide()
 
 
-func inspect(item: Inspectable) -> void:
-	if inspecting or is_instance_valid(input_session.active_owner) or not is_instance_valid(item.visual_root):
+func inspect(item: Inspectable, return_owner: Node = null) -> void:
+	if inspecting or not is_instance_valid(item.visual_root):
+		return
+	if is_instance_valid(input_session.active_owner) and input_session.active_owner != return_owner:
 		return
 	var copy: Node3D = _copy_meshes(item.visual_root)
 	pivot.add_child(copy)
@@ -40,11 +44,13 @@ func inspect(item: Inspectable) -> void:
 	var fit_scale: float = 0.8 / longest
 	copy.scale = Vector3.ONE * fit_scale
 	copy.position = -bounds.get_center() * fit_scale
-	if not input_session.acquire(self):
+	var acquired: bool = input_session.transfer(return_owner, self) if return_owner != null else input_session.acquire(self)
+	if not acquired:
 		pivot.remove_child(copy)
 		copy.queue_free()
 		return
 	active_item = item
+	_return_owner = return_owner
 	inspecting = true
 	_visual_was_visible = item.visual_root.visible
 	item.visual_root.hide()
@@ -54,6 +60,9 @@ func inspect(item: Inspectable) -> void:
 	distance = clampf(item.inspection_distance, _minimum, _maximum)
 	pivot.position = Vector3(0, 0, -distance)
 	pivot.rotation_degrees = item.initial_inspection_rotation
+	$Overlay/Hints.text = "Drag LMB — Rotate    |    Mouse Wheel — Zoom\nRMB / Esc — Return"
+	if item is PickupItem and return_owner == null:
+		$Overlay/Hints.text += "    |    [F] Take"
 	overlay.show()
 	inspection_started.emit(item)
 
@@ -73,7 +82,13 @@ func finish_inspection(restore_mouse: bool = true) -> void:
 		pivot.remove_child(child)
 		child.queue_free()
 	overlay.hide()
-	input_session.release(self, restore_mouse)
+	var previous: Node = _return_owner
+	_return_owner = null
+	if is_instance_valid(previous) and not previous.is_queued_for_deletion():
+		input_session.transfer(self, previous)
+		previous.inspection_returned(restore_mouse)
+	else:
+		input_session.release(self, restore_mouse)
 	inspection_ended.emit()
 
 
@@ -84,6 +99,8 @@ func _input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 	if event.is_action_pressed("toggle_mouse_capture"):
 		finish_inspection()
+	elif event.is_action_pressed("take_item") and not event.is_echo():
+		take_item()
 	elif event is InputEventMouseButton:
 		match event.button_index:
 			MOUSE_BUTTON_RIGHT:
@@ -113,6 +130,42 @@ func zoom(amount: float) -> void:
 	if inspecting:
 		distance = clampf(distance + amount, _minimum, _maximum)
 		pivot.position.z = -distance
+
+
+func take_item() -> bool:
+	if not inspecting or not active_item is PickupItem or _return_owner != null:
+		return false
+	var pickup: PickupItem = active_item as PickupItem
+	if pickup.collected or inventory == null or inventory.has_item(pickup.item_id):
+		return false
+	var data: InventoryItem = InventoryItem.new()
+	data.item_id = pickup.item_id
+	data.display_name = pickup.display_name
+	data.description = pickup.description
+	data.initial_rotation = pickup.initial_inspection_rotation
+	data.inspection_distance = pickup.inspection_distance
+	data.minimum_distance = pickup.minimum_distance
+	data.maximum_distance = pickup.maximum_distance
+	data.rotation_sensitivity = pickup.rotation_sensitivity
+	# Snapshot only static meshes/materials; never retain a world body or script.
+	var visual: Node3D = _copy_meshes(pickup.visual_root)
+	visual.visible = true
+	visual.transform = Transform3D.IDENTITY
+	_set_visual_owner(visual, visual)
+	data.visual_scene = PackedScene.new()
+	var packed: Error = data.visual_scene.pack(visual)
+	visual.free()
+	if packed != OK or not inventory.add_item(data):
+		return false
+	finish_inspection()
+	pickup.remove_from_world()
+	return true
+
+
+func _set_visual_owner(node: Node, root: Node) -> void:
+	for child: Node in node.get_children():
+		child.owner = root
+		_set_visual_owner(child, root)
 
 
 func _notification(what: int) -> void:

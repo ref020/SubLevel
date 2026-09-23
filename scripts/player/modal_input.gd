@@ -49,3 +49,11 @@ func release(requester: Node, restore_mouse: bool = true) -> void:
 	interaction_ray.set_process_unhandled_input(_ray_input)
 	interaction_hud.visible = _hud_visible
 	Input.mouse_mode = _mouse_mode if restore_mouse else Input.MOUSE_MODE_VISIBLE
+
+
+## Explicit handoff preserves the original gameplay snapshot across related UIs.
+func transfer(previous_owner: Node, next_owner: Node) -> bool:
+	if active_owner != previous_owner or not is_instance_valid(next_owner):
+		return false
+	active_owner = next_owner
+	return true
