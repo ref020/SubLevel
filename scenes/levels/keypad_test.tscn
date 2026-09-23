@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/door.tscn" id="Door"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/keypad.tscn" id="Keypad"]
+[sub_resource type="BoxMesh" id="FloorMesh"]
+size = Vector3(12, 0.5, 12)
+[sub_resource type="BoxShape3D" id="FloorShape"]
+size = Vector3(12, 0.5, 12)
+[sub_resource type="Environment" id="Environment"]
+background_mode = 1
+background_color = Color(0.1, 0.13, 0.1, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.8, 0.85, 0.75, 1)
+ambient_light_energy = 0.7
+[node name="KeypadTest" type="Node3D"]
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")
+[node name="Light" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-45, -25, 0)
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.25, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("FloorMesh")
+[node name="Collision" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("FloorShape")
+[node name="Player" parent="." instance=ExtResource("Player")]
+position = Vector3(0, 0.03, 3)
+[node name="Door" parent="." instance=ExtResource("Door")]
+starts_locked = true
+[node name="Keypad" parent="." instance=ExtResource("Keypad")]
+position = Vector3(-0.6, 1.4, 0)
+correct_code = "2580"
+[node name="TestLabel" type="Label3D" parent="."]
+position = Vector3(-0.6, 2, 0)
+text = "KEYPAD TEST: 2580"
+font_size = 32
+[connection signal="correct_code_entered" from="Keypad" to="Door" method="unlock"]

@@ -1,0 +1,162 @@
+[gd_scene load_steps=23 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/keypad.gd" id="Script"]
+
+[sub_resource type="StandardMaterial3D" id="Case"]
+albedo_color = Color(0.56, 0.53, 0.42, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Dark"]
+albedo_color = Color(0.055, 0.065, 0.062, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Key"]
+albedo_color = Color(0.25, 0.28, 0.27, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="Box0"]
+material = SubResource("Case")
+size = Vector3(0.3, 0.43, 0.06)
+
+[sub_resource type="BoxShape3D" id="Box0Shape"]
+size = Vector3(0.3, 0.43, 0.06)
+
+[sub_resource type="BoxMesh" id="Box1"]
+material = SubResource("Dark")
+size = Vector3(0.045, 0.065, 0.008)
+
+[sub_resource type="BoxMesh" id="Box2"]
+material = SubResource("Dark")
+size = Vector3(0.045, 0.065, 0.008)
+
+[sub_resource type="BoxMesh" id="Box3"]
+material = SubResource("Dark")
+size = Vector3(0.045, 0.065, 0.008)
+
+[sub_resource type="BoxMesh" id="Box4"]
+material = SubResource("Dark")
+size = Vector3(0.045, 0.065, 0.008)
+
+[sub_resource type="BoxMesh" id="Box5"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box6"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box7"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box8"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box9"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box10"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box11"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box12"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box13"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box14"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box15"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[sub_resource type="BoxMesh" id="Box16"]
+material = SubResource("Key")
+size = Vector3(0.055, 0.045, 0.014)
+
+[node name="Keypad" type="Node3D"]
+script = ExtResource("Script")
+
+[node name="Housing" type="StaticBody3D" parent="."]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Housing"]
+mesh = SubResource("Box0")
+
+[node name="Collision" type="CollisionShape3D" parent="Housing"]
+shape = SubResource("Box0Shape")
+
+[node name="Digit0" type="MeshInstance3D" parent="."]
+position = Vector3(-0.095, 0.14, 0.034)
+mesh = SubResource("Box1")
+
+[node name="Digit1" type="MeshInstance3D" parent="."]
+position = Vector3(-0.032, 0.14, 0.034)
+mesh = SubResource("Box2")
+
+[node name="Digit2" type="MeshInstance3D" parent="."]
+position = Vector3(0.031, 0.14, 0.034)
+mesh = SubResource("Box3")
+
+[node name="Digit3" type="MeshInstance3D" parent="."]
+position = Vector3(0.094, 0.14, 0.034)
+mesh = SubResource("Box4")
+
+[node name="Key00" type="MeshInstance3D" parent="."]
+position = Vector3(-0.072, 0.045, 0.039)
+mesh = SubResource("Box5")
+
+[node name="Key01" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.045, 0.039)
+mesh = SubResource("Box6")
+
+[node name="Key02" type="MeshInstance3D" parent="."]
+position = Vector3(0.072, 0.045, 0.039)
+mesh = SubResource("Box7")
+
+[node name="Key10" type="MeshInstance3D" parent="."]
+position = Vector3(-0.072, -0.020000000000000004, 0.039)
+mesh = SubResource("Box8")
+
+[node name="Key11" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.020000000000000004, 0.039)
+mesh = SubResource("Box9")
+
+[node name="Key12" type="MeshInstance3D" parent="."]
+position = Vector3(0.072, -0.020000000000000004, 0.039)
+mesh = SubResource("Box10")
+
+[node name="Key20" type="MeshInstance3D" parent="."]
+position = Vector3(-0.072, -0.085, 0.039)
+mesh = SubResource("Box11")
+
+[node name="Key21" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.085, 0.039)
+mesh = SubResource("Box12")
+
+[node name="Key22" type="MeshInstance3D" parent="."]
+position = Vector3(0.072, -0.085, 0.039)
+mesh = SubResource("Box13")
+
+[node name="Key30" type="MeshInstance3D" parent="."]
+position = Vector3(-0.072, -0.15000000000000002, 0.039)
+mesh = SubResource("Box14")
+
+[node name="Key31" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.15000000000000002, 0.039)
+mesh = SubResource("Box15")
+
+[node name="Key32" type="MeshInstance3D" parent="."]
+position = Vector3(0.072, -0.15000000000000002, 0.039)
+mesh = SubResource("Box16")

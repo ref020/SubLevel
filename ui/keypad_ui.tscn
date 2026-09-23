@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://ui/keypad_ui.gd" id="Script"]
+[sub_resource type="StyleBoxFlat" id="Case"]
+bg_color = Color(0.17, 0.19, 0.15, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.37, 0.38, 0.29, 1)
+
+[node name="KeypadUI" type="CanvasLayer"]
+layer = 12
+visible = false
+script = ExtResource("Script")
+[node name="Backdrop" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.025, 0.03, 0.02, 0.9)
+[node name="Center" type="CenterContainer" parent="Backdrop"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="Panel" type="PanelContainer" parent="Backdrop/Center"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("Case")
+[node name="Margin" type="MarginContainer" parent="Backdrop/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+[node name="Content" type="VBoxContainer" parent="Backdrop/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+[node name="Title" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "ACCESS CONTROL"
+horizontal_alignment = 1
+[node name="Display" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+custom_minimum_size = Vector2(320, 56)
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.65, 0.9, 0.56, 1)
+horizontal_alignment = 1
+text = "____"
+[node name="Status" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "ENTER CODE"
+horizontal_alignment = 1
+[node name="Buttons" type="GridContainer" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+[node name="Key1" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "1"
+[node name="Key2" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "2"
+[node name="Key3" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "3"
+[node name="Key4" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "4"
+[node name="Key5" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "5"
+[node name="Key6" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "6"
+[node name="Key7" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "7"
+[node name="Key8" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "8"
+[node name="Key9" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "9"
+[node name="KeyC" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "C"
+[node name="Key0" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "0"
+[node name="KeyENTER" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(104, 52)
+focus_mode = 0
+text = "ENTER"
+[node name="Hints" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "0–9: digits   Backspace: erase\nEnter: submit   Esc: return"
+horizontal_alignment = 1
+[node name="Return" type="Button" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+focus_mode = 0
+text = "RETURN"

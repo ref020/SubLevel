@@ -3,7 +3,8 @@
 F5 now launches `scenes/levels/observation_room.tscn`. No editor configuration or
 external assets are required. All earlier test scenes remain available with F6.
 
-This is environment construction only. The room cannot be escaped yet.
+The graybox now includes the Milestone 6A cabinet keypad puzzle (see keypad.md).
+The room cannot be escaped yet.
 
 ## Scale and provisional layout
 
@@ -35,7 +36,7 @@ east is +X. Walls are 0.3 m thick. The existing player remains human-scale.
 - The cabinet occupies the west side; the procedure poster is on the east wall
   near the exit/intercom side, separated from the keypad's close viewpoint. The stopped clock
   is above the desk. The poster and desktop labels retain the canonical clue
-  values/order, but nothing checks or responds to them.
+  values/order. Their derived code now unlocks the cabinet keypad.
 
 These placements are provisional graybox decisions, not finalized puzzle design.
 Review the relationship between the window and Mara's future viewpoint, the
@@ -57,10 +58,10 @@ Existing systems used:
   hides its test-only red X without modifying the original test asset.
 - Mug: new primitive prop using the existing Inspectable script. No clue marks.
 
-Only those four objects are interactable: exit, desk drawer, photograph, mug.
-There are no unlock controls or pickup-capable items in this level.
+The exit, desk drawer, photograph, mug, cabinet leaf, and keypad are interactable.
+There are no debug unlock controls or pickup-capable items in this level.
 
-The cabinet has an inert four-place display and keypad-shaped buttons. The
+The cabinet has a functional four-digit keypad and an openable leaf. The
 poster reads FIRE 4 / CHEMICAL 7 / ELECTRICAL 3 / CONTAINMENT 1. Desktop labels
 read FIRE / ELECTRICAL / CHEMICAL / CONTAINMENT from left to right. Clock hands
 are fixed at 4:37 (minute 222 degrees; hour 138.5 degrees clockwise from twelve).
@@ -81,7 +82,7 @@ establish the institutional setting. Lighting is local and deliberately simple.
 5. Aim at the flat photograph or mug on the desktop and press E. Drag LMB to
    rotate, wheel to zoom, RMB/Escape to return. Verify each stays on the desk.
 6. Read the east-wall poster and desktop labels. Inspect the analog clock visually.
-   Cabinet buttons, vent, and intercom must have no interaction behavior.
+   Test cabinet entry/opening as described in keypad.md; vent and intercom remain inert.
 7. Check lighting and label readability in your normal game-window size.
 8. To revisit earlier tests, open their scene and press F6; F5 remains the room.
 

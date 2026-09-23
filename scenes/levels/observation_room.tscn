@@ -1,4 +1,4 @@
-[gd_scene load_steps=311 format=3]
+[gd_scene load_steps=291 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" path="res://scenes/props/observation_photograph.tscn" id="Photo"]
 
 [ext_resource type="PackedScene" path="res://scenes/props/graybox_mug.tscn" id="Mug"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/keypad_cabinet.tscn" id="KeypadCabinet"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -658,89 +660,6 @@ size = Vector3(0.08, 0.4, 0.4)
 
 [sub_resource type="BoxShape3D" id="Geo170Shape"]
 size = Vector3(0.08, 0.4, 0.4)
-
-[sub_resource type="BoxMesh" id="Geo172"]
-material = SubResource("Metal")
-size = Vector3(1.1, 2, 0.6)
-
-[sub_resource type="BoxShape3D" id="Geo172Shape"]
-size = Vector3(1.1, 2, 0.6)
-
-[sub_resource type="BoxMesh" id="Geo174"]
-material = SubResource("Dado")
-size = Vector3(1.01, 1.8, 0.04)
-
-[sub_resource type="BoxMesh" id="Geo175"]
-material = SubResource("Beige")
-size = Vector3(0.3, 0.43, 0.045)
-
-[sub_resource type="BoxMesh" id="Geo176"]
-material = SubResource("Dark")
-size = Vector3(0.045, 0.07, 0.008)
-
-[sub_resource type="BoxMesh" id="Geo177"]
-material = SubResource("Dark")
-size = Vector3(0.045, 0.07, 0.008)
-
-[sub_resource type="BoxMesh" id="Geo178"]
-material = SubResource("Dark")
-size = Vector3(0.045, 0.07, 0.008)
-
-[sub_resource type="BoxMesh" id="Geo179"]
-material = SubResource("Dark")
-size = Vector3(0.045, 0.07, 0.008)
-
-[sub_resource type="BoxMesh" id="Geo180"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo181"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo182"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo183"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo184"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo185"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo186"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo187"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo188"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo189"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo190"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo191"]
-material = SubResource("Metal")
-size = Vector3(0.055, 0.045, 0.012)
-
-[sub_resource type="BoxMesh" id="Geo192"]
-material = SubResource("Beige")
-size = Vector3(0.045, 0.22, 0.06)
 
 [sub_resource type="BoxMesh" id="Geo193"]
 material = SubResource("Paper")
@@ -1957,105 +1876,13 @@ mesh = SubResource("Geo170")
 [node name="Collision" type="CollisionShape3D" parent="Furniture/BenchLegB"]
 shape = SubResource("Geo170Shape")
 
-[node name="Cabinet" type="Node3D" parent="PuzzleProps"]
+[node name="Cabinet" parent="PuzzleProps" instance=ExtResource("KeypadCabinet")]
 position = Vector3(-4.08, 0, 0.95)
 rotation_degrees = Vector3(0, 90, 0)
 
-[node name="Case" type="StaticBody3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0, 1, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/Cabinet/Case"]
-mesh = SubResource("Geo172")
-
-[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/Cabinet/Case"]
-shape = SubResource("Geo172Shape")
-
-[node name="DoorPanel" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0, 1.05, 0.31)
-mesh = SubResource("Geo174")
-
-[node name="Interface" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.26, 1.27, 0.34)
-mesh = SubResource("Geo175")
-
-[node name="BlankDigit0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.165, 1.415, 0.37)
-mesh = SubResource("Geo176")
-
-[node name="BlankDigit1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.228, 1.415, 0.37)
-mesh = SubResource("Geo177")
-
-[node name="BlankDigit2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.29100000000000004, 1.415, 0.37)
-mesh = SubResource("Geo178")
-
-[node name="BlankDigit3" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.354, 1.415, 0.37)
-mesh = SubResource("Geo179")
-
-[node name="Key0_0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.185, 1.31, 0.37)
-mesh = SubResource("Geo180")
-
-[node name="Key0_1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.257, 1.31, 0.37)
-mesh = SubResource("Geo181")
-
-[node name="Key0_2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.32899999999999996, 1.31, 0.37)
-mesh = SubResource("Geo182")
-
-[node name="Key1_0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.185, 1.245, 0.37)
-mesh = SubResource("Geo183")
-
-[node name="Key1_1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.257, 1.245, 0.37)
-mesh = SubResource("Geo184")
-
-[node name="Key1_2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.32899999999999996, 1.245, 0.37)
-mesh = SubResource("Geo185")
-
-[node name="Key2_0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.185, 1.1800000000000002, 0.37)
-mesh = SubResource("Geo186")
-
-[node name="Key2_1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.257, 1.1800000000000002, 0.37)
-mesh = SubResource("Geo187")
-
-[node name="Key2_2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.32899999999999996, 1.1800000000000002, 0.37)
-mesh = SubResource("Geo188")
-
-[node name="Key3_0" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.185, 1.115, 0.37)
-mesh = SubResource("Geo189")
-
-[node name="Key3_1" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.257, 1.115, 0.37)
-mesh = SubResource("Geo190")
-
-[node name="Key3_2" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0.32899999999999996, 1.115, 0.37)
-mesh = SubResource("Geo191")
-
-[node name="Pull" type="MeshInstance3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(-0.32, 1.1, 0.37)
-mesh = SubResource("Geo192")
-
-[node name="CabinetLabel" type="Label3D" parent="PuzzleProps/Cabinet"]
-position = Vector3(0, 1.8, 0.338)
-rotation_degrees = Vector3(0, 0, 0)
-text = "EMERGENCY EQUIPMENT"
-font_size = 25
-pixel_size = 0.002
-modulate = Color(0.8, 0.8, 0.7, 1)
-outline_size = 0
-no_depth_test = false
-
+[node name="Keypad" parent="PuzzleProps/Cabinet"]
+correct_code = "4371"
+code_length = 4
 [node name="ProcedurePoster" type="Node3D" parent="PuzzleProps"]
 
 

@@ -1,0 +1,232 @@
+[gd_scene load_steps=30 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/cabinet.gd" id="Script"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/keypad.tscn" id="Keypad"]
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.25, 0.28, 0.27, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="DoorPaint"]
+albedo_color = Color(0.29, 0.36, 0.31, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Beige"]
+albedo_color = Color(0.56, 0.53, 0.42, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.78, 0.75, 0.62, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Dark"]
+albedo_color = Color(0.07, 0.075, 0.06, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="Box0"]
+material = SubResource("Metal")
+size = Vector3(1.1, 2, 0.06)
+
+[sub_resource type="BoxShape3D" id="Box0Shape"]
+size = Vector3(1.1, 2, 0.06)
+
+[sub_resource type="BoxMesh" id="Box1"]
+material = SubResource("Metal")
+size = Vector3(0.06, 2, 0.6)
+
+[sub_resource type="BoxShape3D" id="Box1Shape"]
+size = Vector3(0.06, 2, 0.6)
+
+[sub_resource type="BoxMesh" id="Box2"]
+material = SubResource("Metal")
+size = Vector3(0.06, 2, 0.6)
+
+[sub_resource type="BoxShape3D" id="Box2Shape"]
+size = Vector3(0.06, 2, 0.6)
+
+[sub_resource type="BoxMesh" id="Box3"]
+material = SubResource("Metal")
+size = Vector3(1.1, 0.06, 0.6)
+
+[sub_resource type="BoxShape3D" id="Box3Shape"]
+size = Vector3(1.1, 0.06, 0.6)
+
+[sub_resource type="BoxMesh" id="Box4"]
+material = SubResource("Metal")
+size = Vector3(1.1, 0.2, 0.6)
+
+[sub_resource type="BoxShape3D" id="Box4Shape"]
+size = Vector3(1.1, 0.2, 0.6)
+
+[sub_resource type="BoxMesh" id="Box5"]
+material = SubResource("Metal")
+size = Vector3(1, 0.045, 0.53)
+
+[sub_resource type="BoxShape3D" id="Box5Shape"]
+size = Vector3(1, 0.045, 0.53)
+
+[sub_resource type="BoxMesh" id="Box6"]
+material = SubResource("Metal")
+size = Vector3(0.34, 1.8, 0.07)
+
+[sub_resource type="BoxShape3D" id="Box6Shape"]
+size = Vector3(0.34, 1.8, 0.07)
+
+[sub_resource type="BoxMesh" id="Box7"]
+material = SubResource("DoorPaint")
+size = Vector3(0.69, 1.8, 0.045)
+
+[sub_resource type="BoxShape3D" id="LeafShape"]
+size = Vector3(0.69, 1.8, 0.045)
+
+[sub_resource type="BoxMesh" id="Box8"]
+material = SubResource("Beige")
+size = Vector3(0.045, 0.22, 0.07)
+
+[sub_resource type="BoxMesh" id="Box9"]
+material = SubResource("Beige")
+size = Vector3(0.065, 0.04, 0.13)
+
+[sub_resource type="BoxMesh" id="Box10"]
+material = SubResource("Metal")
+size = Vector3(0.012, 0.012, 0.12)
+
+[sub_resource type="BoxMesh" id="Box11"]
+material = SubResource("Dark")
+size = Vector3(0.105, 0.04, 0.068)
+
+[sub_resource type="BoxMesh" id="Box12"]
+material = SubResource("Paper")
+size = Vector3(0.08, 0.003, 0.035)
+
+[sub_resource type="BoxMesh" id="Box13"]
+material = SubResource("Paper")
+size = Vector3(0.15, 0.005, 0.2)
+
+[node name="Cabinet" type="Node3D"]
+
+
+[node name="Case" type="Node3D" parent="."]
+
+
+[node name="Back" type="StaticBody3D" parent="Case"]
+position = Vector3(0, 1, -0.27)
+
+[node name="Mesh" type="MeshInstance3D" parent="Case/Back"]
+mesh = SubResource("Box0")
+
+[node name="Collision" type="CollisionShape3D" parent="Case/Back"]
+shape = SubResource("Box0Shape")
+
+[node name="Left" type="StaticBody3D" parent="Case"]
+position = Vector3(-0.52, 1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Case/Left"]
+mesh = SubResource("Box1")
+
+[node name="Collision" type="CollisionShape3D" parent="Case/Left"]
+shape = SubResource("Box1Shape")
+
+[node name="Right" type="StaticBody3D" parent="Case"]
+position = Vector3(0.52, 1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Case/Right"]
+mesh = SubResource("Box2")
+
+[node name="Collision" type="CollisionShape3D" parent="Case/Right"]
+shape = SubResource("Box2Shape")
+
+[node name="Top" type="StaticBody3D" parent="Case"]
+position = Vector3(0, 1.97, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Case/Top"]
+mesh = SubResource("Box3")
+
+[node name="Collision" type="CollisionShape3D" parent="Case/Top"]
+shape = SubResource("Box3Shape")
+
+[node name="Bottom" type="StaticBody3D" parent="Case"]
+position = Vector3(0, 0.1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Case/Bottom"]
+mesh = SubResource("Box4")
+
+[node name="Collision" type="CollisionShape3D" parent="Case/Bottom"]
+shape = SubResource("Box4Shape")
+
+[node name="Shelf" type="StaticBody3D" parent="Case"]
+position = Vector3(0, 0.95, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Case/Shelf"]
+mesh = SubResource("Box5")
+
+[node name="Collision" type="CollisionShape3D" parent="Case/Shelf"]
+shape = SubResource("Box5Shape")
+
+[node name="LockPost" type="StaticBody3D" parent="Case"]
+position = Vector3(0.35, 1.05, 0.31)
+
+[node name="Mesh" type="MeshInstance3D" parent="Case/LockPost"]
+mesh = SubResource("Box6")
+
+[node name="Collision" type="CollisionShape3D" parent="Case/LockPost"]
+shape = SubResource("Box6Shape")
+
+[node name="Door" type="Node3D" parent="."]
+script = ExtResource("Script")
+starts_locked = true
+lock_id = &"cabinet_combination"
+open_angle = -105.0
+
+[node name="Body" type="AnimatableBody3D" parent="Door"]
+position = Vector3(-0.51, 0, 0.31)
+sync_to_physics = false
+
+[node name="Panel" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(0.345, 1.05, 0)
+mesh = SubResource("Box7")
+
+[node name="Collision" type="CollisionShape3D" parent="Door/Body"]
+position = Vector3(0.345, 1.05, 0)
+shape = SubResource("LeafShape")
+
+[node name="Pull" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(0.58, 1.1, 0.05)
+mesh = SubResource("Box8")
+
+[node name="Keypad" parent="." instance=ExtResource("Keypad")]
+position = Vector3(0.35, 1.27, 0.39)
+
+[node name="Contents" type="Node3D" parent="."]
+
+
+[node name="ScrewdriverHandle" type="MeshInstance3D" parent="Contents"]
+position = Vector3(-0.28, 0.993, 0.04)
+mesh = SubResource("Box9")
+
+[node name="ScrewdriverShaft" type="MeshInstance3D" parent="Contents"]
+position = Vector3(-0.28, 0.99, -0.08)
+mesh = SubResource("Box10")
+
+[node name="Cassette" type="MeshInstance3D" parent="Contents"]
+position = Vector3(-0.03, 0.997, 0)
+mesh = SubResource("Box11")
+
+[node name="CassetteLabel" type="MeshInstance3D" parent="Contents"]
+position = Vector3(-0.03, 1.018, 0)
+mesh = SubResource("Box12")
+
+[node name="BlankNote" type="MeshInstance3D" parent="Contents"]
+position = Vector3(-0.17, 0.203, 0)
+mesh = SubResource("Box13")
+
+[node name="EquipmentLabel" type="Label3D" parent="Door/Body"]
+position = Vector3(0.345, 1.76, 0.025)
+text = "EMERGENCY\nEQUIPMENT"
+font_size = 24
+pixel_size = 0.002
+modulate = Color(0.8, 0.8, 0.7, 1)
+outline_size = 0
+
+[connection signal="correct_code_entered" from="Keypad" to="Door" method="unlock"]

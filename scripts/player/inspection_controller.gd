@@ -4,9 +4,7 @@ extends Node
 signal inspection_started(item: Inspectable)
 signal inspection_ended
 
-@export var player: CharacterBody3D
-@export var interaction_ray: RayCast3D
-@export var interaction_hud: CanvasLayer
+@export var input_session: PlayerModalInput
 
 var active_item: Inspectable
 var inspecting: bool = false
@@ -15,13 +13,6 @@ var _minimum: float
 var _maximum: float
 var _dragging: bool = false
 var _visual_was_visible: bool
-var _player_physics: bool
-var _player_input: bool
-var _ray_process: bool
-var _ray_input: bool
-var _ray_enabled: bool
-var _hud_visible: bool
-var _mouse_mode: Input.MouseMode
 
 @onready var overlay: CanvasLayer = $Overlay
 @onready var pivot: Node3D = $Overlay/ViewportContainer/Viewport/Stage/Pivot
@@ -33,7 +24,7 @@ func _ready() -> void:
 
 
 func inspect(item: Inspectable) -> void:
-	if inspecting or not is_instance_valid(item.visual_root):
+	if inspecting or is_instance_valid(input_session.active_owner) or not is_instance_valid(item.visual_root):
 		return
 	var copy: Node3D = _copy_meshes(item.visual_root)
 	pivot.add_child(copy)
@@ -49,6 +40,10 @@ func inspect(item: Inspectable) -> void:
 	var fit_scale: float = 0.8 / longest
 	copy.scale = Vector3.ONE * fit_scale
 	copy.position = -bounds.get_center() * fit_scale
+	if not input_session.acquire(self):
+		pivot.remove_child(copy)
+		copy.queue_free()
+		return
 	active_item = item
 	inspecting = true
 	_visual_was_visible = item.visual_root.visible
@@ -59,21 +54,6 @@ func inspect(item: Inspectable) -> void:
 	distance = clampf(item.inspection_distance, _minimum, _maximum)
 	pivot.position = Vector3(0, 0, -distance)
 	pivot.rotation_degrees = item.initial_inspection_rotation
-	_player_physics = player.is_physics_processing()
-	_player_input = player.is_processing_unhandled_input()
-	_ray_process = interaction_ray.is_processing()
-	_ray_input = interaction_ray.is_processing_unhandled_input()
-	_ray_enabled = interaction_ray.gameplay_enabled
-	_hud_visible = interaction_hud.visible
-	_mouse_mode = Input.mouse_mode
-	player.set_physics_process(false)
-	player.set_process_unhandled_input(false)
-	interaction_ray.gameplay_enabled = false
-	interaction_ray.refresh_target()
-	interaction_ray.set_process(false)
-	interaction_ray.set_process_unhandled_input(false)
-	interaction_hud.hide()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	overlay.show()
 	inspection_started.emit(item)
 
@@ -93,13 +73,7 @@ func finish_inspection(restore_mouse: bool = true) -> void:
 		pivot.remove_child(child)
 		child.queue_free()
 	overlay.hide()
-	player.set_physics_process(_player_physics)
-	player.set_process_unhandled_input(_player_input)
-	interaction_ray.gameplay_enabled = _ray_enabled
-	interaction_ray.set_process(_ray_process)
-	interaction_ray.set_process_unhandled_input(_ray_input)
-	interaction_hud.visible = _hud_visible
-	Input.mouse_mode = _mouse_mode if restore_mouse else Input.MOUSE_MODE_VISIBLE
+	input_session.release(self, restore_mouse)
 	inspection_ended.emit()
 
 
