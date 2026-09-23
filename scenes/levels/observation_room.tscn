@@ -1,4 +1,4 @@
-[gd_scene load_steps=291 format=3]
+[gd_scene load_steps=298 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -11,6 +11,11 @@
 [ext_resource type="PackedScene" path="res://scenes/props/graybox_mug.tscn" id="Mug"]
 
 [ext_resource type="PackedScene" path="res://scenes/interactables/keypad_cabinet.tscn" id="KeypadCabinet"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/vent_grate.tscn" id="VentGrate"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/power_breaker.tscn" id="Breaker"]
+[ext_resource type="Script" path="res://scripts/interaction/intercom.gd" id="Intercom"]
+[ext_resource type="Script" path="res://scripts/levels/observation_power.gd" id="Power"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -1134,6 +1139,17 @@ size = Vector3(0.85, 0.1, 0.24)
 material = SubResource("Fluorescent")
 size = Vector3(0.76, 0.03, 0.16)
 
+[sub_resource type="StandardMaterial3D" id="IndicatorOff"]
+albedo_color = Color(0.06, 0.10, 0.06, 1)
+[sub_resource type="BoxMesh" id="AuxIndicator"]
+size = Vector3(0.04, 0.02, 0.015)
+material = SubResource("IndicatorOff")
+[sub_resource type="CylinderMesh" id="AuxConduit"]
+top_radius = 0.014
+bottom_radius = 0.014
+height = 0.5
+material = SubResource("IndicatorOff")
+
 [node name="ObservationRoom" type="Node3D"]
 
 
@@ -2040,82 +2056,26 @@ mesh = SubResource("Geo219")
 [node name="Collision" type="CollisionShape3D" parent="PuzzleProps/VentilationGrate/RecessRight"]
 shape = SubResource("Geo219Shape")
 
-[node name="FixedGrateBacking" type="StaticBody3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.65, 3.46)
+[node name="Grate" parent="PuzzleProps/VentilationGrate" instance=ExtResource("VentGrate")]
+position = Vector3(1.6, 0.3, 3.46)
 
-[node name="Mesh" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate/FixedGrateBacking"]
-mesh = SubResource("Geo221")
+[node name="Breaker" parent="PuzzleProps/VentilationGrate" instance=ExtResource("Breaker")]
+position = Vector3(1.6, 0.69, 3.88)
+accessible = false
 
-[node name="Collision" type="CollisionShape3D" parent="PuzzleProps/VentilationGrate/FixedGrateBacking"]
-shape = SubResource("Geo221Shape")
+[node name="ServiceConduit" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.39, 0.65, 3.94)
+mesh = SubResource("AuxConduit")
 
-[node name="Slat0" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.34, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo223")
-
-[node name="Slat1" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.41700000000000004, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo224")
-
-[node name="Slat2" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.494, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo225")
-
-[node name="Slat3" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.571, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo226")
-
-[node name="Slat4" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.648, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo227")
-
-[node name="Slat5" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.7250000000000001, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo228")
-
-[node name="Slat6" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.802, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo229")
-
-[node name="Slat7" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.879, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo230")
-
-[node name="Slat8" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.6, 0.956, 3.423)
-rotation_degrees = Vector3(-15, 0, 0)
-mesh = SubResource("Geo231")
-
-[node name="Screw1.04_0.34" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.04, 0.34, 3.39)
-rotation_degrees = Vector3(90, 0, 0)
-mesh = SubResource("Geo232")
-
-[node name="Screw1.04_0.96" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(1.04, 0.96, 3.39)
-rotation_degrees = Vector3(90, 0, 0)
-mesh = SubResource("Geo233")
-
-[node name="Screw2.16_0.34" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(2.16, 0.34, 3.39)
-rotation_degrees = Vector3(90, 0, 0)
-mesh = SubResource("Geo234")
-
-[node name="Screw2.16_0.96" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
-position = Vector3(2.16, 0.96, 3.39)
-rotation_degrees = Vector3(90, 0, 0)
-mesh = SubResource("Geo235")
+[node name="ServiceCable" type="MeshInstance3D" parent="PuzzleProps/VentilationGrate"]
+position = Vector3(1.60, 0.43, 3.91)
+rotation_degrees = Vector3(0, 0, 90)
+mesh = SubResource("AuxConduit")
 
 [node name="Intercom" type="Node3D" parent="PuzzleProps"]
 position = Vector3(2.13, 1.45, -3.39)
+script = ExtResource("Intercom")
+interaction_prompt = "Use Intercom"
 
 [node name="Housing" type="StaticBody3D" parent="PuzzleProps/Intercom"]
 position = Vector3(0, 0, 0)
@@ -2471,3 +2431,27 @@ light_energy = 0.48
 omni_range = 3.5
 omni_attenuation = 1.4
 shadow_enabled = true
+
+[node name="Indicator" type="MeshInstance3D" parent="PuzzleProps/Intercom"]
+position = Vector3(0.12, -0.145, 0.09)
+mesh = SubResource("AuxIndicator")
+[node name="ReadyLight" type="OmniLight3D" parent="PuzzleProps/Intercom"]
+visible = false
+position = Vector3(0.12, -0.145, 0.14)
+light_color = Color(0.4, 0.8, 0.45, 1)
+light_energy = 0.3
+omni_range = 0.35
+[node name="StandbyLight" type="OmniLight3D" parent="Furniture/Desk/Computer"]
+visible = false
+position = Vector3(0, 0.3, 0.3)
+light_color = Color(0.36, 0.65, 0.42, 1)
+light_energy = 0.5
+omni_range = 0.8
+[node name="AuxiliaryPower" type="Node" parent="." node_paths=PackedStringArray("inventory", "grate", "breaker", "intercom", "standby_light", "standby_screen")]
+script = ExtResource("Power")
+inventory = NodePath("../Player/Inventory")
+grate = NodePath("../PuzzleProps/VentilationGrate/Grate")
+breaker = NodePath("../PuzzleProps/VentilationGrate/Breaker")
+intercom = NodePath("../PuzzleProps/Intercom")
+standby_light = NodePath("../Furniture/Desk/Computer/StandbyLight")
+standby_screen = NodePath("../Furniture/Desk/Computer/Screen")

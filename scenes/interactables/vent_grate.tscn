@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3]
+[ext_resource type="Script" path="res://scripts/interaction/vent_grate.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/vent_fastener.tscn" id="2"]
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.26, 0.29, 0.25, 1)
+roughness = 0.8
+[sub_resource type="BoxMesh" id="Panel"]
+size = Vector3(1.2, 0.70, 0.045)
+material = SubResource("Metal")
+[sub_resource type="BoxMesh" id="Slat"]
+size = Vector3(1.04, 0.04, 0.025)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(1.2, 0.70, 0.045)
+[node name="Grate" type="Node3D"]
+script = ExtResource("1")
+starts_locked = true
+[node name="Body" type="AnimatableBody3D" parent="."]
+sync_to_physics = false
+[node name="Mesh" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.35, 0)
+mesh = SubResource("Panel")
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0.35, 0)
+shape = SubResource("Hit")
+[node name="Slat0" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.08, -0.035)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Slat")
+[node name="Slat1" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.157, -0.035)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Slat")
+[node name="Slat2" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.23399999999999999, -0.035)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Slat")
+[node name="Slat3" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.311, -0.035)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Slat")
+[node name="Slat4" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.388, -0.035)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Slat")
+[node name="Slat5" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.465, -0.035)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Slat")
+[node name="Slat6" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.5419999999999999, -0.035)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Slat")
+[node name="Slat7" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.619, -0.035)
+rotation_degrees = Vector3(-15, 0, 0)
+mesh = SubResource("Slat")
+[node name="Fasteners" type="Node3D" parent="."]
+[node name="Screw1" parent="Fasteners" instance=ExtResource("2")]
+position = Vector3(-0.56, 0.04, -0.07)
+[node name="Screw2" parent="Fasteners" instance=ExtResource("2")]
+position = Vector3(-0.56, 0.66, -0.07)
+[node name="Screw3" parent="Fasteners" instance=ExtResource("2")]
+position = Vector3(0.56, 0.04, -0.07)
+[node name="Screw4" parent="Fasteners" instance=ExtResource("2")]
+position = Vector3(0.56, 0.66, -0.07)

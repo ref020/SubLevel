@@ -5,6 +5,7 @@ external assets are required. All earlier test scenes remain available with F6.
 
 The graybox includes the Milestone 6A cabinet keypad (see keypad.md) and
 Milestone 6B collectible cabinet items (see inventory.md).
+Milestone 7 adds the vent/auxiliary-power sequence (see vent_auxiliary_power.md).
 The room cannot be escaped yet.
 
 ## Scale and provisional layout
@@ -32,8 +33,8 @@ east is +X. Walls are 0.3 m thick. The existing player remains human-scale.
   The far face of the glass is reserved for future writing; none exists now.
 - The east exit uses the unchanged 1.4 × 2.4 m door scene. Its wall opening and
   frame match the existing leaf. No corridor or Central Hub is constructed.
-- The south vent has a sealed recess approximately 0.5 m deep. Its backing and
-  slats are fixed. There is no hidden switch or removable component yet.
+- The south vent has a sealed recess approximately 0.5 m deep. Its four screws
+  require the screwdriver; the panel folds down to expose an auxiliary breaker.
 - The cabinet occupies the west side; the procedure poster is on the east wall
   near the exit/intercom side, separated from the keypad's close viewpoint. The stopped clock
   is above the desk. The poster and desktop labels retain the canonical clue
@@ -60,13 +61,15 @@ Existing systems used:
 - Mug: new primitive prop using the existing Inspectable script. No clue marks.
 
 The exit, desk drawer, photograph, mug, cabinet leaf, keypad, and three cabinet
-items are interactable. There are no debug unlock controls.
+items are interactable, as are the vent, four screws, breaker, and intercom.
+There are no debug unlock controls.
 
 The cabinet has a functional four-digit keypad and an openable leaf. The
 poster reads FIRE 4 / CHEMICAL 7 / ELECTRICAL 3 / CONTAINMENT 1. Desktop labels
 read FIRE / ELECTRICAL / CHEMICAL / CONTAINMENT from left to right. Clock hands
 are fixed at 4:37 (minute 222 degrees; hour 138.5 degrees clockwise from twelve).
-The intercom, badge, pencil, CRT, keyboard, and other furniture are nonfunctional.
+The intercom now responds to auxiliary power; the CRT gains standby glow.
+The badge, pencil, keyboard, and other furniture remain nonfunctional.
 
 Olive lower-wall paint, concrete/plaster, tile seams, muted metal, wood,
 fluorescent housings, conduit, pipes, filing furniture, and sparse surface wear
@@ -83,7 +86,7 @@ establish the institutional setting. Lighting is local and deliberately simple.
 5. Aim at the flat photograph or mug on the desktop and press E. Drag LMB to
    rotate, wheel to zoom, RMB/Escape to return. Verify each stays on the desk.
 6. Read the east-wall poster and desktop labels. Inspect the analog clock visually.
-   Test cabinet entry/opening as described in keypad.md; vent and intercom remain inert.
+   Test the cabinet as described in keypad.md, then follow vent_auxiliary_power.md.
 7. Check lighting and label readability in your normal game-window size.
 8. To revisit earlier tests, open their scene and press F6; F5 remains the room.
 

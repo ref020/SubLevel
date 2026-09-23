@@ -12,3 +12,7 @@ func get_interaction_prompt() -> String:
 
 func interact() -> void:
 	pass
+
+
+func feedback(message: String) -> void:
+	get_tree().call_group("interaction_feedback", "show_message", message)
