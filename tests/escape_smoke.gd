@@ -70,7 +70,7 @@ func _run() -> void:
 	var drawer: Openable = room.get_node("Furniture/Desk/LockedDrawer")
 	var combination: Keypad = drawer.get_node("Body/Combination")
 	var exit_door: Openable = room.get_node("PuzzleProps/ExitDoor")
-	var badge: Inspectable = room.get_node("Furniture/Desk/Badge")
+	var badge: Inspectable = room.get_node("Furniture/UtilityShelf/Badge")
 	var exit_key: PickupItem = drawer.get_node("Body/ExitKey")
 	_check(not badge is PickupItem, "Badge is inspectable but not collectible")
 	var expected: Array[String] = ["7294", "3816", "5042", "9637"]
@@ -82,7 +82,7 @@ func _run() -> void:
 	for coordinate: String in ["C3", "A1", "D4", "B2"]:
 		derived += (badge.get_node("Visual/Cell" + coordinate).mesh as TextMesh).text
 	_check(derived == "4778" and combination.correct_code == derived, "Coordinate order derives drawer code")
-	await _aim(badge, Vector3(-1.25, 0.03, -1.2), badge.global_position)
+	await _aim(badge, Vector3(1.35, 0.03, 1.65), badge.global_position)
 	_key(KEY_E)
 	_check(inspector.active_item == badge and not inspector.take_item(), "Badge inspection is available before Mara and cannot be taken")
 	var copied_texts: Array[String] = []
@@ -94,7 +94,7 @@ func _run() -> void:
 			copied_texts.append(node.mesh.text)
 	_check(copied_texts.size() == 27 and copied_texts.has("SECURITY VERIFICATION"), "All text meshes survive inspection copy")
 	_key(KEY_ESCAPE)
-	_check(badge.visual_root.visible, "Badge remains on desk")
+	_check(badge.visual_root.visible, "Badge remains on middle table")
 	await _aim(exit_door, Vector3(3.5, 0.03, 1.7), Vector3(4.5, 1.4, 1.7))
 	_key(KEY_E)
 	_check(exit_door.is_locked and exit_door.state == Openable.State.CLOSED, "Exit refuses missing key")

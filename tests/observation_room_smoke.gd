@@ -61,7 +61,8 @@ func _run() -> void:
 		"cabinet": Vector3(-2.9, 0.03, 0.95),
 		"window": Vector3(0, 0.03, -2.7),
 		"intercom": Vector3(2.1, 0.03, -2.6),
-		"vent": Vector3(1.6, 0.03, 2.7)
+		"vent": Vector3(1.6, 0.03, 2.7),
+		"badge": Vector3(1.35, 0.03, 1.65)
 	}
 	for label: String in approaches:
 		var reachable: bool = false

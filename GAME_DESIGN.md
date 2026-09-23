@@ -266,7 +266,7 @@ C3 - A1 - D4 - B2
 
 This information is used in a later step of the Observation Room escape.
 
-The damaged employee badge on the desk has a SECURITY VERIFICATION grid.
+The damaged employee badge on the small middle table has a SECURITY VERIFICATION grid.
 It is inspectable but not collectible. Columns are A–D and rows are 1–4:
 
 |   | A | B | C | D |

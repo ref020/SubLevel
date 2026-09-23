@@ -6,7 +6,7 @@ GAME_DESIGN.md. Mara's original coordinate clue is unchanged.
 
 ## Manual test: complete sequence
 
-1. Explore freely. The employee badge at the desk's right edge is inspectable
+1. Explore freely. The employee badge on the middle table's clipboard is inspectable
    before any conversation. E inspects, LMB drag rotates, wheel zooms, and
    Escape/RMB returns. F must not collect the badge. Its grid faces the camera
    initially; check that all row/column labels and numbers are readable.

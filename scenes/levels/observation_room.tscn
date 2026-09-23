@@ -1850,10 +1850,6 @@ position = Vector3(0.65, 0.825, 0.07)
 rotation_degrees = Vector3(0, -20, 0)
 mesh = SubResource("Geo150")
 
-[node name="Badge" parent="Furniture/Desk" instance=ExtResource("Badge")]
-position = Vector3(0.8, 0.827, 0.29)
-rotation_degrees = Vector3(-90, 15, 0)
-
 [node name="DeskSymbolOrder" type="Label3D" parent="Furniture/Desk"]
 position = Vector3(0.45, 0.823, -0.04)
 rotation_degrees = Vector3(-90, 0, 0)
@@ -2454,6 +2450,10 @@ mesh = SubResource("Revision_BlankPaper")
 position = Vector3(0.21, 0.725, -0.14)
 rotation_degrees = Vector3(0, -8, 0)
 mesh = SubResource("Revision_ClipboardClip")
+
+[node name="Badge" parent="Furniture/UtilityShelf" instance=ExtResource("Badge")]
+position = Vector3(0.23, 0.726, 0.015)
+rotation_degrees = Vector3(-90, -3, 0)
 
 [node name="BlankDeskPaperStack" type="MeshInstance3D" parent="Furniture/Desk"]
 position = Vector3(-0.96, 0.83, -0.24)
