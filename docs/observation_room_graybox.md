@@ -6,6 +6,7 @@ external assets are required. All earlier test scenes remain available with F6.
 The graybox includes the Milestone 6A cabinet keypad (see keypad.md) and
 Milestone 6B collectible cabinet items (see inventory.md).
 Milestone 7 adds the vent/auxiliary-power sequence (see vent_auxiliary_power.md).
+Milestone 8 adds first contact with Mara through the powered intercom (see dialogue.md).
 The room cannot be escaped yet.
 
 ## Scale and provisional layout

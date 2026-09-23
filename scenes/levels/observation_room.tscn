@@ -1,4 +1,4 @@
-[gd_scene load_steps=298 format=3]
+[gd_scene load_steps=300 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" path="res://scenes/interactables/power_breaker.tscn" id="Breaker"]
 [ext_resource type="Script" path="res://scripts/interaction/intercom.gd" id="Intercom"]
 [ext_resource type="Script" path="res://scripts/levels/observation_power.gd" id="Power"]
+
+[ext_resource type="PackedScene" path="res://scenes/npc/mara.tscn" id="Mara"]
+[ext_resource type="Script" path="res://scripts/dialogue/intercom_conversation.gd" id="ConversationLink"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -2455,3 +2458,11 @@ breaker = NodePath("../PuzzleProps/VentilationGrate/Breaker")
 intercom = NodePath("../PuzzleProps/Intercom")
 standby_light = NodePath("../Furniture/Desk/Computer/StandbyLight")
 standby_screen = NodePath("../Furniture/Desk/Computer/Screen")
+
+[node name="Mara" parent="PuzzleProps/ObservationWindow" instance=ExtResource("Mara")]
+
+[node name="ConversationLink" type="Node" parent="." node_paths=PackedStringArray("intercom", "participant", "presenter")]
+script = ExtResource("ConversationLink")
+intercom = NodePath("../PuzzleProps/Intercom")
+participant = NodePath("../PuzzleProps/ObservationWindow/Mara")
+presenter = NodePath("../Player/DialogueUI")

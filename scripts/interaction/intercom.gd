@@ -1,8 +1,14 @@
 extends Interactable
-## Future dialogue listens to powered_interaction; no dialogue knowledge here.
+## A scene connection handles powered_interaction; no NPC content lives here.
 
 signal powered_interaction
+@export var starts_powered: bool = false
 var powered: bool = false
+
+
+func _ready() -> void:
+	if starts_powered:
+		set_powered()
 
 
 func set_powered() -> void:

@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/inventory_test.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/npc/mara.tscn" id="2"]
+[ext_resource type="Script" path="res://scripts/interaction/intercom.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/dialogue/intercom_conversation.gd" id="4"]
+
+[sub_resource type="BoxMesh" id="Housing"]
+size = Vector3(0.36, 0.5, 0.16)
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.36, 0.5, 0.16)
+[sub_resource type="BoxMesh" id="Indicator"]
+size = Vector3(0.04, 0.025, 0.02)
+[sub_resource type="BoxMesh" id="Slot"]
+size = Vector3(0.24, 0.025, 0.02)
+
+[node name="DialogueTest" instance=ExtResource("1")]
+
+[node name="Intercom" type="Node3D" parent="."]
+position = Vector3(0, 1.25, 0.3)
+script = ExtResource("3")
+interaction_prompt = "Use Intercom"
+starts_powered = true
+
+[node name="Housing" type="StaticBody3D" parent="Intercom"]
+[node name="Mesh" type="MeshInstance3D" parent="Intercom/Housing"]
+mesh = SubResource("Housing")
+[node name="Collision" type="CollisionShape3D" parent="Intercom/Housing"]
+shape = SubResource("Hit")
+[node name="Indicator" type="MeshInstance3D" parent="Intercom"]
+position = Vector3(0.1, -0.15, 0.09)
+mesh = SubResource("Indicator")
+[node name="ReadyLight" type="OmniLight3D" parent="Intercom"]
+position = Vector3(0.1, -0.15, 0.14)
+visible = false
+light_color = Color(0.4, 0.8, 0.45, 1)
+light_energy = 0.3
+omni_range = 0.35
+[node name="Speaker1" type="MeshInstance3D" parent="Intercom"]
+position = Vector3(0, 0.14, 0.09)
+mesh = SubResource("Slot")
+[node name="Speaker2" type="MeshInstance3D" parent="Intercom"]
+position = Vector3(0, 0.07, 0.09)
+mesh = SubResource("Slot")
+[node name="Speaker3" type="MeshInstance3D" parent="Intercom"]
+position = Vector3(0, 0, 0.09)
+mesh = SubResource("Slot")
+[node name="Label" type="Label3D" parent="Intercom"]
+position = Vector3(0, 0.45, 0)
+text = "POWERED INTERCOM TEST\nE to contact Mara"
+font_size = 32
+pixel_size = 0.004
+
+[node name="Mara" parent="." instance=ExtResource("2")]
+
+[node name="ConversationLink" type="Node" parent="." node_paths=PackedStringArray("intercom", "participant", "presenter")]
+script = ExtResource("4")
+intercom = NodePath("../Intercom")
+participant = NodePath("../Mara")
+presenter = NodePath("../Player/DialogueUI")

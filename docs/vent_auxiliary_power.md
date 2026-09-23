@@ -1,7 +1,8 @@
 # Milestone 7: vent and auxiliary power
 
 No editor setup or new Input Map actions are required. F5 runs the production
-Observation Room. No later puzzle solutions or dialogue are implemented.
+Observation Room. Milestone 8 adds powered-intercom dialogue (see dialogue.md);
+later puzzle solutions remain unimplemented.
 
 ## Manual test
 
@@ -22,8 +23,8 @@ Observation Room. No later puzzle solutions or dialogue are implemented.
 6. Aim through the opening at the breaker and press E. The handle moves to ON,
    the intercom indicator illuminates, and the CRT gains a subtle standby glow.
    Repeated presses cannot turn auxiliary power off.
-7. Return to the intercom: E displays "The intercom is active." No dialogue
-   starts. Check Tab inventory: the screwdriver remains; cassette/note are
+7. Return to the intercom: E now starts Mara's conversation (Milestone 8).
+   Close dialogue, then check Tab inventory: the screwdriver remains; cassette/note are
    unaffected. Restarting the scene resets the puzzle.
 
 ## Reuse and ownership
@@ -53,8 +54,8 @@ breaker.activated -> auxiliary power. Activation is idempotent and updates the
 intercom and CRT standby presentation, then emits auxiliary_power_activated.
 Existing room illumination is retained; this is not main facility power.
 
-The intercom exposes powered state and powered_interaction. A future dialogue
-controller should connect to powered_interaction. That signal never fires
+The intercom exposes powered state and powered_interaction. The dialogue
+connection uses powered_interaction. That signal never fires
 without power; the intercom has no NPC, conversation, or clue knowledge.
 
 Interactable.feedback() sends text to the local interaction_feedback HUD group.
@@ -72,7 +73,7 @@ inspection, door_drawer, interaction, and observation_room suites also apply.
 
 The room itself is the integration test scene; reusable panel/fastener/breaker
 scenes can be instanced elsewhere. Wire their inventory/access references when
-reusing them. No save/load, sound, first-person tool/hand rig, or dialogue exists.
+reusing them. No save/load, sound, or first-person tool/hand rig exists.
 The rotating/backing-out screw supplies the requested prototype tool feedback.
 Small target readability, dim-cavity appearance, and physical mouse capture
 still need an interactive visual playtest. The existing Openable movement does

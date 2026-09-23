@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://scripts/player/first_person_player.gd" id="1_player"]
 [ext_resource type="Script" path="res://scripts/interaction/player_interaction.gd" id="2_interaction"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://ui/keypad_ui.tscn" id="6_keypad"]
 [ext_resource type="Script" path="res://scripts/systems/player_inventory.gd" id="7_inventory"]
 [ext_resource type="PackedScene" path="res://ui/inventory_ui.tscn" id="8_inventory_ui"]
+[ext_resource type="PackedScene" path="res://ui/dialogue_ui.tscn" id="9_dialogue"]
 
 [sub_resource type="CapsuleShape3D" id="Capsule_player"]
 radius = 0.3
@@ -54,5 +55,8 @@ input_session = NodePath("../ModalInput")
 inventory = NodePath("../Inventory")
 input_session = NodePath("../ModalInput")
 inspection = NodePath("../Head/Camera3D/Inspection")
+
+[node name="DialogueUI" parent="." node_paths=PackedStringArray("input_session") instance=ExtResource("9_dialogue")]
+input_session = NodePath("../ModalInput")
 
 [connection signal="prompt_changed" from="Head/Camera3D/InteractionRay" to="InteractionHUD" method="show_prompt"]
