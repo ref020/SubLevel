@@ -5,6 +5,7 @@ extends Inspectable
 @export var item_id: StringName
 @export var display_name: String
 @export_multiline var description: String
+@export var unlocks: Array[StringName] = []
 
 var collected: bool = false
 

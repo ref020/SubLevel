@@ -1,0 +1,369 @@
+[gd_scene load_steps=38 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/inspectable.gd" id="Script"]
+[sub_resource type="StandardMaterial3D" id="Card"]
+albedo_color = Color(0.70, 0.69, 0.55, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.035, 0.055, 0.045, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Damage"]
+albedo_color = Color(0.28, 0.29, 0.23, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Card"]
+size = Vector3(0.16, 0.21, 0.006)
+material = SubResource("Card")
+
+[sub_resource type="TextMesh" id="Facility"]
+text = "HALCYON RESEARCH FACILITY"
+font_size = 64
+pixel_size = 8e-05
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Heading"]
+text = "SECURITY VERIFICATION"
+font_size = 64
+pixel_size = 9e-05
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="ColumnA"]
+text = "A"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="ColumnB"]
+text = "B"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="ColumnC"]
+text = "C"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="ColumnD"]
+text = "D"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Row1"]
+text = "1"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellA1"]
+text = "7"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellB1"]
+text = "2"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellC1"]
+text = "9"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellD1"]
+text = "4"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Row2"]
+text = "2"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellA2"]
+text = "3"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellB2"]
+text = "8"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellC2"]
+text = "1"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellD2"]
+text = "6"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Row3"]
+text = "3"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellA3"]
+text = "5"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellB3"]
+text = "0"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellC3"]
+text = "4"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellD3"]
+text = "2"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Row4"]
+text = "4"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellA4"]
+text = "9"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellB4"]
+text = "6"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellC4"]
+text = "3"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="CellD4"]
+text = "7"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="Rule"]
+size = Vector3(0.001, 0.12, 0.0005)
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="HeaderRule"]
+size = Vector3(0.13, 0.001, 0.0005)
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Employee"]
+text = "EMPLOYEE"
+font_size = 48
+pixel_size = 8e-05
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="ObscuredIdentity"]
+size = Vector3(0.091, 0.008, 0.001)
+material = SubResource("Damage")
+
+[sub_resource type="BoxMesh" id="Scuff"]
+size = Vector3(0.018, 0.008, 0.001)
+material = SubResource("Damage")
+
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.16, 0.21, 0.008)
+
+[node name="EmployeeBadge" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+interaction_prompt = "Inspect Employee Badge"
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+
+[node name="Visual" type="Node3D" parent="."]
+
+
+[node name="Card" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Card")
+
+[node name="Facility" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.083, 0.0032)
+mesh = SubResource("Facility")
+
+[node name="Heading" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.063, 0.0032)
+mesh = SubResource("Heading")
+
+[node name="ColumnA" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.031, 0.037, 0.0032)
+mesh = SubResource("ColumnA")
+
+[node name="ColumnB" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.004, 0.037, 0.0032)
+mesh = SubResource("ColumnB")
+
+[node name="ColumnC" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.023, 0.037, 0.0032)
+mesh = SubResource("ColumnC")
+
+[node name="ColumnD" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.05, 0.037, 0.0032)
+mesh = SubResource("ColumnD")
+
+[node name="Row1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.06, 0.012, 0.0032)
+mesh = SubResource("Row1")
+
+[node name="CellA1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.031, 0.012, 0.0032)
+mesh = SubResource("CellA1")
+
+[node name="CellB1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.004, 0.012, 0.0032)
+mesh = SubResource("CellB1")
+
+[node name="CellC1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.023, 0.012, 0.0032)
+mesh = SubResource("CellC1")
+
+[node name="CellD1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.05, 0.012, 0.0032)
+mesh = SubResource("CellD1")
+
+[node name="Row2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.06, -0.013000000000000001, 0.0032)
+mesh = SubResource("Row2")
+
+[node name="CellA2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.031, -0.013000000000000001, 0.0032)
+mesh = SubResource("CellA2")
+
+[node name="CellB2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.004, -0.013000000000000001, 0.0032)
+mesh = SubResource("CellB2")
+
+[node name="CellC2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.023, -0.013000000000000001, 0.0032)
+mesh = SubResource("CellC2")
+
+[node name="CellD2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.05, -0.013000000000000001, 0.0032)
+mesh = SubResource("CellD2")
+
+[node name="Row3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.06, -0.038000000000000006, 0.0032)
+mesh = SubResource("Row3")
+
+[node name="CellA3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.031, -0.038000000000000006, 0.0032)
+mesh = SubResource("CellA3")
+
+[node name="CellB3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.004, -0.038000000000000006, 0.0032)
+mesh = SubResource("CellB3")
+
+[node name="CellC3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.023, -0.038000000000000006, 0.0032)
+mesh = SubResource("CellC3")
+
+[node name="CellD3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.05, -0.038000000000000006, 0.0032)
+mesh = SubResource("CellD3")
+
+[node name="Row4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.06, -0.06300000000000001, 0.0032)
+mesh = SubResource("Row4")
+
+[node name="CellA4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.031, -0.06300000000000001, 0.0032)
+mesh = SubResource("CellA4")
+
+[node name="CellB4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.004, -0.06300000000000001, 0.0032)
+mesh = SubResource("CellB4")
+
+[node name="CellC4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.023, -0.06300000000000001, 0.0032)
+mesh = SubResource("CellC4")
+
+[node name="CellD4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.05, -0.06300000000000001, 0.0032)
+mesh = SubResource("CellD4")
+
+[node name="Rule" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.048, -0.001, 0.0034)
+mesh = SubResource("Rule")
+
+[node name="HeaderRule" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.007, 0.024, 0.0034)
+mesh = SubResource("HeaderRule")
+
+[node name="Employee" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.084, 0.0032)
+mesh = SubResource("Employee")
+
+[node name="ObscuredIdentity" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.018, -0.087, 0.004)
+mesh = SubResource("ObscuredIdentity")
+
+[node name="Scuff" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.067, 0.09, 0.0035)
+mesh = SubResource("Scuff")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+shape = SubResource("Hit")

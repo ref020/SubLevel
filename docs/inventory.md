@@ -63,7 +63,9 @@ item-use behavior is implemented here.
 Reusable primitive item scenes replace the inert cabinet props. All three sit
 on its upper shelf within standing-camera reach. Their exact requested metadata
 is retained; the folded note has only temporary faded-writing description text.
-No new clues, cassette purpose, screwdriver use, or other puzzle behavior exists.
+Later milestones add screwdriver use and a compatible exit key; see
+vent_auxiliary_power.md and observation_room_escape.md. The cassette and
+folded note still have no implemented purpose.
 
 Inventory lasts for the player's current scene instance. Restarting resets it.
 There is no saving, stacking, dropping, capacity, or item combination. Inspection

@@ -5,6 +5,7 @@ extends Resource
 @export var item_id: StringName
 @export var display_name: String
 @export_multiline var description: String
+@export var unlocks: Array[StringName] = []
 @export var visual_scene: PackedScene
 @export var initial_rotation: Vector3 = Vector3.ZERO
 @export var inspection_distance: float = 1.4

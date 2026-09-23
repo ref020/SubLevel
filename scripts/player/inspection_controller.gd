@@ -142,6 +142,7 @@ func take_item() -> bool:
 	data.item_id = pickup.item_id
 	data.display_name = pickup.display_name
 	data.description = pickup.description
+	data.unlocks.assign(pickup.unlocks)
 	data.initial_rotation = pickup.initial_inspection_rotation
 	data.inspection_distance = pickup.inspection_distance
 	data.minimum_distance = pickup.minimum_distance

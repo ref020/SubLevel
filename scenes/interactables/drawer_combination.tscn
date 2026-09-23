@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/keypad.gd" id="Script"]
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.24, 0.26, 0.23, 1)
+
+[sub_resource type="StandardMaterial3D" id="Dark"]
+albedo_color = Color(0.025, 0.03, 0.025, 1)
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.7, 0.72, 0.59, 1)
+
+[sub_resource type="BoxMesh" id="Case"]
+size = Vector3(0.22, 0.095, 0.035)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="DigitWindow0"]
+size = Vector3(0.035, 0.065, 0.01)
+material = SubResource("Dark")
+
+[sub_resource type="TextMesh" id="Digit0"]
+text = "0"
+font_size = 64
+pixel_size = 0.00045
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="DigitWindow1"]
+size = Vector3(0.035, 0.065, 0.01)
+material = SubResource("Dark")
+
+[sub_resource type="TextMesh" id="Digit1"]
+text = "0"
+font_size = 64
+pixel_size = 0.00045
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="DigitWindow2"]
+size = Vector3(0.035, 0.065, 0.01)
+material = SubResource("Dark")
+
+[sub_resource type="TextMesh" id="Digit2"]
+text = "0"
+font_size = 64
+pixel_size = 0.00045
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="DigitWindow3"]
+size = Vector3(0.035, 0.065, 0.01)
+material = SubResource("Dark")
+
+[sub_resource type="TextMesh" id="Digit3"]
+text = "0"
+font_size = 64
+pixel_size = 0.00045
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.22, 0.095, 0.035)
+
+[node name="DrawerCombination" type="Node3D"]
+script = ExtResource("Script")
+entry_prompt = "Enter Combination"
+
+[node name="Visual" type="Node3D" parent="."]
+
+
+[node name="Case" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Case")
+
+[node name="DigitWindow0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.074, 0, 0.02)
+mesh = SubResource("DigitWindow0")
+
+[node name="Digit0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.074, 0, 0.026)
+mesh = SubResource("Digit0")
+
+[node name="DigitWindow1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.024999999999999994, 0, 0.02)
+mesh = SubResource("DigitWindow1")
+
+[node name="Digit1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.024999999999999994, 0, 0.026)
+mesh = SubResource("Digit1")
+
+[node name="DigitWindow2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.024000000000000007, 0, 0.02)
+mesh = SubResource("DigitWindow2")
+
+[node name="Digit2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.024000000000000007, 0, 0.026)
+mesh = SubResource("Digit2")
+
+[node name="DigitWindow3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.07300000000000002, 0, 0.02)
+mesh = SubResource("DigitWindow3")
+
+[node name="Digit3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.07300000000000002, 0, 0.026)
+mesh = SubResource("Digit3")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+shape = SubResource("Hit")

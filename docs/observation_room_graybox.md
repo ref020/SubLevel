@@ -7,7 +7,8 @@ The graybox includes the Milestone 6A cabinet keypad (see keypad.md) and
 Milestone 6B collectible cabinet items (see inventory.md).
 Milestone 7 adds the vent/auxiliary-power sequence (see vent_auxiliary_power.md).
 Milestone 8 adds first contact with Mara through the powered intercom (see dialogue.md).
-The room cannot be escaped yet.
+Milestone 9 completes the badge/drawer/key escape sequence (see
+observation_room_escape.md). The exit leads only to a sealed development stub.
 
 ## Scale and provisional layout
 
@@ -32,8 +33,9 @@ east is +X. Walls are 0.3 m thick. The existing player remains human-scale.
 - The north window is approximately 3.2 m wide and 1.45 m high, with a sill
   at 1 m. A sealed, inaccessible dark bay extends approximately 1.7 m beyond it.
   The far face of the glass is reserved for future writing; none exists now.
-- The east exit uses the unchanged 1.4 × 2.4 m door scene. Its wall opening and
-  frame match the existing leaf. No corridor or Central Hub is constructed.
+- The east exit uses the 1.4 × 2.4 m door scene. Its wall opening and frame
+  match the leaf. A short sealed corridor provides a development boundary;
+  no Central Hub is constructed.
 - The south vent has a sealed recess approximately 0.5 m deep. Its four screws
   require the screwdriver; the panel folds down to expose an auxiliary breaker.
 - The cabinet occupies the west side; the procedure poster is on the east wall
@@ -62,7 +64,8 @@ Existing systems used:
 - Mug: new primitive prop using the existing Inspectable script. No clue marks.
 
 The exit, desk drawer, photograph, mug, cabinet leaf, keypad, and three cabinet
-items are interactable, as are the vent, four screws, breaker, and intercom.
+items are interactable, as are the vent, four screws, breaker, intercom,
+employee badge, drawer combination plate, and collectible exit key.
 There are no debug unlock controls.
 
 The cabinet has a functional four-digit keypad and an openable leaf. The
@@ -70,7 +73,8 @@ poster reads FIRE 4 / CHEMICAL 7 / ELECTRICAL 3 / CONTAINMENT 1. Desktop labels
 read FIRE / ELECTRICAL / CHEMICAL / CONTAINMENT from left to right. Clock hands
 are fixed at 4:37 (minute 222 degrees; hour 138.5 degrees clockwise from twelve).
 The intercom now responds to auxiliary power; the CRT gains standby glow.
-The badge, pencil, keyboard, and other furniture remain nonfunctional.
+The badge carries the inspectable verification grid. The pencil, keyboard,
+and other furniture remain nonfunctional.
 
 Olive lower-wall paint, concrete/plaster, tile seams, muted metal, wood,
 fluorescent housings, conduit, pipes, filing furniture, and sparse surface wear

@@ -1,6 +1,6 @@
 class_name Openable
 extends Interactable
-## Shared state/lock contract. Future item systems compare lock_id and call unlock().
+## Shared state/lock contract. Optional inventory enables compatible-key use.
 ## Instantiate a concrete door/drawer scene; Body is the moving collision body.
 
 signal opened
@@ -12,6 +12,7 @@ enum State { CLOSED, OPENING, OPEN, CLOSING }
 
 @export var starts_locked: bool = false
 @export var lock_id: StringName = &""
+@export var inventory: PlayerInventory
 @export_range(0.05, 10.0, 0.05) var animation_duration: float = 0.8
 
 var state: State = State.CLOSED
@@ -40,7 +41,7 @@ func get_object_label() -> String:
 
 func get_interaction_prompt() -> String:
 	if is_locked:
-		return "Locked"
+		return "Unlock " + get_object_label() if has_compatible_key() else "Locked"
 	match state:
 		State.OPENING:
 			return "Opening..."
@@ -52,11 +53,27 @@ func get_interaction_prompt() -> String:
 
 
 func interact() -> void:
-	if is_locked or state == State.OPENING or state == State.CLOSING:
+	if is_locked:
+		if has_compatible_key():
+			unlock()
+			feedback("Unlocked.")
+		else:
+			feedback("It's locked.")
+		return
+	if state == State.OPENING or state == State.CLOSING:
 		return
 	state = State.OPENING if state == State.CLOSED else State.CLOSING
 	_elapsed = 0.0
 	set_physics_process(true)
+
+
+func has_compatible_key() -> bool:
+	if lock_id == &"" or not is_instance_valid(inventory):
+		return false
+	for item: InventoryItem in inventory.get_items():
+		if item.unlocks.has(lock_id):
+			return true
+	return false
 
 
 func unlock() -> void:

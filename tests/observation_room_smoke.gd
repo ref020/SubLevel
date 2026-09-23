@@ -135,7 +135,7 @@ func _run() -> void:
 		nodes.append_array(node.get_children())
 		if node is Interactable:
 			interactables += 1
-	_check(interactables == 16, "Existing interactables plus grate, four screws, breaker and intercom")
+	_check(interactables == 19, "Existing interactables plus badge, drawer combination and exit key")
 	_check(room.get_node("PuzzleProps/Cabinet/Door").is_locked, "Cabinet begins locked")
 	_check(room.get_node("PuzzleProps/Cabinet/Keypad").correct_code == "4371", "Canonical cabinet code preserved")
 	print("Observation Room smoke test: %d failure(s); %d connected walkable sample cells." % [failures, visited.size()])

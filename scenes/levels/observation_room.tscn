@@ -1,4 +1,4 @@
-[gd_scene load_steps=300 format=3]
+[gd_scene load_steps=323 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -19,6 +19,10 @@
 
 [ext_resource type="PackedScene" path="res://scenes/npc/mara.tscn" id="Mara"]
 [ext_resource type="Script" path="res://scripts/dialogue/intercom_conversation.gd" id="ConversationLink"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/employee_badge.tscn" id="Badge"]
+[ext_resource type="PackedScene" path="res://scenes/items/observation_exit_key.tscn" id="ExitKey"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/drawer_combination.tscn" id="DrawerCombination"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -1153,6 +1157,66 @@ bottom_radius = 0.014
 height = 0.5
 material = SubResource("IndicatorOff")
 
+[sub_resource type="BoxMesh" id="BoundaryFloorMesh"]
+size = Vector3(2.1, 0.2, 1.8)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="BoundaryFloorShape"]
+size = Vector3(2.1, 0.2, 1.8)
+
+[sub_resource type="BoxMesh" id="BoundaryCeilingMesh"]
+size = Vector3(2.1, 0.2, 1.8)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="BoundaryCeilingShape"]
+size = Vector3(2.1, 0.2, 1.8)
+
+[sub_resource type="BoxMesh" id="BoundaryNorthMesh"]
+size = Vector3(2.1, 2.6, 0.2)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="BoundaryNorthShape"]
+size = Vector3(2.1, 2.6, 0.2)
+
+[sub_resource type="BoxMesh" id="BoundarySouthMesh"]
+size = Vector3(2.1, 2.6, 0.2)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="BoundarySouthShape"]
+size = Vector3(2.1, 2.6, 0.2)
+
+[sub_resource type="BoxMesh" id="BoundaryEndMesh"]
+size = Vector3(0.2, 2.6, 2.0)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="BoundaryEndShape"]
+size = Vector3(0.2, 2.6, 2.0)
+
+[sub_resource type="BoxMesh" id="DrawerSleeveTopMesh"]
+size = Vector3(1.24, 0.04, 1.0)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="DrawerSleeveTopShape"]
+size = Vector3(1.24, 0.04, 1.0)
+
+[sub_resource type="BoxMesh" id="DrawerSleeveBottomMesh"]
+size = Vector3(1.24, 0.04, 1.0)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="DrawerSleeveBottomShape"]
+size = Vector3(1.24, 0.04, 1.0)
+
+[sub_resource type="BoxMesh" id="DrawerSleeveLeftMesh"]
+size = Vector3(0.04, 0.46, 1.0)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="DrawerSleeveLeftShape"]
+size = Vector3(0.04, 0.46, 1.0)
+
+[sub_resource type="BoxMesh" id="DrawerSleeveRightMesh"]
+size = Vector3(0.04, 0.46, 1.0)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="DrawerSleeveRightShape"]
+size = Vector3(0.04, 0.46, 1.0)
+
+[sub_resource type="BoxMesh" id="DrawerSleeveBackMesh"]
+size = Vector3(1.24, 0.46, 0.04)
+material = SubResource("Metal")
+[sub_resource type="BoxShape3D" id="DrawerSleeveBackShape"]
+size = Vector3(1.24, 0.46, 0.04)
+
 [node name="ObservationRoom" type="Node3D"]
 
 
@@ -1523,11 +1587,12 @@ light_color = Color(0.5, 0.6, 0.52, 1)
 light_energy = 0.12
 omni_range = 2.5
 
-[node name="ExitDoor" parent="PuzzleProps" instance=ExtResource("Door")]
+[node name="ExitDoor" parent="PuzzleProps" node_paths=PackedStringArray("inventory") instance=ExtResource("Door")]
 position = Vector3(4.5, 0, 2.4)
 rotation_degrees = Vector3(0, 90, 0)
 starts_locked = true
 lock_id = &"observation_room_exit"
+inventory = NodePath("../../Player/Inventory")
 
 [node name="ExitFrameA" type="MeshInstance3D" parent="Architecture"]
 position = Vector3(4.43, 1.22, 0.97)
@@ -1785,20 +1850,9 @@ position = Vector3(0.65, 0.825, 0.07)
 rotation_degrees = Vector3(0, -20, 0)
 mesh = SubResource("Geo150")
 
-[node name="Badge" type="MeshInstance3D" parent="Furniture/Desk"]
-position = Vector3(0.8, 0.825, 0.29)
-rotation_degrees = Vector3(0, 15, 0)
-mesh = SubResource("Geo151")
-
-[node name="BadgeDamage" type="MeshInstance3D" parent="Furniture/Desk"]
-position = Vector3(0.81, 0.829, 0.29)
-rotation_degrees = Vector3(0, -20, 0)
-mesh = SubResource("Geo152")
-
-[node name="BadgeStripe" type="MeshInstance3D" parent="Furniture/Desk"]
-position = Vector3(0.775, 0.83, 0.286)
-rotation_degrees = Vector3(0, 15, 0)
-mesh = SubResource("Geo153")
+[node name="Badge" parent="Furniture/Desk" instance=ExtResource("Badge")]
+position = Vector3(0.8, 0.827, 0.29)
+rotation_degrees = Vector3(-90, 15, 0)
 
 [node name="DeskSymbolOrder" type="Label3D" parent="Furniture/Desk"]
 position = Vector3(0.45, 0.823, -0.04)
@@ -2466,3 +2520,100 @@ script = ExtResource("ConversationLink")
 intercom = NodePath("../PuzzleProps/Intercom")
 participant = NodePath("../PuzzleProps/ObservationWindow/Mara")
 presenter = NodePath("../Player/DialogueUI")
+
+[node name="Combination" parent="Furniture/Desk/LockedDrawer/Body" instance=ExtResource("DrawerCombination")]
+position = Vector3(-0.32, 0.22, 0.53)
+scale = Vector3(1.3, 1.3, 1.3)
+correct_code = "4778"
+
+[node name="ExitKey" parent="Furniture/Desk/LockedDrawer/Body" instance=ExtResource("ExitKey")]
+position = Vector3(0.05, 0.103, 0.22)
+rotation_degrees = Vector3(-90, 0, 20)
+scale = Vector3(1.81818, 1.81818, 1.81818)
+
+[node name="ExitBoundary" type="Node3D" parent="Architecture"]
+
+[node name="Floor" type="StaticBody3D" parent="Architecture/ExitBoundary"]
+position = Vector3(5.45, -0.1, 1.7)
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/Floor"]
+mesh = SubResource("BoundaryFloorMesh")
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/Floor"]
+shape = SubResource("BoundaryFloorShape")
+
+[node name="Ceiling" type="StaticBody3D" parent="Architecture/ExitBoundary"]
+position = Vector3(5.45, 2.65, 1.7)
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/Ceiling"]
+mesh = SubResource("BoundaryCeilingMesh")
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/Ceiling"]
+shape = SubResource("BoundaryCeilingShape")
+
+[node name="North" type="StaticBody3D" parent="Architecture/ExitBoundary"]
+position = Vector3(5.45, 1.3, 0.8)
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/North"]
+mesh = SubResource("BoundaryNorthMesh")
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/North"]
+shape = SubResource("BoundaryNorthShape")
+
+[node name="South" type="StaticBody3D" parent="Architecture/ExitBoundary"]
+position = Vector3(5.45, 1.3, 2.6)
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/South"]
+mesh = SubResource("BoundarySouthMesh")
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/South"]
+shape = SubResource("BoundarySouthShape")
+
+[node name="End" type="StaticBody3D" parent="Architecture/ExitBoundary"]
+position = Vector3(6.5, 1.3, 1.7)
+[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/End"]
+mesh = SubResource("BoundaryEndMesh")
+[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/End"]
+shape = SubResource("BoundaryEndShape")
+
+[node name="BoundaryLabel" type="Label3D" parent="Architecture/ExitBoundary"]
+position = Vector3(6.39, 1.5, 1.7)
+rotation_degrees = Vector3(0, -90, 0)
+text = "PROTOTYPE BOUNDARY"
+font_size = 28
+pixel_size = 0.002
+no_depth_test = false
+[node name="DimLight" type="OmniLight3D" parent="Architecture/ExitBoundary"]
+position = Vector3(5.4, 2.2, 1.7)
+light_color = Color(0.4, 0.5, 0.4, 1)
+light_energy = 0.15
+omni_range = 1.6
+
+[node name="SleeveTop" type="StaticBody3D" parent="Furniture/Desk/LockedDrawer"]
+position = Vector3(0, 1.28, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/LockedDrawer/SleeveTop"]
+mesh = SubResource("DrawerSleeveTopMesh")
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/LockedDrawer/SleeveTop"]
+shape = SubResource("DrawerSleeveTopShape")
+
+[node name="SleeveBottom" type="StaticBody3D" parent="Furniture/Desk/LockedDrawer"]
+position = Vector3(0, 0.82, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/LockedDrawer/SleeveBottom"]
+mesh = SubResource("DrawerSleeveBottomMesh")
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/LockedDrawer/SleeveBottom"]
+shape = SubResource("DrawerSleeveBottomShape")
+
+[node name="SleeveLeft" type="StaticBody3D" parent="Furniture/Desk/LockedDrawer"]
+position = Vector3(-0.6, 1.05, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/LockedDrawer/SleeveLeft"]
+mesh = SubResource("DrawerSleeveLeftMesh")
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/LockedDrawer/SleeveLeft"]
+shape = SubResource("DrawerSleeveLeftShape")
+
+[node name="SleeveRight" type="StaticBody3D" parent="Furniture/Desk/LockedDrawer"]
+position = Vector3(0.6, 1.05, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/LockedDrawer/SleeveRight"]
+mesh = SubResource("DrawerSleeveRightMesh")
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/LockedDrawer/SleeveRight"]
+shape = SubResource("DrawerSleeveRightShape")
+
+[node name="SleeveBack" type="StaticBody3D" parent="Furniture/Desk/LockedDrawer"]
+position = Vector3(0, 1.05, -0.49)
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk/LockedDrawer/SleeveBack"]
+mesh = SubResource("DrawerSleeveBackMesh")
+[node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/LockedDrawer/SleeveBack"]
+shape = SubResource("DrawerSleeveBackShape")
+
+[connection signal="correct_code_entered" from="Furniture/Desk/LockedDrawer/Body/Combination" to="Furniture/Desk/LockedDrawer" method="unlock"]

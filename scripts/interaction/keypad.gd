@@ -6,13 +6,14 @@ signal correct_code_entered
 signal incorrect_code_entered
 
 @export var correct_code: String = "2580"
+@export var entry_prompt: String = "Use Keypad"
 @export_range(1, 12, 1) var code_length: int = 4
 
 var succeeded: bool = false
 
 
 func get_interaction_prompt() -> String:
-	return "Unlocked" if succeeded else "Use Keypad"
+	return "Unlocked" if succeeded else entry_prompt
 
 
 func interact() -> void:

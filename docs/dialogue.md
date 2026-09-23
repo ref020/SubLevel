@@ -118,5 +118,6 @@ presentation still require an interactive playtest. UI targets normal desktop
 window sizes; there is no localization or tiny-window adaptive layout yet.
 Flags are monotonic booleans for this prototype, and action resolution is
 synchronous at the dialogue stage. State resets when the scene/NPC is replaced.
-There is no voice, persistence, pathfinding, desk-drawer mechanism, or code
-interpretation. GAME_DESIGN.md's unresolved puzzle details remain unchanged.
+There is no voice, persistence, or pathfinding. Milestone 9 finalizes the badge
+grid interpretation and drawer mechanism; see observation_room_escape.md and
+GAME_DESIGN.md. Dialogue content and the coordinate sequence remain unchanged.

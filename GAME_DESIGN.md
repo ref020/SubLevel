@@ -266,19 +266,37 @@ C3 - A1 - D4 - B2
 
 This information is used in a later step of the Observation Room escape.
 
-The exact mechanism translating this information into opening the desk drawer is NOT YET FINALIZED.
+The damaged employee badge on the desk has a SECURITY VERIFICATION grid.
+It is inspectable but not collectible. Columns are A–D and rows are 1–4:
 
-Do not invent the missing mechanism without updating this design.
+|   | A | B | C | D |
+|---|---|---|---|---|
+| 1 | 7 | 2 | 9 | 4 |
+| 2 | 3 | 8 | 1 | 6 |
+| 3 | 5 | 0 | 4 | 2 |
+| 4 | 9 | 6 | 3 | 7 |
+
+Mara's coordinate order gives C3 = 4, A1 = 7, D4 = 7, B2 = 8.
+The finalized desk drawer combination is **4778**. Correct entry unlocks
+the drawer; the player must then open it physically. Clues may be inspected
+in any order; code entry does not require artificial clue-discovery flags.
 
 ---
 
 # 12. Observation Room Exit
 
-The locked desk drawer ultimately contains the key required to leave the Observation Room.
+The locked desk drawer contains the collectible Observation Room Key:
+item_id `observation_exit_key`, description `A heavy key stamped "OBS-06".`
+It declares compatibility with lock_id `observation_room_exit`.
 
-The player uses the key on the exit door.
+The player inspects and takes the key. Interacting with the locked exit while
+carrying it unlocks the door without consuming the key. A second interaction
+opens the door; unlocking does not automatically open it or move the player.
 
 Opening the door leads to the Central Hub.
+
+Milestone 9 ends at a sealed, temporary dark corridor beyond the exit.
+The Central Hub itself is not built yet.
 
 The Observation Room prototype is complete when this entire sequence can be played successfully.
 
@@ -349,13 +367,13 @@ FINALIZED:
 - Screwdriver -> ventilation grate
 - Hidden switch -> intercom
 - Mara sees C3-A1-D4-B2
+- Employee badge grid interprets C3-A1-D4-B2 as desk drawer code 4778
 - Observation Room key is inside locked desk drawer
 - 107.6 / -0.3 -> 107.3 concept
 
 NOT FINALIZED:
 
 - Full facility layout
-- C3-A1-D4-B2 interpretation
 - cassette purpose
 - cabinet note purpose
 - complete Power puzzle chain
