@@ -3988,41 +3988,6 @@ mesh = SubResource("R220")
 [node name="Collision" type="CollisionShape3D" parent="Maintenance/RadioDesk"]
 shape = SubResource("R221")
 
-[node name="RadioM2Housing" type="StaticBody3D" parent="Maintenance"]
-position = Vector3(24.8, 1.07, 2.05)
-
-[node name="Mesh" type="MeshInstance3D" parent="Maintenance/RadioM2Housing"]
-mesh = SubResource("R222")
-
-[node name="Collision" type="CollisionShape3D" parent="Maintenance/RadioM2Housing"]
-shape = SubResource("R223")
-
-[node name="RadioFace" type="Node3D" parent="Maintenance"]
-position = Vector3(24.8, 1.08, 1.85)
-
-[node name="Mesh" type="MeshInstance3D" parent="Maintenance/RadioFace"]
-mesh = SubResource("R224")
-
-[node name="M2Plate" type="Node3D" parent="Maintenance"]
-position = Vector3(25.06, 1.05, 1.823)
-rotation_degrees = Vector3(0, 180, 0)
-
-[node name="Plate" type="Node3D" parent="Maintenance/M2Plate"]
-position = Vector3(0, 0, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="Maintenance/M2Plate/Plate"]
-mesh = SubResource("R225")
-
-[node name="Text" type="Label3D" parent="Maintenance/M2Plate"]
-position = Vector3(0, 0, 0.02)
-text = "M-2"
-font_size = 24
-pixel_size = 0.001
-modulate = Color(0.82, 0.84, 0.72, 1)
-outline_size = 0
-no_depth_test = false
-billboard = 0
-
 [node name="GeneratorSign" type="Node3D" parent="Maintenance"]
 position = Vector3(26, 2.78, -4.16)
 rotation_degrees = Vector3(0, 0, 0)

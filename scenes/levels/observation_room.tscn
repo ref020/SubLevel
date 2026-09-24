@@ -1,4 +1,4 @@
-[gd_scene load_steps=314 format=3]
+[gd_scene load_steps=316 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -25,6 +25,10 @@
 [ext_resource type="PackedScene" path="res://scenes/interactables/drawer_combination.tscn" id="DrawerCombination"]
 
 [ext_resource type="PackedScene" path="res://scenes/levels/facility_graybox.tscn" id="Facility"]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/facility_investigation.tscn" id="Investigation"]
+
+[ext_resource type="Script" path="res://scripts/dialogue/radio_conversation.gd" id="RadioLink"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -2539,5 +2543,15 @@ position = Vector3(0, 1.05, -0.49)
 mesh = SubResource("DrawerSleeveBackMesh")
 [node name="Collision" type="CollisionShape3D" parent="Furniture/Desk/LockedDrawer/SleeveBack"]
 shape = SubResource("DrawerSleeveBackShape")
+
+
+[node name="FacilityInvestigation" parent="." instance=ExtResource("Investigation")]
+
+[node name="RadioConversation" type="Node" parent="." node_paths=PackedStringArray("radio", "participant", "radio_presenter", "dialogue_presenter")]
+script = ExtResource("RadioLink")
+radio = NodePath("../FacilityInvestigation/M2")
+participant = NodePath("../FacilityInvestigation/Elias")
+radio_presenter = NodePath("../Player/RadioUI")
+dialogue_presenter = NodePath("../Player/DialogueUI")
 
 [connection signal="correct_code_entered" from="Furniture/Desk/LockedDrawer/Body/Combination" to="Furniture/Desk/LockedDrawer" method="unlock"]

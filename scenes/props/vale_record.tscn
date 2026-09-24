@@ -1,0 +1,96 @@
+[gd_scene load_steps=16 format=3]
+[ext_resource type="Script" path="res://scripts/interaction/inspectable.gd" id="Script"]
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.74, 0.70, 0.56, 1)
+roughness = 0.95
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.07, 0.075, 0.06, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="PaperMesh"]
+size = Vector3(0.24, 0.32, 0.008)
+material = SubResource("Paper")
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.24, 0.32, 0.012)
+[sub_resource type="TextMesh" id="Text0"]
+text = "DR. WARREN VALE"
+font_size = 64
+pixel_size = 0.0003
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="TextMesh" id="Text1"]
+text = "FACILITY DIRECTOR"
+font_size = 64
+pixel_size = 0.00024
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="TextMesh" id="Text2"]
+text = "W. VALE"
+font_size = 64
+pixel_size = 0.0003
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="TextMesh" id="Text3"]
+text = "DIRECTOR"
+font_size = 64
+pixel_size = 0.00023
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="TextMesh" id="Text4"]
+text = "MAINT. BAND"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="TextMesh" id="Text5"]
+text = "107.6 MHz"
+font_size = 64
+pixel_size = 0.00032
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="StandardMaterial3D" id="Card"]
+albedo_color = Color(0.65, 0.66, 0.56, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="CardMesh"]
+size = Vector3(0.20, 0.175, 0.001)
+material = SubResource("Card")
+[sub_resource type="StandardMaterial3D" id="ClipMat"]
+albedo_color = Color(0.28, 0.30, 0.27, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="ClipMesh"]
+size = Vector3(0.05, 0.012, 0.006)
+material = SubResource("ClipMat")
+[node name="ValeRecord" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+interaction_prompt = "Inspect Vale Record"
+[node name="Visual" type="Node3D" parent="."]
+[node name="Paper" type="MeshInstance3D" parent="Visual"]
+mesh = SubResource("PaperMesh")
+[node name="Text0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.125, 0.0045)
+mesh = SubResource("Text0")
+[node name="Text1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.09, 0.0045)
+mesh = SubResource("Text1")
+[node name="Text2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.02, 0.0045)
+mesh = SubResource("Text2")
+[node name="Text3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.01, 0.0045)
+mesh = SubResource("Text3")
+[node name="Text4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.07, 0.0045)
+mesh = SubResource("Text4")
+[node name="Text5" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.105, 0.0045)
+mesh = SubResource("Text5")
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+shape = SubResource("Hit")
+[node name="ContactCard" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.05, 0.0036)
+mesh = SubResource("CardMesh")
+[node name="Clip" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.153, 0.006)
+mesh = SubResource("ClipMesh")

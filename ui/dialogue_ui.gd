@@ -19,9 +19,13 @@ func _ready() -> void:
 	$Backdrop/Center/Panel/Margin/Content/End.pressed.connect(close_dialogue)
 
 
-func open_dialogue(participant: ConversationParticipant, device: Node = null) -> bool:
-	if not is_instance_valid(participant) or participant.dialogue == null or not input_session.acquire(self):
+func open_dialogue(participant: ConversationParticipant, device: Node = null, previous_owner: Node = null, channel: String = "INTERCOM / VOICE CHANNEL") -> bool:
+	if not is_instance_valid(participant) or participant.dialogue == null:
 		return false
+	var acquired: bool = input_session.transfer(previous_owner, self) if previous_owner != null else input_session.acquire(self)
+	if not acquired:
+		return false
+	$Backdrop/Center/Panel/Margin/Content/Channel.text = channel
 	npc = participant
 	source = device
 	npc.tree_exiting.connect(_target_exiting)

@@ -1,0 +1,113 @@
+[gd_scene load_steps=20 format=3]
+[ext_resource type="Script" path="res://scripts/interaction/tunable_radio.gd" id="Script"]
+[sub_resource type="StandardMaterial3D" id="Case"]
+albedo_color = Color(0.56, 0.55, 0.46, 1)
+roughness = 0.85
+[sub_resource type="StandardMaterial3D" id="Dark"]
+albedo_color = Color(0.07, 0.085, 0.075, 1)
+roughness = 0.85
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.7, 0.73, 0.59, 1)
+roughness = 0.85
+[sub_resource type="BoxMesh" id="CaseMesh"]
+size = Vector3(0.7, 0.37, 0.38)
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="FaceMesh"]
+size = Vector3(0.65, 0.31, 0.012)
+material = SubResource("Dark")
+[sub_resource type="BoxMesh" id="DisplayPlateMesh"]
+size = Vector3(0.28, 0.07, 0.01)
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="Grille0Mesh"]
+size = Vector3(0.22, 0.008, 0.014)
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="Grille1Mesh"]
+size = Vector3(0.22, 0.008, 0.014)
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="Grille2Mesh"]
+size = Vector3(0.22, 0.008, 0.014)
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="Grille3Mesh"]
+size = Vector3(0.22, 0.008, 0.014)
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="Grille4Mesh"]
+size = Vector3(0.22, 0.008, 0.014)
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="Grille5Mesh"]
+size = Vector3(0.22, 0.008, 0.014)
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="Grille6Mesh"]
+size = Vector3(0.22, 0.008, 0.014)
+material = SubResource("Case")
+[sub_resource type="CylinderMesh" id="Knob"]
+top_radius = 0.038
+bottom_radius = 0.038
+height = 0.03
+material = SubResource("Case")
+[sub_resource type="BoxMesh" id="Pointer"]
+size = Vector3(0.004, 0.027, 0.003)
+material = SubResource("Dark")
+[sub_resource type="TextMesh" id="Frequency"]
+text = "99.5 MHz"
+font_size = 48
+pixel_size = 0.0005
+depth = 0.0
+material = SubResource("Dark")
+[sub_resource type="TextMesh" id="Designation"]
+text = "M-2"
+font_size = 48
+pixel_size = 0.0004
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.7, 0.37, 0.38)
+[node name="Radio" type="Node3D"]
+script = ExtResource("Script")
+[node name="Visual" type="Node3D" parent="."]
+[node name="Case" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("CaseMesh")
+[node name="Face" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0.194)
+mesh = SubResource("FaceMesh")
+[node name="DisplayPlate" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.14, 0.085, 0.205)
+mesh = SubResource("DisplayPlateMesh")
+[node name="Grille0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.17, 0.1, 0.21)
+mesh = SubResource("Grille0Mesh")
+[node name="Grille1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.17, 0.068, 0.21)
+mesh = SubResource("Grille1Mesh")
+[node name="Grille2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.17, 0.036000000000000004, 0.21)
+mesh = SubResource("Grille2Mesh")
+[node name="Grille3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.17, 0.0040000000000000036, 0.21)
+mesh = SubResource("Grille3Mesh")
+[node name="Grille4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.17, -0.027999999999999997, 0.21)
+mesh = SubResource("Grille4Mesh")
+[node name="Grille5" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.17, -0.06, 0.21)
+mesh = SubResource("Grille5Mesh")
+[node name="Grille6" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.17, -0.092, 0.21)
+mesh = SubResource("Grille6Mesh")
+[node name="Frequency" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.14, 0.085, 0.211)
+mesh = SubResource("Frequency")
+[node name="Designation" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.20, -0.105, 0.207)
+mesh = SubResource("Designation")
+[node name="Dial" type="Node3D" parent="Visual"]
+position = Vector3(0.13, -0.02, 0.222)
+[node name="Knob" type="MeshInstance3D" parent="Visual/Dial"]
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Knob")
+[node name="Pointer" type="MeshInstance3D" parent="Visual/Dial"]
+position = Vector3(0, 0.017, 0.017)
+mesh = SubResource("Pointer")
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+shape = SubResource("Hit")

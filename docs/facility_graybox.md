@@ -7,7 +7,9 @@ editor configuration, new Input Map action, or scene transition is required.
 `scenes/levels/facility_graybox.tscn` is an editable static scene instanced under
 the main room's Architecture/Facility node. It replaces only the old sealed
 development corridor. It contains no gameplay scripts or Interactables.
-All new equipment, signs, and status text are nonfunctional presentation.
+Its equipment, signs, and status text are nonfunctional presentation. Milestone
+10B replaces only the M-2 placeholder with a separate gameplay layer alongside
+Architecture, plus two inspectable records; see [radio_elias.md](radio_elias.md).
 
 ## Area relationships
 
@@ -57,9 +59,11 @@ is shorter. No long transit tunnels are introduced.
 - Laboratory: benches, a glazed bench partition, old analytical housing,
   sink cabinet, and reserved calibration/battery equipment locations.
 - Archive: metal shelves, records boxes/cabinet, and a cassette workstation
-  with an inert housing. No records, frequencies, or cassette content yet.
-- Maintenance: workbench, tool storage, exposed services, and inert M-2 radio
-  housing on a work surface. No tuning or Elias exists.
+  with an inert housing. Milestone 10B adds the Vale record at the personnel
+  cabinet; the cassette workstation remains nonfunctional.
+- Maintenance: workbench, tool storage, exposed services, and a radio work surface.
+  Milestone 10B replaces its inert M-2 housing with the tunable radio from the
+  separate investigation scene.
 - Generator: machinery mass, pipework, control-console mounting area; markers
   reserve the pressure gauge, prime, field excitation, and breakers 1–4.
 - Service side: inaccessible pipe/terminal placeholders reserve the future
@@ -70,9 +74,10 @@ is shorter. No long transit tunnels are introduced.
   remains an empty reserved shell, without cabinet/terminal puzzle content.
 
 Reserved locations are named Marker3D nodes visible in the editor only. They
-are not floating labels, interactables, or implemented clues. The actual future
-solutions live exclusively in GAME_DESIGN.md at this milestone. Existing
-cassette/note descriptions and Mara dialogue have not been changed.
+are not floating labels, interactables, or implemented clues. Future puzzle
+solutions live in GAME_DESIGN.md. Milestone 10B adds only the M-2 clue
+records and folded note text; cassette descriptions and Mara dialogue remain
+unchanged.
 
 Concrete, green/gray lower walls, dark steel, wood surfaces, beige housings,
 and restrained greenish fluorescent fixtures extend the existing visual
@@ -102,5 +107,6 @@ composition. Multiple shadowed local lights and primitive props need a visual
 performance/playtest pass. Navigation tests sample movement paths and collision
 boundaries; they are not exhaustive attempts at every jump or exploit.
 
-No post-Observation puzzle functions, new NPCs/dialogue, main power, playback,
-card rewriting, authorization, or final escape have been implemented.
+The Milestone 10B radio investigation and Elias first contact are now implemented
+outside this static shell. Main power, playback, card rewriting, authorization,
+and final escape remain unimplemented.

@@ -244,9 +244,9 @@ The screwdriver is required immediately.
 
 The cassette and note are intended for later use.
 
-Their future purposes are finalized in sections 13-14 below. In Milestone 10A,
-their existing item descriptions and behavior remain unchanged; those future
-systems and clue presentations are not implemented yet.
+Their purposes are finalized in sections 13-14 below. Milestone 10B implements
+the folded note M-2/Vale clue, including inventory re-inspection. The cassette
+remains unchanged; its playback and related systems are not implemented yet.
 
 ---
 
@@ -304,7 +304,8 @@ opens the door; unlocking does not automatically open it or move the player.
 Opening the door leads to the Central Hub.
 
 Milestone 10A extends the former temporary corridor into the Central Hub and
-adjacent graybox wings. Post-Observation equipment remains nonfunctional.
+adjacent graybox wings. Milestone 10B adds the M-2 investigation and first Elias
+contact; other post-Observation equipment remains nonfunctional.
 
 The Observation Room prototype is complete when this entire sequence can be played successfully.
 
@@ -312,9 +313,9 @@ The Observation Room prototype is complete when this entire sequence can be play
 
 # 13. Post-Observation Design and Main Game Objectives
 
-The finalized concepts below are canonical for FUTURE implementation.
-Milestone 10A implements only documentation, layout, navigation, and atmosphere.
-It does not implement these puzzle systems, new dialogue, or Elias.
+The finalized concepts below are canonical. Milestone 10A implements layout,
+navigation, and atmosphere. Milestone 10B implements only the Radio / Elias
+investigation and first contact. Later puzzle branches remain future work.
 
 The final emergency egress requires all three macro conditions:
 
@@ -336,7 +337,7 @@ This display is presentation only until a future milestone.
 
 ## Radio / Elias
 
-The folded note carried from Observation 06 will ultimately communicate:
+The folded note carried from Observation 06 communicates:
 
 > M-2 is still three tenths out. Vale refuses to change the card.
 
@@ -349,8 +350,14 @@ MAINT. BAND
 
 The Laboratory calibration record reads `M-2    -0.3`.
 Maintenance contains radio unit M-2. The correct frequency is
-**107.6 - 0.3 = 107.3 MHz**. Tuning M-2 to 107.3 eventually contacts Elias,
+**107.6 - 0.3 = 107.3 MHz**. Tuning M-2 to 107.3 contacts Elias,
 a maintenance technician trapped in an inaccessible service area.
+
+Implemented in Milestone 10B: the noncollectible calibration log rests on the
+Laboratory calibration bench; Vale's noncollectible record/contact card is on
+the Archive personnel cabinet. Clues may be read in any order, and correct
+tuning works without discovery flags. First contact establishes the separated
+coolant bypass and startup controls. Elias cannot operate the bypass yet.
 
 ## Cassette / Generator / Main Power
 

@@ -1,32 +1,54 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=10 format=3]
 [ext_resource type="Script" path="res://scripts/interaction/pickup_item.gd" id="Script"]
-[sub_resource type="BoxShape3D" id="Collision"]
-size = Vector3(0.13, 0.18, 0.016)
-[sub_resource type="StandardMaterial3D" id="Mat0"]
-albedo_color = Color(0.74, 0.7, 0.56, 1)
-[sub_resource type="BoxMesh" id="Mesh0"]
-material = SubResource("Mat0")
-size = Vector3(0.13, 0.18, 0.01)
-[sub_resource type="StandardMaterial3D" id="Mat1"]
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.74, 0.70, 0.56, 1)
+roughness = 0.95
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.07, 0.075, 0.06, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="PaperMesh"]
+size = Vector3(0.13, 0.18, 0.008)
+material = SubResource("Paper")
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.13, 0.18, 0.012)
+[sub_resource type="TextMesh" id="Text0"]
+text = "M-2 is still three tenths out."
+font_size = 64
+pixel_size = 0.00011
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="TextMesh" id="Text1"]
+text = "Vale refuses to change the card."
+font_size = 64
+pixel_size = 0.0001
+depth = 0.0
+material = SubResource("Ink")
+[sub_resource type="StandardMaterial3D" id="FoldMat"]
 albedo_color = Color(0.61, 0.58, 0.46, 1)
-[sub_resource type="BoxMesh" id="Mesh1"]
-material = SubResource("Mat1")
-size = Vector3(0.12, 0.007, 0.003)
-
+roughness = 0.95
+[sub_resource type="BoxMesh" id="FoldMesh"]
+size = Vector3(0.12, 0.002, 0.001)
+material = SubResource("FoldMat")
 [node name="FoldedNote" type="Node3D" node_paths=PackedStringArray("visual_root")]
 script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+interaction_prompt = "Inspect Folded Note"
 item_id = &"cabinet_note"
 display_name = "Folded Note"
-description = "Most of the writing has faded."
-visual_root = NodePath("Visual")
-initial_inspection_rotation = Vector3(25, -20, 0)
-[node name="Body" type="StaticBody3D" parent="."]
-[node name="Collision" type="CollisionShape3D" parent="Body"]
-shape = SubResource("Collision")
+description = "M-2 is still three tenths out.\nVale refuses to change the card."
 [node name="Visual" type="Node3D" parent="."]
 [node name="Paper" type="MeshInstance3D" parent="Visual"]
-position = Vector3(0, 0, 0)
-mesh = SubResource("Mesh0")
+mesh = SubResource("PaperMesh")
+[node name="Text0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.035, 0.0045)
+mesh = SubResource("Text0")
+[node name="Text1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.005, 0.0045)
+mesh = SubResource("Text1")
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+shape = SubResource("Hit")
 [node name="Fold" type="MeshInstance3D" parent="Visual"]
-position = Vector3(0, 0, 0.006)
-mesh = SubResource("Mesh1")
+position = Vector3(0, -0.034, 0.0046)
+mesh = SubResource("FoldMesh")

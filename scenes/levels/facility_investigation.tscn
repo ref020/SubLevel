@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3]
+[ext_resource type="PackedScene" path="res://scenes/interactables/tunable_radio.tscn" id="Radio"]
+[ext_resource type="PackedScene" path="res://scenes/props/calibration_log.tscn" id="Log"]
+[ext_resource type="PackedScene" path="res://scenes/props/vale_record.tscn" id="Record"]
+[ext_resource type="PackedScene" path="res://scenes/npc/elias.tscn" id="Elias"]
+[node name="FacilityInvestigation" type="Node3D"]
+[node name="M2" parent="." instance=ExtResource("Radio")]
+position = Vector3(24.8, 1.07, 2.05)
+rotation_degrees = Vector3(0, 180, 0)
+designation = "M-2"
+minimum_frequency = 87.5
+maximum_frequency = 108.0
+tuning_step = 0.1
+starting_frequency = 99.5
+target_frequency = 107.3
+[node name="CalibrationLog" parent="." instance=ExtResource("Log")]
+position = Vector3(13.1, 0.932, -11.55)
+rotation_degrees = Vector3(-90, -8, 0)
+[node name="ValeRecord" parent="." instance=ExtResource("Record")]
+position = Vector3(14.9, 1.42, 9.639)
+[node name="Elias" parent="." instance=ExtResource("Elias")]
