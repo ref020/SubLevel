@@ -8,7 +8,8 @@ Milestone 6B collectible cabinet items (see inventory.md).
 Milestone 7 adds the vent/auxiliary-power sequence (see vent_auxiliary_power.md).
 Milestone 8 adds first contact with Mara through the powered intercom (see dialogue.md).
 Milestone 9 completes the badge/drawer/key escape sequence (see
-observation_room_escape.md). The exit leads only to a sealed development stub.
+observation_room_escape.md). Milestone 10A extends its exit to the Central Hub
+and static wing grayboxes (see facility_graybox.md).
 
 ## Scale and provisional layout
 
@@ -34,8 +35,8 @@ east is +X. Walls are 0.3 m thick. The existing player remains human-scale.
   at 1 m. A sealed, inaccessible dark bay extends approximately 1.7 m beyond it.
   The far face of the glass is reserved for future writing; none exists now.
 - The east exit uses the 1.4 × 2.4 m door scene. Its wall opening and frame
-  match the leaf. A short sealed corridor provides a development boundary;
-  no Central Hub is constructed.
+  match the leaf. The former development stub is now a service corridor
+  connecting the room to the Central Hub.
 - The south vent has a sealed recess approximately 0.5 m deep. Its four screws
   require the screwdriver; the panel folds down to expose an auxiliary breaker.
 - The cabinet occupies the west side; the procedure poster is on the east wall

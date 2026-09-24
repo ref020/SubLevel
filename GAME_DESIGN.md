@@ -110,18 +110,24 @@ Elias can eventually:
 
 # 5. Facility Structure
 
-Planned major areas:
+Canonical major areas:
 
-- Observation Room
+- Observation Wing / Observation 06
 - Central Hub
 - Laboratory
 - Archive
-- Maintenance Corridor
-- Generator Room
-- Security Area
-- Final Exit
+- Maintenance
+- Generator
+- Security
+- Director's Office
+- Emergency Egress
 
-Exact layout is not finalized.
+Observation 06 exits through an institutional service corridor toward the
+Central Hub, the geographic anchor. The Hub connects toward Laboratory,
+Archive, Maintenance, Security, and Emergency Egress. Generator access branches
+through Maintenance; the Director's Office belongs to the Security /
+administrative side. Broad progression is nonlinear and interconnected, with
+compact routes and easy backtracking. Graybox dimensions remain provisional.
 
 ---
 
@@ -238,7 +244,9 @@ The screwdriver is required immediately.
 
 The cassette and note are intended for later use.
 
-Their exact later functions are not yet finalized and should not be invented during implementation.
+Their future purposes are finalized in sections 13-14 below. In Milestone 10A,
+their existing item descriptions and behavior remain unchanged; those future
+systems and clue presentations are not implemented yet.
 
 ---
 
@@ -295,62 +303,167 @@ opens the door; unlocking does not automatically open it or move the player.
 
 Opening the door leads to the Central Hub.
 
-Milestone 9 ends at a sealed, temporary dark corridor beyond the exit.
-The Central Hub itself is not built yet.
+Milestone 10A extends the former temporary corridor into the Central Hub and
+adjacent graybox wings. Post-Observation equipment remains nonfunctional.
 
 The Observation Room prototype is complete when this entire sequence can be played successfully.
 
 ---
 
-# 13. Main Game Objectives
+# 13. Post-Observation Design and Main Game Objectives
 
-After reaching the Central Hub, the player eventually discovers that the final exit requires:
+The finalized concepts below are canonical for FUTURE implementation.
+Milestone 10A implements only documentation, layout, navigation, and atmosphere.
+It does not implement these puzzle systems, new dialogue, or Elias.
 
-## Main Power
+The final emergency egress requires all three macro conditions:
 
-Primarily associated with:
-- maintenance systems
-- Elias
-- Generator Room
+- MAIN POWER
+- SECURITY CLEARANCE
+- DIRECTOR AUTHORIZATION
+
+The Hub's nonfunctional status panel presents:
+
+```text
+EMERGENCY EGRESS
+MAIN POWER             OFF
+SECURITY CLEARANCE     INVALID
+DIRECTOR AUTHORIZATION REQUIRED
+EXIT SEALED
+```
+
+This display is presentation only until a future milestone.
+
+## Radio / Elias
+
+The folded note carried from Observation 06 will ultimately communicate:
+
+> M-2 is still three tenths out. Vale refuses to change the card.
+
+Archive information associated with Dr. Warren Vale reads:
+
+```text
+MAINT. BAND
+107.6 MHz
+```
+
+The Laboratory calibration record reads `M-2    -0.3`.
+Maintenance contains radio unit M-2. The correct frequency is
+**107.6 - 0.3 = 107.3 MHz**. Tuning M-2 to 107.3 eventually contacts Elias,
+a maintenance technician trapped in an inaccessible service area.
+
+## Cassette / Generator / Main Power
+
+The Observation 06 cassette contains a recorded generator startup drill.
+A removable **12V instrument battery** from Laboratory equipment can temporarily
+power an Archive cassette deck before main power is restored. The screwdriver
+is required to access/remove that battery.
+
+The generator startup procedure is:
+
+1. Bypass open.
+2. Prime until pressure reaches **40**.
+3. Wait for stabilization.
+4. Close breaker **2**.
+5. Field excitation.
+6. Close breaker **4**.
+7. Close breaker **1**.
+8. Close breaker **3**.
+
+Elias physically operates the inaccessible coolant bypass; the player operates
+the generator controls. Both actions are required for MAIN POWER. Incorrect
+generator operation should trip/reset, never create an unrecoverable state.
 
 ## Security Clearance
 
-Primarily associated with:
-- Director Warren Vale
-- access card
-- security systems
+After main power is restored, Security equipment becomes usable. The player
+eventually obtains Warren Vale's revoked Director Access Card. Its encoder
+requires EMPLOYEE ID, CLEARANCE CLASS, and VERIFICATION HASH.
 
-A director access card is eventually discovered with revoked permissions.
+Vale's employee ID is **0614**; Facility Director clearance is **Class IV**.
+The verification hash combines three sources:
 
-Later, the player discovers a way to rewrite its permissions.
+| Symbol | Cassette analyzer | Mara's later report |
+|---|---|---|
+| A | 3 | 90 degrees |
+| B | 1 | 270 degrees |
+| C | 4 | 0 degrees |
+| D | 2 | 180 degrees |
+
+Laboratory apparatus order is **0, 90, 180, 270 degrees**. This orders symbols
+**C, A, D, B**, giving **4, 3, 2, 1**. The verification hash is **4321**.
+
+Correct encoder information is **0614 / Class IV / 4321**. This restores the
+Director Access Card and satisfies SECURITY CLEARANCE.
 
 ## Director Authorization
 
-The most complex of the three branches.
+Security clearance permits access to the Director's Office. A Director document
+cabinet uses five symbols. Department mapping and incident priority are:
 
-The final authorization is derived from several clues throughout the facility rather than being directly written down.
+| Priority | Department | Symbol |
+|---|---|---|
+| 1 | Containment | diamond |
+| 2 | Laboratory | circle |
+| 3 | Archive | plus |
+| 4 | Maintenance | triangle |
+| 5 | Administration | square |
 
-Exact puzzle chain is not finalized.
+The cabinet sequence is **diamond, circle, plus, triangle, square**. It contains
+a Director Authorization Module. The Director terminal accepts the primary
+module but requires secondary authorization from maintenance terminal **M-4**.
+
+M-4 is inaccessible to the player, reachable by Elias, and has poor/no radio
+reception. Mara can access an intercom routing system. Generator/maintenance
+documentation establishes:
+
+| Terminal | Line |
+|---|---|
+| M-1 | C |
+| M-2 | F |
+| M-3 | A |
+| M-4 | D |
+
+The player directs Mara to route **Line D**. Mara contacts Elias directly.
+This NPC-to-NPC interaction must become meaningful gameplay/dialogue, not
+background lore. No such communication is implemented in Milestone 10A.
+
+The finalized challenge-response example at the Director terminal is:
+
+```text
+PHASE 2
+LOAD 6
+CIRCUIT B
+```
+
+Maintenance documentation maps Phase 1 = North, Phase 2 = East,
+Phase 3 = South, Phase 4 = West. The Archive emergency table maps
+Load 2 = White, Load 4 = Blue, Load 6 = Amber, Load 8 = Red.
+
+Thus **PHASE 2 / LOAD 6 / CIRCUIT B** becomes **EAST / AMBER / B**.
+The player supplies the interpreted information to Mara; Mara relays it to
+Elias; Elias configures M-4; the player completes primary authorization.
+This satisfies DIRECTOR AUTHORIZATION.
 
 ---
 
-# 14. Known Future Clue
+# 14. Final Egress — Future Implementation
 
-An item associated with Dr. Warren Vale contains:
+When MAIN POWER, SECURITY CLEARANCE, and DIRECTOR AUTHORIZATION are valid,
+Emergency Egress permits manual release. The first mechanical release only
+partially disengages because the secondary release is seized. The screwdriver
+is used again to access the final manual linkage, echoing the Observation Room
+vent interaction. The player manually releases the second lock and opens the exit.
 
-107.6 MHz
+At the final evacuation control the player can release:
 
-Later, the player discovers a calibration error:
+- Observation Cells
+- Maintenance Sector
+- Surface Access
 
--0.3 MHz
-
-The intended frequency is therefore:
-
-107.3 MHz
-
-A radio tuned to 107.3 MHz eventually provides puzzle information.
-
-Exact downstream puzzle is not finalized.
+This frees Mara and Elias before the player reaches the surface. Do not expand
+the ending beyond this without a future design decision. None of this final
+escape functionality is implemented in Milestone 10A.
 
 ---
 
@@ -358,26 +471,23 @@ Exact downstream puzzle is not finalized.
 
 FINALIZED:
 
-- Core premise
-- Halcyon Research Facility
-- Mara
-- Elias
+- Core premise, Halcyon Research Facility, Mara, and Elias
 - Three final exit requirements
 - Observation Room cabinet solution: 4371
-- Screwdriver -> ventilation grate
-- Hidden switch -> intercom
+- Screwdriver -> ventilation grate -> hidden switch -> intercom
 - Mara sees C3-A1-D4-B2
 - Employee badge grid interprets C3-A1-D4-B2 as desk drawer code 4778
 - Observation Room key is inside locked desk drawer
-- 107.6 / -0.3 -> 107.3 concept
+- Note, Archive band, Laboratory calibration, and M-2 contact at 107.3 MHz
+- Cassette drill, removable 12V battery, and cooperative generator procedure
+- Director card encoder: 0614 / Class IV / 4321
+- Department symbol sequence and Director Authorization Module
+- M-4 / Line D routing, Mara-to-Elias relay, and EAST / AMBER / B response
+- Final manual linkage and evacuation release of Mara and Elias
+- Compact Hub-centered area relationships and nonlinear broad progression
 
 NOT FINALIZED:
 
-- Full facility layout
-- cassette purpose
-- cabinet note purpose
-- complete Power puzzle chain
-- complete Security puzzle chain
-- complete Authorization puzzle chain
-- ending
-- full narrative explanation
+- Final physical dimensions, detailed prop/clue placement, and art
+- Detailed dialogue/action presentation for future puzzle systems
+- Full narrative explanation

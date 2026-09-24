@@ -1,0 +1,4724 @@
+[gd_scene load_steps=280 format=3]
+
+[sub_resource type="StandardMaterial3D" id="Plaster"]
+albedo_color = Color(0.48, 0.49, 0.43, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Concrete"]
+albedo_color = Color(0.29, 0.31, 0.29, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Floor"]
+albedo_color = Color(0.25, 0.28, 0.25, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Dado"]
+albedo_color = Color(0.23, 0.31, 0.26, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.2, 0.24, 0.22, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Beige"]
+albedo_color = Color(0.55, 0.51, 0.39, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Wood"]
+albedo_color = Color(0.3, 0.24, 0.17, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Sign"]
+albedo_color = Color(0.08, 0.13, 0.11, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Dark"]
+albedo_color = Color(0.025, 0.04, 0.034, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.61, 0.6, 0.49, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Rust"]
+albedo_color = Color(0.34, 0.2, 0.12, 1)
+roughness = 0.86
+
+[sub_resource type="StandardMaterial3D" id="Diffuser"]
+albedo_color = Color(0.64, 0.7, 0.53, 1)
+roughness = 0.86
+emission_enabled = true
+emission = Color(0.25, 0.32, 0.19, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="StandardMaterial3D" id="Glass"]
+albedo_color = Color(0.19, 0.28, 0.24, 0.25)
+transparency = 1
+roughness = 0.35
+cull_mode = 2
+
+[sub_resource type="BoxMesh" id="R1"]
+size = Vector3(6.2, 0.24, 2.0)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R2"]
+size = Vector3(6.2, 0.24, 2.0)
+
+[sub_resource type="BoxMesh" id="R3"]
+size = Vector3(6.2, 0.2, 2.0)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R4"]
+size = Vector3(6.2, 0.2, 2.0)
+
+[sub_resource type="BoxMesh" id="R5"]
+size = Vector3(6.0, 2.8, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R6"]
+size = Vector3(6.0, 2.8, 0.2)
+
+[sub_resource type="BoxMesh" id="R7"]
+size = Vector3(6.0, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R8"]
+size = Vector3(0.2, 0.2999999999999998, 1.8)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R9"]
+size = Vector3(0.2, 0.2999999999999998, 1.8)
+
+[sub_resource type="BoxMesh" id="R10"]
+size = Vector3(0.27, 2.5, 0.1)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="R11"]
+size = Vector3(10.2, 0.24, 10.2)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R12"]
+size = Vector3(10.2, 0.24, 10.2)
+
+[sub_resource type="BoxMesh" id="R13"]
+size = Vector3(10.2, 0.2, 10.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R14"]
+size = Vector3(10.2, 0.2, 10.2)
+
+[sub_resource type="BoxMesh" id="R15"]
+size = Vector3(1.5, 3.6, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R16"]
+size = Vector3(1.5, 3.6, 0.2)
+
+[sub_resource type="BoxMesh" id="R17"]
+size = Vector3(1.5, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R18"]
+size = Vector3(2, 1.1, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R19"]
+size = Vector3(2, 1.1, 0.2)
+
+[sub_resource type="BoxMesh" id="R20"]
+size = Vector3(6.5, 3.6, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R21"]
+size = Vector3(6.5, 3.6, 0.2)
+
+[sub_resource type="BoxMesh" id="R22"]
+size = Vector3(6.5, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R23"]
+size = Vector3(0.1, 2.5, 0.27)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="R24"]
+size = Vector3(0.2, 3.6, 4.1)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R25"]
+size = Vector3(0.2, 3.6, 4.1)
+
+[sub_resource type="BoxMesh" id="R26"]
+size = Vector3(0.214, 1.2, 4.1)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R27"]
+size = Vector3(0.2, 1.1, 1.8)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R28"]
+size = Vector3(0.2, 1.1, 1.8)
+
+[sub_resource type="BoxMesh" id="R29"]
+size = Vector3(0.2, 3.6, 1.9999999999999998)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R30"]
+size = Vector3(0.2, 3.6, 1.9999999999999998)
+
+[sub_resource type="BoxMesh" id="R31"]
+size = Vector3(0.214, 1.2, 1.9999999999999998)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R32"]
+size = Vector3(0.2, 1.1, 2.0)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R33"]
+size = Vector3(0.2, 1.1, 2.0)
+
+[sub_resource type="BoxMesh" id="R34"]
+size = Vector3(0.2, 3.6, 3.0)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R35"]
+size = Vector3(0.2, 3.6, 3.0)
+
+[sub_resource type="BoxMesh" id="R36"]
+size = Vector3(0.214, 1.2, 3.0)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R37"]
+size = Vector3(0.2, 3.6, 1.0)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R38"]
+size = Vector3(0.2, 3.6, 1.0)
+
+[sub_resource type="BoxMesh" id="R39"]
+size = Vector3(0.214, 1.2, 1.0)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R40"]
+size = Vector3(2.2, 0.24, 2.2)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R41"]
+size = Vector3(2.2, 0.24, 2.2)
+
+[sub_resource type="BoxMesh" id="R42"]
+size = Vector3(2.2, 0.2, 2.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R43"]
+size = Vector3(2.2, 0.2, 2.2)
+
+[sub_resource type="BoxMesh" id="R44"]
+size = Vector3(2, 0.7000000000000002, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R45"]
+size = Vector3(2, 0.7000000000000002, 0.2)
+
+[sub_resource type="BoxMesh" id="R46"]
+size = Vector3(0.2, 3.2, 2.0)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R47"]
+size = Vector3(0.2, 3.2, 2.0)
+
+[sub_resource type="BoxMesh" id="R48"]
+size = Vector3(0.214, 1.2, 2.0)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R49"]
+size = Vector3(7.2, 0.24, 7.200000000000001)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R50"]
+size = Vector3(7.2, 0.24, 7.200000000000001)
+
+[sub_resource type="BoxMesh" id="R51"]
+size = Vector3(7.2, 0.2, 7.200000000000001)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R52"]
+size = Vector3(7.2, 0.2, 7.200000000000001)
+
+[sub_resource type="BoxMesh" id="R53"]
+size = Vector3(7.0, 3.2, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R54"]
+size = Vector3(7.0, 3.2, 0.2)
+
+[sub_resource type="BoxMesh" id="R55"]
+size = Vector3(7.0, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R56"]
+size = Vector3(1.5, 3.2, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R57"]
+size = Vector3(1.5, 3.2, 0.2)
+
+[sub_resource type="BoxMesh" id="R58"]
+size = Vector3(3.5, 3.2, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R59"]
+size = Vector3(3.5, 3.2, 0.2)
+
+[sub_resource type="BoxMesh" id="R60"]
+size = Vector3(3.5, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R61"]
+size = Vector3(0.2, 3.2, 7.000000000000001)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R62"]
+size = Vector3(0.2, 3.2, 7.000000000000001)
+
+[sub_resource type="BoxMesh" id="R63"]
+size = Vector3(0.214, 1.2, 7.000000000000001)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R64"]
+size = Vector3(2.2, 0.24, 2.1999999999999993)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R65"]
+size = Vector3(2.2, 0.24, 2.1999999999999993)
+
+[sub_resource type="BoxMesh" id="R66"]
+size = Vector3(2.2, 0.2, 2.1999999999999993)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R67"]
+size = Vector3(2.2, 0.2, 2.1999999999999993)
+
+[sub_resource type="BoxMesh" id="R68"]
+size = Vector3(0.2, 3.2, 1.9999999999999991)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R69"]
+size = Vector3(0.2, 3.2, 1.9999999999999991)
+
+[sub_resource type="BoxMesh" id="R70"]
+size = Vector3(0.214, 1.2, 1.9999999999999991)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R71"]
+size = Vector3(7.2, 0.24, 7.2)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R72"]
+size = Vector3(7.2, 0.24, 7.2)
+
+[sub_resource type="BoxMesh" id="R73"]
+size = Vector3(7.2, 0.2, 7.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R74"]
+size = Vector3(7.2, 0.2, 7.2)
+
+[sub_resource type="BoxMesh" id="R75"]
+size = Vector3(0.2, 3.2, 7.0)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R76"]
+size = Vector3(0.2, 3.2, 7.0)
+
+[sub_resource type="BoxMesh" id="R77"]
+size = Vector3(0.214, 1.2, 7.0)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R78"]
+size = Vector3(2.0, 3.2, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R79"]
+size = Vector3(2.0, 3.2, 0.2)
+
+[sub_resource type="BoxMesh" id="R80"]
+size = Vector3(2.0, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R81"]
+size = Vector3(0.2, 0.7000000000000002, 2.0)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R82"]
+size = Vector3(0.2, 0.7000000000000002, 2.0)
+
+[sub_resource type="BoxMesh" id="R83"]
+size = Vector3(2.5, 3.2, 0.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R84"]
+size = Vector3(2.5, 3.2, 0.2)
+
+[sub_resource type="BoxMesh" id="R85"]
+size = Vector3(2.5, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R86"]
+size = Vector3(2, 0.7000000000000002, 0.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxMesh" id="R87"]
+size = Vector3(7.0, 3.2, 0.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxMesh" id="R88"]
+size = Vector3(0.2, 3.2, 3.0)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R89"]
+size = Vector3(0.2, 3.2, 3.0)
+
+[sub_resource type="BoxMesh" id="R90"]
+size = Vector3(0.2, 0.7000000000000002, 2.0)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxMesh" id="R91"]
+size = Vector3(0.2, 3.2, 2.0)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxMesh" id="R92"]
+size = Vector3(0.2, 3.2, 7.0)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxMesh" id="R93"]
+size = Vector3(9.2, 0.24, 8.2)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R94"]
+size = Vector3(9.2, 0.24, 8.2)
+
+[sub_resource type="BoxMesh" id="R95"]
+size = Vector3(9.2, 0.2, 8.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R96"]
+size = Vector3(9.2, 0.2, 8.2)
+
+[sub_resource type="BoxMesh" id="R97"]
+size = Vector3(9.0, 3.8, 0.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R98"]
+size = Vector3(9.0, 3.8, 0.2)
+
+[sub_resource type="BoxMesh" id="R99"]
+size = Vector3(9.0, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R100"]
+size = Vector3(2.5, 3.8, 0.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R101"]
+size = Vector3(2.5, 3.8, 0.2)
+
+[sub_resource type="BoxMesh" id="R102"]
+size = Vector3(2, 1.2999999999999998, 0.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R103"]
+size = Vector3(2, 1.2999999999999998, 0.2)
+
+[sub_resource type="BoxMesh" id="R104"]
+size = Vector3(4.5, 3.8, 0.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R105"]
+size = Vector3(4.5, 3.8, 0.2)
+
+[sub_resource type="BoxMesh" id="R106"]
+size = Vector3(4.5, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R107"]
+size = Vector3(0.2, 3.8, 8.0)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R108"]
+size = Vector3(0.2, 3.8, 8.0)
+
+[sub_resource type="BoxMesh" id="R109"]
+size = Vector3(0.214, 1.2, 8.0)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R110"]
+size = Vector3(0.2, 3.8, 1.0)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R111"]
+size = Vector3(0.2, 3.8, 1.0)
+
+[sub_resource type="BoxMesh" id="R112"]
+size = Vector3(0.2, 1.2999999999999998, 6.000000000000001)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R113"]
+size = Vector3(0.2, 1.2999999999999998, 6.000000000000001)
+
+[sub_resource type="BoxMesh" id="R114"]
+size = Vector3(3.2, 0.24, 8.2)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R115"]
+size = Vector3(3.2, 0.24, 8.2)
+
+[sub_resource type="BoxMesh" id="R116"]
+size = Vector3(3.2, 0.2, 8.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R117"]
+size = Vector3(3.2, 0.2, 8.2)
+
+[sub_resource type="BoxMesh" id="R118"]
+size = Vector3(3.0, 3.8, 0.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R119"]
+size = Vector3(3.0, 3.8, 0.2)
+
+[sub_resource type="BoxMesh" id="R120"]
+size = Vector3(3.0, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R121"]
+size = Vector3(6.2, 0.24, 5.199999999999999)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R122"]
+size = Vector3(6.2, 0.24, 5.199999999999999)
+
+[sub_resource type="BoxMesh" id="R123"]
+size = Vector3(6.2, 0.2, 5.199999999999999)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R124"]
+size = Vector3(6.2, 0.2, 5.199999999999999)
+
+[sub_resource type="BoxMesh" id="R125"]
+size = Vector3(6.0, 3.2, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R126"]
+size = Vector3(6.0, 3.2, 0.2)
+
+[sub_resource type="BoxMesh" id="R127"]
+size = Vector3(2.5, 3.2, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxMesh" id="R128"]
+size = Vector3(0.2, 3.2, 2.999999999999999)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R129"]
+size = Vector3(0.2, 3.2, 2.999999999999999)
+
+[sub_resource type="BoxMesh" id="R130"]
+size = Vector3(0.214, 1.2, 2.999999999999999)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R131"]
+size = Vector3(0.2, 3.2, 0.5)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R132"]
+size = Vector3(0.2, 3.2, 0.5)
+
+[sub_resource type="BoxMesh" id="R133"]
+size = Vector3(0.214, 1.2, 0.5)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R134"]
+size = Vector3(0.2, 0.7000000000000002, 3.999999999999999)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R135"]
+size = Vector3(0.2, 0.7000000000000002, 3.999999999999999)
+
+[sub_resource type="BoxMesh" id="R136"]
+size = Vector3(5.2, 0.24, 5.199999999999999)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R137"]
+size = Vector3(5.2, 0.24, 5.199999999999999)
+
+[sub_resource type="BoxMesh" id="R138"]
+size = Vector3(5.2, 0.2, 5.199999999999999)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R139"]
+size = Vector3(5.2, 0.2, 5.199999999999999)
+
+[sub_resource type="BoxMesh" id="R140"]
+size = Vector3(5.0, 3.2, 0.2)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R141"]
+size = Vector3(5.0, 3.2, 0.2)
+
+[sub_resource type="BoxMesh" id="R142"]
+size = Vector3(5.0, 1.2, 0.214)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R143"]
+size = Vector3(0.2, 3.2, 4.999999999999999)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R144"]
+size = Vector3(0.2, 3.2, 4.999999999999999)
+
+[sub_resource type="BoxMesh" id="R145"]
+size = Vector3(0.214, 1.2, 4.999999999999999)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R146"]
+size = Vector3(6.2, 0.24, 5.2)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="R147"]
+size = Vector3(6.2, 0.24, 5.2)
+
+[sub_resource type="BoxMesh" id="R148"]
+size = Vector3(6.2, 0.2, 5.2)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R149"]
+size = Vector3(6.2, 0.2, 5.2)
+
+[sub_resource type="BoxMesh" id="R150"]
+size = Vector3(0.2, 3.2, 5.0)
+material = SubResource("Plaster")
+
+[sub_resource type="BoxShape3D" id="R151"]
+size = Vector3(0.2, 3.2, 5.0)
+
+[sub_resource type="BoxMesh" id="R152"]
+size = Vector3(0.214, 1.2, 5.0)
+material = SubResource("Dado")
+
+[sub_resource type="BoxMesh" id="R153"]
+size = Vector3(1.5, 0.16, 0.36)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="R154"]
+size = Vector3(1.35, 0.025, 0.24)
+material = SubResource("Diffuser")
+
+[sub_resource type="BoxMesh" id="R155"]
+size = Vector3(1.8, 0.35, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R156"]
+size = Vector3(1.6, 0.35, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R157"]
+size = Vector3(5.6, 0.045, 0.045)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="R158"]
+size = Vector3(0.26, 0.25, 0.08)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="R159"]
+size = Vector3(0.36, 0.45, 10)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxMesh" id="R160"]
+size = Vector3(0.38, 3.3, 0.38)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R161"]
+size = Vector3(0.38, 3.3, 0.38)
+
+[sub_resource type="BoxMesh" id="R162"]
+size = Vector3(0.85, 1.1, 2.0)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R163"]
+size = Vector3(0.85, 1.1, 2.0)
+
+[sub_resource type="BoxMesh" id="R164"]
+size = Vector3(1.0, 0.08, 2.1)
+material = SubResource("Wood")
+
+[sub_resource type="BoxShape3D" id="R165"]
+size = Vector3(1.0, 0.08, 2.1)
+
+[sub_resource type="BoxMesh" id="R166"]
+size = Vector3(0.5, 0.6, 0.48)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R167"]
+size = Vector3(0.5, 0.6, 0.48)
+
+[sub_resource type="BoxMesh" id="R168"]
+size = Vector3(0.015, 0.38, 0.35)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="R169"]
+size = Vector3(0.7, 0.14, 1.8)
+material = SubResource("Wood")
+
+[sub_resource type="BoxShape3D" id="R170"]
+size = Vector3(0.7, 0.14, 1.8)
+
+[sub_resource type="BoxMesh" id="R171"]
+size = Vector3(0.5, 0.4, 1.55)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R172"]
+size = Vector3(0.5, 0.4, 1.55)
+
+[sub_resource type="BoxMesh" id="R173"]
+size = Vector3(2.3, 0.65, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R174"]
+size = Vector3(1.9, 0.35, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R175"]
+size = Vector3(1.85, 0.35, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R176"]
+size = Vector3(2.7, 2.8, 0.18)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="R177"]
+size = Vector3(2.7, 2.8, 0.18)
+
+[sub_resource type="BoxMesh" id="R178"]
+size = Vector3(1.15, 2.65, 0.18)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R179"]
+size = Vector3(1.15, 2.65, 0.18)
+
+[sub_resource type="BoxMesh" id="R180"]
+size = Vector3(2.35, 0.075, 0.09)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxMesh" id="R181"]
+size = Vector3(2.6, 0.36, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R182"]
+size = Vector3(2.6, 1.4, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R183"]
+size = Vector3(1.0, 0.9, 2.1)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R184"]
+size = Vector3(1.0, 0.9, 2.1)
+
+[sub_resource type="BoxMesh" id="R185"]
+size = Vector3(1.12, 0.06, 2.2)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="R186"]
+size = Vector3(1.12, 0.06, 2.2)
+
+[sub_resource type="BoxMesh" id="R187"]
+size = Vector3(0.68, 0.58, 0.8)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R188"]
+size = Vector3(0.68, 0.58, 0.8)
+
+[sub_resource type="BoxMesh" id="R189"]
+size = Vector3(0.015, 0.2, 0.34)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="R190"]
+size = Vector3(0.68, 0.52, 0.9)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R191"]
+size = Vector3(0.68, 0.52, 0.9)
+
+[sub_resource type="BoxMesh" id="R192"]
+size = Vector3(3.0, 0.92, 0.8)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R193"]
+size = Vector3(3.0, 0.92, 0.8)
+
+[sub_resource type="BoxMesh" id="R194"]
+size = Vector3(2.3, 0.13, 0.13)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R195"]
+size = Vector3(2.3, 0.13, 0.13)
+
+[sub_resource type="BoxMesh" id="R196"]
+size = Vector3(2.25, 1.1, 0.03)
+material = SubResource("Glass")
+
+[sub_resource type="BoxShape3D" id="R197"]
+size = Vector3(2.25, 1.1, 0.03)
+
+[sub_resource type="BoxMesh" id="R198"]
+size = Vector3(0.05, 1.3, 0.08)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R199"]
+size = Vector3(0.05, 1.3, 0.08)
+
+[sub_resource type="BoxMesh" id="R200"]
+size = Vector3(1.2, 0.9, 0.9)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R201"]
+size = Vector3(1.2, 0.9, 0.9)
+
+[sub_resource type="BoxMesh" id="R202"]
+size = Vector3(0.12, 2.2, 4.3)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R203"]
+size = Vector3(0.12, 2.2, 4.3)
+
+[sub_resource type="BoxMesh" id="R204"]
+size = Vector3(0.65, 0.06, 4.3)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R205"]
+size = Vector3(0.65, 0.06, 4.3)
+
+[sub_resource type="BoxMesh" id="R206"]
+size = Vector3(0.46, 0.36, 0.65)
+material = SubResource("Paper")
+
+[sub_resource type="BoxShape3D" id="R207"]
+size = Vector3(0.46, 0.36, 0.65)
+
+[sub_resource type="BoxMesh" id="R208"]
+size = Vector3(1.8, 0.86, 0.8)
+material = SubResource("Wood")
+
+[sub_resource type="BoxShape3D" id="R209"]
+size = Vector3(1.8, 0.86, 0.8)
+
+[sub_resource type="BoxMesh" id="R210"]
+size = Vector3(0.65, 0.26, 0.4)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R211"]
+size = Vector3(0.65, 0.26, 0.4)
+
+[sub_resource type="BoxMesh" id="R212"]
+size = Vector3(1.3, 2.0, 0.65)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R213"]
+size = Vector3(1.3, 2.0, 0.65)
+
+[sub_resource type="BoxMesh" id="R214"]
+size = Vector3(1.0, 0.9, 3.8)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R215"]
+size = Vector3(1.0, 0.9, 3.8)
+
+[sub_resource type="BoxMesh" id="R216"]
+size = Vector3(1.12, 0.06, 3.9)
+material = SubResource("Wood")
+
+[sub_resource type="BoxShape3D" id="R217"]
+size = Vector3(1.12, 0.06, 3.9)
+
+[sub_resource type="BoxMesh" id="R218"]
+size = Vector3(0.07, 1.1, 3.5)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxMesh" id="R219"]
+size = Vector3(0.08, 0.38, 0.055)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="R220"]
+size = Vector3(2.3, 0.88, 0.9)
+material = SubResource("Wood")
+
+[sub_resource type="BoxShape3D" id="R221"]
+size = Vector3(2.3, 0.88, 0.9)
+
+[sub_resource type="BoxMesh" id="R222"]
+size = Vector3(0.7, 0.37, 0.38)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R223"]
+size = Vector3(0.7, 0.37, 0.38)
+
+[sub_resource type="BoxMesh" id="R224"]
+size = Vector3(0.55, 0.2, 0.025)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="R225"]
+size = Vector3(0.12, 0.06, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R226"]
+size = Vector3(6.4, 0.14, 0.14)
+material = SubResource("Rust")
+
+[sub_resource type="BoxMesh" id="R227"]
+size = Vector3(0.15, 2.9, 0.15)
+material = SubResource("Rust")
+
+[sub_resource type="BoxMesh" id="R228"]
+size = Vector3(3.3, 0.44, 2.6)
+material = SubResource("Concrete")
+
+[sub_resource type="BoxShape3D" id="R229"]
+size = Vector3(3.3, 0.44, 2.6)
+
+[sub_resource type="BoxMesh" id="R230"]
+size = Vector3(2.9, 1.4, 2.1)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R231"]
+size = Vector3(2.9, 1.4, 2.1)
+
+[sub_resource type="BoxMesh" id="R232"]
+size = Vector3(2.5, 0.08, 0.07)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="R233"]
+size = Vector3(1.6, 1.3, 0.65)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R234"]
+size = Vector3(1.6, 1.3, 0.65)
+
+[sub_resource type="BoxMesh" id="R235"]
+size = Vector3(1.6, 0.24, 0.65)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R236"]
+size = Vector3(1.6, 0.24, 0.65)
+
+[sub_resource type="BoxMesh" id="R237"]
+size = Vector3(0.18, 0.18, 4.7)
+material = SubResource("Rust")
+
+[sub_resource type="BoxShape3D" id="R238"]
+size = Vector3(0.15, 2.5, 6.0)
+
+[sub_resource type="BoxMesh" id="R239"]
+size = Vector3(0.07, 2.5, 0.025)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="R240"]
+size = Vector3(0.07, 0.025, 6.0)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="R241"]
+size = Vector3(0.2, 2.2, 0.2)
+material = SubResource("Rust")
+
+[sub_resource type="BoxShape3D" id="R242"]
+size = Vector3(0.2, 2.2, 0.2)
+
+[sub_resource type="BoxMesh" id="R243"]
+size = Vector3(0.5, 0.8, 0.6)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R244"]
+size = Vector3(0.5, 0.8, 0.6)
+
+[sub_resource type="BoxMesh" id="R245"]
+size = Vector3(0.18, 2.5, 1.4)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R246"]
+size = Vector3(0.18, 2.5, 1.4)
+
+[sub_resource type="BoxMesh" id="R247"]
+size = Vector3(0.035, 2.5, 2.6)
+material = SubResource("Glass")
+
+[sub_resource type="BoxShape3D" id="R248"]
+size = Vector3(0.035, 2.5, 2.6)
+
+[sub_resource type="BoxMesh" id="R249"]
+size = Vector3(0.13, 2.5, 0.07)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R250"]
+size = Vector3(0.13, 2.5, 0.07)
+
+[sub_resource type="BoxMesh" id="R251"]
+size = Vector3(3.2, 0.35, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="R252"]
+size = Vector3(0.5, 1.3, 0.4)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R253"]
+size = Vector3(0.5, 1.3, 0.4)
+
+[sub_resource type="BoxMesh" id="R254"]
+size = Vector3(1.0, 0.9, 3.5)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R255"]
+size = Vector3(1.0, 0.9, 3.5)
+
+[sub_resource type="BoxMesh" id="R256"]
+size = Vector3(0.6, 0.4, 0.7)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="R257"]
+size = Vector3(0.6, 0.4, 0.7)
+
+[sub_resource type="BoxMesh" id="R258"]
+size = Vector3(1.6, 2.4, 0.8)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R259"]
+size = Vector3(1.6, 2.4, 0.8)
+
+[sub_resource type="BoxMesh" id="R260"]
+size = Vector3(2.0, 2.5, 0.2)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="R261"]
+size = Vector3(2.0, 2.5, 0.2)
+
+[sub_resource type="BoxMesh" id="R262"]
+size = Vector3(0.04, 2.5, 0.015)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="R263"]
+size = Vector3(2.4, 0.35, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="ObservationSignPlate"]
+size = Vector3(2.2, 0.72, 0.035)
+material = SubResource("Sign")
+
+[sub_resource type="BoxMesh" id="ServiceStripHousing"]
+size = Vector3(0.8, 0.10, 0.22)
+material = SubResource("Metal")
+[sub_resource type="BoxMesh" id="ServiceStripDiffuser"]
+size = Vector3(0.68, 0.02, 0.15)
+material = SubResource("Diffuser")
+
+[node name="FacilityGraybox" type="Node3D"]
+
+
+[node name="ObservationTransition" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="ObservationTransition"]
+position = Vector3(7.5, -0.12, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/Floor"]
+mesh = SubResource("R1")
+
+[node name="Collision" type="CollisionShape3D" parent="ObservationTransition/Floor"]
+shape = SubResource("R2")
+
+[node name="Ceiling" type="StaticBody3D" parent="ObservationTransition"]
+position = Vector3(7.5, 2.9, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/Ceiling"]
+mesh = SubResource("R3")
+
+[node name="Collision" type="CollisionShape3D" parent="ObservationTransition/Ceiling"]
+shape = SubResource("R4")
+
+[node name="North0" type="StaticBody3D" parent="ObservationTransition"]
+position = Vector3(7.5, 1.4, 0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/North0"]
+mesh = SubResource("R5")
+
+[node name="Collision" type="CollisionShape3D" parent="ObservationTransition/North0"]
+shape = SubResource("R6")
+
+[node name="NorthDado0" type="Node3D" parent="ObservationTransition"]
+position = Vector3(7.5, 0.6, 0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/NorthDado0"]
+mesh = SubResource("R7")
+
+[node name="South0" type="StaticBody3D" parent="ObservationTransition"]
+position = Vector3(7.5, 1.4, 2.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/South0"]
+mesh = SubResource("R5")
+
+[node name="Collision" type="CollisionShape3D" parent="ObservationTransition/South0"]
+shape = SubResource("R6")
+
+[node name="SouthDado0" type="Node3D" parent="ObservationTransition"]
+position = Vector3(7.5, 0.6, 2.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/SouthDado0"]
+mesh = SubResource("R7")
+
+[node name="West0" type="StaticBody3D" parent="ObservationTransition"]
+position = Vector3(4.5, 2.65, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/West0"]
+mesh = SubResource("R8")
+
+[node name="Collision" type="CollisionShape3D" parent="ObservationTransition/West0"]
+shape = SubResource("R9")
+
+[node name="WestJamb0A" type="Node3D" parent="ObservationTransition"]
+position = Vector3(4.5, 1.25, 0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/WestJamb0A"]
+mesh = SubResource("R10")
+
+[node name="WestJamb0B" type="Node3D" parent="ObservationTransition"]
+position = Vector3(4.5, 1.25, 2.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/WestJamb0B"]
+mesh = SubResource("R10")
+
+[node name="East0" type="StaticBody3D" parent="ObservationTransition"]
+position = Vector3(10.5, 2.65, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/East0"]
+mesh = SubResource("R8")
+
+[node name="Collision" type="CollisionShape3D" parent="ObservationTransition/East0"]
+shape = SubResource("R9")
+
+[node name="EastJamb0A" type="Node3D" parent="ObservationTransition"]
+position = Vector3(10.5, 1.25, 0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/EastJamb0A"]
+mesh = SubResource("R10")
+
+[node name="EastJamb0B" type="Node3D" parent="ObservationTransition"]
+position = Vector3(10.5, 1.25, 2.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/EastJamb0B"]
+mesh = SubResource("R10")
+
+[node name="CentralHub" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(15.5, -0.12, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/Floor"]
+mesh = SubResource("R11")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/Floor"]
+shape = SubResource("R12")
+
+[node name="Ceiling" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(15.5, 3.7, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/Ceiling"]
+mesh = SubResource("R13")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/Ceiling"]
+shape = SubResource("R14")
+
+[node name="North0" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(11.25, 1.8, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/North0"]
+mesh = SubResource("R15")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/North0"]
+shape = SubResource("R16")
+
+[node name="NorthDado0" type="Node3D" parent="CentralHub"]
+position = Vector3(11.25, 0.6, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/NorthDado0"]
+mesh = SubResource("R17")
+
+[node name="North1" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(13.0, 3.05, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/North1"]
+mesh = SubResource("R18")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/North1"]
+shape = SubResource("R19")
+
+[node name="North2" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(17.25, 1.8, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/North2"]
+mesh = SubResource("R20")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/North2"]
+shape = SubResource("R21")
+
+[node name="NorthDado2" type="Node3D" parent="CentralHub"]
+position = Vector3(17.25, 0.6, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/NorthDado2"]
+mesh = SubResource("R22")
+
+[node name="NorthJamb0A" type="Node3D" parent="CentralHub"]
+position = Vector3(12, 1.25, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/NorthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="NorthJamb0B" type="Node3D" parent="CentralHub"]
+position = Vector3(14, 1.25, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/NorthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="South0" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(11.25, 1.8, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/South0"]
+mesh = SubResource("R15")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/South0"]
+shape = SubResource("R16")
+
+[node name="SouthDado0" type="Node3D" parent="CentralHub"]
+position = Vector3(11.25, 0.6, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/SouthDado0"]
+mesh = SubResource("R17")
+
+[node name="South1" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(13.0, 3.05, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/South1"]
+mesh = SubResource("R18")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/South1"]
+shape = SubResource("R19")
+
+[node name="South2" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(17.25, 1.8, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/South2"]
+mesh = SubResource("R20")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/South2"]
+shape = SubResource("R21")
+
+[node name="SouthDado2" type="Node3D" parent="CentralHub"]
+position = Vector3(17.25, 0.6, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/SouthDado2"]
+mesh = SubResource("R22")
+
+[node name="SouthJamb0A" type="Node3D" parent="CentralHub"]
+position = Vector3(12, 1.25, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/SouthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="SouthJamb0B" type="Node3D" parent="CentralHub"]
+position = Vector3(14, 1.25, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/SouthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="West0" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(10.5, 1.8, -1.25)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/West0"]
+mesh = SubResource("R24")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/West0"]
+shape = SubResource("R25")
+
+[node name="WestDado0" type="Node3D" parent="CentralHub"]
+position = Vector3(10.5, 0.6, -1.25)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/WestDado0"]
+mesh = SubResource("R26")
+
+[node name="West1" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(10.5, 3.05, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/West1"]
+mesh = SubResource("R27")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/West1"]
+shape = SubResource("R28")
+
+[node name="West2" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(10.5, 1.8, 4.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/West2"]
+mesh = SubResource("R24")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/West2"]
+shape = SubResource("R25")
+
+[node name="WestDado2" type="Node3D" parent="CentralHub"]
+position = Vector3(10.5, 0.6, 4.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/WestDado2"]
+mesh = SubResource("R26")
+
+[node name="WestJamb0A" type="Node3D" parent="CentralHub"]
+position = Vector3(10.5, 1.25, 0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/WestJamb0A"]
+mesh = SubResource("R10")
+
+[node name="WestJamb0B" type="Node3D" parent="CentralHub"]
+position = Vector3(10.5, 1.25, 2.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/WestJamb0B"]
+mesh = SubResource("R10")
+
+[node name="East0" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(20.5, 1.8, -2.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/East0"]
+mesh = SubResource("R29")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/East0"]
+shape = SubResource("R30")
+
+[node name="EastDado0" type="Node3D" parent="CentralHub"]
+position = Vector3(20.5, 0.6, -2.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastDado0"]
+mesh = SubResource("R31")
+
+[node name="East1" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(20.5, 3.05, -0.30000000000000004)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/East1"]
+mesh = SubResource("R32")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/East1"]
+shape = SubResource("R33")
+
+[node name="East2" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(20.5, 1.8, 2.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/East2"]
+mesh = SubResource("R34")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/East2"]
+shape = SubResource("R35")
+
+[node name="EastDado2" type="Node3D" parent="CentralHub"]
+position = Vector3(20.5, 0.6, 2.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastDado2"]
+mesh = SubResource("R36")
+
+[node name="East3" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(20.5, 3.05, 4.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/East3"]
+mesh = SubResource("R32")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/East3"]
+shape = SubResource("R33")
+
+[node name="East4" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(20.5, 1.8, 6.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/East4"]
+mesh = SubResource("R37")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/East4"]
+shape = SubResource("R38")
+
+[node name="EastDado4" type="Node3D" parent="CentralHub"]
+position = Vector3(20.5, 0.6, 6.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastDado4"]
+mesh = SubResource("R39")
+
+[node name="EastJamb0A" type="Node3D" parent="CentralHub"]
+position = Vector3(20.5, 1.25, -1.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastJamb0A"]
+mesh = SubResource("R10")
+
+[node name="EastJamb0B" type="Node3D" parent="CentralHub"]
+position = Vector3(20.5, 1.25, 0.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastJamb0B"]
+mesh = SubResource("R10")
+
+[node name="EastJamb1A" type="Node3D" parent="CentralHub"]
+position = Vector3(20.5, 1.25, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastJamb1A"]
+mesh = SubResource("R10")
+
+[node name="EastJamb1B" type="Node3D" parent="CentralHub"]
+position = Vector3(20.5, 1.25, 5.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastJamb1B"]
+mesh = SubResource("R10")
+
+[node name="LaboratoryLink" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="LaboratoryLink"]
+position = Vector3(13.0, -0.12, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/Floor"]
+mesh = SubResource("R40")
+
+[node name="Collision" type="CollisionShape3D" parent="LaboratoryLink/Floor"]
+shape = SubResource("R41")
+
+[node name="Ceiling" type="StaticBody3D" parent="LaboratoryLink"]
+position = Vector3(13.0, 3.3000000000000003, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/Ceiling"]
+mesh = SubResource("R42")
+
+[node name="Collision" type="CollisionShape3D" parent="LaboratoryLink/Ceiling"]
+shape = SubResource("R43")
+
+[node name="North0" type="StaticBody3D" parent="LaboratoryLink"]
+position = Vector3(13.0, 2.85, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/North0"]
+mesh = SubResource("R44")
+
+[node name="Collision" type="CollisionShape3D" parent="LaboratoryLink/North0"]
+shape = SubResource("R45")
+
+[node name="NorthJamb0A" type="Node3D" parent="LaboratoryLink"]
+position = Vector3(12, 1.25, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/NorthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="NorthJamb0B" type="Node3D" parent="LaboratoryLink"]
+position = Vector3(14, 1.25, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/NorthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="South0" type="StaticBody3D" parent="LaboratoryLink"]
+position = Vector3(13.0, 2.85, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/South0"]
+mesh = SubResource("R44")
+
+[node name="Collision" type="CollisionShape3D" parent="LaboratoryLink/South0"]
+shape = SubResource("R45")
+
+[node name="SouthJamb0A" type="Node3D" parent="LaboratoryLink"]
+position = Vector3(12, 1.25, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/SouthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="SouthJamb0B" type="Node3D" parent="LaboratoryLink"]
+position = Vector3(14, 1.25, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/SouthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="West0" type="StaticBody3D" parent="LaboratoryLink"]
+position = Vector3(12, 1.6, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/West0"]
+mesh = SubResource("R46")
+
+[node name="Collision" type="CollisionShape3D" parent="LaboratoryLink/West0"]
+shape = SubResource("R47")
+
+[node name="WestDado0" type="Node3D" parent="LaboratoryLink"]
+position = Vector3(12, 0.6, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/WestDado0"]
+mesh = SubResource("R48")
+
+[node name="East0" type="StaticBody3D" parent="LaboratoryLink"]
+position = Vector3(14, 1.6, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/East0"]
+mesh = SubResource("R46")
+
+[node name="Collision" type="CollisionShape3D" parent="LaboratoryLink/East0"]
+shape = SubResource("R47")
+
+[node name="EastDado0" type="Node3D" parent="LaboratoryLink"]
+position = Vector3(14, 0.6, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="LaboratoryLink/EastDado0"]
+mesh = SubResource("R48")
+
+[node name="Laboratory" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(14.0, -0.12, -8.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/Floor"]
+mesh = SubResource("R49")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/Floor"]
+shape = SubResource("R50")
+
+[node name="Ceiling" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(14.0, 3.3000000000000003, -8.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/Ceiling"]
+mesh = SubResource("R51")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/Ceiling"]
+shape = SubResource("R52")
+
+[node name="North0" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(14.0, 1.6, -12.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/North0"]
+mesh = SubResource("R53")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/North0"]
+shape = SubResource("R54")
+
+[node name="NorthDado0" type="Node3D" parent="Laboratory"]
+position = Vector3(14.0, 0.6, -12.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/NorthDado0"]
+mesh = SubResource("R55")
+
+[node name="South0" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(11.25, 1.6, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/South0"]
+mesh = SubResource("R56")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/South0"]
+shape = SubResource("R57")
+
+[node name="SouthDado0" type="Node3D" parent="Laboratory"]
+position = Vector3(11.25, 0.6, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/SouthDado0"]
+mesh = SubResource("R17")
+
+[node name="South1" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(13.0, 2.85, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/South1"]
+mesh = SubResource("R44")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/South1"]
+shape = SubResource("R45")
+
+[node name="South2" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(15.75, 1.6, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/South2"]
+mesh = SubResource("R58")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/South2"]
+shape = SubResource("R59")
+
+[node name="SouthDado2" type="Node3D" parent="Laboratory"]
+position = Vector3(15.75, 0.6, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/SouthDado2"]
+mesh = SubResource("R60")
+
+[node name="SouthJamb0A" type="Node3D" parent="Laboratory"]
+position = Vector3(12, 1.25, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/SouthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="SouthJamb0B" type="Node3D" parent="Laboratory"]
+position = Vector3(14, 1.25, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/SouthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="West0" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(10.5, 1.6, -8.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/West0"]
+mesh = SubResource("R61")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/West0"]
+shape = SubResource("R62")
+
+[node name="WestDado0" type="Node3D" parent="Laboratory"]
+position = Vector3(10.5, 0.6, -8.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/WestDado0"]
+mesh = SubResource("R63")
+
+[node name="East0" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(17.5, 1.6, -8.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/East0"]
+mesh = SubResource("R61")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/East0"]
+shape = SubResource("R62")
+
+[node name="EastDado0" type="Node3D" parent="Laboratory"]
+position = Vector3(17.5, 0.6, -8.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/EastDado0"]
+mesh = SubResource("R63")
+
+[node name="ArchiveLink" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="ArchiveLink"]
+position = Vector3(13.0, -0.12, 7.699999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/Floor"]
+mesh = SubResource("R64")
+
+[node name="Collision" type="CollisionShape3D" parent="ArchiveLink/Floor"]
+shape = SubResource("R65")
+
+[node name="Ceiling" type="StaticBody3D" parent="ArchiveLink"]
+position = Vector3(13.0, 3.3000000000000003, 7.699999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/Ceiling"]
+mesh = SubResource("R66")
+
+[node name="Collision" type="CollisionShape3D" parent="ArchiveLink/Ceiling"]
+shape = SubResource("R67")
+
+[node name="North0" type="StaticBody3D" parent="ArchiveLink"]
+position = Vector3(13.0, 2.85, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/North0"]
+mesh = SubResource("R44")
+
+[node name="Collision" type="CollisionShape3D" parent="ArchiveLink/North0"]
+shape = SubResource("R45")
+
+[node name="NorthJamb0A" type="Node3D" parent="ArchiveLink"]
+position = Vector3(12, 1.25, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/NorthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="NorthJamb0B" type="Node3D" parent="ArchiveLink"]
+position = Vector3(14, 1.25, 6.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/NorthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="South0" type="StaticBody3D" parent="ArchiveLink"]
+position = Vector3(13.0, 2.85, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/South0"]
+mesh = SubResource("R44")
+
+[node name="Collision" type="CollisionShape3D" parent="ArchiveLink/South0"]
+shape = SubResource("R45")
+
+[node name="SouthJamb0A" type="Node3D" parent="ArchiveLink"]
+position = Vector3(12, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/SouthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="SouthJamb0B" type="Node3D" parent="ArchiveLink"]
+position = Vector3(14, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/SouthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="West0" type="StaticBody3D" parent="ArchiveLink"]
+position = Vector3(12, 1.6, 7.699999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/West0"]
+mesh = SubResource("R68")
+
+[node name="Collision" type="CollisionShape3D" parent="ArchiveLink/West0"]
+shape = SubResource("R69")
+
+[node name="WestDado0" type="Node3D" parent="ArchiveLink"]
+position = Vector3(12, 0.6, 7.699999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/WestDado0"]
+mesh = SubResource("R70")
+
+[node name="East0" type="StaticBody3D" parent="ArchiveLink"]
+position = Vector3(14, 1.6, 7.699999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/East0"]
+mesh = SubResource("R68")
+
+[node name="Collision" type="CollisionShape3D" parent="ArchiveLink/East0"]
+shape = SubResource("R69")
+
+[node name="EastDado0" type="Node3D" parent="ArchiveLink"]
+position = Vector3(14, 0.6, 7.699999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="ArchiveLink/EastDado0"]
+mesh = SubResource("R70")
+
+[node name="Archive" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="Archive"]
+position = Vector3(14.0, -0.12, 12.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Floor"]
+mesh = SubResource("R71")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Floor"]
+shape = SubResource("R72")
+
+[node name="Ceiling" type="StaticBody3D" parent="Archive"]
+position = Vector3(14.0, 3.3000000000000003, 12.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Ceiling"]
+mesh = SubResource("R73")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Ceiling"]
+shape = SubResource("R74")
+
+[node name="North0" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.25, 1.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/North0"]
+mesh = SubResource("R56")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/North0"]
+shape = SubResource("R57")
+
+[node name="NorthDado0" type="Node3D" parent="Archive"]
+position = Vector3(11.25, 0.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/NorthDado0"]
+mesh = SubResource("R17")
+
+[node name="North1" type="StaticBody3D" parent="Archive"]
+position = Vector3(13.0, 2.85, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/North1"]
+mesh = SubResource("R44")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/North1"]
+shape = SubResource("R45")
+
+[node name="North2" type="StaticBody3D" parent="Archive"]
+position = Vector3(15.75, 1.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/North2"]
+mesh = SubResource("R58")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/North2"]
+shape = SubResource("R59")
+
+[node name="NorthDado2" type="Node3D" parent="Archive"]
+position = Vector3(15.75, 0.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/NorthDado2"]
+mesh = SubResource("R60")
+
+[node name="NorthJamb0A" type="Node3D" parent="Archive"]
+position = Vector3(12, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/NorthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="NorthJamb0B" type="Node3D" parent="Archive"]
+position = Vector3(14, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/NorthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="South0" type="StaticBody3D" parent="Archive"]
+position = Vector3(14.0, 1.6, 15.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/South0"]
+mesh = SubResource("R53")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/South0"]
+shape = SubResource("R54")
+
+[node name="SouthDado0" type="Node3D" parent="Archive"]
+position = Vector3(14.0, 0.6, 15.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/SouthDado0"]
+mesh = SubResource("R55")
+
+[node name="West0" type="StaticBody3D" parent="Archive"]
+position = Vector3(10.5, 1.6, 12.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/West0"]
+mesh = SubResource("R75")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/West0"]
+shape = SubResource("R76")
+
+[node name="WestDado0" type="Node3D" parent="Archive"]
+position = Vector3(10.5, 0.6, 12.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/WestDado0"]
+mesh = SubResource("R77")
+
+[node name="East0" type="StaticBody3D" parent="Archive"]
+position = Vector3(17.5, 1.6, 12.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/East0"]
+mesh = SubResource("R75")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/East0"]
+shape = SubResource("R76")
+
+[node name="EastDado0" type="Node3D" parent="Archive"]
+position = Vector3(17.5, 0.6, 12.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/EastDado0"]
+mesh = SubResource("R77")
+
+[node name="MaintenanceLink" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="MaintenanceLink"]
+position = Vector3(21.5, -0.12, -0.30000000000000004)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/Floor"]
+mesh = SubResource("R40")
+
+[node name="Collision" type="CollisionShape3D" parent="MaintenanceLink/Floor"]
+shape = SubResource("R41")
+
+[node name="Ceiling" type="StaticBody3D" parent="MaintenanceLink"]
+position = Vector3(21.5, 3.3000000000000003, -0.30000000000000004)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/Ceiling"]
+mesh = SubResource("R42")
+
+[node name="Collision" type="CollisionShape3D" parent="MaintenanceLink/Ceiling"]
+shape = SubResource("R43")
+
+[node name="North0" type="StaticBody3D" parent="MaintenanceLink"]
+position = Vector3(21.5, 1.6, -1.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/North0"]
+mesh = SubResource("R78")
+
+[node name="Collision" type="CollisionShape3D" parent="MaintenanceLink/North0"]
+shape = SubResource("R79")
+
+[node name="NorthDado0" type="Node3D" parent="MaintenanceLink"]
+position = Vector3(21.5, 0.6, -1.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/NorthDado0"]
+mesh = SubResource("R80")
+
+[node name="South0" type="StaticBody3D" parent="MaintenanceLink"]
+position = Vector3(21.5, 1.6, 0.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/South0"]
+mesh = SubResource("R78")
+
+[node name="Collision" type="CollisionShape3D" parent="MaintenanceLink/South0"]
+shape = SubResource("R79")
+
+[node name="SouthDado0" type="Node3D" parent="MaintenanceLink"]
+position = Vector3(21.5, 0.6, 0.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/SouthDado0"]
+mesh = SubResource("R80")
+
+[node name="West0" type="StaticBody3D" parent="MaintenanceLink"]
+position = Vector3(20.5, 2.85, -0.30000000000000004)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/West0"]
+mesh = SubResource("R81")
+
+[node name="Collision" type="CollisionShape3D" parent="MaintenanceLink/West0"]
+shape = SubResource("R82")
+
+[node name="WestJamb0A" type="Node3D" parent="MaintenanceLink"]
+position = Vector3(20.5, 1.25, -1.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/WestJamb0A"]
+mesh = SubResource("R10")
+
+[node name="WestJamb0B" type="Node3D" parent="MaintenanceLink"]
+position = Vector3(20.5, 1.25, 0.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/WestJamb0B"]
+mesh = SubResource("R10")
+
+[node name="East0" type="StaticBody3D" parent="MaintenanceLink"]
+position = Vector3(22.5, 2.85, -0.30000000000000004)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/East0"]
+mesh = SubResource("R81")
+
+[node name="Collision" type="CollisionShape3D" parent="MaintenanceLink/East0"]
+shape = SubResource("R82")
+
+[node name="EastJamb0A" type="Node3D" parent="MaintenanceLink"]
+position = Vector3(22.5, 1.25, -1.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/EastJamb0A"]
+mesh = SubResource("R10")
+
+[node name="EastJamb0B" type="Node3D" parent="MaintenanceLink"]
+position = Vector3(22.5, 1.25, 0.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="MaintenanceLink/EastJamb0B"]
+mesh = SubResource("R10")
+
+[node name="Maintenance" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(26.0, -0.12, -0.7999999999999998)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/Floor"]
+mesh = SubResource("R71")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/Floor"]
+shape = SubResource("R72")
+
+[node name="Ceiling" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(26.0, 3.3000000000000003, -0.7999999999999998)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/Ceiling"]
+mesh = SubResource("R73")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/Ceiling"]
+shape = SubResource("R74")
+
+[node name="North0" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(23.75, 1.6, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/North0"]
+mesh = SubResource("R83")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/North0"]
+shape = SubResource("R84")
+
+[node name="NorthDado0" type="Node3D" parent="Maintenance"]
+position = Vector3(23.75, 0.6, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/NorthDado0"]
+mesh = SubResource("R85")
+
+[node name="North1" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(26.0, 2.85, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/North1"]
+mesh = SubResource("R86")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/North1"]
+shape = SubResource("R45")
+
+[node name="North2" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(28.25, 1.6, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/North2"]
+mesh = SubResource("R83")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/North2"]
+shape = SubResource("R84")
+
+[node name="NorthDado2" type="Node3D" parent="Maintenance"]
+position = Vector3(28.25, 0.6, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/NorthDado2"]
+mesh = SubResource("R85")
+
+[node name="NorthJamb0A" type="Node3D" parent="Maintenance"]
+position = Vector3(25, 1.25, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/NorthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="NorthJamb0B" type="Node3D" parent="Maintenance"]
+position = Vector3(27, 1.25, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/NorthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="South0" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(26.0, 1.6, 2.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/South0"]
+mesh = SubResource("R87")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/South0"]
+shape = SubResource("R54")
+
+[node name="SouthDado0" type="Node3D" parent="Maintenance"]
+position = Vector3(26.0, 0.6, 2.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/SouthDado0"]
+mesh = SubResource("R55")
+
+[node name="West0" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(22.5, 1.6, -2.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/West0"]
+mesh = SubResource("R88")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/West0"]
+shape = SubResource("R89")
+
+[node name="WestDado0" type="Node3D" parent="Maintenance"]
+position = Vector3(22.5, 0.6, -2.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/WestDado0"]
+mesh = SubResource("R36")
+
+[node name="West1" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(22.5, 2.85, -0.30000000000000004)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/West1"]
+mesh = SubResource("R90")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/West1"]
+shape = SubResource("R82")
+
+[node name="West2" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(22.5, 1.6, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/West2"]
+mesh = SubResource("R91")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/West2"]
+shape = SubResource("R47")
+
+[node name="WestDado2" type="Node3D" parent="Maintenance"]
+position = Vector3(22.5, 0.6, 1.7000000000000002)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/WestDado2"]
+mesh = SubResource("R48")
+
+[node name="WestJamb0A" type="Node3D" parent="Maintenance"]
+position = Vector3(22.5, 1.25, -1.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/WestJamb0A"]
+mesh = SubResource("R10")
+
+[node name="WestJamb0B" type="Node3D" parent="Maintenance"]
+position = Vector3(22.5, 1.25, 0.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/WestJamb0B"]
+mesh = SubResource("R10")
+
+[node name="East0" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(29.5, 1.6, -0.7999999999999998)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/East0"]
+mesh = SubResource("R92")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/East0"]
+shape = SubResource("R76")
+
+[node name="EastDado0" type="Node3D" parent="Maintenance"]
+position = Vector3(29.5, 0.6, -0.7999999999999998)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/EastDado0"]
+mesh = SubResource("R77")
+
+[node name="GeneratorLink" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="GeneratorLink"]
+position = Vector3(26.0, -0.12, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/Floor"]
+mesh = SubResource("R40")
+
+[node name="Collision" type="CollisionShape3D" parent="GeneratorLink/Floor"]
+shape = SubResource("R41")
+
+[node name="Ceiling" type="StaticBody3D" parent="GeneratorLink"]
+position = Vector3(26.0, 3.3000000000000003, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/Ceiling"]
+mesh = SubResource("R42")
+
+[node name="Collision" type="CollisionShape3D" parent="GeneratorLink/Ceiling"]
+shape = SubResource("R43")
+
+[node name="North0" type="StaticBody3D" parent="GeneratorLink"]
+position = Vector3(26.0, 2.85, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/North0"]
+mesh = SubResource("R86")
+
+[node name="Collision" type="CollisionShape3D" parent="GeneratorLink/North0"]
+shape = SubResource("R45")
+
+[node name="NorthJamb0A" type="Node3D" parent="GeneratorLink"]
+position = Vector3(25, 1.25, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/NorthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="NorthJamb0B" type="Node3D" parent="GeneratorLink"]
+position = Vector3(27, 1.25, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/NorthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="South0" type="StaticBody3D" parent="GeneratorLink"]
+position = Vector3(26.0, 2.85, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/South0"]
+mesh = SubResource("R86")
+
+[node name="Collision" type="CollisionShape3D" parent="GeneratorLink/South0"]
+shape = SubResource("R45")
+
+[node name="SouthJamb0A" type="Node3D" parent="GeneratorLink"]
+position = Vector3(25, 1.25, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/SouthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="SouthJamb0B" type="Node3D" parent="GeneratorLink"]
+position = Vector3(27, 1.25, -4.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/SouthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="West0" type="StaticBody3D" parent="GeneratorLink"]
+position = Vector3(25, 1.6, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/West0"]
+mesh = SubResource("R91")
+
+[node name="Collision" type="CollisionShape3D" parent="GeneratorLink/West0"]
+shape = SubResource("R47")
+
+[node name="WestDado0" type="Node3D" parent="GeneratorLink"]
+position = Vector3(25, 0.6, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/WestDado0"]
+mesh = SubResource("R48")
+
+[node name="East0" type="StaticBody3D" parent="GeneratorLink"]
+position = Vector3(27, 1.6, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/East0"]
+mesh = SubResource("R91")
+
+[node name="Collision" type="CollisionShape3D" parent="GeneratorLink/East0"]
+shape = SubResource("R47")
+
+[node name="EastDado0" type="Node3D" parent="GeneratorLink"]
+position = Vector3(27, 0.6, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="GeneratorLink/EastDado0"]
+mesh = SubResource("R48")
+
+[node name="Generator" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="Generator"]
+position = Vector3(27.0, -0.12, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/Floor"]
+mesh = SubResource("R93")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/Floor"]
+shape = SubResource("R94")
+
+[node name="Ceiling" type="StaticBody3D" parent="Generator"]
+position = Vector3(27.0, 3.9, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/Ceiling"]
+mesh = SubResource("R95")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/Ceiling"]
+shape = SubResource("R96")
+
+[node name="North0" type="StaticBody3D" parent="Generator"]
+position = Vector3(27.0, 1.9, -14.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/North0"]
+mesh = SubResource("R97")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/North0"]
+shape = SubResource("R98")
+
+[node name="NorthDado0" type="Node3D" parent="Generator"]
+position = Vector3(27.0, 0.6, -14.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/NorthDado0"]
+mesh = SubResource("R99")
+
+[node name="South0" type="StaticBody3D" parent="Generator"]
+position = Vector3(23.75, 1.9, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/South0"]
+mesh = SubResource("R100")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/South0"]
+shape = SubResource("R101")
+
+[node name="SouthDado0" type="Node3D" parent="Generator"]
+position = Vector3(23.75, 0.6, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/SouthDado0"]
+mesh = SubResource("R85")
+
+[node name="South1" type="StaticBody3D" parent="Generator"]
+position = Vector3(26.0, 3.15, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/South1"]
+mesh = SubResource("R102")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/South1"]
+shape = SubResource("R103")
+
+[node name="South2" type="StaticBody3D" parent="Generator"]
+position = Vector3(29.25, 1.9, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/South2"]
+mesh = SubResource("R104")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/South2"]
+shape = SubResource("R105")
+
+[node name="SouthDado2" type="Node3D" parent="Generator"]
+position = Vector3(29.25, 0.6, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/SouthDado2"]
+mesh = SubResource("R106")
+
+[node name="SouthJamb0A" type="Node3D" parent="Generator"]
+position = Vector3(25, 1.25, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/SouthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="SouthJamb0B" type="Node3D" parent="Generator"]
+position = Vector3(27, 1.25, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/SouthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="West0" type="StaticBody3D" parent="Generator"]
+position = Vector3(22.5, 1.9, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/West0"]
+mesh = SubResource("R107")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/West0"]
+shape = SubResource("R108")
+
+[node name="WestDado0" type="Node3D" parent="Generator"]
+position = Vector3(22.5, 0.6, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/WestDado0"]
+mesh = SubResource("R109")
+
+[node name="East0" type="StaticBody3D" parent="Generator"]
+position = Vector3(31.5, 1.9, -13.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/East0"]
+mesh = SubResource("R110")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/East0"]
+shape = SubResource("R111")
+
+[node name="EastDado0" type="Node3D" parent="Generator"]
+position = Vector3(31.5, 0.6, -13.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/EastDado0"]
+mesh = SubResource("R39")
+
+[node name="East1" type="StaticBody3D" parent="Generator"]
+position = Vector3(31.5, 3.15, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/East1"]
+mesh = SubResource("R112")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/East1"]
+shape = SubResource("R113")
+
+[node name="East2" type="StaticBody3D" parent="Generator"]
+position = Vector3(31.5, 1.9, -6.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/East2"]
+mesh = SubResource("R110")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/East2"]
+shape = SubResource("R111")
+
+[node name="EastDado2" type="Node3D" parent="Generator"]
+position = Vector3(31.5, 0.6, -6.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/EastDado2"]
+mesh = SubResource("R39")
+
+[node name="EastJamb0A" type="Node3D" parent="Generator"]
+position = Vector3(31.5, 1.25, -13.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/EastJamb0A"]
+mesh = SubResource("R10")
+
+[node name="EastJamb0B" type="Node3D" parent="Generator"]
+position = Vector3(31.5, 1.25, -7.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/EastJamb0B"]
+mesh = SubResource("R10")
+
+[node name="ServiceSide" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(33.0, -0.12, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/Floor"]
+mesh = SubResource("R114")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/Floor"]
+shape = SubResource("R115")
+
+[node name="Ceiling" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(33.0, 3.9, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/Ceiling"]
+mesh = SubResource("R116")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/Ceiling"]
+shape = SubResource("R117")
+
+[node name="North0" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(33.0, 1.9, -14.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/North0"]
+mesh = SubResource("R118")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/North0"]
+shape = SubResource("R119")
+
+[node name="NorthDado0" type="Node3D" parent="ServiceSide"]
+position = Vector3(33.0, 0.6, -14.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/NorthDado0"]
+mesh = SubResource("R120")
+
+[node name="South0" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(33.0, 1.9, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/South0"]
+mesh = SubResource("R118")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/South0"]
+shape = SubResource("R119")
+
+[node name="SouthDado0" type="Node3D" parent="ServiceSide"]
+position = Vector3(33.0, 0.6, -6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/SouthDado0"]
+mesh = SubResource("R120")
+
+[node name="West0" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(31.5, 1.9, -13.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/West0"]
+mesh = SubResource("R110")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/West0"]
+shape = SubResource("R111")
+
+[node name="WestDado0" type="Node3D" parent="ServiceSide"]
+position = Vector3(31.5, 0.6, -13.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/WestDado0"]
+mesh = SubResource("R39")
+
+[node name="West1" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(31.5, 3.15, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/West1"]
+mesh = SubResource("R112")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/West1"]
+shape = SubResource("R113")
+
+[node name="West2" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(31.5, 1.9, -6.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/West2"]
+mesh = SubResource("R110")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/West2"]
+shape = SubResource("R111")
+
+[node name="WestDado2" type="Node3D" parent="ServiceSide"]
+position = Vector3(31.5, 0.6, -6.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/WestDado2"]
+mesh = SubResource("R39")
+
+[node name="WestJamb0A" type="Node3D" parent="ServiceSide"]
+position = Vector3(31.5, 1.25, -13.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/WestJamb0A"]
+mesh = SubResource("R10")
+
+[node name="WestJamb0B" type="Node3D" parent="ServiceSide"]
+position = Vector3(31.5, 1.25, -7.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/WestJamb0B"]
+mesh = SubResource("R10")
+
+[node name="East0" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(34.5, 1.9, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/East0"]
+mesh = SubResource("R107")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/East0"]
+shape = SubResource("R108")
+
+[node name="EastDado0" type="Node3D" parent="ServiceSide"]
+position = Vector3(34.5, 0.6, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/EastDado0"]
+mesh = SubResource("R109")
+
+[node name="SecurityLink" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="SecurityLink"]
+position = Vector3(21.5, -0.12, 4.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/Floor"]
+mesh = SubResource("R40")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityLink/Floor"]
+shape = SubResource("R41")
+
+[node name="Ceiling" type="StaticBody3D" parent="SecurityLink"]
+position = Vector3(21.5, 3.3000000000000003, 4.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/Ceiling"]
+mesh = SubResource("R42")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityLink/Ceiling"]
+shape = SubResource("R43")
+
+[node name="North0" type="StaticBody3D" parent="SecurityLink"]
+position = Vector3(21.5, 1.6, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/North0"]
+mesh = SubResource("R78")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityLink/North0"]
+shape = SubResource("R79")
+
+[node name="NorthDado0" type="Node3D" parent="SecurityLink"]
+position = Vector3(21.5, 0.6, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/NorthDado0"]
+mesh = SubResource("R80")
+
+[node name="South0" type="StaticBody3D" parent="SecurityLink"]
+position = Vector3(21.5, 1.6, 5.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/South0"]
+mesh = SubResource("R78")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityLink/South0"]
+shape = SubResource("R79")
+
+[node name="SouthDado0" type="Node3D" parent="SecurityLink"]
+position = Vector3(21.5, 0.6, 5.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/SouthDado0"]
+mesh = SubResource("R80")
+
+[node name="West0" type="StaticBody3D" parent="SecurityLink"]
+position = Vector3(20.5, 2.85, 4.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/West0"]
+mesh = SubResource("R81")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityLink/West0"]
+shape = SubResource("R82")
+
+[node name="WestJamb0A" type="Node3D" parent="SecurityLink"]
+position = Vector3(20.5, 1.25, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/WestJamb0A"]
+mesh = SubResource("R10")
+
+[node name="WestJamb0B" type="Node3D" parent="SecurityLink"]
+position = Vector3(20.5, 1.25, 5.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/WestJamb0B"]
+mesh = SubResource("R10")
+
+[node name="East0" type="StaticBody3D" parent="SecurityLink"]
+position = Vector3(22.5, 2.85, 4.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/East0"]
+mesh = SubResource("R81")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityLink/East0"]
+shape = SubResource("R82")
+
+[node name="EastJamb0A" type="Node3D" parent="SecurityLink"]
+position = Vector3(22.5, 1.25, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/EastJamb0A"]
+mesh = SubResource("R10")
+
+[node name="EastJamb0B" type="Node3D" parent="SecurityLink"]
+position = Vector3(22.5, 1.25, 5.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityLink/EastJamb0B"]
+mesh = SubResource("R10")
+
+[node name="SecurityOuter" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(25.5, -0.12, 6.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/Floor"]
+mesh = SubResource("R121")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/Floor"]
+shape = SubResource("R122")
+
+[node name="Ceiling" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(25.5, 3.3000000000000003, 6.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/Ceiling"]
+mesh = SubResource("R123")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/Ceiling"]
+shape = SubResource("R124")
+
+[node name="North0" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(25.5, 1.6, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/North0"]
+mesh = SubResource("R125")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/North0"]
+shape = SubResource("R126")
+
+[node name="NorthDado0" type="Node3D" parent="SecurityOuter"]
+position = Vector3(25.5, 0.6, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/NorthDado0"]
+mesh = SubResource("R7")
+
+[node name="South0" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(23.75, 1.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/South0"]
+mesh = SubResource("R127")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/South0"]
+shape = SubResource("R84")
+
+[node name="SouthDado0" type="Node3D" parent="SecurityOuter"]
+position = Vector3(23.75, 0.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/SouthDado0"]
+mesh = SubResource("R85")
+
+[node name="South1" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(26.0, 2.85, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/South1"]
+mesh = SubResource("R44")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/South1"]
+shape = SubResource("R45")
+
+[node name="South2" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(27.75, 1.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/South2"]
+mesh = SubResource("R56")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/South2"]
+shape = SubResource("R57")
+
+[node name="SouthDado2" type="Node3D" parent="SecurityOuter"]
+position = Vector3(27.75, 0.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/SouthDado2"]
+mesh = SubResource("R17")
+
+[node name="SouthJamb0A" type="Node3D" parent="SecurityOuter"]
+position = Vector3(25, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/SouthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="SouthJamb0B" type="Node3D" parent="SecurityOuter"]
+position = Vector3(27, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/SouthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="West0" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(22.5, 2.85, 4.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/West0"]
+mesh = SubResource("R81")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/West0"]
+shape = SubResource("R82")
+
+[node name="West1" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(22.5, 1.6, 7.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/West1"]
+mesh = SubResource("R128")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/West1"]
+shape = SubResource("R129")
+
+[node name="WestDado1" type="Node3D" parent="SecurityOuter"]
+position = Vector3(22.5, 0.6, 7.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/WestDado1"]
+mesh = SubResource("R130")
+
+[node name="WestJamb0A" type="Node3D" parent="SecurityOuter"]
+position = Vector3(22.5, 1.25, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/WestJamb0A"]
+mesh = SubResource("R10")
+
+[node name="WestJamb0B" type="Node3D" parent="SecurityOuter"]
+position = Vector3(22.5, 1.25, 5.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/WestJamb0B"]
+mesh = SubResource("R10")
+
+[node name="East0" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.6, 3.95)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/East0"]
+mesh = SubResource("R131")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/East0"]
+shape = SubResource("R132")
+
+[node name="EastDado0" type="Node3D" parent="SecurityOuter"]
+position = Vector3(28.5, 0.6, 3.95)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/EastDado0"]
+mesh = SubResource("R133")
+
+[node name="East1" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(28.5, 2.85, 6.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/East1"]
+mesh = SubResource("R134")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/East1"]
+shape = SubResource("R135")
+
+[node name="East2" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.6, 8.45)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/East2"]
+mesh = SubResource("R131")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/East2"]
+shape = SubResource("R132")
+
+[node name="EastDado2" type="Node3D" parent="SecurityOuter"]
+position = Vector3(28.5, 0.6, 8.45)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/EastDado2"]
+mesh = SubResource("R133")
+
+[node name="EastJamb0A" type="Node3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.25, 4.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/EastJamb0A"]
+mesh = SubResource("R10")
+
+[node name="EastJamb0B" type="Node3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.25, 8.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/EastJamb0B"]
+mesh = SubResource("R10")
+
+[node name="SecurityInner" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(31.0, -0.12, 6.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/Floor"]
+mesh = SubResource("R136")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/Floor"]
+shape = SubResource("R137")
+
+[node name="Ceiling" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(31.0, 3.3000000000000003, 6.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/Ceiling"]
+mesh = SubResource("R138")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/Ceiling"]
+shape = SubResource("R139")
+
+[node name="North0" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(31.0, 1.6, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/North0"]
+mesh = SubResource("R140")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/North0"]
+shape = SubResource("R141")
+
+[node name="NorthDado0" type="Node3D" parent="SecurityInner"]
+position = Vector3(31.0, 0.6, 3.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/NorthDado0"]
+mesh = SubResource("R142")
+
+[node name="South0" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(31.0, 1.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/South0"]
+mesh = SubResource("R140")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/South0"]
+shape = SubResource("R141")
+
+[node name="SouthDado0" type="Node3D" parent="SecurityInner"]
+position = Vector3(31.0, 0.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/SouthDado0"]
+mesh = SubResource("R142")
+
+[node name="West0" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(28.5, 1.6, 3.95)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/West0"]
+mesh = SubResource("R131")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/West0"]
+shape = SubResource("R132")
+
+[node name="WestDado0" type="Node3D" parent="SecurityInner"]
+position = Vector3(28.5, 0.6, 3.95)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/WestDado0"]
+mesh = SubResource("R133")
+
+[node name="West1" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(28.5, 2.85, 6.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/West1"]
+mesh = SubResource("R134")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/West1"]
+shape = SubResource("R135")
+
+[node name="West2" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(28.5, 1.6, 8.45)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/West2"]
+mesh = SubResource("R131")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/West2"]
+shape = SubResource("R132")
+
+[node name="WestDado2" type="Node3D" parent="SecurityInner"]
+position = Vector3(28.5, 0.6, 8.45)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/WestDado2"]
+mesh = SubResource("R133")
+
+[node name="WestJamb0A" type="Node3D" parent="SecurityInner"]
+position = Vector3(28.5, 1.25, 4.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/WestJamb0A"]
+mesh = SubResource("R10")
+
+[node name="WestJamb0B" type="Node3D" parent="SecurityInner"]
+position = Vector3(28.5, 1.25, 8.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/WestJamb0B"]
+mesh = SubResource("R10")
+
+[node name="East0" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(33.5, 1.6, 6.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/East0"]
+mesh = SubResource("R143")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/East0"]
+shape = SubResource("R144")
+
+[node name="EastDado0" type="Node3D" parent="SecurityInner"]
+position = Vector3(33.5, 0.6, 6.199999999999999)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/EastDado0"]
+mesh = SubResource("R145")
+
+[node name="DirectorThreshold" type="Node3D" parent="."]
+
+
+[node name="Floor" type="StaticBody3D" parent="DirectorThreshold"]
+position = Vector3(26.5, -0.12, 11.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/Floor"]
+mesh = SubResource("R146")
+
+[node name="Collision" type="CollisionShape3D" parent="DirectorThreshold/Floor"]
+shape = SubResource("R147")
+
+[node name="Ceiling" type="StaticBody3D" parent="DirectorThreshold"]
+position = Vector3(26.5, 3.3000000000000003, 11.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/Ceiling"]
+mesh = SubResource("R148")
+
+[node name="Collision" type="CollisionShape3D" parent="DirectorThreshold/Ceiling"]
+shape = SubResource("R149")
+
+[node name="North0" type="StaticBody3D" parent="DirectorThreshold"]
+position = Vector3(24.25, 1.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/North0"]
+mesh = SubResource("R56")
+
+[node name="Collision" type="CollisionShape3D" parent="DirectorThreshold/North0"]
+shape = SubResource("R57")
+
+[node name="NorthDado0" type="Node3D" parent="DirectorThreshold"]
+position = Vector3(24.25, 0.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/NorthDado0"]
+mesh = SubResource("R17")
+
+[node name="North1" type="StaticBody3D" parent="DirectorThreshold"]
+position = Vector3(26.0, 2.85, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/North1"]
+mesh = SubResource("R44")
+
+[node name="Collision" type="CollisionShape3D" parent="DirectorThreshold/North1"]
+shape = SubResource("R45")
+
+[node name="North2" type="StaticBody3D" parent="DirectorThreshold"]
+position = Vector3(28.25, 1.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/North2"]
+mesh = SubResource("R127")
+
+[node name="Collision" type="CollisionShape3D" parent="DirectorThreshold/North2"]
+shape = SubResource("R84")
+
+[node name="NorthDado2" type="Node3D" parent="DirectorThreshold"]
+position = Vector3(28.25, 0.6, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/NorthDado2"]
+mesh = SubResource("R85")
+
+[node name="NorthJamb0A" type="Node3D" parent="DirectorThreshold"]
+position = Vector3(25, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/NorthJamb0A"]
+mesh = SubResource("R23")
+
+[node name="NorthJamb0B" type="Node3D" parent="DirectorThreshold"]
+position = Vector3(27, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/NorthJamb0B"]
+mesh = SubResource("R23")
+
+[node name="South0" type="StaticBody3D" parent="DirectorThreshold"]
+position = Vector3(26.5, 1.6, 13.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/South0"]
+mesh = SubResource("R125")
+
+[node name="Collision" type="CollisionShape3D" parent="DirectorThreshold/South0"]
+shape = SubResource("R126")
+
+[node name="SouthDado0" type="Node3D" parent="DirectorThreshold"]
+position = Vector3(26.5, 0.6, 13.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/SouthDado0"]
+mesh = SubResource("R7")
+
+[node name="West0" type="StaticBody3D" parent="DirectorThreshold"]
+position = Vector3(23.5, 1.6, 11.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/West0"]
+mesh = SubResource("R150")
+
+[node name="Collision" type="CollisionShape3D" parent="DirectorThreshold/West0"]
+shape = SubResource("R151")
+
+[node name="WestDado0" type="Node3D" parent="DirectorThreshold"]
+position = Vector3(23.5, 0.6, 11.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/WestDado0"]
+mesh = SubResource("R152")
+
+[node name="East0" type="StaticBody3D" parent="DirectorThreshold"]
+position = Vector3(29.5, 1.6, 11.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/East0"]
+mesh = SubResource("R150")
+
+[node name="Collision" type="CollisionShape3D" parent="DirectorThreshold/East0"]
+shape = SubResource("R151")
+
+[node name="EastDado0" type="Node3D" parent="DirectorThreshold"]
+position = Vector3(29.5, 0.6, 11.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="DirectorThreshold/EastDado0"]
+mesh = SubResource("R152")
+
+[node name="FluorescentAHousing" type="Node3D" parent="ObservationTransition"]
+position = Vector3(6.4, 2.67, 1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/FluorescentAHousing"]
+mesh = SubResource("R153")
+
+[node name="FluorescentADiffuser" type="Node3D" parent="ObservationTransition"]
+position = Vector3(6.4, 2.582, 1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/FluorescentADiffuser"]
+mesh = SubResource("R154")
+
+[node name="FluorescentALight" type="OmniLight3D" parent="ObservationTransition"]
+position = Vector3(6.4, 2.25, 1.7)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.48
+omni_range = 3.6
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="FluorescentBHousing" type="Node3D" parent="ObservationTransition"]
+position = Vector3(9.0, 2.67, 1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/FluorescentBHousing"]
+mesh = SubResource("R153")
+
+[node name="FluorescentBDiffuser" type="Node3D" parent="ObservationTransition"]
+position = Vector3(9.0, 2.582, 1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/FluorescentBDiffuser"]
+mesh = SubResource("R154")
+
+[node name="FluorescentBLight" type="OmniLight3D" parent="ObservationTransition"]
+position = Vector3(9.0, 2.25, 1.7)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.48
+omni_range = 3.6
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="ObservationSign" type="Node3D" parent="ObservationTransition"]
+position = Vector3(6.1, 1.8, 0.925)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Plate" type="Node3D" parent="ObservationTransition/ObservationSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/ObservationSign/Plate"]
+mesh = SubResource("ObservationSignPlate")
+
+[node name="Text" type="Label3D" parent="ObservationTransition/ObservationSign"]
+position = Vector3(0, 0, 0.02)
+text = "OBSERVATION WING /\n06"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="HubSign" type="Node3D" parent="ObservationTransition"]
+position = Vector3(9.2, 1.8, 0.925)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Plate" type="Node3D" parent="ObservationTransition/HubSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/HubSign/Plate"]
+mesh = SubResource("R156")
+
+[node name="Text" type="Label3D" parent="ObservationTransition/HubSign"]
+position = Vector3(0, 0, 0.02)
+text = "CENTRAL HUB"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="Conduit" type="Node3D" parent="ObservationTransition"]
+position = Vector3(7.5, 2.25, 0.95)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/Conduit"]
+mesh = SubResource("R157")
+
+[node name="Junction" type="Node3D" parent="ObservationTransition"]
+position = Vector3(8, 2.15, 0.96)
+
+[node name="Mesh" type="MeshInstance3D" parent="ObservationTransition/Junction"]
+mesh = SubResource("R158")
+
+[node name="WestFixtureHousing" type="Node3D" parent="CentralHub"]
+position = Vector3(12.2, 3.47, 1.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/WestFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="WestFixtureDiffuser" type="Node3D" parent="CentralHub"]
+position = Vector3(12.2, 3.382, 1.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/WestFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="WestFixtureLight" type="OmniLight3D" parent="CentralHub"]
+position = Vector3(12.2, 3.05, 1.5)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.85
+omni_range = 6.1
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="EastFixtureHousing" type="Node3D" parent="CentralHub"]
+position = Vector3(18.1, 3.47, 1.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="EastFixtureDiffuser" type="Node3D" parent="CentralHub"]
+position = Vector3(18.1, 3.382, 1.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EastFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="EastFixtureLight" type="OmniLight3D" parent="CentralHub"]
+position = Vector3(18.1, 3.05, 1.5)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.85
+omni_range = 6.1
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="SouthFixtureHousing" type="Node3D" parent="CentralHub"]
+position = Vector3(16, 3.47, 5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/SouthFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="SouthFixtureDiffuser" type="Node3D" parent="CentralHub"]
+position = Vector3(16, 3.382, 5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/SouthFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="SouthFixtureLight" type="OmniLight3D" parent="CentralHub"]
+position = Vector3(16, 3.05, 5.3)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.85
+omni_range = 5.8
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="NorthFixtureHousing" type="Node3D" parent="CentralHub"]
+position = Vector3(16, 3.47, -1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/NorthFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="NorthFixtureDiffuser" type="Node3D" parent="CentralHub"]
+position = Vector3(16, 3.382, -1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/NorthFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="NorthFixtureLight" type="OmniLight3D" parent="CentralHub"]
+position = Vector3(16, 3.05, -1.7)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.85
+omni_range = 5.8
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="Beam" type="Node3D" parent="CentralHub"]
+position = Vector3(15.5, 3.36, 1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/Beam"]
+mesh = SubResource("R159")
+
+[node name="Pier0" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(15.5, 1.65, -0.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/Pier0"]
+mesh = SubResource("R160")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/Pier0"]
+shape = SubResource("R161")
+
+[node name="Pier1" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(15.5, 1.65, 3.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/Pier1"]
+mesh = SubResource("R160")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/Pier1"]
+shape = SubResource("R161")
+
+[node name="ControlCounter" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(11.25, 0.55, 4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/ControlCounter"]
+mesh = SubResource("R162")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/ControlCounter"]
+shape = SubResource("R163")
+
+[node name="Countertop" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(11.25, 1.12, 4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/Countertop"]
+mesh = SubResource("R164")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/Countertop"]
+shape = SubResource("R165")
+
+[node name="OldCRT" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(11.3, 1.48, 4.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/OldCRT"]
+mesh = SubResource("R166")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/OldCRT"]
+shape = SubResource("R167")
+
+[node name="CRTGlass" type="Node3D" parent="CentralHub"]
+position = Vector3(11.56, 1.5, 4.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/CRTGlass"]
+mesh = SubResource("R168")
+
+[node name="Bench" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(11.25, 0.45, -1.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/Bench"]
+mesh = SubResource("R169")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/Bench"]
+shape = SubResource("R170")
+
+[node name="BenchBase" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(11.25, 0.2, -1.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/BenchBase"]
+mesh = SubResource("R171")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/BenchBase"]
+shape = SubResource("R172")
+
+[node name="HubIdentity" type="Node3D" parent="CentralHub"]
+position = Vector3(10.63, 2.1, -1.5)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="Plate" type="Node3D" parent="CentralHub/HubIdentity"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/HubIdentity/Plate"]
+mesh = SubResource("R173")
+
+[node name="Text" type="Label3D" parent="CentralHub/HubIdentity"]
+position = Vector3(0, 0, 0.02)
+text = "HALCYON / SUBLEVEL 6\nCENTRAL HUB"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="LabSign" type="Node3D" parent="CentralHub"]
+position = Vector3(13, 2.78, -3.16)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Plate" type="Node3D" parent="CentralHub/LabSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/LabSign/Plate"]
+mesh = SubResource("R174")
+
+[node name="Text" type="Label3D" parent="CentralHub/LabSign"]
+position = Vector3(0, 0, 0.02)
+text = "LABORATORY"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="ArchiveSign" type="Node3D" parent="CentralHub"]
+position = Vector3(13, 2.78, 6.56)
+rotation_degrees = Vector3(0, 180, 0)
+
+[node name="Plate" type="Node3D" parent="CentralHub/ArchiveSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/ArchiveSign/Plate"]
+mesh = SubResource("R155")
+
+[node name="Text" type="Label3D" parent="CentralHub/ArchiveSign"]
+position = Vector3(0, 0, 0.02)
+text = "ARCHIVE"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="MaintenanceSign" type="Node3D" parent="CentralHub"]
+position = Vector3(20.36, 2.78, -0.3)
+rotation_degrees = Vector3(0, -90, 0)
+
+[node name="Plate" type="Node3D" parent="CentralHub/MaintenanceSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/MaintenanceSign/Plate"]
+mesh = SubResource("R175")
+
+[node name="Text" type="Label3D" parent="CentralHub/MaintenanceSign"]
+position = Vector3(0, 0, 0.02)
+text = "MAINTENANCE"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="SecuritySign" type="Node3D" parent="CentralHub"]
+position = Vector3(20.36, 2.78, 4.7)
+rotation_degrees = Vector3(0, -90, 0)
+
+[node name="Plate" type="Node3D" parent="CentralHub/SecuritySign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/SecuritySign/Plate"]
+mesh = SubResource("R155")
+
+[node name="Text" type="Label3D" parent="CentralHub/SecuritySign"]
+position = Vector3(0, 0, 0.02)
+text = "SECURITY"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="ReturnSign" type="Node3D" parent="CentralHub"]
+position = Vector3(10.64, 2.78, 1.7)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="Plate" type="Node3D" parent="CentralHub/ReturnSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/ReturnSign/Plate"]
+mesh = SubResource("R155")
+
+[node name="Text" type="Label3D" parent="CentralHub/ReturnSign"]
+position = Vector3(0, 0, 0.02)
+text = "OBSERVATION 06"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="EgressFrame" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(18.7, 1.4, -3.13)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EgressFrame"]
+mesh = SubResource("R176")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/EgressFrame"]
+shape = SubResource("R177")
+
+[node name="EgressLeaf0" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(18.1, 1.35, -3.01)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EgressLeaf0"]
+mesh = SubResource("R178")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/EgressLeaf0"]
+shape = SubResource("R179")
+
+[node name="EgressLeaf1" type="StaticBody3D" parent="CentralHub"]
+position = Vector3(19.3, 1.35, -3.01)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EgressLeaf1"]
+mesh = SubResource("R178")
+
+[node name="Collision" type="CollisionShape3D" parent="CentralHub/EgressLeaf1"]
+shape = SubResource("R179")
+
+[node name="EgressBrace0" type="Node3D" parent="CentralHub"]
+position = Vector3(18.7, 0.45, -2.87)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EgressBrace0"]
+mesh = SubResource("R180")
+
+[node name="EgressBrace1" type="Node3D" parent="CentralHub"]
+position = Vector3(18.7, 1.0, -2.87)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EgressBrace1"]
+mesh = SubResource("R180")
+
+[node name="EgressBrace2" type="Node3D" parent="CentralHub"]
+position = Vector3(18.7, 1.65, -2.87)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EgressBrace2"]
+mesh = SubResource("R180")
+
+[node name="EgressBrace3" type="Node3D" parent="CentralHub"]
+position = Vector3(18.7, 2.25, -2.87)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EgressBrace3"]
+mesh = SubResource("R180")
+
+[node name="EgressSign" type="Node3D" parent="CentralHub"]
+position = Vector3(18.7, 3.08, -3.13)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Plate" type="Node3D" parent="CentralHub/EgressSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/EgressSign/Plate"]
+mesh = SubResource("R181")
+
+[node name="Text" type="Label3D" parent="CentralHub/EgressSign"]
+position = Vector3(0, 0, 0.02)
+text = "EMERGENCY EGRESS"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="StatusPanel" type="Node3D" parent="CentralHub"]
+position = Vector3(15.9, 1.65, -3.14)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Plate" type="Node3D" parent="CentralHub/StatusPanel"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="CentralHub/StatusPanel/Plate"]
+mesh = SubResource("R182")
+
+[node name="Text" type="Label3D" parent="CentralHub/StatusPanel"]
+position = Vector3(0, 0, 0.02)
+text = "EMERGENCY EGRESS\n\nMAIN POWER             OFF\nSECURITY CLEARANCE     INVALID\nDIRECTOR AUTHORIZATION REQUIRED\n\nEXIT SEALED"
+font_size = 36
+pixel_size = 0.0033
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="ReservedEgressRelease" type="Marker3D" parent="CentralHub"]
+position = Vector3(18.7, 1.1, -2.82)
+
+[node name="MainFixtureHousing" type="Node3D" parent="Laboratory"]
+position = Vector3(13, 3.0700000000000003, -8.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/MainFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="MainFixtureDiffuser" type="Node3D" parent="Laboratory"]
+position = Vector3(13, 2.982, -8.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/MainFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="MainFixtureLight" type="OmniLight3D" parent="Laboratory"]
+position = Vector3(13, 2.6500000000000004, -8.4)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.95
+omni_range = 5.7
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="BenchFixtureHousing" type="Node3D" parent="Laboratory"]
+position = Vector3(16, 3.0700000000000003, -10.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/BenchFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="BenchFixtureDiffuser" type="Node3D" parent="Laboratory"]
+position = Vector3(16, 2.982, -10.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/BenchFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="BenchFixtureLight" type="OmniLight3D" parent="Laboratory"]
+position = Vector3(16, 2.6500000000000004, -10.6)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.65
+omni_range = 4.8
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="Bench0" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(16.8, 0.45, -7.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/Bench0"]
+mesh = SubResource("R183")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/Bench0"]
+shape = SubResource("R184")
+
+[node name="BenchTop0" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(16.8, 0.93, -7.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/BenchTop0"]
+mesh = SubResource("R185")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/BenchTop0"]
+shape = SubResource("R186")
+
+[node name="Bench1" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(16.8, 0.45, -10.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/Bench1"]
+mesh = SubResource("R183")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/Bench1"]
+shape = SubResource("R184")
+
+[node name="BenchTop1" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(16.8, 0.93, -10.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/BenchTop1"]
+mesh = SubResource("R185")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/BenchTop1"]
+shape = SubResource("R186")
+
+[node name="Analyzer" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(16.7, 1.24, -10.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/Analyzer"]
+mesh = SubResource("R187")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/Analyzer"]
+shape = SubResource("R188")
+
+[node name="AnalyzerDisplay" type="Node3D" parent="Laboratory"]
+position = Vector3(16.34, 1.3, -10.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/AnalyzerDisplay"]
+mesh = SubResource("R189")
+
+[node name="BatteryEquipment" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(16.7, 1.22, -7.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/BatteryEquipment"]
+mesh = SubResource("R190")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/BatteryEquipment"]
+shape = SubResource("R191")
+
+[node name="CalibrationBench" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(13.1, 0.46, -11.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/CalibrationBench"]
+mesh = SubResource("R192")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/CalibrationBench"]
+shape = SubResource("R193")
+
+[node name="GlazingSill" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(11.8, 1.02, -8.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/GlazingSill"]
+mesh = SubResource("R194")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/GlazingSill"]
+shape = SubResource("R195")
+
+[node name="BenchGlazing" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(11.8, 1.64, -8.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/BenchGlazing"]
+mesh = SubResource("R196")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/BenchGlazing"]
+shape = SubResource("R197")
+
+[node name="GlazingPost0" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(10.68, 1.64, -8.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/GlazingPost0"]
+mesh = SubResource("R198")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/GlazingPost0"]
+shape = SubResource("R199")
+
+[node name="GlazingPost1" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(12.92, 1.64, -8.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/GlazingPost1"]
+mesh = SubResource("R198")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/GlazingPost1"]
+shape = SubResource("R199")
+
+[node name="SinkCabinet" type="StaticBody3D" parent="Laboratory"]
+position = Vector3(11.5, 0.45, -11.65)
+
+[node name="Mesh" type="MeshInstance3D" parent="Laboratory/SinkCabinet"]
+mesh = SubResource("R200")
+
+[node name="Collision" type="CollisionShape3D" parent="Laboratory/SinkCabinet"]
+shape = SubResource("R201")
+
+[node name="ReservedCalibration" type="Marker3D" parent="Laboratory"]
+position = Vector3(13.1, 1.1, -11.7)
+
+[node name="ReservedRemovableBattery" type="Marker3D" parent="Laboratory"]
+position = Vector3(16.7, 1.22, -7.6)
+
+[node name="MainFixtureHousing" type="Node3D" parent="Archive"]
+position = Vector3(13, 3.0700000000000003, 11)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/MainFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="MainFixtureDiffuser" type="Node3D" parent="Archive"]
+position = Vector3(13, 2.982, 11)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/MainFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="MainFixtureLight" type="OmniLight3D" parent="Archive"]
+position = Vector3(13, 2.6500000000000004, 11)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.7
+omni_range = 5.5
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="RecordsFixtureHousing" type="Node3D" parent="Archive"]
+position = Vector3(15.7, 3.0700000000000003, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/RecordsFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="RecordsFixtureDiffuser" type="Node3D" parent="Archive"]
+position = Vector3(15.7, 2.982, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/RecordsFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="RecordsFixtureLight" type="OmniLight3D" parent="Archive"]
+position = Vector3(15.7, 2.6500000000000004, 14)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.6
+omni_range = 5.0
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="ShelfBack0" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.1, 1.1, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/ShelfBack0"]
+mesh = SubResource("R202")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/ShelfBack0"]
+shape = SubResource("R203")
+
+[node name="Shelf0_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 0.2, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Shelf0_0"]
+mesh = SubResource("R204")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Shelf0_0"]
+shape = SubResource("R205")
+
+[node name="Records0_0_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 0.41000000000000003, 11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_0_0"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_0_0"]
+shape = SubResource("R207")
+
+[node name="Records0_0_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 0.41000000000000003, 12.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_0_1"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_0_1"]
+shape = SubResource("R207")
+
+[node name="Records0_0_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 0.41000000000000003, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_0_2"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_0_2"]
+shape = SubResource("R207")
+
+[node name="Shelf0_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 0.8, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Shelf0_1"]
+mesh = SubResource("R204")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Shelf0_1"]
+shape = SubResource("R205")
+
+[node name="Records0_1_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 1.01, 11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_1_0"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_1_0"]
+shape = SubResource("R207")
+
+[node name="Records0_1_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 1.01, 12.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_1_1"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_1_1"]
+shape = SubResource("R207")
+
+[node name="Records0_1_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 1.01, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_1_2"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_1_2"]
+shape = SubResource("R207")
+
+[node name="Shelf0_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 1.4, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Shelf0_2"]
+mesh = SubResource("R204")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Shelf0_2"]
+shape = SubResource("R205")
+
+[node name="Records0_2_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 1.6099999999999999, 11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_2_0"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_2_0"]
+shape = SubResource("R207")
+
+[node name="Records0_2_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 1.6099999999999999, 12.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_2_1"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_2_1"]
+shape = SubResource("R207")
+
+[node name="Records0_2_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 1.6099999999999999, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_2_2"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_2_2"]
+shape = SubResource("R207")
+
+[node name="Shelf0_3" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 2.0, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Shelf0_3"]
+mesh = SubResource("R204")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Shelf0_3"]
+shape = SubResource("R205")
+
+[node name="Records0_3_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 2.21, 11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_3_0"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_3_0"]
+shape = SubResource("R207")
+
+[node name="Records0_3_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 2.21, 12.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_3_1"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_3_1"]
+shape = SubResource("R207")
+
+[node name="Records0_3_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(11.32, 2.21, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records0_3_2"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records0_3_2"]
+shape = SubResource("R207")
+
+[node name="ShelfBack1" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.9, 1.1, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/ShelfBack1"]
+mesh = SubResource("R202")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/ShelfBack1"]
+shape = SubResource("R203")
+
+[node name="Shelf1_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 0.2, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Shelf1_0"]
+mesh = SubResource("R204")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Shelf1_0"]
+shape = SubResource("R205")
+
+[node name="Records1_0_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 0.41000000000000003, 11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_0_0"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_0_0"]
+shape = SubResource("R207")
+
+[node name="Records1_0_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 0.41000000000000003, 12.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_0_1"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_0_1"]
+shape = SubResource("R207")
+
+[node name="Records1_0_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 0.41000000000000003, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_0_2"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_0_2"]
+shape = SubResource("R207")
+
+[node name="Shelf1_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 0.8, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Shelf1_1"]
+mesh = SubResource("R204")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Shelf1_1"]
+shape = SubResource("R205")
+
+[node name="Records1_1_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 1.01, 11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_1_0"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_1_0"]
+shape = SubResource("R207")
+
+[node name="Records1_1_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 1.01, 12.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_1_1"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_1_1"]
+shape = SubResource("R207")
+
+[node name="Records1_1_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 1.01, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_1_2"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_1_2"]
+shape = SubResource("R207")
+
+[node name="Shelf1_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 1.4, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Shelf1_2"]
+mesh = SubResource("R204")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Shelf1_2"]
+shape = SubResource("R205")
+
+[node name="Records1_2_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 1.6099999999999999, 11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_2_0"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_2_0"]
+shape = SubResource("R207")
+
+[node name="Records1_2_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 1.6099999999999999, 12.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_2_1"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_2_1"]
+shape = SubResource("R207")
+
+[node name="Records1_2_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 1.6099999999999999, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_2_2"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_2_2"]
+shape = SubResource("R207")
+
+[node name="Shelf1_3" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 2.0, 12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Shelf1_3"]
+mesh = SubResource("R204")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Shelf1_3"]
+shape = SubResource("R205")
+
+[node name="Records1_3_0" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 2.21, 11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_3_0"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_3_0"]
+shape = SubResource("R207")
+
+[node name="Records1_3_1" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 2.21, 12.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_3_1"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_3_1"]
+shape = SubResource("R207")
+
+[node name="Records1_3_2" type="StaticBody3D" parent="Archive"]
+position = Vector3(16.68, 2.21, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/Records1_3_2"]
+mesh = SubResource("R206")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/Records1_3_2"]
+shape = SubResource("R207")
+
+[node name="CassetteWorkstation" type="StaticBody3D" parent="Archive"]
+position = Vector3(14.4, 0.43, 15.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/CassetteWorkstation"]
+mesh = SubResource("R208")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/CassetteWorkstation"]
+shape = SubResource("R209")
+
+[node name="SilentDeckHousing" type="StaticBody3D" parent="Archive"]
+position = Vector3(14.4, 1.0, 15.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/SilentDeckHousing"]
+mesh = SubResource("R210")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/SilentDeckHousing"]
+shape = SubResource("R211")
+
+[node name="PersonnelCabinet" type="StaticBody3D" parent="Archive"]
+position = Vector3(14.9, 1.0, 9.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Archive/PersonnelCabinet"]
+mesh = SubResource("R212")
+
+[node name="Collision" type="CollisionShape3D" parent="Archive/PersonnelCabinet"]
+shape = SubResource("R213")
+
+[node name="ReservedCassetteDeck" type="Marker3D" parent="Archive"]
+position = Vector3(14.4, 1.0, 15.05)
+
+[node name="ReservedPersonnelRecords" type="Marker3D" parent="Archive"]
+position = Vector3(14.9, 1.0, 9.3)
+
+[node name="WorkshopFixtureHousing" type="Node3D" parent="Maintenance"]
+position = Vector3(25.6, 3.0700000000000003, -0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/WorkshopFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="WorkshopFixtureDiffuser" type="Node3D" parent="Maintenance"]
+position = Vector3(25.6, 2.982, -0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/WorkshopFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="WorkshopFixtureLight" type="OmniLight3D" parent="Maintenance"]
+position = Vector3(25.6, 2.6500000000000004, -0.8)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.75
+omni_range = 5.8
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="Workbench" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(28.8, 0.45, -0.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/Workbench"]
+mesh = SubResource("R214")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/Workbench"]
+shape = SubResource("R215")
+
+[node name="Worktop" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(28.8, 0.93, -0.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/Worktop"]
+mesh = SubResource("R216")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/Worktop"]
+shape = SubResource("R217")
+
+[node name="ToolBoard" type="Node3D" parent="Maintenance"]
+position = Vector3(29.35, 1.65, -0.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/ToolBoard"]
+mesh = SubResource("R218")
+
+[node name="ToolBlank0" type="Node3D" parent="Maintenance"]
+position = Vector3(29.29, 1.65, -1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/ToolBlank0"]
+mesh = SubResource("R219")
+
+[node name="ToolBlank1" type="Node3D" parent="Maintenance"]
+position = Vector3(29.29, 1.65, -1.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/ToolBlank1"]
+mesh = SubResource("R219")
+
+[node name="ToolBlank2" type="Node3D" parent="Maintenance"]
+position = Vector3(29.29, 1.65, -0.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/ToolBlank2"]
+mesh = SubResource("R219")
+
+[node name="ToolBlank3" type="Node3D" parent="Maintenance"]
+position = Vector3(29.29, 1.65, 0.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/ToolBlank3"]
+mesh = SubResource("R219")
+
+[node name="ToolBlank4" type="Node3D" parent="Maintenance"]
+position = Vector3(29.29, 1.65, 0.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/ToolBlank4"]
+mesh = SubResource("R219")
+
+[node name="RadioDesk" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(24.8, 0.44, 2.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/RadioDesk"]
+mesh = SubResource("R220")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/RadioDesk"]
+shape = SubResource("R221")
+
+[node name="RadioM2Housing" type="StaticBody3D" parent="Maintenance"]
+position = Vector3(24.8, 1.07, 2.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/RadioM2Housing"]
+mesh = SubResource("R222")
+
+[node name="Collision" type="CollisionShape3D" parent="Maintenance/RadioM2Housing"]
+shape = SubResource("R223")
+
+[node name="RadioFace" type="Node3D" parent="Maintenance"]
+position = Vector3(24.8, 1.08, 1.85)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/RadioFace"]
+mesh = SubResource("R224")
+
+[node name="M2Plate" type="Node3D" parent="Maintenance"]
+position = Vector3(25.06, 1.05, 1.823)
+rotation_degrees = Vector3(0, 180, 0)
+
+[node name="Plate" type="Node3D" parent="Maintenance/M2Plate"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/M2Plate/Plate"]
+mesh = SubResource("R225")
+
+[node name="Text" type="Label3D" parent="Maintenance/M2Plate"]
+position = Vector3(0, 0, 0.02)
+text = "M-2"
+font_size = 24
+pixel_size = 0.001
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="GeneratorSign" type="Node3D" parent="Maintenance"]
+position = Vector3(26, 2.78, -4.16)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Plate" type="Node3D" parent="Maintenance/GeneratorSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/GeneratorSign/Plate"]
+mesh = SubResource("R155")
+
+[node name="Text" type="Label3D" parent="Maintenance/GeneratorSign"]
+position = Vector3(0, 0, 0.02)
+text = "GENERATOR"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="OverheadPipe" type="Node3D" parent="Maintenance"]
+position = Vector3(26, 2.8, -0.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/OverheadPipe"]
+mesh = SubResource("R226")
+
+[node name="Riser" type="Node3D" parent="Maintenance"]
+position = Vector3(28.9, 1.45, -3.9)
+
+[node name="Mesh" type="MeshInstance3D" parent="Maintenance/Riser"]
+mesh = SubResource("R227")
+
+[node name="ReservedRadioM2" type="Marker3D" parent="Maintenance"]
+position = Vector3(24.8, 1.07, 2.05)
+
+[node name="MachineFixtureHousing" type="Node3D" parent="Generator"]
+position = Vector3(25, 3.67, -10)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/MachineFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="MachineFixtureDiffuser" type="Node3D" parent="Generator"]
+position = Vector3(25, 3.582, -10)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/MachineFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="MachineFixtureLight" type="OmniLight3D" parent="Generator"]
+position = Vector3(25, 3.25, -10)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.8
+omni_range = 6.2
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="ControlFixtureHousing" type="Node3D" parent="Generator"]
+position = Vector3(28.6, 3.67, -8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ControlFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="ControlFixtureDiffuser" type="Node3D" parent="Generator"]
+position = Vector3(28.6, 3.582, -8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ControlFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="ControlFixtureLight" type="OmniLight3D" parent="Generator"]
+position = Vector3(28.6, 3.25, -8)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.65
+omni_range = 4.5
+omni_attenuation = 1.3
+shadow_enabled = true
+
+[node name="MachinePlinth" type="StaticBody3D" parent="Generator"]
+position = Vector3(25.5, 0.22, -11.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/MachinePlinth"]
+mesh = SubResource("R228")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/MachinePlinth"]
+shape = SubResource("R229")
+
+[node name="GeneratorHousing" type="StaticBody3D" parent="Generator"]
+position = Vector3(25.5, 1.1, -11.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/GeneratorHousing"]
+mesh = SubResource("R230")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/GeneratorHousing"]
+shape = SubResource("R231")
+
+[node name="CoolingFin0" type="Node3D" parent="Generator"]
+position = Vector3(25.5, 1.84, -12.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/CoolingFin0"]
+mesh = SubResource("R232")
+
+[node name="CoolingFin1" type="Node3D" parent="Generator"]
+position = Vector3(25.5, 1.84, -12)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/CoolingFin1"]
+mesh = SubResource("R232")
+
+[node name="CoolingFin2" type="Node3D" parent="Generator"]
+position = Vector3(25.5, 1.84, -11.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/CoolingFin2"]
+mesh = SubResource("R232")
+
+[node name="CoolingFin3" type="Node3D" parent="Generator"]
+position = Vector3(25.5, 1.84, -11.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/CoolingFin3"]
+mesh = SubResource("R232")
+
+[node name="CoolingFin4" type="Node3D" parent="Generator"]
+position = Vector3(25.5, 1.84, -11.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/CoolingFin4"]
+mesh = SubResource("R232")
+
+[node name="ControlConsole" type="StaticBody3D" parent="Generator"]
+position = Vector3(29.7, 0.65, -8.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ControlConsole"]
+mesh = SubResource("R233")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/ControlConsole"]
+shape = SubResource("R234")
+
+[node name="ControlFace" type="StaticBody3D" parent="Generator"]
+position = Vector3(29.7, 1.42, -8.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ControlFace"]
+mesh = SubResource("R235")
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/ControlFace"]
+shape = SubResource("R236")
+
+[node name="ReservedPressureGauge" type="Marker3D" parent="Generator"]
+position = Vector3(29.2, 1.58, -8.0)
+
+[node name="ReservedPrimeControl" type="Marker3D" parent="Generator"]
+position = Vector3(29.5, 1.58, -8.0)
+
+[node name="ReservedFieldExcitation" type="Marker3D" parent="Generator"]
+position = Vector3(29.8, 1.58, -8.0)
+
+[node name="ReservedBreaker1" type="Marker3D" parent="Generator"]
+position = Vector3(30.0, 1.58, -8.0)
+
+[node name="ReservedBreaker2" type="Marker3D" parent="Generator"]
+position = Vector3(30.1, 1.58, -8.0)
+
+[node name="ReservedBreaker3" type="Marker3D" parent="Generator"]
+position = Vector3(30.2, 1.58, -8.0)
+
+[node name="ReservedBreaker4" type="Marker3D" parent="Generator"]
+position = Vector3(30.3, 1.58, -8.0)
+
+[node name="PipeRun" type="Node3D" parent="Generator"]
+position = Vector3(28.8, 2.9, -11.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/PipeRun"]
+mesh = SubResource("R237")
+
+[node name="ServiceBarrier" type="StaticBody3D" parent="Generator"]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -10.3)
+shape = SubResource("R238")
+
+[node name="Vertical0" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -13.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical0"]
+mesh = SubResource("R239")
+
+[node name="Vertical1" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -13.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical1"]
+mesh = SubResource("R239")
+
+[node name="Vertical2" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -12.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical2"]
+mesh = SubResource("R239")
+
+[node name="Vertical3" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -12.55)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical3"]
+mesh = SubResource("R239")
+
+[node name="Vertical4" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -12.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical4"]
+mesh = SubResource("R239")
+
+[node name="Vertical5" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -12.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical5"]
+mesh = SubResource("R239")
+
+[node name="Vertical6" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -11.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical6"]
+mesh = SubResource("R239")
+
+[node name="Vertical7" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -11.55)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical7"]
+mesh = SubResource("R239")
+
+[node name="Vertical8" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -11.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical8"]
+mesh = SubResource("R239")
+
+[node name="Vertical9" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -11.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical9"]
+mesh = SubResource("R239")
+
+[node name="Vertical10" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -10.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical10"]
+mesh = SubResource("R239")
+
+[node name="Vertical11" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -10.55)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical11"]
+mesh = SubResource("R239")
+
+[node name="Vertical12" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical12"]
+mesh = SubResource("R239")
+
+[node name="Vertical13" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -10.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical13"]
+mesh = SubResource("R239")
+
+[node name="Vertical14" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -9.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical14"]
+mesh = SubResource("R239")
+
+[node name="Vertical15" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -9.55)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical15"]
+mesh = SubResource("R239")
+
+[node name="Vertical16" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -9.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical16"]
+mesh = SubResource("R239")
+
+[node name="Vertical17" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -9.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical17"]
+mesh = SubResource("R239")
+
+[node name="Vertical18" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -8.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical18"]
+mesh = SubResource("R239")
+
+[node name="Vertical19" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -8.55)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical19"]
+mesh = SubResource("R239")
+
+[node name="Vertical20" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -8.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical20"]
+mesh = SubResource("R239")
+
+[node name="Vertical21" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -8.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical21"]
+mesh = SubResource("R239")
+
+[node name="Vertical22" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -7.800000000000001)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical22"]
+mesh = SubResource("R239")
+
+[node name="Vertical23" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -7.550000000000001)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical23"]
+mesh = SubResource("R239")
+
+[node name="Vertical24" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -7.300000000000001)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Vertical24"]
+mesh = SubResource("R239")
+
+[node name="Horizontal0" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 0.0, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal0"]
+mesh = SubResource("R240")
+
+[node name="Horizontal1" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 0.25, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal1"]
+mesh = SubResource("R240")
+
+[node name="Horizontal2" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 0.5, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal2"]
+mesh = SubResource("R240")
+
+[node name="Horizontal3" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 0.75, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal3"]
+mesh = SubResource("R240")
+
+[node name="Horizontal4" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.0, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal4"]
+mesh = SubResource("R240")
+
+[node name="Horizontal5" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.25, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal5"]
+mesh = SubResource("R240")
+
+[node name="Horizontal6" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.5, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal6"]
+mesh = SubResource("R240")
+
+[node name="Horizontal7" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 1.75, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal7"]
+mesh = SubResource("R240")
+
+[node name="Horizontal8" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 2.0, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal8"]
+mesh = SubResource("R240")
+
+[node name="Horizontal9" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 2.25, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal9"]
+mesh = SubResource("R240")
+
+[node name="Horizontal10" type="Node3D" parent="Generator/ServiceBarrier"]
+position = Vector3(31.5, 2.5, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceBarrier/Horizontal10"]
+mesh = SubResource("R240")
+
+[node name="ServiceSign" type="Node3D" parent="Generator"]
+position = Vector3(31.4, 2.78, -10.3)
+rotation_degrees = Vector3(0, -90, 0)
+
+[node name="Plate" type="Node3D" parent="Generator/ServiceSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Generator/ServiceSign/Plate"]
+mesh = SubResource("R155")
+
+[node name="Text" type="Label3D" parent="Generator/ServiceSign"]
+position = Vector3(0, 0, 0.02)
+text = "SERVICE ACCESS"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="ServiceFixtureHousing" type="Node3D" parent="ServiceSide"]
+position = Vector3(33, 3.67, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/ServiceFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="ServiceFixtureDiffuser" type="Node3D" parent="ServiceSide"]
+position = Vector3(33, 3.582, -10.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/ServiceFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="ServiceFixtureLight" type="OmniLight3D" parent="ServiceSide"]
+position = Vector3(33, 3.25, -10.3)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.28
+omni_range = 4
+omni_attenuation = 1.3
+shadow_enabled = true
+
+[node name="BypassPipe" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(33.3, 1.1, -10.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/BypassPipe"]
+mesh = SubResource("R241")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/BypassPipe"]
+shape = SubResource("R242")
+
+[node name="RemoteTerminal" type="StaticBody3D" parent="ServiceSide"]
+position = Vector3(33.9, 1.2, -12.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="ServiceSide/RemoteTerminal"]
+mesh = SubResource("R243")
+
+[node name="Collision" type="CollisionShape3D" parent="ServiceSide/RemoteTerminal"]
+shape = SubResource("R244")
+
+[node name="ReservedCoolantBypass" type="Marker3D" parent="ServiceSide"]
+position = Vector3(33.3, 1.1, -10)
+
+[node name="ReservedM4" type="Marker3D" parent="ServiceSide"]
+position = Vector3(33.9, 1.2, -12.3)
+
+[node name="VestibuleFixtureHousing" type="Node3D" parent="SecurityOuter"]
+position = Vector3(25, 3.0700000000000003, 6.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/VestibuleFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="VestibuleFixtureDiffuser" type="Node3D" parent="SecurityOuter"]
+position = Vector3(25, 2.982, 6.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/VestibuleFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="VestibuleFixtureLight" type="OmniLight3D" parent="SecurityOuter"]
+position = Vector3(25, 2.6500000000000004, 6.0)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.65
+omni_range = 4.8
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="InnerFixtureHousing" type="Node3D" parent="SecurityInner"]
+position = Vector3(31, 3.0700000000000003, 6.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/InnerFixtureHousing"]
+mesh = SubResource("R153")
+
+[node name="InnerFixtureDiffuser" type="Node3D" parent="SecurityInner"]
+position = Vector3(31, 2.982, 6.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/InnerFixtureDiffuser"]
+mesh = SubResource("R154")
+
+[node name="InnerFixtureLight" type="OmniLight3D" parent="SecurityInner"]
+position = Vector3(31, 2.6500000000000004, 6.0)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.35
+omni_range = 4
+omni_attenuation = 1.3
+shadow_enabled = true
+
+[node name="ControlledDoor" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.25, 4.9)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/ControlledDoor"]
+mesh = SubResource("R245")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/ControlledDoor"]
+shape = SubResource("R246")
+
+[node name="SecurityGlazing" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.25, 6.9)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/SecurityGlazing"]
+mesh = SubResource("R247")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/SecurityGlazing"]
+shape = SubResource("R248")
+
+[node name="GlazingMullion0" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.25, 5.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/GlazingMullion0"]
+mesh = SubResource("R249")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/GlazingMullion0"]
+shape = SubResource("R250")
+
+[node name="GlazingMullion1" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.25, 6.9)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/GlazingMullion1"]
+mesh = SubResource("R249")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/GlazingMullion1"]
+shape = SubResource("R250")
+
+[node name="GlazingMullion2" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(28.5, 1.25, 8.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/GlazingMullion2"]
+mesh = SubResource("R249")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/GlazingMullion2"]
+shape = SubResource("R250")
+
+[node name="ControlledSign" type="Node3D" parent="SecurityOuter"]
+position = Vector3(28.35, 2.8, 6.2)
+rotation_degrees = Vector3(0, -90, 0)
+
+[node name="Plate" type="Node3D" parent="SecurityOuter/ControlledSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/ControlledSign/Plate"]
+mesh = SubResource("R251")
+
+[node name="Text" type="Label3D" parent="SecurityOuter/ControlledSign"]
+position = Vector3(0, 0, 0.02)
+text = "SECURITY / CONTROLLED ACCESS"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="AccessPedestal" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(27.3, 0.65, 4.1)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/AccessPedestal"]
+mesh = SubResource("R252")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/AccessPedestal"]
+shape = SubResource("R253")
+
+[node name="ReservedAccessTerminal" type="Marker3D" parent="SecurityOuter"]
+position = Vector3(27.3, 1.4, 4.1)
+
+[node name="EncoderBench" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(32.7, 0.45, 6.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/EncoderBench"]
+mesh = SubResource("R254")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/EncoderBench"]
+shape = SubResource("R255")
+
+[node name="EncoderHousing" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(32.7, 1.1, 6.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/EncoderHousing"]
+mesh = SubResource("R256")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/EncoderHousing"]
+shape = SubResource("R257")
+
+[node name="SecurityRack" type="StaticBody3D" parent="SecurityInner"]
+position = Vector3(31.7, 1.2, 8.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/SecurityRack"]
+mesh = SubResource("R258")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityInner/SecurityRack"]
+shape = SubResource("R259")
+
+[node name="ReservedCardEncoder" type="Marker3D" parent="SecurityInner"]
+position = Vector3(32.7, 1.1, 6.3)
+
+[node name="DirectorDoor" type="StaticBody3D" parent="SecurityOuter"]
+position = Vector3(26, 1.25, 8.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/DirectorDoor"]
+mesh = SubResource("R260")
+
+[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/DirectorDoor"]
+shape = SubResource("R261")
+
+[node name="DirectorDoorSeam" type="Node3D" parent="SecurityOuter"]
+position = Vector3(26, 1.25, 8.58)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/DirectorDoorSeam"]
+mesh = SubResource("R262")
+
+[node name="DirectorSign" type="Node3D" parent="SecurityOuter"]
+position = Vector3(26, 2.8, 8.56)
+rotation_degrees = Vector3(0, 180, 0)
+
+[node name="Plate" type="Node3D" parent="SecurityOuter/DirectorSign"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/DirectorSign/Plate"]
+mesh = SubResource("R263")
+
+[node name="Text" type="Label3D" parent="SecurityOuter/DirectorSign"]
+position = Vector3(0, 0, 0.02)
+text = "DIRECTOR'S OFFICE"
+font_size = 48
+pixel_size = 0.0035
+modulate = Color(0.82, 0.84, 0.72, 1)
+outline_size = 0
+no_depth_test = false
+billboard = 0
+
+[node name="ReservedDirectorOffice" type="Marker3D" parent="DirectorThreshold"]
+position = Vector3(26, 0, 11.2)
+
+[node name="ServiceStrip" type="Node3D" parent="LaboratoryLink"]
+position = Vector3(13, 3.1300000000000003, -4.3)
+[node name="Housing" type="MeshInstance3D" parent="LaboratoryLink/ServiceStrip"]
+mesh = SubResource("ServiceStripHousing")
+[node name="Diffuser" type="MeshInstance3D" parent="LaboratoryLink/ServiceStrip"]
+position = Vector3(0, -0.06, 0)
+mesh = SubResource("ServiceStripDiffuser")
+[node name="Light" type="OmniLight3D" parent="LaboratoryLink/ServiceStrip"]
+position = Vector3(0, -0.45, 0)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.28
+omni_range = 2.6
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="ServiceStrip" type="Node3D" parent="ArchiveLink"]
+position = Vector3(13, 3.1300000000000003, 7.7)
+[node name="Housing" type="MeshInstance3D" parent="ArchiveLink/ServiceStrip"]
+mesh = SubResource("ServiceStripHousing")
+[node name="Diffuser" type="MeshInstance3D" parent="ArchiveLink/ServiceStrip"]
+position = Vector3(0, -0.06, 0)
+mesh = SubResource("ServiceStripDiffuser")
+[node name="Light" type="OmniLight3D" parent="ArchiveLink/ServiceStrip"]
+position = Vector3(0, -0.45, 0)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.28
+omni_range = 2.6
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="ServiceStrip" type="Node3D" parent="GeneratorLink"]
+position = Vector3(26, 3.1300000000000003, -5.3)
+[node name="Housing" type="MeshInstance3D" parent="GeneratorLink/ServiceStrip"]
+mesh = SubResource("ServiceStripHousing")
+[node name="Diffuser" type="MeshInstance3D" parent="GeneratorLink/ServiceStrip"]
+position = Vector3(0, -0.06, 0)
+mesh = SubResource("ServiceStripDiffuser")
+[node name="Light" type="OmniLight3D" parent="GeneratorLink/ServiceStrip"]
+position = Vector3(0, -0.45, 0)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.28
+omni_range = 2.6
+omni_attenuation = 1.1
+shadow_enabled = true
+
+[node name="ServiceStrip" type="Node3D" parent="Generator"]
+position = Vector3(23.7, 3.73, -12.9)
+[node name="Housing" type="MeshInstance3D" parent="Generator/ServiceStrip"]
+mesh = SubResource("ServiceStripHousing")
+[node name="Diffuser" type="MeshInstance3D" parent="Generator/ServiceStrip"]
+position = Vector3(0, -0.06, 0)
+mesh = SubResource("ServiceStripDiffuser")
+[node name="Light" type="OmniLight3D" parent="Generator/ServiceStrip"]
+position = Vector3(0, -0.45, 0)
+light_color = Color(0.78, 0.87, 0.68, 1)
+light_energy = 0.38
+omni_range = 3.3
+omni_attenuation = 1.1
+shadow_enabled = true

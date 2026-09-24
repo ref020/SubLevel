@@ -1,4 +1,4 @@
-[gd_scene load_steps=323 format=3]
+[gd_scene load_steps=314 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" path="res://scenes/props/employee_badge.tscn" id="Badge"]
 [ext_resource type="PackedScene" path="res://scenes/items/observation_exit_key.tscn" id="ExitKey"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/drawer_combination.tscn" id="DrawerCombination"]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/facility_graybox.tscn" id="Facility"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -1156,36 +1158,6 @@ top_radius = 0.014
 bottom_radius = 0.014
 height = 0.5
 material = SubResource("IndicatorOff")
-
-[sub_resource type="BoxMesh" id="BoundaryFloorMesh"]
-size = Vector3(2.1, 0.2, 1.8)
-material = SubResource("Metal")
-[sub_resource type="BoxShape3D" id="BoundaryFloorShape"]
-size = Vector3(2.1, 0.2, 1.8)
-
-[sub_resource type="BoxMesh" id="BoundaryCeilingMesh"]
-size = Vector3(2.1, 0.2, 1.8)
-material = SubResource("Metal")
-[sub_resource type="BoxShape3D" id="BoundaryCeilingShape"]
-size = Vector3(2.1, 0.2, 1.8)
-
-[sub_resource type="BoxMesh" id="BoundaryNorthMesh"]
-size = Vector3(2.1, 2.6, 0.2)
-material = SubResource("Metal")
-[sub_resource type="BoxShape3D" id="BoundaryNorthShape"]
-size = Vector3(2.1, 2.6, 0.2)
-
-[sub_resource type="BoxMesh" id="BoundarySouthMesh"]
-size = Vector3(2.1, 2.6, 0.2)
-material = SubResource("Metal")
-[sub_resource type="BoxShape3D" id="BoundarySouthShape"]
-size = Vector3(2.1, 2.6, 0.2)
-
-[sub_resource type="BoxMesh" id="BoundaryEndMesh"]
-size = Vector3(0.2, 2.6, 2.0)
-material = SubResource("Metal")
-[sub_resource type="BoxShape3D" id="BoundaryEndShape"]
-size = Vector3(0.2, 2.6, 2.0)
 
 [sub_resource type="BoxMesh" id="DrawerSleeveTopMesh"]
 size = Vector3(1.24, 0.04, 1.0)
@@ -2531,55 +2503,7 @@ position = Vector3(0.05, 0.103, 0.22)
 rotation_degrees = Vector3(-90, 0, 20)
 scale = Vector3(1.81818, 1.81818, 1.81818)
 
-[node name="ExitBoundary" type="Node3D" parent="Architecture"]
-
-[node name="Floor" type="StaticBody3D" parent="Architecture/ExitBoundary"]
-position = Vector3(5.45, -0.1, 1.7)
-[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/Floor"]
-mesh = SubResource("BoundaryFloorMesh")
-[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/Floor"]
-shape = SubResource("BoundaryFloorShape")
-
-[node name="Ceiling" type="StaticBody3D" parent="Architecture/ExitBoundary"]
-position = Vector3(5.45, 2.65, 1.7)
-[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/Ceiling"]
-mesh = SubResource("BoundaryCeilingMesh")
-[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/Ceiling"]
-shape = SubResource("BoundaryCeilingShape")
-
-[node name="North" type="StaticBody3D" parent="Architecture/ExitBoundary"]
-position = Vector3(5.45, 1.3, 0.8)
-[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/North"]
-mesh = SubResource("BoundaryNorthMesh")
-[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/North"]
-shape = SubResource("BoundaryNorthShape")
-
-[node name="South" type="StaticBody3D" parent="Architecture/ExitBoundary"]
-position = Vector3(5.45, 1.3, 2.6)
-[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/South"]
-mesh = SubResource("BoundarySouthMesh")
-[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/South"]
-shape = SubResource("BoundarySouthShape")
-
-[node name="End" type="StaticBody3D" parent="Architecture/ExitBoundary"]
-position = Vector3(6.5, 1.3, 1.7)
-[node name="Mesh" type="MeshInstance3D" parent="Architecture/ExitBoundary/End"]
-mesh = SubResource("BoundaryEndMesh")
-[node name="Collision" type="CollisionShape3D" parent="Architecture/ExitBoundary/End"]
-shape = SubResource("BoundaryEndShape")
-
-[node name="BoundaryLabel" type="Label3D" parent="Architecture/ExitBoundary"]
-position = Vector3(6.39, 1.5, 1.7)
-rotation_degrees = Vector3(0, -90, 0)
-text = "PROTOTYPE BOUNDARY"
-font_size = 28
-pixel_size = 0.002
-no_depth_test = false
-[node name="DimLight" type="OmniLight3D" parent="Architecture/ExitBoundary"]
-position = Vector3(5.4, 2.2, 1.7)
-light_color = Color(0.4, 0.5, 0.4, 1)
-light_energy = 0.15
-omni_range = 1.6
+[node name="Facility" parent="Architecture" instance=ExtResource("Facility")]
 
 [node name="SleeveTop" type="StaticBody3D" parent="Furniture/Desk/LockedDrawer"]
 position = Vector3(0, 1.28, 0)

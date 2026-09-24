@@ -204,7 +204,10 @@ func _run() -> void:
 	await create_timer(0.9).timeout
 	_check(exit_door.state == Openable.State.OPEN, "Second E opens exit")
 	_check(not player.test_move(Transform3D(Basis.IDENTITY, Vector3(3.8, 0.03, 1.7)), Vector3(1.2, 0, 0)), "Open threshold allows stepping beyond room")
-	_check(player.test_move(Transform3D(Basis.IDENTITY, Vector3(5.2, 0.03, 1.7)), Vector3(3, 0, 0)), "Temporary corridor end prevents void escape")
+	_check(not player.test_move(Transform3D(Basis.IDENTITY, Vector3(5.2, 0.03, 1.7)), Vector3(7.8, 0, 0)), "Completed escape reaches Central Hub through service corridor")
+	player.position = Vector3(3.8, 0.03, 1.7)
+	var transition_collision: KinematicCollision3D = player.move_and_collide(Vector3(9.2, 0, 0))
+	_check(transition_collision == null and player.position.x > 12.9, "Player physically moves from completed Observation Room into Hub")
 	room.queue_free()
 	await process_frame
 	print("Escape smoke test: %d failure(s)." % failures)

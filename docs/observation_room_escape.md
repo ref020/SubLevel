@@ -30,8 +30,8 @@ GAME_DESIGN.md. Mara's original coordinate clue is unchanged.
 8. Approach the exit and press E: the compatible key unlocks it, with brief
    feedback, but it stays closed. Press E again to open it. The key remains
    in inventory and the player is not teleported.
-9. Step into the short dark corridor beyond the door. Its sealed end, marked
-   PROTOTYPE BOUNDARY, is the current development boundary. No Hub is built.
+9. Step into the service corridor beyond the door. Milestone 10A connects it
+   to the Central Hub and static wing grayboxes; see facility_graybox.md.
 
 Before collecting the key, the exit stays locked. Before entering 4778, the
 drawer stays locked. Clue inspection is never ordered by hidden flags: knowing
@@ -89,7 +89,7 @@ key -> exit chain using camera targeting and E/F/code/dialogue input. Player
 positions are set to known approaches; it is not an automated walking playtest.
 It also checks the grid, inspection mesh text, wrong codes, closed-drawer ray
 occlusion from standing/jump viewpoints, generic lock compatibility, retained
-keys, separate unlock/open steps, and the corridor boundary.
+keys, separate unlock/open steps, and passage through the corridor into the Hub.
 
 All earlier smoke suites remain applicable. The room navigation test retains
 its existing checks and includes the three new interactables in its count.
@@ -97,6 +97,6 @@ its existing checks and includes the three new interactables in its count.
 Headless checks cannot judge final visual readability or physical mouse feel.
 The badge is deliberately larger than a modern ID card for prototype clarity.
 Existing openable animation does not reverse on obstruction. State resets on
-scene restart. The corridor is a sealed development stub, not the Central Hub.
+scene restart. The corridor now connects to the Milestone 10A facility graybox.
 No cassette/note purpose, later puzzles, persistence, NPC systems, or audio
 have been added.
