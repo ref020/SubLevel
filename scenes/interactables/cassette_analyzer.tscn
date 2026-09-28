@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/powered_readout.gd" id="Script"]
+
+[sub_resource type="StandardMaterial3D" id="MatHousing"]
+albedo_color = Color(0.31, 0.35, 0.30, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatScreen"]
+albedo_color = Color(0.022, 0.031, 0.025, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatInk"]
+albedo_color = Color(0.67, 0.76, 0.58, 1)
+roughness = 0.92
+emission = Color(0.35, 0.48, 0.29, 1)
+emission_energy_multiplier = 0.35
+
+[sub_resource type="BoxMesh" id="Housing"]
+size = Vector3(0.38, 0.42, 0.34)
+material = SubResource("MatHousing")
+
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.38, 0.42, 0.34)
+
+[sub_resource type="BoxMesh" id="Screen"]
+size = Vector3(0.33, 0.345, 0.006)
+material = SubResource("MatScreen")
+
+[sub_resource type="TextMesh" id="Readout"]
+text = ""
+font_size = 64
+pixel_size = 0.00032
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Plate"]
+text = "SIGNAL ANALYZER"
+font_size = 64
+pixel_size = 0.00025
+depth = 0.0
+material = SubResource("MatInk")
+
+[node name="CassetteAnalyzer" type="Node3D" node_paths=PackedStringArray("visual_root", "display_mesh")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+display_mesh = NodePath("Visual/Readout")
+interaction_prompt = "Analyze Cassette"
+standby_text = "SIGNAL ANALYSIS\nMAINS ONLINE\nREADY"
+analyzes_recording = true
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Housing" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Housing")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0, 0)
+shape = SubResource("Hit")
+
+[node name="Screen" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.012, 0.174)
+mesh = SubResource("Screen")
+
+[node name="Readout" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.012, 0.178)
+mesh = SubResource("Readout")
+
+[node name="Plate" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.184, 0.172)
+mesh = SubResource("Plate")

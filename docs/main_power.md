@@ -2,8 +2,9 @@
 
 F5 starts the complete Observation Room and continues into the facility. No
 editor configuration, new Input Map actions, dependencies, or debug controls
-are required. This milestone ends at Main Power; Security, Director
-Authorization, and Emergency Egress progression remain unimplemented.
+are required. This milestone ends at Main Power; card rewriting, Director
+Authorization, and Emergency Egress progression remain unimplemented. Milestone
+11A adds Security investigation only; see [security_investigation.md](security_investigation.md).
 
 ## Physical route and controls
 
@@ -68,7 +69,9 @@ is intentionally outside this milestone. Generic player code contains no
 battery/deck item-ID checks.
 
 `ConversationParticipant` now offers a `_perform_action` hook before setting
-flags/emitting action resolution. Mara retains the default behavior. Elias's
+flags/emitting action resolution. Mara retains that behavior for the original
+window action; Milestone 11A adds a physically Main-Power-gated phase-chart action.
+Elias's
 implementation opens the real facility bypass only after contact and only once;
 dialogue confirms success afterward. Aborting the acknowledgement leaves the
 request available. His flags record the conversation; physical bypass state
@@ -88,8 +91,9 @@ does not enumerate lights, rooms, or future equipment.
 - An additional Hub fluorescent circuit illuminates its existing housing.
 - Archive's AC lamp wakes. The recorder works on battery **or** facility mains;
   restoring mains preserves any installed battery/cassette and playback access.
-- A small standby lamp wakes on the Security outer pedestal, without enabling
-  Security gameplay or changing its physical boundary.
+- A small standby lamp wakes on the Security outer pedestal, without changing
+  its physical boundary. Milestone 11A additionally boots the investigation
+  terminal and enables Archive analysis through the same state.
 - The Hub status panel changes only MAIN POWER from OFF to ONLINE. SECURITY
   CLEARANCE INVALID, DIRECTOR AUTHORIZATION REQUIRED, and EXIT SEALED remain.
 

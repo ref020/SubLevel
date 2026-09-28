@@ -13,7 +13,8 @@ Map action is required. No clue-inspection flags gate the radio.
   Equal-weight rows read A-4 +0.1, M-2 -0.3, C-7 +0.2.
 - Archive personnel cabinet: noncollectible Warren Vale record/contact card
   mounted at (14.9, 1.42, 9.639). It identifies the Facility Director and gives
-  MAINT. BAND / 107.6 MHz. It does not mention M-2, 107.3, or employee ID 0614.
+  MAINT. BAND / 107.6 MHz. Milestone 11A adds EMPLOYEE ID: 0614 to this same
+  record; it still does not mention M-2 or 107.3.
 - Maintenance radio desk: M-2 at its existing reserved (24.8, 1.07, 2.05).
 
 Canonical deduction: **107.6 MHz + (-0.3 MHz) = 107.3 MHz**. Document text is
@@ -56,7 +57,9 @@ See [main_power.md](main_power.md) for its state and physical effects.
 static graybox remains separate. Radio conversation wiring belongs to the main
 scene because it references the main player. Milestone 10C adds battery,
 cassette playback, generator operation, and Main Power in a separate systems
-layer. Security, Director, and new Mara progression remain unimplemented.
+layer. Milestone 11A adds Security investigation and Mara's phase-chart action;
+see [security_investigation.md](security_investigation.md). Card rewriting and
+Director progression remain unimplemented.
 
 ## Validation and manual check
 

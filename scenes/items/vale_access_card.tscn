@@ -1,0 +1,130 @@
+[gd_scene load_steps=17 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/pickup_item.gd" id="Script"]
+
+[sub_resource type="StandardMaterial3D" id="MatCard"]
+albedo_color = Color(0.55, 0.56, 0.44, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatInk"]
+albedo_color = Color(0.07, 0.085, 0.07, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatBand"]
+albedo_color = Color(0.27, 0.31, 0.27, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatWear"]
+albedo_color = Color(0.41, 0.42, 0.34, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="Card"]
+size = Vector3(0.23, 0.15, 0.009)
+material = SubResource("MatCard")
+
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.23, 0.15, 0.009)
+
+[sub_resource type="BoxMesh" id="Stripe"]
+size = Vector3(0.22, 0.018, 0.001)
+material = SubResource("MatBand")
+
+[sub_resource type="TextMesh" id="Facility"]
+text = "HALCYON RESEARCH FACILITY"
+font_size = 64
+pixel_size = 0.00019
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Name"]
+text = "WARREN VALE"
+font_size = 64
+pixel_size = 0.00032
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Role"]
+text = "FACILITY DIRECTOR"
+font_size = 64
+pixel_size = 0.00025
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Status"]
+text = "ACCESS REVOKED"
+font_size = 64
+pixel_size = 0.00025
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="BoxMesh" id="BackStripe"]
+size = Vector3(0.22, 0.035, 0.001)
+material = SubResource("MatBand")
+
+[sub_resource type="BoxMesh" id="Wear0"]
+size = Vector3(0.009, 0.003, 0.001)
+material = SubResource("MatWear")
+
+[sub_resource type="BoxMesh" id="Wear1"]
+size = Vector3(0.009, 0.003, 0.001)
+material = SubResource("MatWear")
+
+[sub_resource type="BoxMesh" id="Wear2"]
+size = Vector3(0.009, 0.003, 0.001)
+material = SubResource("MatWear")
+
+[node name="ValeAccessCard" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+item_id = &"vale_access_card"
+display_name = "Director Access Card"
+description = "An access credential issued to Facility Director Warren Vale. Its permissions have been revoked."
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Card" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Card")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0, 0)
+shape = SubResource("Hit")
+
+[node name="Stripe" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.042, 0.005)
+mesh = SubResource("Stripe")
+
+[node name="Facility" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.060, 0.005)
+mesh = SubResource("Facility")
+
+[node name="Name" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.015, 0.005)
+mesh = SubResource("Name")
+
+[node name="Role" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.012, 0.005)
+mesh = SubResource("Role")
+
+[node name="Status" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.045, 0.005)
+mesh = SubResource("Status")
+
+[node name="BackStripe" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.03, -0.005)
+mesh = SubResource("BackStripe")
+
+[node name="Wear0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.107, -0.057, 0.005)
+mesh = SubResource("Wear0")
+
+[node name="Wear1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.099, 0.027, 0.005)
+mesh = SubResource("Wear1")
+
+[node name="Wear2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.08, 0.07, 0.005)
+mesh = SubResource("Wear2")

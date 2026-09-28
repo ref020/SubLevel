@@ -3,12 +3,23 @@ extends DialogueData
 
 func _init() -> void:
 	actions = {
+		"inspect_phase_chart": {
+			"requires": ["main_power_online"], "excludes": ["phase_chart_inspected"],
+			"sets": ["phase_chart_inspected"]
+		},
 		"inspect_window": {
 			"requires": ["has_introduced_herself", "knows_player_is_trapped", "window_context"],
 			"excludes": ["window_inspected"], "sets": ["window_inspected"]
 		}
 	}
 	nodes = {
+		"phase_request": {"text": "There's a light on over an observation panel now. I'll go closer and read it.", "next": "phase_discovery"},
+		"phase_discovery": {"action": "inspect_phase_chart", "action_unavailable": "menu",
+			"text": "I can see a chart beside it. Four channels, each with a different marking.", "next": "phase_report"},
+		"phase_report": {"text": "A = 90°\nB = 270°\nC = 0°\nD = 180°",
+			"sets": ["phase_chart_reported"], "next": "phase_after"},
+		"phase_after": {"text": "That's what's printed here. I don't know what the channels connect to.", "next": "menu"},
+		"phase_recall": {"text": "I remember the markings on that chart.", "next": "phase_report"},
 		"first": {"text": "Hello?", "next": "hearing"},
 		"hearing": {"text": "Can you hear me? I thought this thing was dead.", "choices": [
 			{"id": "answer", "text": "Yes. Who are you?", "next": "introduction"},
@@ -17,6 +28,12 @@ func _init() -> void:
 		"introduction": {"text": "Mara. Who's there? You don't sound like anyone I've heard here.",
 			"sets": ["has_introduced_herself"], "next": "menu"},
 		"menu": {"text": "I'm here. What is it?", "choices": [
+			{"id": "phase", "text": "Has the restored power revealed anything on your side?",
+				"requires": ["main_power_online"], "excludes": ["phase_chart_inspected"], "next": "phase_request"},
+			{"id": "phase_unreported", "text": "What did you find by the powered observation panel?",
+				"requires": ["phase_chart_inspected"], "excludes": ["phase_chart_reported"], "next": "phase_report"},
+			{"id": "phase_recall", "text": "Repeat the channel markings you found.",
+				"requires": ["phase_chart_reported"], "next": "phase_recall"},
 			{"id": "name", "text": "Who are you?", "excludes": ["has_introduced_herself"], "next": "introduction"},
 			{"id": "trapped", "text": "I'm locked in an observation room.", "excludes": ["knows_player_is_trapped"], "next": "trapped"},
 			{"id": "location", "text": "Where are you?", "next": "location"},

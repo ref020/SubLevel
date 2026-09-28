@@ -317,8 +317,9 @@ The Observation Room prototype is complete when this entire sequence can be play
 The finalized concepts below are canonical. Milestone 10A implements layout,
 navigation, and atmosphere. Milestone 10B implements only the Radio / Elias
 investigation and first contact. Milestone 10C implements the cassette/battery
-and cooperative Generator branch through Main Power. Later branches remain
-future work.
+and cooperative Generator branch through Main Power. Milestone 11A implements
+Security investigation and hash deduction only. Card rewriting, Security
+completion, Director Authorization, and egress remain future work.
 
 The final emergency egress requires all three macro conditions:
 
@@ -417,8 +418,29 @@ The verification hash combines three sources:
 Laboratory apparatus order is **0, 90, 180, 270 degrees**. This orders symbols
 **C, A, D, B**, giving **4, 3, 2, 1**. The verification hash is **4321**.
 
-Correct encoder information is **0614 / Class IV / 4321**. This restores the
-Director Access Card and satisfies SECURITY CLEARANCE.
+Milestone 11A IMPLEMENTED: the revoked collectible Director Access Card is
+clipped to the Archive personnel cabinet beside Vale's existing record. The
+record now includes EMPLOYEE ID: 0614 while retaining the 107.6 MHz contact
+card. A noncollectible Laboratory authorization chart lists equal-weight role
+classes I-IV. The Laboratory bench apparatus presents four physical ports in
+ascending phase order, without letter labels. These clues are available before
+Main Power and have no knowledge prerequisites.
+
+Main Power boots the Security outer access-control terminal, which reports
+CARD STATUS: REVOKED, CLEARANCE: NONE, ENCODER: AVAILABLE, and the three required
+credential fields without values. Main Power also enables deliberate signal
+analysis of the same installed Observation cassette at the Archive workstation;
+battery power still supports the unchanged generator recording, but not analysis.
+Mara can investigate newly illuminated channel markings on her side after Main
+Power. Investigation and report flags persist separately, with interrupted-report
+recovery and later recall. No clue inspections gate her action.
+
+FUTURE: entering **0614 / Class IV / 4321** at the encoder will restore the
+Director Access Card and satisfy SECURITY CLEARANCE. Milestone 11A has no
+credential entry/rewrite interaction and never marks Security valid. The encoder
+remains inert hardware; Director and egress barriers remain closed. The deduction
+above is design documentation, never an automatic in-game explanation.
+See docs/security_investigation.md for implementation and validation.
 
 ## Director Authorization
 

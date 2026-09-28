@@ -1,4 +1,4 @@
-[gd_scene load_steps=318 format=3]
+[gd_scene load_steps=320 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -32,6 +32,9 @@
 
 [ext_resource type="PackedScene" path="res://scenes/levels/facility_systems.tscn" id="FacilitySystems"]
 [ext_resource type="Script" path="res://scripts/levels/facility_main_power.gd" id="MainWiring"]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/security_investigation.tscn" id="SecurityInvestigation"]
+[ext_resource type="Script" path="res://scripts/levels/security_investigation.gd" id="SecurityWiring"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -2567,3 +2570,13 @@ elias = NodePath("../FacilityInvestigation/Elias")
 shell = NodePath("../Architecture/Facility")
 
 [connection signal="correct_code_entered" from="Furniture/Desk/LockedDrawer/Body/Combination" to="Furniture/Desk/LockedDrawer" method="unlock"]
+
+[node name="SecurityInvestigation" parent="." instance=ExtResource("SecurityInvestigation")]
+
+[node name="SecurityWiring" type="Node" parent="." node_paths=PackedStringArray("state", "terminal", "analyzer", "tape_slot", "mara")]
+script = ExtResource("SecurityWiring")
+state = NodePath("../FacilitySystems/State")
+terminal = NodePath("../SecurityInvestigation/Terminal")
+analyzer = NodePath("../SecurityInvestigation/Analyzer")
+tape_slot = NodePath("../FacilitySystems/CassetteWorkstation/TapeSlot")
+mara = NodePath("../PuzzleProps/ObservationWindow/Mara")

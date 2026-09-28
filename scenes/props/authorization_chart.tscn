@@ -1,0 +1,169 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/inspectable.gd" id="Script"]
+
+[sub_resource type="StandardMaterial3D" id="MatPaper"]
+albedo_color = Color(0.70, 0.69, 0.55, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatInk"]
+albedo_color = Color(0.06, 0.08, 0.06, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatClip"]
+albedo_color = Color(0.25, 0.28, 0.24, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="Paper"]
+size = Vector3(0.40, 0.34, 0.008)
+material = SubResource("MatPaper")
+
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.40, 0.34, 0.008)
+
+[sub_resource type="BoxMesh" id="Clip"]
+size = Vector3(0.08, 0.014, 0.01)
+material = SubResource("MatClip")
+
+[sub_resource type="TextMesh" id="Title"]
+text = "HALCYON / AUTHORIZATION"
+font_size = 64
+pixel_size = 0.00033
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="HeaderRole"]
+text = "ROLE"
+font_size = 64
+pixel_size = 0.00029
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="HeaderClass"]
+text = "ACCESS CLASS"
+font_size = 64
+pixel_size = 0.00023
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Role0"]
+text = "TECHNICAL STAFF"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Class0"]
+text = "I"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Role1"]
+text = "RESEARCH STAFF"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Class1"]
+text = "II"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Role2"]
+text = "SECTION SUPERVISOR"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Class2"]
+text = "III"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Role3"]
+text = "FACILITY DIRECTOR"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="TextMesh" id="Class3"]
+text = "IV"
+font_size = 64
+pixel_size = 0.00028
+depth = 0.0
+material = SubResource("MatInk")
+
+[node name="AuthorizationChart" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+interaction_prompt = "Inspect Authorization Reference"
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Paper" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Paper")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0, 0)
+shape = SubResource("Hit")
+
+[node name="Clip" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.162, 0.003)
+mesh = SubResource("Clip")
+
+[node name="Title" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.125, 0.005)
+mesh = SubResource("Title")
+
+[node name="HeaderRole" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.079, 0.075, 0.005)
+mesh = SubResource("HeaderRole")
+
+[node name="HeaderClass" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.128, 0.075, 0.005)
+mesh = SubResource("HeaderClass")
+
+[node name="Role0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.045, 0.027, 0.005)
+mesh = SubResource("Role0")
+
+[node name="Class0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.128, 0.027, 0.005)
+mesh = SubResource("Class0")
+
+[node name="Role1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.045, -0.018, 0.005)
+mesh = SubResource("Role1")
+
+[node name="Class1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.128, -0.018, 0.005)
+mesh = SubResource("Class1")
+
+[node name="Role2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.045, -0.063, 0.005)
+mesh = SubResource("Role2")
+
+[node name="Class2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.128, -0.063, 0.005)
+mesh = SubResource("Class2")
+
+[node name="Role3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.045, -0.10800000000000001, 0.005)
+mesh = SubResource("Role3")
+
+[node name="Class3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.128, -0.10800000000000001, 0.005)
+mesh = SubResource("Class3")

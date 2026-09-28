@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/inspectable.gd" id="Script"]
+
+[sub_resource type="StandardMaterial3D" id="MatHousing"]
+albedo_color = Color(0.32, 0.36, 0.30, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatInk"]
+albedo_color = Color(0.08, 0.095, 0.075, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatPlate"]
+albedo_color = Color(0.65, 0.65, 0.51, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="MatPort"]
+albedo_color = Color(0.09, 0.11, 0.09, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="Housing"]
+size = Vector3(0.80, 0.58, 0.68)
+material = SubResource("MatHousing")
+
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.80, 0.58, 0.68)
+
+[sub_resource type="BoxMesh" id="Faceplate"]
+size = Vector3(0.75, 0.48, 0.008)
+material = SubResource("MatPlate")
+
+[sub_resource type="TextMesh" id="Title"]
+text = "PHASE / TEST PORTS"
+font_size = 64
+pixel_size = 0.00065
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="BoxMesh" id="Port0"]
+size = Vector3(0.10, 0.07, 0.018)
+material = SubResource("MatPort")
+
+[sub_resource type="TextMesh" id="Phase0"]
+text = "0°"
+font_size = 64
+pixel_size = 0.00065
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="BoxMesh" id="Port1"]
+size = Vector3(0.10, 0.07, 0.018)
+material = SubResource("MatPort")
+
+[sub_resource type="TextMesh" id="Phase1"]
+text = "90°"
+font_size = 64
+pixel_size = 0.00065
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="BoxMesh" id="Port2"]
+size = Vector3(0.10, 0.07, 0.018)
+material = SubResource("MatPort")
+
+[sub_resource type="TextMesh" id="Phase2"]
+text = "180°"
+font_size = 64
+pixel_size = 0.00065
+depth = 0.0
+material = SubResource("MatInk")
+
+[sub_resource type="BoxMesh" id="Port3"]
+size = Vector3(0.10, 0.07, 0.018)
+material = SubResource("MatPort")
+
+[sub_resource type="TextMesh" id="Phase3"]
+text = "270°"
+font_size = 64
+pixel_size = 0.00065
+depth = 0.0
+material = SubResource("MatInk")
+
+[node name="PhaseApparatus" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+interaction_prompt = "Inspect Phase Apparatus"
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Housing" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("Housing")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0, 0)
+shape = SubResource("Hit")
+
+[node name="Faceplate" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0.344)
+mesh = SubResource("Faceplate")
+
+[node name="Title" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.16, 0.349)
+mesh = SubResource("Title")
+
+[node name="Port0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.27, 0, 0.359)
+mesh = SubResource("Port0")
+
+[node name="Phase0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.27, -0.11, 0.349)
+mesh = SubResource("Phase0")
+
+[node name="Port1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.09000000000000002, 0, 0.359)
+mesh = SubResource("Port1")
+
+[node name="Phase1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.09000000000000002, -0.11, 0.349)
+mesh = SubResource("Phase1")
+
+[node name="Port2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.08999999999999997, 0, 0.359)
+mesh = SubResource("Port2")
+
+[node name="Phase2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.08999999999999997, -0.11, 0.349)
+mesh = SubResource("Phase2")
+
+[node name="Port3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.27, 0, 0.359)
+mesh = SubResource("Port3")
+
+[node name="Phase3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.27, -0.11, 0.349)
+mesh = SubResource("Phase3")

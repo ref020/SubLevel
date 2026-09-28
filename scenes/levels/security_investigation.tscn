@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3]
+[ext_resource type="PackedScene" path="res://scenes/items/vale_access_card.tscn" id="ValeCard"]
+[ext_resource type="PackedScene" path="res://scenes/props/authorization_chart.tscn" id="AuthorizationChart"]
+[ext_resource type="PackedScene" path="res://scenes/props/phase_apparatus.tscn" id="PhaseApparatus"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/security_terminal.tscn" id="Terminal"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/cassette_analyzer.tscn" id="Analyzer"]
+[node name="SecurityInvestigation" type="Node3D"]
+[node name="ValeCard" parent="." instance=ExtResource("ValeCard")]
+position = Vector3(15.28, 1.22, 9.639)
+rotation_degrees = Vector3(0, 0, -4)
+[node name="AuthorizationChart" parent="." instance=ExtResource("AuthorizationChart")]
+position = Vector3(13.1, 1.65, -12.16)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="PhaseApparatus" parent="." instance=ExtResource("PhaseApparatus")]
+position = Vector3(16.7, 1.24, -10.8)
+rotation_degrees = Vector3(0, -90, 0)
+[node name="Terminal" parent="." instance=ExtResource("Terminal")]
+position = Vector3(27.3, 1.515, 4.1)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Analyzer" parent="." instance=ExtResource("Analyzer")]
+position = Vector3(13.71, 1.07, 15.05)
+rotation_degrees = Vector3(0, 180, 0)
