@@ -47,16 +47,16 @@ First contact establishes his maintenance role, isolation on the service side,
 emergency supply, and the need to coordinate his coolant bypass with the player's
 Generator controls. No startup sequence is supplied. `contacted` and the
 `generator_problem_established` flag persist only for the current game session.
-Later calls open a short reminder/end menu. The reminder is available even if
-the introduction was interrupted. Existing participant action requests support
-future commands, but `open_coolant_bypass` is deliberately unregistered and
-cannot pretend to operate equipment.
+Later calls open a short menu. The reminder is available even if the
+introduction was interrupted. Milestone 10C registers `open_coolant_bypass` as a
+real Elias action; it is available after contact without cassette prerequisites.
+See [main_power.md](main_power.md) for its state and physical effects.
 
 `facility_investigation.tscn` contains the active props and participant; the
 static graybox remains separate. Radio conversation wiring belongs to the main
-scene because it references the main player. No battery, cassette playback,
-generator operation, main power, Security, Director, or new Mara progression
-is implemented.
+scene because it references the main player. Milestone 10C adds battery,
+cassette playback, generator operation, and Main Power in a separate systems
+layer. Security, Director, and new Mara progression remain unimplemented.
 
 ## Validation and manual check
 

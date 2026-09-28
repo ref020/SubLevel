@@ -6,6 +6,8 @@ extends Inspectable
 @export var display_name: String
 @export_multiline var description: String
 @export var unlocks: Array[StringName] = []
+@export var installation_tags: Array[StringName] = []
+@export var recording: RecordingData
 
 var collected: bool = false
 

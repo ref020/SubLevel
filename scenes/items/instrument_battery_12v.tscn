@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/pickup_item.gd" id="Pickup"]
+
+[sub_resource type="StandardMaterial3D" id="R1"]
+albedo_color = Color(0.18, 0.21, 0.18, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="R2"]
+albedo_color = Color(0.68, 0.67, 0.53, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="R3"]
+albedo_color = Color(0.38, 0.39, 0.35, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="R4"]
+size = Vector3(0.22, 0.16, 0.12)
+material = SubResource("R1")
+
+[sub_resource type="BoxMesh" id="R5"]
+size = Vector3(0.2, 0.1, 0.003)
+material = SubResource("R2")
+
+[sub_resource type="BoxMesh" id="R6"]
+size = Vector3(0.025, 0.025, 0.025)
+material = SubResource("R3")
+
+[sub_resource type="BoxMesh" id="R7"]
+size = Vector3(0.025, 0.025, 0.025)
+material = SubResource("R3")
+
+[sub_resource type="TextMesh" id="R8"]
+text = "12V"
+font_size = 48
+pixel_size = 0.00065
+depth = 0.0
+material = SubResource("R1")
+
+[sub_resource type="TextMesh" id="R9"]
+text = "INSTRUMENT BATTERY"
+font_size = 48
+pixel_size = 0.00016
+depth = 0.0
+material = SubResource("R1")
+
+[sub_resource type="BoxShape3D" id="R10"]
+size = Vector3(0.22, 0.18, 0.13)
+
+[node name="Battery" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Pickup")
+item_id = &"instrument_battery_12v"
+display_name = "12V Instrument Battery"
+description = "A heavy rechargeable 12V battery removed from laboratory equipment."
+installation_tags = Array[StringName]([&"power_12v"])
+visual_root = NodePath("Visual")
+
+[node name="Visual" type="Node3D" parent="."]
+
+
+[node name="Cell" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("R4")
+
+[node name="Label" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0.061)
+mesh = SubResource("R5")
+
+[node name="Terminal0.065A" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.065, 0.09, 0)
+mesh = SubResource("R6")
+
+[node name="Terminal0.065B" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.065, 0.09, 0)
+mesh = SubResource("R7")
+
+[node name="Volts" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.022, 0.064)
+mesh = SubResource("R8")
+
+[node name="Type" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.018, 0.064)
+mesh = SubResource("R9")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+shape = SubResource("R10")

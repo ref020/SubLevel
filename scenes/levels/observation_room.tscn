@@ -1,4 +1,4 @@
-[gd_scene load_steps=316 format=3]
+[gd_scene load_steps=318 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -29,6 +29,9 @@
 [ext_resource type="PackedScene" path="res://scenes/levels/facility_investigation.tscn" id="Investigation"]
 
 [ext_resource type="Script" path="res://scripts/dialogue/radio_conversation.gd" id="RadioLink"]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/facility_systems.tscn" id="FacilitySystems"]
+[ext_resource type="Script" path="res://scripts/levels/facility_main_power.gd" id="MainWiring"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -2553,5 +2556,14 @@ radio = NodePath("../FacilityInvestigation/M2")
 participant = NodePath("../FacilityInvestigation/Elias")
 radio_presenter = NodePath("../Player/RadioUI")
 dialogue_presenter = NodePath("../Player/DialogueUI")
+
+[node name="FacilitySystems" parent="." instance=ExtResource("FacilitySystems")]
+
+[node name="MainPowerWiring" type="Node" parent="." node_paths=PackedStringArray("systems", "inventory", "elias", "shell")]
+script = ExtResource("MainWiring")
+systems = NodePath("../FacilitySystems")
+inventory = NodePath("../Player/Inventory")
+elias = NodePath("../FacilityInvestigation/Elias")
+shell = NodePath("../Architecture/Facility")
 
 [connection signal="correct_code_entered" from="Furniture/Desk/LockedDrawer/Body/Combination" to="Furniture/Desk/LockedDrawer" method="unlock"]

@@ -1,0 +1,625 @@
+[gd_scene load_steps=34 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/generator_presentation.gd" id="Present"]
+
+[ext_resource type="Script" path="res://scripts/systems/generator_startup.gd" id="Startup"]
+
+[ext_resource type="Script" path="res://scripts/interaction/physical_control.gd" id="Control"]
+
+[sub_resource type="StandardMaterial3D" id="R1"]
+albedo_color = Color(0.43, 0.47, 0.40, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="R2"]
+albedo_color = Color(0.06, 0.08, 0.06, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="R3"]
+albedo_color = Color(0.83, 0.81, 0.67, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="R4"]
+albedo_color = Color(0.18, 0.48, 0.2, 1)
+roughness = 0.85
+emission_enabled = true
+emission = Color(0.18, 0.48, 0.2, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="BoxMesh" id="R5"]
+size = Vector3(1.6, 0.68, 0.05)
+material = SubResource("R1")
+
+[sub_resource type="BoxShape3D" id="R6"]
+size = Vector3(1.6, 0.68, 0.05)
+
+[sub_resource type="BoxMesh" id="R7"]
+size = Vector3(0.37, 0.37, 0.012)
+material = SubResource("R3")
+
+[sub_resource type="BoxMesh" id="R8"]
+size = Vector3(0.012, 0.145, 0.003)
+material = SubResource("R2")
+
+[sub_resource type="BoxMesh" id="R9"]
+size = Vector3(0.16, 0.12, 0.03)
+material = SubResource("R2")
+
+[sub_resource type="BoxShape3D" id="R10"]
+size = Vector3(0.18, 0.16, 0.08)
+
+[sub_resource type="BoxMesh" id="R11"]
+size = Vector3(0.06, 0.075, 0.035)
+material = SubResource("R3")
+
+[sub_resource type="BoxMesh" id="R12"]
+size = Vector3(0.16, 0.12, 0.03)
+material = SubResource("R2")
+
+[sub_resource type="BoxShape3D" id="R13"]
+size = Vector3(0.18, 0.16, 0.08)
+
+[sub_resource type="BoxMesh" id="R14"]
+size = Vector3(0.06, 0.075, 0.035)
+material = SubResource("R3")
+
+[sub_resource type="BoxMesh" id="R15"]
+size = Vector3(0.16, 0.12, 0.03)
+material = SubResource("R2")
+
+[sub_resource type="BoxShape3D" id="R16"]
+size = Vector3(0.18, 0.16, 0.08)
+
+[sub_resource type="BoxMesh" id="R17"]
+size = Vector3(0.06, 0.075, 0.035)
+material = SubResource("R3")
+
+[sub_resource type="BoxMesh" id="R18"]
+size = Vector3(0.16, 0.12, 0.03)
+material = SubResource("R2")
+
+[sub_resource type="BoxShape3D" id="R19"]
+size = Vector3(0.18, 0.16, 0.08)
+
+[sub_resource type="BoxMesh" id="R20"]
+size = Vector3(0.06, 0.075, 0.035)
+material = SubResource("R3")
+
+[sub_resource type="BoxMesh" id="R21"]
+size = Vector3(0.16, 0.12, 0.03)
+material = SubResource("R2")
+
+[sub_resource type="BoxShape3D" id="R22"]
+size = Vector3(0.18, 0.16, 0.08)
+
+[sub_resource type="BoxMesh" id="R23"]
+size = Vector3(0.06, 0.075, 0.035)
+material = SubResource("R3")
+
+[sub_resource type="BoxMesh" id="R24"]
+size = Vector3(0.16, 0.12, 0.03)
+material = SubResource("R2")
+
+[sub_resource type="BoxShape3D" id="R25"]
+size = Vector3(0.18, 0.16, 0.08)
+
+[sub_resource type="BoxMesh" id="R26"]
+size = Vector3(0.06, 0.075, 0.035)
+material = SubResource("R3")
+
+[sub_resource type="BoxMesh" id="R27"]
+size = Vector3(0.055, 0.025, 0.01)
+material = SubResource("R4")
+
+[sub_resource type="BoxMesh" id="Backing"]
+size = Vector3(0.36, 0.055, 0.016)
+material = SubResource("R2")
+
+[sub_resource type="BoxMesh" id="MinorGraduation"]
+size = Vector3(0.0025, 0.010, 0.001)
+material = SubResource("R2")
+[sub_resource type="BoxMesh" id="MajorGraduation"]
+size = Vector3(0.004, 0.018, 0.001)
+material = SubResource("R2")
+[node name="Generator" type="Node3D"]
+script = ExtResource("Present")
+
+[node name="Startup" type="Node" parent="."]
+script = ExtResource("Startup")
+
+[node name="Panel" type="StaticBody3D" parent="."]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("R5")
+
+[node name="Collision" type="CollisionShape3D" parent="Panel"]
+shape = SubResource("R6")
+
+[node name="Gauge" type="Node3D" parent="."]
+position = Vector3(-0.49, 0.04, 0.045)
+scale = Vector3(1.12, 1.12, 1.12)
+
+[node name="Face" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("R7")
+
+[node name="Needle" type="Node3D" parent="Gauge"]
+position = Vector3(0, 0, 0.014)
+
+[node name="Pointer" type="MeshInstance3D" parent="Gauge/Needle"]
+position = Vector3(0, 0.0725, 0)
+mesh = SubResource("R8")
+
+[node name="Tick0" type="Label3D" parent="Gauge"]
+position = Vector3(-0.1299038105676658, -0.07499999999999997, 0.017)
+text = "0"
+font_size = 36
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.08, 0.09, 0.07, 1)
+
+[node name="Tick10" type="Label3D" parent="Gauge"]
+position = Vector3(-0.1477211629518312, 0.02604722665003956, 0.017)
+text = "10"
+font_size = 36
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.08, 0.09, 0.07, 1)
+
+[node name="Tick20" type="Label3D" parent="Gauge"]
+position = Vector3(-0.09641814145298089, 0.1149066664678467, 0.017)
+text = "20"
+font_size = 36
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.08, 0.09, 0.07, 1)
+
+[node name="Tick30" type="Label3D" parent="Gauge"]
+position = Vector3(-0.0, 0.15, 0.017)
+text = "30"
+font_size = 36
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.08, 0.09, 0.07, 1)
+
+[node name="Tick40" type="Label3D" parent="Gauge"]
+position = Vector3(0.09641814145298089, 0.1149066664678467, 0.017)
+text = "40"
+font_size = 36
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.08, 0.09, 0.07, 1)
+
+[node name="Tick50" type="Label3D" parent="Gauge"]
+position = Vector3(0.1477211629518312, 0.02604722665003956, 0.017)
+text = "50"
+font_size = 36
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.08, 0.09, 0.07, 1)
+
+[node name="Tick60" type="Label3D" parent="Gauge"]
+position = Vector3(0.1299038105676658, -0.07499999999999997, 0.017)
+text = "60"
+font_size = 36
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.08, 0.09, 0.07, 1)
+
+[node name="Readout" type="Label3D" parent="Gauge"]
+position = Vector3(0, -0.25, 0.02)
+text = "PRESSURE  00"
+font_size = 32
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="Controls" type="Node3D" parent="."]
+
+
+[node name="prime" type="Node3D" parent="Controls"]
+position = Vector3(-0.14, 0.12, 0.055)
+script = ExtResource("Control")
+interaction_prompt = "Prime"
+
+[node name="Mount" type="MeshInstance3D" parent="Controls/prime"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("R9")
+
+[node name="Body" type="StaticBody3D" parent="Controls/prime"]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Controls/prime/Body"]
+shape = SubResource("R10")
+
+[node name="Lever" type="Node3D" parent="Controls/prime"]
+
+
+[node name="Handle" type="MeshInstance3D" parent="Controls/prime/Lever"]
+position = Vector3(0, 0.02, 0.035)
+mesh = SubResource("R11")
+
+[node name="Label" type="Label3D" parent="Controls/prime"]
+position = Vector3(0, 0.105, -0.026)
+text = "PRIME"
+font_size = 32
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="field" type="Node3D" parent="Controls"]
+position = Vector3(0.16, 0.12, 0.055)
+script = ExtResource("Control")
+interaction_prompt = "Field Excitation"
+
+[node name="Mount" type="MeshInstance3D" parent="Controls/field"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("R12")
+
+[node name="Body" type="StaticBody3D" parent="Controls/field"]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Controls/field/Body"]
+shape = SubResource("R13")
+
+[node name="Lever" type="Node3D" parent="Controls/field"]
+
+
+[node name="Handle" type="MeshInstance3D" parent="Controls/field/Lever"]
+position = Vector3(0, 0.02, 0.035)
+mesh = SubResource("R14")
+
+[node name="Label" type="Label3D" parent="Controls/field"]
+position = Vector3(0, 0.105, -0.026)
+text = "FIELD"
+font_size = 32
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="breaker_1" type="Node3D" parent="Controls"]
+position = Vector3(-0.12, -0.14, 0.055)
+script = ExtResource("Control")
+interaction_prompt = "Close Breaker 1"
+
+[node name="Mount" type="MeshInstance3D" parent="Controls/breaker_1"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("R15")
+
+[node name="Body" type="StaticBody3D" parent="Controls/breaker_1"]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Controls/breaker_1/Body"]
+shape = SubResource("R16")
+
+[node name="Lever" type="Node3D" parent="Controls/breaker_1"]
+
+
+[node name="Handle" type="MeshInstance3D" parent="Controls/breaker_1/Lever"]
+position = Vector3(0, 0.02, 0.035)
+mesh = SubResource("R17")
+
+[node name="Label" type="Label3D" parent="Controls/breaker_1"]
+position = Vector3(0, 0.105, -0.026)
+text = "1"
+font_size = 32
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="breaker_2" type="Node3D" parent="Controls"]
+position = Vector3(0.13, -0.14, 0.055)
+script = ExtResource("Control")
+interaction_prompt = "Close Breaker 2"
+
+[node name="Mount" type="MeshInstance3D" parent="Controls/breaker_2"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("R18")
+
+[node name="Body" type="StaticBody3D" parent="Controls/breaker_2"]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Controls/breaker_2/Body"]
+shape = SubResource("R19")
+
+[node name="Lever" type="Node3D" parent="Controls/breaker_2"]
+
+
+[node name="Handle" type="MeshInstance3D" parent="Controls/breaker_2/Lever"]
+position = Vector3(0, 0.02, 0.035)
+mesh = SubResource("R20")
+
+[node name="Label" type="Label3D" parent="Controls/breaker_2"]
+position = Vector3(0, 0.105, -0.026)
+text = "2"
+font_size = 32
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="breaker_3" type="Node3D" parent="Controls"]
+position = Vector3(0.38, -0.14, 0.055)
+script = ExtResource("Control")
+interaction_prompt = "Close Breaker 3"
+
+[node name="Mount" type="MeshInstance3D" parent="Controls/breaker_3"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("R21")
+
+[node name="Body" type="StaticBody3D" parent="Controls/breaker_3"]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Controls/breaker_3/Body"]
+shape = SubResource("R22")
+
+[node name="Lever" type="Node3D" parent="Controls/breaker_3"]
+
+
+[node name="Handle" type="MeshInstance3D" parent="Controls/breaker_3/Lever"]
+position = Vector3(0, 0.02, 0.035)
+mesh = SubResource("R23")
+
+[node name="Label" type="Label3D" parent="Controls/breaker_3"]
+position = Vector3(0, 0.105, -0.026)
+text = "3"
+font_size = 32
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="breaker_4" type="Node3D" parent="Controls"]
+position = Vector3(0.63, -0.14, 0.055)
+script = ExtResource("Control")
+interaction_prompt = "Close Breaker 4"
+
+[node name="Mount" type="MeshInstance3D" parent="Controls/breaker_4"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("R24")
+
+[node name="Body" type="StaticBody3D" parent="Controls/breaker_4"]
+
+
+[node name="Collision" type="CollisionShape3D" parent="Controls/breaker_4/Body"]
+shape = SubResource("R25")
+
+[node name="Lever" type="Node3D" parent="Controls/breaker_4"]
+
+
+[node name="Handle" type="MeshInstance3D" parent="Controls/breaker_4/Lever"]
+position = Vector3(0, 0.02, 0.035)
+mesh = SubResource("R26")
+
+[node name="Label" type="Label3D" parent="Controls/breaker_4"]
+position = Vector3(0, 0.105, -0.026)
+text = "4"
+font_size = 32
+pixel_size = 0.001
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="BreakerHeading" type="Label3D" parent="."]
+position = Vector3(0.26, -0.32, 0.034)
+text = "BREAKERS"
+font_size = 32
+pixel_size = 0.0006
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="Status" type="Label3D" parent="."]
+position = Vector3(0.47, 0.255, 0.034)
+text = "STANDBY"
+font_size = 32
+pixel_size = 0.0008
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="BypassLabel" type="Label3D" parent="."]
+position = Vector3(0.47, 0.11, 0.034)
+text = "COOLANT"
+font_size = 32
+pixel_size = 0.0006
+outline_size = 0
+no_depth_test = false
+billboard = 0
+modulate = Color(0.8, 0.83, 0.73, 1)
+
+[node name="BypassLamp" type="MeshInstance3D" parent="."]
+position = Vector3(0.47, 0.06, 0.034)
+mesh = SubResource("R27")
+visible = false
+
+[node name="Hum" type="AudioStreamPlayer3D" parent="."]
+volume_db = -20.0
+unit_size = 5.0
+max_distance = 20.0
+
+[node name="ReadoutPlate" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0, -0.25, 0.009)
+mesh = SubResource("Backing")
+
+[node name="Graduation0" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.1030570230503482, -0.05949999999999997, 0.009)
+rotation_degrees = Vector3(0, 0, 120)
+mesh = SubResource("MajorGraduation")
+
+[node name="Graduation2" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.1103348786934477, -0.04457818461649354, 0.009)
+rotation_degrees = Vector3(0, 0, 112)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation4" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.11546519142684357, -0.028788705576360464, 0.009)
+rotation_degrees = Vector3(0, 0, 104)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation6" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.11834810554882452, -0.012438887128850773, 0.009)
+rotation_degrees = Vector3(0, 0, 96)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation8" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.11892750841527239, 0.004153040107597628, 0.009)
+rotation_degrees = Vector3(0, 0, 88)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation10" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.11719212260845274, 0.02066413314236472, 0.009)
+rotation_degrees = Vector3(0, 0, 80)
+mesh = SubResource("MajorGraduation")
+
+[node name="Graduation12" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.11317572543912327, 0.03677302233061874, 0.009)
+rotation_degrees = Vector3(0, 0, 72)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation14" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.10695649150960088, 0.05216616646790022, 0.009)
+rotation_degrees = Vector3(0, 0, 64)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation16" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.09865547113404996, 0.06654395551301887, 0.009)
+rotation_degrees = Vector3(0, 0, 56)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation18" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.0884342342318099, 0.07962654215670413, 0.009)
+rotation_degrees = Vector3(0, 0, 48)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation20" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.07649172555269816, 0.09115928873115837, 0.009)
+rotation_degrees = Vector3(0, 0, 40)
+mesh = SubResource("MajorGraduation")
+
+[node name="Graduation22" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.06306039244375138, 0.10091772344261468, 0.009)
+rotation_degrees = Vector3(0, 0, 32)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation24" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.04840166052602022, 0.1087119094594695, 0.009)
+rotation_degrees = Vector3(0, 0, 24)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation26" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.0328008453422229, 0.11439014181665995, 0.009)
+rotation_degrees = Vector3(0, 0, 16)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation28" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.016561599014247787, 0.11784190018024687, 0.009)
+rotation_degrees = Vector3(0, 0, 8)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation30" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(-0.0, 0.119, 0.009)
+rotation_degrees = Vector3(0, 0, 0)
+mesh = SubResource("MajorGraduation")
+
+[node name="Graduation32" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.016561599014247787, 0.11784190018024687, 0.009)
+rotation_degrees = Vector3(0, 0, -8)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation34" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.0328008453422229, 0.11439014181665995, 0.009)
+rotation_degrees = Vector3(0, 0, -16)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation36" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.04840166052602022, 0.1087119094594695, 0.009)
+rotation_degrees = Vector3(0, 0, -24)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation38" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.06306039244375138, 0.10091772344261468, 0.009)
+rotation_degrees = Vector3(0, 0, -32)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation40" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.07649172555269816, 0.09115928873115837, 0.009)
+rotation_degrees = Vector3(0, 0, -40)
+mesh = SubResource("MajorGraduation")
+
+[node name="Graduation42" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.0884342342318099, 0.07962654215670413, 0.009)
+rotation_degrees = Vector3(0, 0, -48)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation44" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.09865547113404996, 0.06654395551301887, 0.009)
+rotation_degrees = Vector3(0, 0, -56)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation46" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.10695649150960088, 0.05216616646790022, 0.009)
+rotation_degrees = Vector3(0, 0, -64)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation48" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.11317572543912327, 0.03677302233061874, 0.009)
+rotation_degrees = Vector3(0, 0, -72)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation50" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.11719212260845274, 0.02066413314236472, 0.009)
+rotation_degrees = Vector3(0, 0, -80)
+mesh = SubResource("MajorGraduation")
+
+[node name="Graduation52" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.11892750841527239, 0.004153040107597628, 0.009)
+rotation_degrees = Vector3(0, 0, -88)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation54" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.11834810554882452, -0.012438887128850773, 0.009)
+rotation_degrees = Vector3(0, 0, -96)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation56" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.11546519142684357, -0.028788705576360464, 0.009)
+rotation_degrees = Vector3(0, 0, -104)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation58" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.1103348786934477, -0.04457818461649354, 0.009)
+rotation_degrees = Vector3(0, 0, -112)
+mesh = SubResource("MinorGraduation")
+
+[node name="Graduation60" type="MeshInstance3D" parent="Gauge"]
+position = Vector3(0.1030570230503482, -0.05949999999999997, 0.009)
+rotation_degrees = Vector3(0, 0, -120)
+mesh = SubResource("MajorGraduation")

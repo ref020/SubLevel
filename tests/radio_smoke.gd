@@ -66,7 +66,7 @@ func _run() -> void:
 					_check(point.x > bounds.position.x and point.x < bounds.end.x and point.y > bounds.position.y and point.y < bounds.end.y, "Document lettering stays on paper: " + str(document.name))
 	_check(radio.global_position.is_equal_approx(level.get_node("Architecture/Facility/Maintenance/ReservedRadioM2").global_position), "M-2 uses reserved Maintenance position")
 	_check(elias.npc_id == &"elias" and not elias.contacted and elias.flags.is_empty(), "Fresh Elias session")
-	_check(not elias.request_action("open_coolant_bypass"), "Unimplemented bypass action refused")
+	_check(not elias.request_action("open_coolant_bypass"), "Bypass action refused before contact")
 	# Actual world ray and E path; no clue inspections or knowledge flags yet.
 	player.position = Vector3(24.8, 0.03, 0.9)
 	camera.look_at(radio.global_position)
@@ -132,7 +132,7 @@ func _run() -> void:
 		if dialogue.conversation.node_id != "menu":
 			_key(KEY_ENTER)
 	_check(elias.flags.get("generator_problem_established", false) and dialogue.conversation.node_id == "menu", "Concise first contact establishes cooperative problem")
-	_check(dialogue.conversation.choices.size() == 2, "Only reminder and end choices; no fake bypass action")
+	_check(dialogue.conversation.choices.size() == 3, "Reminder, physical bypass request, and end choices")
 	_key(KEY_ESCAPE)
 	_check(modal.active_owner == null and player.is_physics_processing() and Input.mouse_mode == mouse_before, "Dialogue exit restores original gameplay snapshot")
 	_key(KEY_E)
@@ -140,6 +140,10 @@ func _run() -> void:
 	_check(dialogue.conversation.node_id == "menu", "Retained frequency gives repeat contact without introduction")
 	_key(KEY_1)
 	_check(dialogue.conversation.node_id == "reminder", "Repeat context remains accessible")
+	_key(KEY_ENTER)
+	_key(KEY_2)
+	_key(KEY_ENTER)
+	_check(level.get_node("FacilitySystems/State").coolant_bypass_open, "Elias can open bypass before cassette discovery or playback")
 	_key(KEY_ESCAPE)
 	# Both records are targetable at their physical surfaces and fully inspectable.
 	for entry: Array in [[log_record, Vector3(13.1, 0.03, -10.7)], [vale, Vector3(14.9, 0.03, 10.7)]]:

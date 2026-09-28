@@ -2,8 +2,7 @@ extends DialogueData
 
 
 func _init() -> void:
-	# No bypass action is registered until there is real equipment to operate.
-	# ConversationParticipant already supports condition-gated action requests.
+	actions = {"open_coolant_bypass": {"excludes": ["bypass_opened"], "sets": ["bypass_opened"]}}
 	nodes = {
 		"first": {"text": "Hold there. Someone on this band? I thought I was the only one still moving.", "next": "identify"},
 		"identify": {"speaker": "PLAYER", "text": "I hear you. Who is this?", "next": "elias"},
@@ -14,8 +13,11 @@ func _init() -> void:
 		"cooperation": {"text": "You can't bring it up without coolant. I can't start it from here. We'll need each other. Don't touch the startup controls until we know the procedure.", "sets": ["generator_problem_established"], "next": "menu"},
 		"menu": {"text": "Elias here. Still on the service side.", "choices": [
 			{"id": "problem", "text": "Remind me what separates us from the Generator.", "next": "reminder"},
+			{"id": "bypass", "text": "Open the coolant bypass on your side.", "excludes": ["bypass_opened"], "next": "bypass_ack"},
 			{"id": "end", "text": "I'll call back.", "next": "goodbye"}
 		]},
 		"reminder": {"text": "The coolant bypass is on my side. The synchronization and startup controls are on yours. Neither of us can restore main power alone.", "sets": ["generator_problem_established"], "next": "menu"},
+		"bypass_ack": {"text": "All right. Stand clear of the machinery. I'll open the bypass from here.", "next": "bypass_done"},
+		"bypass_done": {"action": "open_coolant_bypass", "action_unavailable": "menu", "text": "It's open. Coolant has a path now. I'll leave it that way.", "next": "menu"},
 		"goodbye": {"text": "All right. I'll keep listening.", "next": ""}
 	}

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="RecordingData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/systems/recording_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+title = "GENERATOR COLD-START DRILL"
+lines = PackedStringArray("Bypass open.", "Prime until pressure reaches forty.", "Stop priming. Wait for pressure to stabilize.", "Close breaker two.", "Field excitation.", "Close breaker four.", "Bring breaker one online.", "Breaker three last.")
+seconds_per_line = 4.0

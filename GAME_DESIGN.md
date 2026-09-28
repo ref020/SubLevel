@@ -246,7 +246,7 @@ The cassette and note are intended for later use.
 
 Their purposes are finalized in sections 13-14 below. Milestone 10B implements
 the folded note M-2/Vale clue, including inventory re-inspection. The cassette
-remains unchanged; its playback and related systems are not implemented yet.
+now supports replayable training playback in Milestone 10C.
 
 ---
 
@@ -305,7 +305,8 @@ Opening the door leads to the Central Hub.
 
 Milestone 10A extends the former temporary corridor into the Central Hub and
 adjacent graybox wings. Milestone 10B adds the M-2 investigation and first Elias
-contact; other post-Observation equipment remains nonfunctional.
+contact. Milestone 10C adds the battery, cassette workstation, Elias bypass
+action, and Generator startup through Main Power restoration.
 
 The Observation Room prototype is complete when this entire sequence can be played successfully.
 
@@ -315,7 +316,9 @@ The Observation Room prototype is complete when this entire sequence can be play
 
 The finalized concepts below are canonical. Milestone 10A implements layout,
 navigation, and atmosphere. Milestone 10B implements only the Radio / Elias
-investigation and first contact. Later puzzle branches remain future work.
+investigation and first contact. Milestone 10C implements the cassette/battery
+and cooperative Generator branch through Main Power. Later branches remain
+future work.
 
 The final emergency egress requires all three macro conditions:
 
@@ -323,7 +326,7 @@ The final emergency egress requires all three macro conditions:
 - SECURITY CLEARANCE
 - DIRECTOR AUTHORIZATION
 
-The Hub's nonfunctional status panel presents:
+The Hub's status panel initially presents:
 
 ```text
 EMERGENCY EGRESS
@@ -333,7 +336,8 @@ DIRECTOR AUTHORIZATION REQUIRED
 EXIT SEALED
 ```
 
-This display is presentation only until a future milestone.
+Milestone 10C changes only MAIN POWER to ONLINE after successful startup.
+Security, Director Authorization, and EXIT SEALED remain unchanged.
 
 ## Radio / Elias
 
@@ -357,7 +361,9 @@ Implemented in Milestone 10B: the noncollectible calibration log rests on the
 Laboratory calibration bench; Vale's noncollectible record/contact card is on
 the Archive personnel cabinet. Clues may be read in any order, and correct
 tuning works without discovery flags. First contact establishes the separated
-coolant bypass and startup controls. Elias cannot operate the bypass yet.
+coolant bypass and startup controls. Milestone 10C adds an explicit player
+request for Elias to open the inaccessible bypass, without a cassette-playback
+prerequisite.
 
 ## Cassette / Generator / Main Power
 
@@ -380,6 +386,17 @@ The generator startup procedure is:
 Elias physically operates the inaccessible coolant bypass; the player operates
 the generator controls. Both actions are required for MAIN POWER. Incorrect
 generator operation should trip/reset, never create an unrecoverable state.
+
+Milestone 10C implements this branch. The screwdriver opens one captive-screw
+battery cover. Battery and cassette are explicitly installed at the recorder,
+retained there rather than destroyed. PLAY presents replayable timed training
+subtitles. PRIME toggles the pump; stopping within 38-42 settles to 40 after
+1.5 seconds. The canonical subsequent sequence remains 2, FIELD, 4, 1, 3.
+Trips reset the player controls and pressure after one second; the bypass stays
+open. Main Power is authoritative scene/session state, distinct from Observation
+auxiliary power. Its signal drives environmental lighting/status reactions.
+The recorder can use installed 12V power or restored facility mains. No
+Security, Director, or egress progression is implemented in this milestone.
 
 ## Security Clearance
 

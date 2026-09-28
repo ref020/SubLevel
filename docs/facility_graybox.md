@@ -10,6 +10,9 @@ development corridor. It contains no gameplay scripts or Interactables.
 Its equipment, signs, and status text are nonfunctional presentation. Milestone
 10B replaces only the M-2 placeholder with a separate gameplay layer alongside
 Architecture, plus two inspectable records; see [radio_elias.md](radio_elias.md).
+Milestone 10C similarly replaces the inert battery equipment and cassette deck,
+adds controls at the Generator console, and connects selected lights/status
+to facility Main Power; see [main_power.md](main_power.md).
 
 ## Area relationships
 
@@ -60,7 +63,7 @@ is shorter. No long transit tunnels are introduced.
   sink cabinet, and reserved calibration/battery equipment locations.
 - Archive: metal shelves, records boxes/cabinet, and a cassette workstation
   with an inert housing. Milestone 10B adds the Vale record at the personnel
-  cabinet; the cassette workstation remains nonfunctional.
+  cabinet; Milestone 10C replaces the inert cassette workstation with playback.
 - Maintenance: workbench, tool storage, exposed services, and a radio work surface.
   Milestone 10B replaces its inert M-2 housing with the tunable radio from the
   separate investigation scene.
@@ -99,7 +102,8 @@ All earlier smoke suites remain in use.
 
 Run both scripts with `godot --headless --path . --script res://tests/NAME.gd`.
 F5 is the integrated manual test: visit every open wing, return to the Hub,
-try blocked thresholds, and confirm that the static egress status remains off.
+try blocked thresholds. After the Milestone 10C generator startup, only MAIN
+POWER on the egress panel changes to ONLINE; the exit remains sealed.
 
 The layout is deliberately compact and provisional. Headless checks do not
 judge lighting, sign legibility, glass appearance, frame rate, or final visual
@@ -107,6 +111,6 @@ composition. Multiple shadowed local lights and primitive props need a visual
 performance/playtest pass. Navigation tests sample movement paths and collision
 boundaries; they are not exhaustive attempts at every jump or exploit.
 
-The Milestone 10B radio investigation and Elias first contact are now implemented
-outside this static shell. Main power, playback, card rewriting, authorization,
+The Milestone 10B radio investigation and Milestone 10C cooperative Main Power
+branch are implemented outside this static shell. Card rewriting, authorization,
 and final escape remain unimplemented.

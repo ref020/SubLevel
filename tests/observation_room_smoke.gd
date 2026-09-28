@@ -133,7 +133,7 @@ func _run() -> void:
 	var nodes: Array[Node] = [room]
 	while not nodes.is_empty():
 		var node: Node = nodes.pop_back()
-		if node == room.get_node("FacilityInvestigation"):
+		if node == room.get_node("FacilityInvestigation") or node == room.get_node("FacilitySystems"):
 			continue # Post-Observation interactables have their own radio suite.
 		nodes.append_array(node.get_children())
 		if node is Interactable:

@@ -33,6 +33,12 @@ func can_request_action(action_id: String) -> bool:
 func request_action(action_id: String) -> bool:
 	if not can_request_action(action_id):
 		return false
+	if not _perform_action(action_id):
+		return false
 	set_flags(dialogue.actions[action_id].get("sets", []))
 	action_resolved.emit(action_id)
+	return true
+
+
+func _perform_action(_action_id: String) -> bool:
 	return true
