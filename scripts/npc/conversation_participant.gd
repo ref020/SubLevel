@@ -9,6 +9,8 @@ signal action_resolved(action_id: String)
 var flags: Dictionary = {}
 var completed_choices: Dictionary = {}
 var contacted: bool = false
+var conversation_partners: Dictionary = {}
+var dialogue_values: Dictionary = {}
 
 
 func meets_conditions(data: Dictionary) -> bool:
@@ -30,15 +32,15 @@ func can_request_action(action_id: String) -> bool:
 	return dialogue != null and dialogue.actions.has(action_id) and meets_conditions(dialogue.actions[action_id])
 
 
-func request_action(action_id: String) -> bool:
+func request_action(action_id: String, parameters: Dictionary = {}) -> bool:
 	if not can_request_action(action_id):
 		return false
-	if not _perform_action(action_id):
+	if not _perform_action(action_id, parameters):
 		return false
 	set_flags(dialogue.actions[action_id].get("sets", []))
 	action_resolved.emit(action_id)
 	return true
 
 
-func _perform_action(_action_id: String) -> bool:
+func _perform_action(_action_id: String, _parameters: Dictionary = {}) -> bool:
 	return true

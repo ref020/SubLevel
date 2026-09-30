@@ -31,6 +31,9 @@ func open_dialogue(participant: ConversationParticipant, device: Node = null, pr
 	npc.tree_exiting.connect(_target_exiting)
 	if is_instance_valid(source):
 		source.tree_exiting.connect(_target_exiting)
+	for partner: ConversationParticipant in npc.conversation_partners.values():
+		if is_instance_valid(partner) and not partner.tree_exiting.is_connected(_target_exiting):
+			partner.tree_exiting.connect(_target_exiting)
 	show()
 	if not conversation.start(npc):
 		close_dialogue()
@@ -41,7 +44,9 @@ func open_dialogue(participant: ConversationParticipant, device: Node = null, pr
 func close_dialogue(restore_mouse: bool = true) -> void:
 	if input_session.active_owner != self:
 		return
-	for target: Node in [npc, source]:
+	var targets: Array = [npc, source]
+	if is_instance_valid(npc): targets.append_array(npc.conversation_partners.values())
+	for target: Node in targets:
 		if is_instance_valid(target) and target.tree_exiting.is_connected(_target_exiting):
 			target.tree_exiting.disconnect(_target_exiting)
 	npc = null
@@ -58,7 +63,7 @@ func _render() -> void:
 	for child: Node in buttons.get_children():
 		buttons.remove_child(child)
 		child.queue_free()
-	speaker_label.text = str(conversation.current.get("speaker", npc.display_name)).to_upper()
+	speaker_label.text = str(conversation.current.get("speaker", conversation.current_actor.display_name)).to_upper()
 	text_label.text = conversation.current.get("text", "")
 	var choices: Array[Dictionary] = conversation.choices
 	if choices.is_empty():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3]
+[gd_scene load_steps=52 format=3]
 
 [ext_resource type="Script" path="res://scripts/systems/facility_director.gd" id="State"]
 
@@ -9,6 +9,24 @@
 [ext_resource type="PackedScene" path="res://scenes/interactables/director_document_cabinet.tscn" id="Cabinet"]
 
 [ext_resource type="PackedScene" path="res://scenes/interactables/authorization_terminal.tscn" id="Terminal"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/communications_routing.tscn" id="CommunicationsRouting"]
+[ext_resource type="PackedScene" path="res://scenes/props/service_phase_reference.tscn" id="ServicePhaseReference"]
+[ext_resource type="PackedScene" path="res://scenes/props/load_reference.tscn" id="LoadReference"]
+[sub_resource type="StandardMaterial3D" id="ReadyMaterial"]
+albedo_color = Color(0.38, 0.65, 0.25, 1)
+emission_enabled = true
+emission = Color(0.38, 0.65, 0.25, 1)
+emission_energy_multiplier = 0.4
+[sub_resource type="BoxMesh" id="ReadyMesh"]
+size = Vector3(0.055, 0.04, 0.015)
+material = SubResource("ReadyMaterial")
+[sub_resource type="TextMesh" id="ReadyText"]
+text = "READY"
+font_size = 64
+pixel_size = 0.0006
+depth = 0.0
+material = SubResource("ReadyMaterial")
 
 [sub_resource type="StandardMaterial3D" id="Metal"]
 albedo_color = Color(0.28, 0.32, 0.29, 1)
@@ -351,3 +369,20 @@ mesh = SubResource("M4Plate")
 [node name="Label" type="MeshInstance3D" parent="M4Designation"]
 position = Vector3(0, 0, 0.009)
 mesh = SubResource("M4Text")
+
+[node name="RoutingDocument" parent="." instance=ExtResource("CommunicationsRouting")]
+position = Vector3(23.8, 1.6, -4.15)
+[node name="PhaseDocument" parent="." instance=ExtResource("ServicePhaseReference")]
+position = Vector3(29.35, 1.6, -2.7)
+rotation = Vector3(0, -1.5707963, 0)
+[node name="LoadDocument" parent="." instance=ExtResource("LoadReference")]
+position = Vector3(14.4, 1.6, 15.55)
+rotation = Vector3(0, 3.14159265, 0)
+[node name="ReadyLamp" type="MeshInstance3D" parent="M4Designation"]
+position = Vector3(-0.18, -0.2, 0.01)
+visible = false
+mesh = SubResource("ReadyMesh")
+[node name="ReadyLabel" type="MeshInstance3D" parent="M4Designation"]
+position = Vector3(0.04, -0.2, 0.01)
+visible = false
+mesh = SubResource("ReadyText")

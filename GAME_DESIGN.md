@@ -320,7 +320,7 @@ investigation and first contact. Milestone 10C implements the cassette/battery
 and cooperative Generator branch through Main Power. Milestone 11A implements
 Security investigation and hash deduction. Milestone 11B implements credential
 rewriting and Security access through the openable Director threshold. Director
-Authorization and egress remain future work.
+Authorization is implemented through Milestones 12A/12B; final egress remains future work.
 
 The final emergency egress requires all three macro conditions:
 
@@ -475,11 +475,29 @@ director_primary_authorized, emits a signal, and identifies SERVICE CONTROL M-4
 with NETWORK LINK: OFFLINE. director_authorization_valid remains false; the Hub
 continues to show Director Authorization REQUIRED and EXIT SEALED.
 
-PRIMARY AUTHORIZATION is implemented. SECONDARY / COMPLETE DIRECTOR
-AUTHORIZATION remains FUTURE. A noninteractive M-4 designation is visible behind
-the existing Generator service grille. Routing, NPC relay, challenge-response,
-and final egress below remain canonical future design, not implemented gameplay.
-See docs/director_authorization.md.
+Milestone 12B IMPLEMENTED: communications routing documentation on Maintenance's
+north wall maps M-1/C, M-2/F, M-3/A and M-4/D. A separate Maintenance east-wall
+phase reference and Archive south-wall load table provide the canonical mappings
+below. Main Power enables Mara's routing topic with equal choices A-F. Line D
+leads to a witnessed exchange using Mara's and Elias's separate participants.
+Elias establishes that he can operate M-4 from the inaccessible service side.
+No clue-inspection flags are required; wrong lines are recoverable.
+
+After primary acceptance and established D-line contact, the player deliberately
+presses SESSION / CONFIRM on the Director terminal to start the secondary
+challenge. Through three independent dialogue selectors the player constructs
+direction, load color and circuit, reviews them and gives them to Mara. She
+repeats and explicitly relays them to Elias. His configure_m4 action evaluates
+the response; failures give no component-specific hint and permit immediate retry.
+EAST / AMBER / B sets director_secondary_ready and the remote M-4 READY indicator,
+but not director_authorization_valid. The player returns to the Director terminal
+and presses SESSION / CONFIRM to complete authorization. The Hub then shows MAIN
+POWER ONLINE, SECURITY CLEARANCE VALID, DIRECTOR AUTHORIZATION VALID and READY
+FOR MANUAL RELEASE. Emergency Egress remains physically closed.
+
+DIRECTOR AUTHORIZATION is implemented. FINAL EMERGENCY EGRESS RELEASE remains
+FUTURE. No final mechanical-release controls or escape sequence are implemented.
+See docs/director_authorization.md and docs/director_secondary.md.
 
 
 Security clearance permits access to the Director's Office. A Director document
@@ -526,7 +544,7 @@ Load 2 = White, Load 4 = Blue, Load 6 = Amber, Load 8 = Red.
 
 Thus **PHASE 2 / LOAD 6 / CIRCUIT B** becomes **EAST / AMBER / B**.
 The player supplies the interpreted information to Mara; Mara relays it to
-Elias; Elias configures M-4; the player completes primary authorization.
+Elias; Elias configures M-4; the player returns to finalize Director authorization.
 This satisfies DIRECTOR AUTHORIZATION.
 
 ---

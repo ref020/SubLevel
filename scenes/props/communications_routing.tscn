@@ -1,0 +1,134 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/inspectable.gd" id="Script"]
+
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.75, 0.73, 0.61, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.06, 0.075, 0.06, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="PaperMesh"]
+size = Vector3(0.36, 0.46, 0.008)
+material = SubResource("Paper")
+
+[sub_resource type="BoxShape3D" id="PaperShape"]
+size = Vector3(0.36, 0.46, 0.008)
+
+[sub_resource type="TextMesh" id="HeaderMesh"]
+text = "MAINTENANCE / CIRCUIT REGISTER"
+font_size = 64
+pixel_size = 0.00024
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="TitleMesh"]
+text = "SERVICE COMMUNICATIONS"
+font_size = 64
+pixel_size = 0.00038
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="ContextMesh"]
+text = "SERVICE CONTROL       COMM LINE"
+font_size = 64
+pixel_size = 0.0002
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Priority1Mesh"]
+text = "M-1                 C"
+font_size = 64
+pixel_size = 0.00033
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Priority2Mesh"]
+text = "M-2                 F"
+font_size = 64
+pixel_size = 0.00033
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Priority3Mesh"]
+text = "M-3                 A"
+font_size = 64
+pixel_size = 0.00033
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Priority4Mesh"]
+text = "M-4                 D"
+font_size = 64
+pixel_size = 0.00033
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Priority5Mesh"]
+text = ""
+font_size = 64
+pixel_size = 0.00033
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="FooterMesh"]
+text = "RECORDS COPY / RETAIN IN FILE"
+font_size = 64
+pixel_size = 0.00022
+depth = 0.0
+material = SubResource("Ink")
+
+[node name="CommunicationsRouting" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+interaction_prompt = "Inspect Service Routing"
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Paper" type="StaticBody3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Visual/Paper"]
+mesh = SubResource("PaperMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Visual/Paper"]
+shape = SubResource("PaperShape")
+
+[node name="Header" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.19, 0.005)
+mesh = SubResource("HeaderMesh")
+
+[node name="Title" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.14, 0.005)
+mesh = SubResource("TitleMesh")
+
+[node name="Context" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.093, 0.005)
+mesh = SubResource("ContextMesh")
+
+[node name="Priority1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.045, 0.005)
+mesh = SubResource("Priority1Mesh")
+
+[node name="Priority2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.0020000000000000018, 0.005)
+mesh = SubResource("Priority2Mesh")
+
+[node name="Priority3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.049, 0.005)
+mesh = SubResource("Priority3Mesh")
+
+[node name="Priority4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.09600000000000002, 0.005)
+mesh = SubResource("Priority4Mesh")
+
+[node name="Priority5" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.14300000000000002, 0.005)
+mesh = SubResource("Priority5Mesh")
+
+[node name="Footer" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.196, 0.005)
+mesh = SubResource("FooterMesh")

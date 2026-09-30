@@ -65,3 +65,42 @@ func _init() -> void:
 		"else": {"text": "Nothing I'm sure of. I'd rather tell you what I can actually see.", "next": "menu"},
 		"goodbye": {"text": "I'll listen for you. Don't forget I'm here.", "next": ""}
 	}
+	_add_routing()
+
+
+func _add_routing() -> void:
+	actions["route_line"] = {}
+	actions["relay_m4"] = {}
+	nodes["menu"]["choices"].insert(0, {"id": "communications", "text": "Can you work with the communications panel?", "requires": ["main_power_online"], "next": "communications"})
+	nodes["communications"] = {"text": "I'm at the routing panel. What do you need?", "choices": [
+		{"id": "routing", "text": "Connect a service communication line.", "next": "routing"},
+		{"id": "response", "text": "I have a response for the secondary station.", "requires": ["secondary_session"], "excludes": ["secondary_ready", "director_valid"], "next": "response_direction"},
+		{"id": "back", "text": "Something else.", "next": "menu"}]}
+	nodes["routing"] = {"text": "The routing panel on my side has power now. I can patch a service line through. Which line?", "choices": []}
+	for line: String in ["A", "B", "C", "D", "E", "F"]:
+		nodes["routing"]["choices"].append({"id": "line_" + line, "text": "LINE " + line, "next": "route_" + line})
+		nodes["route_" + line] = {"action": "route_line", "parameters": {"line": line}, "action_unavailable": "menu", "text": "Line " + line + " connected. Listening.", "next": "call_elias" if line == "D" else "line_silent"}
+	nodes["routing"]["choices"].append({"id": "back", "text": "Leave the panel for now.", "next": "menu"})
+	nodes["line_silent"] = {"text": "Only a carrier. Nobody answering us on this line.", "next": "routing"}
+	nodes["call_elias"] = {"text": "Maintenance, can you hear me?", "next": "elias:routing_reply"}
+	nodes["routing_reply"] = {"text": "Observation-side intercom. Someone out here needs service control M-4.", "next": "elias:m4_access"}
+	nodes["link_established"] = {"text": "I'll keep this line connected. Tell me what you need passed along.", "next": "menu"}
+	var directions: Array[String] = ["NORTH", "EAST", "SOUTH", "WEST"]
+	var colors: Array[String] = ["WHITE", "BLUE", "AMBER", "RED"]
+	var circuits: Array[String] = ["A", "B", "C", "D"]
+	for field: String in ["direction", "color", "circuit"]:
+		var options: Array[String] = directions if field == "direction" else (colors if field == "color" else circuits)
+		var next_stage: String = "response_color" if field == "direction" else ("response_circuit" if field == "color" else "response_review")
+		nodes["response_" + field] = {"speaker": "PLAYER", "text": "RESPONSE / " + ("LOAD COLOR" if field == "color" else field.to_upper()), "choices": []}
+		for value: String in options:
+			var entry: String = "select_" + field + "_" + value
+			nodes["response_" + field]["choices"].append({"id": entry, "text": value, "next": entry})
+			nodes[entry] = {"speaker": "PLAYER", "text": field.to_upper() + ": " + value, "values": {field: value}, "next": next_stage}
+		nodes["response_" + field]["choices"].append({"id": "cancel", "text": "Cancel response.", "next": "menu"})
+	nodes["response_review"] = {"speaker": "PLAYER", "text": "DIRECTION: {direction}\nLOAD COLOR: {color}\nCIRCUIT: {circuit}", "choices": [
+		{"id": "transmit", "text": "Give response to Mara.", "next": "response_player"},
+		{"id": "edit", "text": "Change response.", "next": "response_direction"},
+		{"id": "cancel", "text": "Not yet.", "next": "menu"}]}
+	nodes["response_player"] = {"speaker": "PLAYER", "text": "{direction}. {color}. Circuit {circuit}.", "next": "response_confirm"}
+	nodes["response_confirm"] = {"text": "{direction}, {color}, {circuit}. Got it.", "next": "response_relay"}
+	nodes["response_relay"] = {"action": "relay_m4", "action_unavailable": "menu", "text": "Elias, response is {direction}, {color}, circuit {circuit}.", "next": "elias:m4_setting"}

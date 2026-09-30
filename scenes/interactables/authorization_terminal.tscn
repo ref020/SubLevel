@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3]
+[gd_scene load_steps=21 format=3]
 
 [ext_resource type="Script" path="res://scripts/interaction/authorization_terminal.gd" id="Script"]
 
 [ext_resource type="Script" path="res://scripts/interaction/powered_item_socket.gd" id="Socket"]
 
+[ext_resource type="Script" path="res://scripts/interaction/physical_control.gd" id="Control"]
 [sub_resource type="StandardMaterial3D" id="Beige"]
 albedo_color = Color(0.59, 0.59, 0.48, 1)
 roughness = 0.92
@@ -42,7 +43,8 @@ depth = 0.0
 material = SubResource("Phosphor")
 
 [sub_resource type="TextMesh" id="PlateMesh"]
-text = "EMERGENCY AUTHORIZATION"
+text = "EMERGENCY
+AUTHORIZATION"
 font_size = 64
 pixel_size = 0.0004
 depth = 0.0
@@ -70,6 +72,17 @@ pixel_size = 0.00032
 depth = 0.0
 material = SubResource("Ink")
 
+[sub_resource type="BoxMesh" id="ControlMesh"]
+size = Vector3(0.27, 0.07, 0.045)
+material = SubResource("Ink")
+[sub_resource type="BoxShape3D" id="ControlShape"]
+size = Vector3(0.27, 0.07, 0.045)
+[sub_resource type="TextMesh" id="ControlLabel"]
+text = "SESSION / CONFIRM"
+font_size = 64
+pixel_size = 0.00025
+depth = 0.0
+
 [node name="AuthorizationTerminal" type="Node3D" node_paths=PackedStringArray("visual_root")]
 script = ExtResource("Script")
 visual_root = NodePath("Visual")
@@ -96,11 +109,11 @@ position = Vector3(0, 0.035, 0.242)
 mesh = SubResource("ReadoutMesh")
 
 [node name="Plate" type="MeshInstance3D" parent="Visual"]
-position = Vector3(0, -0.25, 0.233)
+position = Vector3(0.16, -0.25, 0.233)
 mesh = SubResource("PlateMesh")
 
 [node name="PowerLamp" type="MeshInstance3D" parent="Visual"]
-position = Vector3(-0.32, -0.25, 0.24)
+position = Vector3(0.35, -0.25, 0.24)
 mesh = SubResource("PowerLampMesh")
 
 [node name="Socket" type="Node3D" parent="."]
@@ -128,3 +141,16 @@ mesh = SubResource("DockLabelMesh")
 
 [node name="Installed" type="Node3D" parent="Socket"]
 position = Vector3(0, 0, 0.15)
+
+[node name="Control" type="Node3D" parent="."]
+position = Vector3(-0.20, -0.25, 0.285)
+script = ExtResource("Control")
+interaction_prompt = "Session / Confirm"
+[node name="Body" type="StaticBody3D" parent="Control"]
+[node name="Mesh" type="MeshInstance3D" parent="Control/Body"]
+mesh = SubResource("ControlMesh")
+[node name="Collision" type="CollisionShape3D" parent="Control/Body"]
+shape = SubResource("ControlShape")
+[node name="Label" type="MeshInstance3D" parent="Control"]
+position = Vector3(0, 0, 0.026)
+mesh = SubResource("ControlLabel")

@@ -15,6 +15,7 @@ func _ready() -> void:
 	$Visual/Readout.mesh = readout.duplicate()
 	readout = $Visual/Readout.mesh
 	socket.item_installed.connect(_installed)
+	$Control.activated.connect(_operate)
 	_refresh()
 
 
@@ -25,6 +26,7 @@ func configure(supply: FacilityPower, state: FacilityDirector, inventory: Player
 	socket.inventory = inventory
 	power.main_power_changed.connect(_power_changed)
 	director.primary_authorization_changed.connect(_primary_changed)
+	director.changed.connect(_refresh)
 	_refresh()
 
 
@@ -78,3 +80,24 @@ func _refresh() -> void:
 		readout.text = "PRIMARY TOKEN\nVALIDATING..."
 	else:
 		readout.text = ACCEPTED if director != null and director.director_primary_authorized else WAITING
+		if director != null and director.director_primary_authorized:
+			if director.director_authorization_valid:
+				readout.text = "EMERGENCY AUTHORIZATION\nCOMPLETE\n\nPRIMARY: VALID\nSECONDARY M-4: VALID"
+			elif director.director_secondary_ready:
+				readout.text = "PRIMARY AUTHORIZATION: ACCEPTED\n\nSECONDARY STATION M-4: READY\n\nFINALIZE AUTHORIZATION\nPRESS SESSION / CONFIRM"
+			elif director.director_secondary_session_active:
+				readout.text = "SECONDARY SESSION / M-4\n\nPHASE 2\nLOAD 6\nCIRCUIT B\n\nAWAITING STATION RESPONSE"
+			elif director.link_available():
+				readout.text = "PRIMARY AUTHORIZATION: ACCEPTED\nSECONDARY AUTHORIZATION: REQUIRED\nSERVICE CONTROL M-4\nVOICE LINK: CONNECTED\n\nPRESS SESSION / CONFIRM"
+
+
+func _operate() -> void:
+	if power == null or not power.main_power_online or director == null or _remaining > 0.0:
+		feedback("Terminal unavailable.")
+		return
+	if director.director_secondary_ready:
+		if director.finalize(): feedback("Emergency authorization complete.")
+	elif director.begin_secondary():
+		feedback("Secondary session active. Read the terminal.")
+	else:
+		feedback("Authorization prerequisites unavailable.")

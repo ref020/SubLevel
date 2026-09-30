@@ -2601,8 +2601,12 @@ terminal = NodePath("../SecurityInvestigation/Terminal")
 
 [node name="DirectorOffice" parent="." instance=ExtResource("DirectorOffice")]
 
-[node name="DirectorWiring" type="Node" parent="." node_paths=PackedStringArray("office", "power", "inventory")]
+[node name="DirectorWiring" type="Node" parent="." node_paths=PackedStringArray("office", "power", "inventory", "mara", "elias", "security", "shell")]
 script = ExtResource("DirectorWiring")
 office = NodePath("../DirectorOffice")
 power = NodePath("../FacilitySystems/State")
 inventory = NodePath("../Player/Inventory")
+mara = NodePath("../PuzzleProps/ObservationWindow/Mara")
+elias = NodePath("../FacilityInvestigation/Elias")
+security = NodePath("../SecurityAccess/State")
+shell = NodePath("../Architecture/Facility")

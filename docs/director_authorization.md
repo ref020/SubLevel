@@ -1,7 +1,11 @@
 # Milestone 12A: Director primary authorization
 
 PRIMARY AUTHORIZATION = IMPLEMENTED.
-SECONDARY / COMPLETE DIRECTOR AUTHORIZATION = FUTURE.
+SECONDARY / COMPLETE DIRECTOR AUTHORIZATION = IMPLEMENTED in Milestone 12B.
+See [director_secondary.md](director_secondary.md) for routing, relay and finalization.
+FINAL EMERGENCY EGRESS RELEASE = FUTURE.
+
+The following describes the primary stage and its intermediate endpoint.
 
 ## Layout and clues
 
@@ -73,14 +77,15 @@ SECONDARY TERMINAL: SERVICE CONTROL M-4; NETWORK LINK: OFFLINE.
 DirectorOffice/State (FacilityDirector) owns session-only primary acceptance.
 accept_primary emits primary_authorization_changed once. The read-only
 director_primary_authorized becomes true, while director_authorization_valid
-remains false because secondary authorization has no implementation. New scene
+remains false at this primary stage. Milestone 12B completes it separately. New scene
 instances reset primary state. The Hub remains Director Authorization REQUIRED,
 EXIT SEALED. Main Power and Security Clearance are unaffected.
 
 A backed SERVICE CONTROL / M-4 designation is mounted on the existing remote
 Generator service equipment at (33.638, 1.4, -12.3), facing west. The existing
-full collision grille remains. No controls, Line D clue, routing, NPC relay,
-challenge-response, secondary completion or egress release are implemented.
+full collision grille remains. Milestone 12B adds a remotely operated READY
+indicator and secondary progression; there are no player-accessible M-4 controls
+or final egress release.
 
 ## Validation and manual playtest
 
