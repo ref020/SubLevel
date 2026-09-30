@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/credential_door.gd" id="Door"]
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.28, 0.33, 0.29, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Reader"]
+albedo_color = Color(0.14, 0.17, 0.14, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Green"]
+albedo_color = Color(0.4, 0.65, 0.34, 1)
+roughness = 0.9
+emission_enabled = true
+emission = Color(0.4, 0.65, 0.34, 1)
+emission_energy_multiplier = 0.3
+
+[sub_resource type="StandardMaterial3D" id="Text"]
+albedo_color = Color(0.73, 0.75, 0.62, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="PanelMesh"]
+size = Vector3(1.4, 2.5, 0.18)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="PanelShape"]
+size = Vector3(1.4, 2.5, 0.18)
+
+[sub_resource type="BoxMesh" id="ReaderMesh"]
+size = Vector3(0.18, 0.26, 0.06)
+material = SubResource("Reader")
+
+[sub_resource type="BoxMesh" id="AcceptedLampMesh"]
+size = Vector3(0.09, 0.018, 0.012)
+material = SubResource("Green")
+
+[sub_resource type="BoxMesh" id="Handle0Mesh"]
+size = Vector3(0.12, 0.07, 0.18)
+material = SubResource("Reader")
+
+[sub_resource type="BoxMesh" id="Handle2Mesh"]
+size = Vector3(0.12, 0.07, 0.18)
+material = SubResource("Reader")
+
+[node name="Door" type="Node3D"]
+script = ExtResource("Door")
+starts_locked = true
+open_angle = 100.0
+access_system = &"security_inner"
+
+[node name="Body" type="AnimatableBody3D" parent="."]
+sync_to_physics = false
+
+[node name="Panel" type="MeshInstance3D" parent="Body"]
+position = Vector3(0.7, 1.25, 0)
+mesh = SubResource("PanelMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.7, 1.25, 0)
+shape = SubResource("PanelShape")
+
+[node name="Reader" type="MeshInstance3D" parent="Body"]
+position = Vector3(1.18, 1.1, 0.115)
+mesh = SubResource("ReaderMesh")
+
+[node name="AcceptedLamp" type="MeshInstance3D" parent="Body"]
+position = Vector3(1.18, 1.17, 0.151)
+mesh = SubResource("AcceptedLampMesh")
+visible = false
+
+[node name="Handle0" type="MeshInstance3D" parent="Body"]
+position = Vector3(1.18, 0.91, -0.1)
+mesh = SubResource("Handle0Mesh")
+
+[node name="Handle2" type="MeshInstance3D" parent="Body"]
+position = Vector3(1.18, 0.91, 0.1)
+mesh = SubResource("Handle2Mesh")

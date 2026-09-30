@@ -318,8 +318,9 @@ The finalized concepts below are canonical. Milestone 10A implements layout,
 navigation, and atmosphere. Milestone 10B implements only the Radio / Elias
 investigation and first contact. Milestone 10C implements the cassette/battery
 and cooperative Generator branch through Main Power. Milestone 11A implements
-Security investigation and hash deduction only. Card rewriting, Security
-completion, Director Authorization, and egress remain future work.
+Security investigation and hash deduction. Milestone 11B implements credential
+rewriting and Security access through the openable Director threshold. Director
+Authorization and egress remain future work.
 
 The final emergency egress requires all three macro conditions:
 
@@ -435,12 +436,28 @@ Mara can investigate newly illuminated channel markings on her side after Main
 Power. Investigation and report flags persist separately, with interrupted-report
 recovery and later recall. No clue inspections gate her action.
 
-FUTURE: entering **0614 / Class IV / 4321** at the encoder will restore the
-Director Access Card and satisfy SECURITY CLEARANCE. Milestone 11A has no
-credential entry/rewrite interaction and never marks Security valid. The encoder
-remains inert hardware; Director and egress barriers remain closed. The deduction
-above is design documentation, never an automatic in-game explanation.
-See docs/security_investigation.md for implementation and validation.
+Milestone 11B IMPLEMENTED: the encoder is accessible in Security outer, moved
+from its formerly inaccessible inner reservation to avoid a circular access
+requirement. Main Power is required. The player explicitly inserts the same Vale
+card, enters **0614 / Class IV / 4321** on digit wheels/class keys, and starts a
+short write cycle. Every field must match, including the leading zero. Errors
+report only CREDENTIAL MISMATCH and permit immediate retries. The retained card
+can be explicitly ejected before or after success; ejecting during writing cancels
+the write. Restoring the card updates its active/revoked/class state, description,
+and inspectable status, without completing Security by itself.
+
+Using the restored compatible Class IV card at the powered inner Security door
+unlocks it, retains the card, and establishes SECURITY CLEARANCE. The next
+interaction physically opens the door. The authoritative session Security state
+emits a signal: the Hub changes SECURITY CLEARANCE to VALID, the Director
+threshold unlocks for manual opening, and small local access lamps confirm it.
+Main Power remains ONLINE, Director Authorization REQUIRED, and EXIT SEALED.
+Inner Security has mundane monitor/equipment furnishings; the Director threshold
+is still an empty graybox, without its future puzzle chain. All state resets with
+the scene. No clue-inspection flags are required.
+
+The deduction above is design documentation, never an automatic gameplay
+explanation. See docs/security_investigation.md and docs/security_access.md.
 
 ## Director Authorization
 

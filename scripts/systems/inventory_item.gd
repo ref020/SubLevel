@@ -8,6 +8,7 @@ extends Resource
 @export var unlocks: Array[StringName] = []
 @export var installation_tags: Array[StringName] = []
 @export var recording: RecordingData
+@export var credential: AccessCredential
 @export var visual_scene: PackedScene
 @export var initial_rotation: Vector3 = Vector3.ZERO
 @export var inspection_distance: float = 1.4

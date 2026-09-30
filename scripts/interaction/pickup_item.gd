@@ -8,6 +8,7 @@ extends Inspectable
 @export var unlocks: Array[StringName] = []
 @export var installation_tags: Array[StringName] = []
 @export var recording: RecordingData
+@export var credential: AccessCredential
 
 var collected: bool = false
 

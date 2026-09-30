@@ -145,6 +145,7 @@ func take_item() -> bool:
 	data.unlocks.assign(pickup.unlocks)
 	data.installation_tags.assign(pickup.installation_tags)
 	data.recording = pickup.recording
+	data.credential = pickup.credential.duplicate(true) if pickup.credential != null else null
 	data.initial_rotation = pickup.initial_inspection_rotation
 	data.inspection_distance = pickup.inspection_distance
 	data.minimum_distance = pickup.minimum_distance

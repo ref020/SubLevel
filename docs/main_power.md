@@ -2,9 +2,9 @@
 
 F5 starts the complete Observation Room and continues into the facility. No
 editor configuration, new Input Map actions, dependencies, or debug controls
-are required. This milestone ends at Main Power; card rewriting, Director
-Authorization, and Emergency Egress progression remain unimplemented. Milestone
-11A adds Security investigation only; see [security_investigation.md](security_investigation.md).
+are required. This branch ends at Main Power. Milestones 11A/11B add Security
+investigation and credential access; see [security_access.md](security_access.md).
+Director Authorization and Emergency Egress progression remain unimplemented.
 
 ## Physical route and controls
 
@@ -71,8 +71,7 @@ battery/deck item-ID checks.
 `ConversationParticipant` now offers a `_perform_action` hook before setting
 flags/emitting action resolution. Mara retains that behavior for the original
 window action; Milestone 11A adds a physically Main-Power-gated phase-chart action.
-Elias's
-implementation opens the real facility bypass only after contact and only once;
+Elias's implementation opens the real facility bypass only after contact and only once;
 dialogue confirms success afterward. Aborting the acknowledgement leaves the
 request available. His flags record the conversation; physical bypass state
 belongs to FacilityPower.

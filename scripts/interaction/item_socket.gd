@@ -3,6 +3,7 @@ extends Interactable
 ## Retains the real InventoryItem while installed, rather than destroying it.
 
 signal item_installed(item: InventoryItem)
+signal item_ejected(item: InventoryItem)
 @export var accepts_tag: StringName
 @export var socket_label: String = "Slot"
 var inventory: PlayerInventory
@@ -40,3 +41,26 @@ func install(item: InventoryItem) -> bool:
 	$Installed.add_child(visual)
 	item_installed.emit(item)
 	return true
+
+
+func eject() -> bool:
+	if installed_item == null or not is_instance_valid(inventory) or inventory.has_item(installed_item.item_id):
+		return false
+	var item: InventoryItem = installed_item
+	installed_item = null
+	if not inventory.add_item(item):
+		installed_item = item
+		return false
+	for child: Node in $Installed.get_children():
+		$Installed.remove_child(child)
+		child.queue_free()
+	item_ejected.emit(item)
+	return true
+
+
+func refresh_visual() -> void:
+	for child: Node in $Installed.get_children():
+		$Installed.remove_child(child)
+		child.queue_free()
+	if installed_item != null and installed_item.visual_scene != null:
+		$Installed.add_child(installed_item.visual_scene.instantiate())

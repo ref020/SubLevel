@@ -26,8 +26,8 @@ flowchart LR
     M --- G[Generator]
     G --- X[Blocked service side]
     H --- S[Security outer]
-    S --- I[Blocked inner Security]
-    S --- D[Blocked Director threshold]
+    S --- I[Credential-controlled inner Security]
+    S --- D[Security-released Director threshold]
     H --- E[Sealed Emergency Egress]
 ```
 
@@ -45,8 +45,8 @@ Emergency Egress bulkhead and fixed status panel occupy the Hub's north wall.
 | Maintenance | 7 × 7 m | 3.2 m | Open, through a 2 m link |
 | Generator | 9 × 8 m | 3.8 m | Open via Maintenance and a 2 m link |
 | Security outer | 6 × 5 m | 3.2 m | Open, through a 2 m link |
-| Security inner | 5 × 5 m | 3.2 m | Visible through glazing; physically blocked |
-| Director threshold shell | 6 × 5 m | 3.2 m | Sealed; office is not furnished/playable |
+| Security inner | 5 × 5 m | 3.2 m | Restored Class IV credential unlocks its door |
+| Director threshold shell | 6 × 5 m | 3.2 m | Opens after Security acceptance; empty graybox |
 | Generator service side | 3 × 8 m | 3.8 m | Visible through steel grille; blocked |
 
 Walls are approximately 0.2 m thick; portal headers leave 2.5 m clearance.
@@ -71,9 +71,13 @@ is shorter. No long transit tunnels are introduced.
   reserve the pressure gauge, prime, field excitation, and breakers 1–4.
 - Service side: inaccessible pipe/terminal placeholders reserve the future
   coolant bypass and M-4. The steel grille has full collision to its header.
-- Security: heavy door/glazing boundary, outer access-terminal location,
-  inner encoder bench and equipment rack. No card or power logic.
-- Director: named sealed threshold on the administrative side. The office
+- Security: retained glazing and equipment rack; the former door is now a
+  separate credential-controlled door. Milestone 11B moves the encoder reservation
+  to outer Security at (24.2, 1.18, 7.85), facing north, on a small stand. The
+  retained inner bench supports three mundane CRTs, with conduit/junction box.
+  The existing inner fluorescent rises from 0.35 to 0.8 energy on Main Power.
+- Director: named threshold on the administrative side, unlocked by Security
+  acceptance and opened manually. The office
   remains an empty reserved shell, without cabinet/terminal puzzle content.
 
 Reserved locations are named Marker3D nodes visible in the editor only. They
@@ -85,8 +89,10 @@ unchanged.
 Concrete, green/gray lower walls, dark steel, wood surfaces, beige housings,
 and restrained greenish fluorescent fixtures extend the existing visual
 direction. Signs have physical backing plates and normal depth testing.
-Emergency Egress reads OFF / INVALID / REQUIRED / EXIT SEALED regardless of
-Observation auxiliary power; there is no macro-condition state manager.
+Emergency Egress starts OFF / INVALID / REQUIRED / EXIT SEALED regardless of
+Observation auxiliary power. Main Power changes OFF to ONLINE; Security reader
+acceptance changes INVALID to VALID. Separate scene-owned states drive those
+reactions; Director Authorization and final release remain unimplemented.
 
 ## Validation and playtest concerns
 
@@ -112,5 +118,7 @@ performance/playtest pass. Navigation tests sample movement paths and collision
 boundaries; they are not exhaustive attempts at every jump or exploit.
 
 The Milestone 10B radio investigation and Milestone 10C cooperative Main Power
-branch are implemented outside this static shell. Card rewriting, authorization,
-and final escape remain unimplemented.
+branch are implemented outside this static shell. Milestone 11B likewise adds
+card rewriting and access via a separate gameplay layer; see
+[security_access.md](security_access.md). Director Authorization and final escape
+remain unimplemented.

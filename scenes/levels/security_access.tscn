@@ -1,0 +1,217 @@
+[gd_scene load_steps=31 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/credential_encoder.tscn" id="Encoder"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/security_access_door.tscn" id="InnerDoor"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/director_threshold_door.tscn" id="DirectorDoor"]
+
+[ext_resource type="Script" path="res://scripts/systems/facility_security.gd" id="State"]
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.32, 0.36, 0.30, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Screen"]
+albedo_color = Color(0.045, 0.07, 0.05, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Panel"]
+albedo_color = Color(0.45, 0.47, 0.39, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Text"]
+albedo_color = Color(0.56, 0.62, 0.48, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="EncoderStandMesh"]
+size = Vector3(1.4, 0.9, 0.72)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="EncoderStandShape"]
+size = Vector3(1.4, 0.9, 0.72)
+
+[sub_resource type="BoxMesh" id="Monitor0Mesh"]
+size = Vector3(0.50, 0.42, 0.60)
+material = SubResource("Panel")
+
+[sub_resource type="BoxShape3D" id="Monitor0Shape"]
+size = Vector3(0.50, 0.42, 0.60)
+
+[sub_resource type="BoxMesh" id="Screen0Mesh"]
+size = Vector3(0.008, 0.31, 0.48)
+material = SubResource("Screen")
+
+[sub_resource type="BoxMesh" id="Scan00Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="Scan01Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="Scan02Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="Monitor1Mesh"]
+size = Vector3(0.50, 0.42, 0.60)
+material = SubResource("Panel")
+
+[sub_resource type="BoxShape3D" id="Monitor1Shape"]
+size = Vector3(0.50, 0.42, 0.60)
+
+[sub_resource type="BoxMesh" id="Screen1Mesh"]
+size = Vector3(0.008, 0.31, 0.48)
+material = SubResource("Screen")
+
+[sub_resource type="BoxMesh" id="Scan10Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="Scan11Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="Scan12Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="Monitor2Mesh"]
+size = Vector3(0.50, 0.42, 0.60)
+material = SubResource("Panel")
+
+[sub_resource type="BoxShape3D" id="Monitor2Shape"]
+size = Vector3(0.50, 0.42, 0.60)
+
+[sub_resource type="BoxMesh" id="Screen2Mesh"]
+size = Vector3(0.008, 0.31, 0.48)
+material = SubResource("Screen")
+
+[sub_resource type="BoxMesh" id="Scan20Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="Scan21Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="Scan22Mesh"]
+size = Vector3(0.009, 0.006, 0.37)
+material = SubResource("Text")
+
+[sub_resource type="BoxMesh" id="ConduitMesh"]
+size = Vector3(0.06, 2.5, 0.06)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="JunctionMesh"]
+size = Vector3(0.10, 0.35, 0.3)
+material = SubResource("Panel")
+
+[node name="SecurityAccess" type="Node3D"]
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("State")
+
+[node name="Encoder" parent="." instance=ExtResource("Encoder")]
+position = Vector3(24.2, 1.18, 7.85)
+rotation_degrees = Vector3(0, 180, 0)
+
+[node name="InnerDoor" parent="." instance=ExtResource("InnerDoor")]
+position = Vector3(28.5, 0, 4.2)
+rotation_degrees = Vector3(0, -90, 0)
+
+[node name="DirectorDoor" parent="." instance=ExtResource("DirectorDoor")]
+position = Vector3(25, 0, 8.7)
+
+[node name="EncoderStand" type="StaticBody3D" parent="."]
+position = Vector3(24.2, 0.45, 7.85)
+
+[node name="Mesh" type="MeshInstance3D" parent="EncoderStand"]
+mesh = SubResource("EncoderStandMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="EncoderStand"]
+shape = SubResource("EncoderStandShape")
+
+[node name="Monitor0" type="StaticBody3D" parent="."]
+position = Vector3(32.7, 1.13, 5.35)
+
+[node name="Mesh" type="MeshInstance3D" parent="Monitor0"]
+mesh = SubResource("Monitor0Mesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Monitor0"]
+shape = SubResource("Monitor0Shape")
+
+[node name="Screen0" type="MeshInstance3D" parent="."]
+position = Vector3(32.444, 1.14, 5.35)
+mesh = SubResource("Screen0Mesh")
+
+[node name="Scan00" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.05, 5.35)
+mesh = SubResource("Scan00Mesh")
+
+[node name="Scan01" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.125, 5.35)
+mesh = SubResource("Scan01Mesh")
+
+[node name="Scan02" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.2, 5.35)
+mesh = SubResource("Scan02Mesh")
+
+[node name="Monitor1" type="StaticBody3D" parent="."]
+position = Vector3(32.7, 1.13, 6.05)
+
+[node name="Mesh" type="MeshInstance3D" parent="Monitor1"]
+mesh = SubResource("Monitor1Mesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Monitor1"]
+shape = SubResource("Monitor1Shape")
+
+[node name="Screen1" type="MeshInstance3D" parent="."]
+position = Vector3(32.444, 1.14, 6.05)
+mesh = SubResource("Screen1Mesh")
+
+[node name="Scan10" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.05, 6.05)
+mesh = SubResource("Scan10Mesh")
+
+[node name="Scan11" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.125, 6.05)
+mesh = SubResource("Scan11Mesh")
+
+[node name="Scan12" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.2, 6.05)
+mesh = SubResource("Scan12Mesh")
+
+[node name="Monitor2" type="StaticBody3D" parent="."]
+position = Vector3(32.7, 1.13, 6.75)
+
+[node name="Mesh" type="MeshInstance3D" parent="Monitor2"]
+mesh = SubResource("Monitor2Mesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Monitor2"]
+shape = SubResource("Monitor2Shape")
+
+[node name="Screen2" type="MeshInstance3D" parent="."]
+position = Vector3(32.444, 1.14, 6.75)
+mesh = SubResource("Screen2Mesh")
+
+[node name="Scan20" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.05, 6.75)
+mesh = SubResource("Scan20Mesh")
+
+[node name="Scan21" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.125, 6.75)
+mesh = SubResource("Scan21Mesh")
+
+[node name="Scan22" type="MeshInstance3D" parent="."]
+position = Vector3(32.438, 1.2, 6.75)
+mesh = SubResource("Scan22Mesh")
+
+[node name="Conduit" type="MeshInstance3D" parent="."]
+position = Vector3(33.31, 1.4, 7.35)
+mesh = SubResource("ConduitMesh")
+
+[node name="Junction" type="MeshInstance3D" parent="."]
+position = Vector3(33.29, 1.6, 7.35)
+mesh = SubResource("JunctionMesh")

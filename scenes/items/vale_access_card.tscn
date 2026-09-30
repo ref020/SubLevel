@@ -1,6 +1,13 @@
-[gd_scene load_steps=17 format=3]
+[gd_scene load_steps=19 format=3]
 
 [ext_resource type="Script" path="res://scripts/interaction/pickup_item.gd" id="Script"]
+
+[ext_resource type="Script" path="res://scripts/systems/access_credential.gd" id="Credential"]
+[sub_resource type="Resource" id="CredentialState"]
+resource_local_to_scene = true
+script = ExtResource("Credential")
+identity = &"warren_vale"
+compatible_access_systems = Array[StringName]([&"security_inner"])
 
 [sub_resource type="StandardMaterial3D" id="MatCard"]
 albedo_color = Color(0.55, 0.56, 0.44, 1)
@@ -78,6 +85,8 @@ script = ExtResource("Script")
 visual_root = NodePath("Visual")
 inspection_distance = 1.0
 item_id = &"vale_access_card"
+credential = SubResource("CredentialState")
+installation_tags = Array[StringName]([&"access_credential"])
 display_name = "Director Access Card"
 description = "An access credential issued to Facility Director Warren Vale. Its permissions have been revoked."
 

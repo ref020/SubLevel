@@ -53,3 +53,7 @@ func interact() -> void:
 			lines.append("%s          %s" % [channel, tape.recording.channel_amplitudes[channel]])
 		_text.text = "\n".join(lines)
 	super.interact()
+
+
+func refresh_report() -> void:
+	_refresh(powered)

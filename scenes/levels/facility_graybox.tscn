@@ -4450,15 +4450,6 @@ omni_range = 4
 omni_attenuation = 1.3
 shadow_enabled = true
 
-[node name="ControlledDoor" type="StaticBody3D" parent="SecurityOuter"]
-position = Vector3(28.5, 1.25, 4.9)
-
-[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/ControlledDoor"]
-mesh = SubResource("R245")
-
-[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/ControlledDoor"]
-shape = SubResource("R246")
-
 [node name="SecurityGlazing" type="StaticBody3D" parent="SecurityOuter"]
 position = Vector3(28.5, 1.25, 6.9)
 
@@ -4536,15 +4527,6 @@ mesh = SubResource("R254")
 [node name="Collision" type="CollisionShape3D" parent="SecurityInner/EncoderBench"]
 shape = SubResource("R255")
 
-[node name="EncoderHousing" type="StaticBody3D" parent="SecurityInner"]
-position = Vector3(32.7, 1.1, 6.3)
-
-[node name="Mesh" type="MeshInstance3D" parent="SecurityInner/EncoderHousing"]
-mesh = SubResource("R256")
-
-[node name="Collision" type="CollisionShape3D" parent="SecurityInner/EncoderHousing"]
-shape = SubResource("R257")
-
 [node name="SecurityRack" type="StaticBody3D" parent="SecurityInner"]
 position = Vector3(31.7, 1.2, 8.0)
 
@@ -4554,23 +4536,8 @@ mesh = SubResource("R258")
 [node name="Collision" type="CollisionShape3D" parent="SecurityInner/SecurityRack"]
 shape = SubResource("R259")
 
-[node name="ReservedCardEncoder" type="Marker3D" parent="SecurityInner"]
-position = Vector3(32.7, 1.1, 6.3)
-
-[node name="DirectorDoor" type="StaticBody3D" parent="SecurityOuter"]
-position = Vector3(26, 1.25, 8.7)
-
-[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/DirectorDoor"]
-mesh = SubResource("R260")
-
-[node name="Collision" type="CollisionShape3D" parent="SecurityOuter/DirectorDoor"]
-shape = SubResource("R261")
-
-[node name="DirectorDoorSeam" type="Node3D" parent="SecurityOuter"]
-position = Vector3(26, 1.25, 8.58)
-
-[node name="Mesh" type="MeshInstance3D" parent="SecurityOuter/DirectorDoorSeam"]
-mesh = SubResource("R262")
+[node name="ReservedCardEncoder" type="Marker3D" parent="SecurityOuter"]
+position = Vector3(24.2, 1.18, 7.85)
 
 [node name="DirectorSign" type="Node3D" parent="SecurityOuter"]
 position = Vector3(26, 2.8, 8.56)

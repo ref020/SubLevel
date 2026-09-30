@@ -1,9 +1,9 @@
 # Milestone 11A: Security investigation
 
-Implemented endpoint: the player can derive **0614 / IV / 4321**. Security
-Clearance is still INVALID. No card rewriting, credential-entry UI, Director
-Authorization, or egress progression is implemented. Existing encoder hardware
-in inner Security remains inert; there is no fake correct-input rejection.
+Milestone 11A provides the information to derive **0614 / IV / 4321**. Milestone
+11B now implements rewriting and reader acceptance; see [security_access.md](security_access.md).
+Security begins INVALID and stays so until the active card is accepted. Director
+Authorization and egress progression remain unimplemented.
 
 ## Physical information
 
@@ -13,7 +13,9 @@ in inner Security remains inert; there is no fake correct-input rejection.
   FACILITY DIRECTOR. E inspects, F takes, and inventory retains its static model.
   `vale_access_card`, **Director Access Card**, description: "An access credential
   issued to Facility Director Warren Vale. Its permissions have been revoked."
-  Its `unlocks` array is empty. There is no category field in the current inventory.
+  Its `unlocks` array is empty. Milestone 11B adds a separate mutable credential
+  with `security_inner` compatibility, initially revoked/inactive/class 0. There
+  is no category field in the current inventory.
 - Laboratory north wall above the calibration bench: authorization reference at
   (13.1, 1.65, -12.16). Technical Staff I, Research Staff II, Section Supervisor
   III, Facility Director IV all have identical styling. Inspectable, not takeable.
