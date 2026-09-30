@@ -21,6 +21,12 @@ func _run() -> void:
 	await physics_frame
 	await physics_frame
 	var facility: Node3D = room.get_node("Architecture/Facility")
+	for body: Node in facility.get_node("CentralHub").get_children():
+		if body is StaticBody3D and body.has_node("Mesh") and body.has_node("Collision"):
+			var mesh: MeshInstance3D = body.get_node("Mesh")
+			var collision: CollisionShape3D = body.get_node("Collision")
+			if mesh.mesh is BoxMesh and collision.shape is BoxShape3D:
+				_check(mesh.mesh.size.is_equal_approx(collision.shape.size), "Hub visible geometry matches collision: " + str(body.name))
 	var space: PhysicsDirectSpaceState3D = room.get_world_3d().direct_space_state
 	var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
 	query.shape = player.get_node("CollisionShape3D").shape

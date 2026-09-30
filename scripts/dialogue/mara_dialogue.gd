@@ -66,6 +66,7 @@ func _init() -> void:
 		"goodbye": {"text": "I'll listen for you. Don't forget I'm here.", "next": ""}
 	}
 	_add_routing()
+	nodes["sector_released"] = {"text": "The lock just released. I can get out.", "next": ""}
 
 
 func _add_routing() -> void:

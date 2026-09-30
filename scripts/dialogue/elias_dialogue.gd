@@ -27,3 +27,4 @@ func _init() -> void:
 	nodes["m4_access"] = {"action": "contact_m4", "action_unavailable": "mara:menu", "text": "I can reach M-4 from the service side. Its network link is down, but I can work the controls. Tell me what the Director terminal wants.", "next": "mara:link_established"}
 	nodes["m4_setting"] = {"text": "Copy. Setting M-4.", "next": "elias:m4_result"}
 	nodes["m4_result"] = {"action": "configure_m4", "action_unavailable": "mara:menu", "text": "{m4_result}", "next": "mara:menu"}
+	nodes["sector_released"] = {"text": "Service door's open. I'm moving.", "next": ""}

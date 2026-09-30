@@ -223,7 +223,7 @@ func _run() -> void:
 		var screen_bounds: AABB = terminal.readout.get_aabb()
 		_check(screen_bounds.size.x < 0.67 and screen_bounds.size.y < 0.45, "Terminal report fits CRT")
 		var status: String = level.get_node("Architecture/Facility/CentralHub/StatusPanel/Text").text
-		for text: String in ["MAIN POWER             ONLINE", "SECURITY CLEARANCE     VALID", "DIRECTOR AUTHORIZATION VALID", "READY FOR MANUAL RELEASE"]: _check(status.contains(text), "Hub status " + text)
+		for text: String in ["MAIN POWER             ONLINE", "SECURITY CLEARANCE     VALID", "DIRECTOR AUTHORIZATION VALID", "MANUAL RELEASE ENABLED"]: _check(status.contains(text), "Hub status " + text)
 		var label: Label3D = level.get_node("Architecture/Facility/CentralHub/StatusPanel/Text")
 		_check(label.get_aabb().size.x < 2.55 and label.get_aabb().size.y < 1.35, "Completed Hub report fits backing")
 		_check(player.test_move(Transform3D(Basis.IDENTITY, Vector3(18.5, 0.03, -2.3)), Vector3(0, 0, -2)), "Egress remains physically sealed")

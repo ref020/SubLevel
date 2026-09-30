@@ -1,4 +1,4 @@
-[gd_scene load_steps=324 format=3]
+[gd_scene load_steps=326 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -41,6 +41,9 @@
 
 [ext_resource type="PackedScene" path="res://scenes/levels/director_office.tscn" id="DirectorOffice"]
 [ext_resource type="Script" path="res://scripts/levels/director_office.gd" id="DirectorWiring"]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/emergency_egress.tscn" id="Egress"]
+[ext_resource type="Script" path="res://scripts/levels/emergency_egress.gd" id="EgressWiring"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -2610,3 +2613,19 @@ mara = NodePath("../PuzzleProps/ObservationWindow/Mara")
 elias = NodePath("../FacilityInvestigation/Elias")
 security = NodePath("../SecurityAccess/State")
 shell = NodePath("../Architecture/Facility")
+
+[node name="EmergencyEgress" parent="." instance=ExtResource("Egress")]
+[node name="EgressWiring" type="Node" parent="." node_paths=PackedStringArray("assembly", "power", "security", "director", "inventory", "player", "shell", "dialogue_ui", "ending_ui", "mara", "elias", "facility_hum")]
+script = ExtResource("EgressWiring")
+assembly = NodePath("../EmergencyEgress")
+power = NodePath("../FacilitySystems/State")
+security = NodePath("../SecurityAccess/State")
+director = NodePath("../DirectorOffice/State")
+inventory = NodePath("../Player/Inventory")
+player = NodePath("../Player")
+shell = NodePath("../Architecture/Facility")
+dialogue_ui = NodePath("../Player/DialogueUI")
+ending_ui = NodePath("../Player/EndingUI")
+mara = NodePath("../PuzzleProps/ObservationWindow/Mara")
+elias = NodePath("../FacilityInvestigation/Elias")
+facility_hum = NodePath("../FacilitySystems/Generator/Hum")

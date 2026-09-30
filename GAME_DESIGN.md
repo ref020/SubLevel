@@ -1,7 +1,7 @@
 # SUBLEVEL
 ## Game Design Document
 
-Status: Pre-production / Prototype
+Status: Complete intended gameplay prototype (Milestone 13); manual polish/playtesting remains
 
 ---
 
@@ -45,6 +45,7 @@ The game is first-person.
 Core capabilities will eventually include:
 
 - Walk
+- Sprint while holding Shift (default 6 m/s; walking remains 4 m/s)
 - Look
 - Jump
 - Crouch if required
@@ -320,7 +321,7 @@ investigation and first contact. Milestone 10C implements the cassette/battery
 and cooperative Generator branch through Main Power. Milestone 11A implements
 Security investigation and hash deduction. Milestone 11B implements credential
 rewriting and Security access through the openable Director threshold. Director
-Authorization is implemented through Milestones 12A/12B; final egress remains future work.
+Authorization is implemented through Milestones 12A/12B; Milestone 13 implements final evacuation and departure.
 
 The final emergency egress requires all three macro conditions:
 
@@ -495,8 +496,8 @@ and presses SESSION / CONFIRM to complete authorization. The Hub then shows MAIN
 POWER ONLINE, SECURITY CLEARANCE VALID, DIRECTOR AUTHORIZATION VALID and READY
 FOR MANUAL RELEASE. Emergency Egress remains physically closed.
 
-DIRECTOR AUTHORIZATION is implemented. FINAL EMERGENCY EGRESS RELEASE remains
-FUTURE. No final mechanical-release controls or escape sequence are implemented.
+DIRECTOR AUTHORIZATION is implemented. Milestone 13 implements the final
+mechanical releases, sector evacuation and physical departure described below.
 See docs/director_authorization.md and docs/director_secondary.md.
 
 
@@ -549,7 +550,7 @@ This satisfies DIRECTOR AUTHORIZATION.
 
 ---
 
-# 14. Final Egress — Future Implementation
+# 14. Final Egress - Implemented (Milestone 13)
 
 When MAIN POWER, SECURITY CLEARANCE, and DIRECTOR AUTHORIZATION are valid,
 Emergency Egress permits manual release. The first mechanical release only
@@ -563,9 +564,26 @@ At the final evacuation control the player can release:
 - Maintenance Sector
 - Surface Access
 
-This frees Mara and Elias before the player reaches the surface. Do not expand
-the ending beyond this without a future design decision. None of this final
-escape functionality is implemented in Milestone 10A.
+Milestone 13 IMPLEMENTED: all three authoritative macro conditions enable manual
+release, with a Hub indicator/clunk and MANUAL RELEASE ENABLED report. The
+primary handle retracts its latch but leaves SECONDARY: MECHANICAL FAULT. One
+captive screwdriver-compatible fastener opens the secondary service plate; the
+original screwdriver is retained. The exposed linkage requires another deliberate
+interaction. Both latches release the heavy door without automatically opening
+it. The player opens it and enters a compact evacuation vestibule.
+
+Separate Observation Cells and Maintenance Sector controls set authoritative
+session release states. Mara and Elias each confirm their sector release with a
+short participant-owned line; no NPC pathfinding or teleportation is added.
+Surface Access becomes READY only after both sectors, then requires deliberate
+activation. It unlocks the upper door on a short rising service route. It does
+not end the game. The player manually opens that door and physically crosses the
+final threshold before game_completed becomes true and a restrained evacuation
+completion fade appears. Backtracking remains possible before departure.
+
+The complete intended gameplay progression is implemented. No further puzzles,
+post-ending lore, new codes, timed escape or surprise failure are added.
+See docs/final_egress.md for state, geometry, tests and manual-review limitations.
 
 ---
 

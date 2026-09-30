@@ -1,0 +1,881 @@
+[gd_scene load_steps=102 format=3]
+
+[ext_resource type="Script" path="res://scripts/systems/facility_egress.gd" id="State"]
+
+[ext_resource type="Script" path="res://scripts/interaction/egress_control.gd" id="Control"]
+
+[ext_resource type="Script" path="res://scripts/interaction/egress_service_cover.gd" id="Cover"]
+
+[ext_resource type="Script" path="res://scripts/interaction/door.gd" id="Door"]
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.30, 0.34, 0.31, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Wall"]
+albedo_color = Color(0.40, 0.43, 0.37, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Floor"]
+albedo_color = Color(0.24, 0.27, 0.24, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Dark"]
+albedo_color = Color(0.08, 0.11, 0.09, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.78, 0.81, 0.69, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Handle"]
+albedo_color = Color(0.48, 0.45, 0.28, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.62, 0.65, 0.56, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Lamp"]
+albedo_color = Color(0.46, 0.70, 0.36, 1)
+roughness = 0.9
+emission_enabled = true
+emission = Color(0.46, 0.70, 0.36, 1)
+emission_energy_multiplier = 0.4
+
+[sub_resource type="StandardMaterial3D" id="Day"]
+albedo_color = Color(0.82, 0.85, 0.80, 1)
+roughness = 0.9
+emission_enabled = true
+emission = Color(0.82, 0.85, 0.80, 1)
+emission_energy_multiplier = 0.4
+
+[sub_resource type="BoxMesh" id="VestibuleFloorMesh"]
+size = Vector3(2.7, 0.24, 4.2)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="VestibuleFloorShape"]
+size = Vector3(2.7, 0.24, 4.2)
+
+[sub_resource type="BoxMesh" id="VestibuleCeilingMesh"]
+size = Vector3(2.7, 0.22, 4.2)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="VestibuleCeilingShape"]
+size = Vector3(2.7, 0.22, 4.2)
+
+[sub_resource type="BoxMesh" id="WestWallMesh"]
+size = Vector3(0.2, 6.0, 12.4)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="WestWallShape"]
+size = Vector3(0.2, 6.0, 12.4)
+
+[sub_resource type="BoxMesh" id="EastWallMesh"]
+size = Vector3(0.2, 6.0, 12.4)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="EastWallShape"]
+size = Vector3(0.2, 6.0, 12.4)
+
+[sub_resource type="BoxMesh" id="RampMesh"]
+size = Vector3(2.7, 0.24, 6.462198)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="RampShape"]
+size = Vector3(2.7, 0.24, 6.462198)
+
+[sub_resource type="BoxMesh" id="RampRoofMesh"]
+size = Vector3(2.7, 0.22, 6.462198)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="RampRoofShape"]
+size = Vector3(2.7, 0.22, 6.462198)
+
+[sub_resource type="BoxMesh" id="LandingMesh"]
+size = Vector3(2.7, 0.24, 2.4)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="LandingShape"]
+size = Vector3(2.7, 0.24, 2.4)
+
+[sub_resource type="BoxMesh" id="LandingRoofMesh"]
+size = Vector3(2.7, 0.22, 2.4)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="LandingRoofShape"]
+size = Vector3(2.7, 0.22, 2.4)
+
+[sub_resource type="BoxMesh" id="EndWallMesh"]
+size = Vector3(2.9, 3.5, 0.2)
+material = SubResource("Day")
+
+[sub_resource type="BoxShape3D" id="EndWallShape"]
+size = Vector3(2.9, 3.5, 0.2)
+
+[sub_resource type="BoxMesh" id="EntranceJambMesh"]
+size = Vector3(0.25, 2.7, 0.35)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="EntranceJambShape"]
+size = Vector3(0.25, 2.7, 0.35)
+
+[sub_resource type="BoxMesh" id="DoorBodyPanelMesh"]
+size = Vector3(2.15, 2.7, 0.18)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="DoorDoorShape"]
+size = Vector3(2.15, 2.7, 0.18)
+
+[sub_resource type="BoxMesh" id="DoorBodyHandleMesh"]
+size = Vector3(0.08, 0.38, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="BoxMesh" id="DoorBodyBrace0Mesh"]
+size = Vector3(1.95, 0.08, 0.08)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="DoorBodyBrace1Mesh"]
+size = Vector3(1.95, 0.08, 0.08)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="DoorBodyPrimaryLatchMesh"]
+size = Vector3(0.55, 0.1, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="BoxMesh" id="DoorBodySecondaryLatchMesh"]
+size = Vector3(0.55, 0.1, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="BoxMesh" id="PrimaryBaseMesh"]
+size = Vector3(0.22, 0.32, 0.06)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="PrimaryBaseShape"]
+size = Vector3(0.22, 0.32, 0.06)
+
+[sub_resource type="BoxMesh" id="PrimaryLeverMesh"]
+size = Vector3(0.045, 0.23, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="TextMesh" id="PrimaryLabel"]
+text = "PRIMARY\nRELEASE"
+font_size = 64
+pixel_size = 0.0005
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="AuthorizedLampMesh"]
+size = Vector3(0.065, 0.065, 0.04)
+material = SubResource("Lamp")
+
+[sub_resource type="BoxMesh" id="ServiceBackMesh"]
+size = Vector3(0.58, 0.58, 0.04)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="ServiceBackShape"]
+size = Vector3(0.58, 0.58, 0.04)
+
+[sub_resource type="BoxMesh" id="ServiceLeftMesh"]
+size = Vector3(0.04, 0.58, 0.3)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="ServiceLeftShape"]
+size = Vector3(0.04, 0.58, 0.3)
+
+[sub_resource type="BoxMesh" id="ServiceRightMesh"]
+size = Vector3(0.04, 0.58, 0.3)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="ServiceRightShape"]
+size = Vector3(0.04, 0.58, 0.3)
+
+[sub_resource type="BoxMesh" id="ServiceTopMesh"]
+size = Vector3(0.58, 0.04, 0.3)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="ServiceTopShape"]
+size = Vector3(0.58, 0.04, 0.3)
+
+[sub_resource type="BoxMesh" id="ServiceBottomMesh"]
+size = Vector3(0.58, 0.04, 0.3)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="ServiceBottomShape"]
+size = Vector3(0.58, 0.04, 0.3)
+
+[sub_resource type="BoxMesh" id="ServiceCoverHingePanelMesh"]
+size = Vector3(0.54, 0.54, 0.045)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="ServiceCoverHingePanelShape"]
+size = Vector3(0.54, 0.54, 0.045)
+
+[sub_resource type="BoxMesh" id="ServiceCoverHingeFastenerMesh"]
+size = Vector3(0.065, 0.065, 0.015)
+material = SubResource("Paper")
+
+[sub_resource type="BoxMesh" id="ServiceCoverHingeSlotMesh"]
+size = Vector3(0.042, 0.009, 0.008)
+material = SubResource("Dark")
+
+[sub_resource type="TextMesh" id="ServiceCoverHingeLabel"]
+text = "SECONDARY\nSERVICE ACCESS"
+font_size = 64
+pixel_size = 0.0003
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="ServiceLinkageBaseMesh"]
+size = Vector3(0.22, 0.32, 0.06)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="ServiceLinkageBaseShape"]
+size = Vector3(0.22, 0.32, 0.06)
+
+[sub_resource type="BoxMesh" id="ServiceLinkageLeverMesh"]
+size = Vector3(0.045, 0.23, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="BoxMesh" id="FaultBackingMesh"]
+size = Vector3(1.12, 0.29, 0.035)
+material = SubResource("Dark")
+
+[sub_resource type="TextMesh" id="FaultText"]
+text = "PRIMARY: SECURED\nSECONDARY: SECURED"
+font_size = 64
+pixel_size = 0.00055
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="EvacuationPanelCaseMesh"]
+size = Vector3(1.65, 1.24, 0.22)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="EvacuationPanelCaseShape"]
+size = Vector3(1.65, 1.24, 0.22)
+
+[sub_resource type="BoxMesh" id="EvacuationPanelCRTMesh"]
+size = Vector3(1.48, 0.52, 0.012)
+material = SubResource("Dark")
+
+[sub_resource type="TextMesh" id="EvacuationPanelReadout"]
+text = "EVACUATION CONTROL\nOBSERVATION CELLS   SECURED\nMAINTENANCE SECTOR  SECURED\nSURFACE ACCESS      LOCKED"
+font_size = 64
+pixel_size = 0.0006
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="EvacuationPanelObservationBaseMesh"]
+size = Vector3(0.22, 0.32, 0.06)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="EvacuationPanelObservationBaseShape"]
+size = Vector3(0.22, 0.32, 0.06)
+
+[sub_resource type="BoxMesh" id="EvacuationPanelObservationLeverMesh"]
+size = Vector3(0.045, 0.23, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="TextMesh" id="EvacuationPanelObservationLabel"]
+text = "OBSERVATION\nCELLS"
+font_size = 64
+pixel_size = 0.00035
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="EvacuationPanelMaintenanceBaseMesh"]
+size = Vector3(0.22, 0.32, 0.06)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="EvacuationPanelMaintenanceBaseShape"]
+size = Vector3(0.22, 0.32, 0.06)
+
+[sub_resource type="BoxMesh" id="EvacuationPanelMaintenanceLeverMesh"]
+size = Vector3(0.045, 0.23, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="TextMesh" id="EvacuationPanelMaintenanceLabel"]
+text = "MAINTENANCE\nSECTOR"
+font_size = 64
+pixel_size = 0.00035
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="EvacuationPanelSurfaceBaseMesh"]
+size = Vector3(0.22, 0.32, 0.06)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="EvacuationPanelSurfaceBaseShape"]
+size = Vector3(0.22, 0.32, 0.06)
+
+[sub_resource type="BoxMesh" id="EvacuationPanelSurfaceLeverMesh"]
+size = Vector3(0.045, 0.23, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="TextMesh" id="EvacuationPanelSurfaceLabel"]
+text = "SURFACE\nACCESS"
+font_size = 64
+pixel_size = 0.00035
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="SurfaceDoorBodyPanelMesh"]
+size = Vector3(1.8, 2.65, 0.18)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="SurfaceDoorDoorShape"]
+size = Vector3(1.8, 2.65, 0.18)
+
+[sub_resource type="BoxMesh" id="SurfaceDoorBodyHandleMesh"]
+size = Vector3(0.08, 0.38, 0.1)
+material = SubResource("Handle")
+
+[sub_resource type="BoxMesh" id="SurfaceDoorBodyBrace0Mesh"]
+size = Vector3(1.6, 0.08, 0.08)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="SurfaceDoorBodyBrace1Mesh"]
+size = Vector3(1.6, 0.08, 0.08)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="SurfaceLeftMesh"]
+size = Vector3(0.45, 3.3, 0.25)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="SurfaceLeftShape"]
+size = Vector3(0.45, 3.3, 0.25)
+
+[sub_resource type="BoxMesh" id="SurfaceRightMesh"]
+size = Vector3(0.45, 3.3, 0.25)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="SurfaceRightShape"]
+size = Vector3(0.45, 3.3, 0.25)
+
+[sub_resource type="BoxMesh" id="SurfaceHeaderMesh"]
+size = Vector3(1.8, 0.65, 0.25)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="SurfaceHeaderShape"]
+size = Vector3(1.8, 0.65, 0.25)
+
+[sub_resource type="TextMesh" id="SurfaceSign"]
+text = "SURFACE ACCESS"
+font_size = 64
+pixel_size = 0.001
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="Fixture0Mesh"]
+size = Vector3(0.85, 0.1, 0.22)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="Diffuser0Mesh"]
+size = Vector3(0.7, 0.025, 0.13)
+material = SubResource("Lamp")
+
+[sub_resource type="BoxMesh" id="Fixture1Mesh"]
+size = Vector3(0.85, 0.1, 0.22)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="Diffuser1Mesh"]
+size = Vector3(0.7, 0.025, 0.13)
+material = SubResource("Lamp")
+
+[sub_resource type="BoxMesh" id="Fixture2Mesh"]
+size = Vector3(0.85, 0.1, 0.22)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="Diffuser2Mesh"]
+size = Vector3(0.7, 0.025, 0.13)
+material = SubResource("Day")
+
+[sub_resource type="BoxShape3D" id="ExitShape"]
+size = Vector3(2.5, 2.8, 0.6)
+
+[sub_resource type="BoxMesh" id="PrimaryLabelBacking"]
+size = Vector3(0.38, 0.19, 0.045)
+material = SubResource("Dark")
+
+[node name="EmergencyEgress" type="Node3D"]
+
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("State")
+
+[node name="VestibuleFloor" type="StaticBody3D" parent="."]
+position = Vector3(18.85, -0.12, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="VestibuleFloor"]
+mesh = SubResource("VestibuleFloorMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="VestibuleFloor"]
+shape = SubResource("VestibuleFloorShape")
+
+[node name="VestibuleCeiling" type="StaticBody3D" parent="."]
+position = Vector3(18.85, 3.31, -5.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="VestibuleCeiling"]
+mesh = SubResource("VestibuleCeilingMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="VestibuleCeiling"]
+shape = SubResource("VestibuleCeilingShape")
+
+[node name="WestWall" type="StaticBody3D" parent="."]
+position = Vector3(17.5, 3, -9.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="WestWall"]
+mesh = SubResource("WestWallMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="WestWall"]
+shape = SubResource("WestWallShape")
+
+[node name="EastWall" type="StaticBody3D" parent="."]
+position = Vector3(20.2, 3, -9.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="EastWall"]
+mesh = SubResource("EastWallMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="EastWall"]
+shape = SubResource("EastWallShape")
+
+[node name="Ramp" type="StaticBody3D" parent="."]
+position = Vector3(18.85, 1.070756, -10.3)
+rotation = Vector3(0.380506, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ramp"]
+mesh = SubResource("RampMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Ramp"]
+shape = SubResource("RampShape")
+
+[node name="RampRoof" type="StaticBody3D" parent="."]
+position = Vector3(18.85, 4.55, -10.3)
+rotation = Vector3(0.380506, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="RampRoof"]
+mesh = SubResource("RampRoofMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="RampRoof"]
+shape = SubResource("RampRoofShape")
+
+[node name="Landing" type="StaticBody3D" parent="."]
+position = Vector3(18.85, 2.28, -14.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Landing"]
+mesh = SubResource("LandingMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Landing"]
+shape = SubResource("LandingShape")
+
+[node name="LandingRoof" type="StaticBody3D" parent="."]
+position = Vector3(18.85, 5.71, -14.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="LandingRoof"]
+mesh = SubResource("LandingRoofMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="LandingRoof"]
+shape = SubResource("LandingRoofShape")
+
+[node name="EndWall" type="StaticBody3D" parent="."]
+position = Vector3(18.85, 4.05, -15.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="EndWall"]
+mesh = SubResource("EndWallMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="EndWall"]
+shape = SubResource("EndWallShape")
+
+[node name="EntranceJamb" type="StaticBody3D" parent="."]
+position = Vector3(17.625, 1.35, -3.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="EntranceJamb"]
+mesh = SubResource("EntranceJambMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="EntranceJamb"]
+shape = SubResource("EntranceJambShape")
+
+[node name="Door" type="Node3D" parent="."]
+position = Vector3(17.75, 0, -3.27)
+script = ExtResource("Door")
+starts_locked = true
+open_angle = 85.0
+animation_duration = 1.1
+
+[node name="Body" type="AnimatableBody3D" parent="Door"]
+sync_to_physics = false
+
+[node name="Panel" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(1.075, 1.35, 0)
+mesh = SubResource("DoorBodyPanelMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Door/Body"]
+position = Vector3(1.075, 1.35, 0)
+shape = SubResource("DoorDoorShape")
+
+[node name="Handle" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(1.95, 1.15, 0.14)
+mesh = SubResource("DoorBodyHandleMesh")
+
+[node name="Brace0" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(1.075, 0.5, 0.13)
+mesh = SubResource("DoorBodyBrace0Mesh")
+
+[node name="Brace1" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(1.075, 1.8, 0.13)
+mesh = SubResource("DoorBodyBrace1Mesh")
+
+[node name="PrimaryLatch" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(1.85, 0.72, 0.18)
+mesh = SubResource("DoorBodyPrimaryLatchMesh")
+
+[node name="SecondaryLatch" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(1.85, 1.35, 0.18)
+mesh = SubResource("DoorBodySecondaryLatchMesh")
+
+[node name="Primary" type="Node3D" parent="."]
+position = Vector3(20.0, 1.35, -3.02)
+script = ExtResource("Control")
+action = &"primary"
+control_name = "Operate Primary Release"
+
+[node name="Base" type="StaticBody3D" parent="Primary"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Primary/Base"]
+mesh = SubResource("PrimaryBaseMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Primary/Base"]
+shape = SubResource("PrimaryBaseShape")
+
+[node name="Lever" type="MeshInstance3D" parent="Primary"]
+position = Vector3(0, 0.035, 0.065)
+mesh = SubResource("PrimaryLeverMesh")
+
+[node name="Label" type="MeshInstance3D" parent="Primary"]
+position = Vector3(0, 0.29, 0.035)
+mesh = SubResource("PrimaryLabel")
+
+[node name="AuthorizedLamp" type="MeshInstance3D" parent="."]
+position = Vector3(20, 1.06, -2.98)
+mesh = SubResource("AuthorizedLampMesh")
+
+[node name="Service" type="Node3D" parent="."]
+position = Vector3(16.3, 0.34, -2.80)
+
+[node name="Back" type="StaticBody3D" parent="Service"]
+position = Vector3(0.27, 0.27, -0.29)
+
+[node name="Mesh" type="MeshInstance3D" parent="Service/Back"]
+mesh = SubResource("ServiceBackMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Service/Back"]
+shape = SubResource("ServiceBackShape")
+
+[node name="Left" type="StaticBody3D" parent="Service"]
+position = Vector3(-0.02, 0.27, -0.14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Service/Left"]
+mesh = SubResource("ServiceLeftMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Service/Left"]
+shape = SubResource("ServiceLeftShape")
+
+[node name="Right" type="StaticBody3D" parent="Service"]
+position = Vector3(0.56, 0.27, -0.14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Service/Right"]
+mesh = SubResource("ServiceRightMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Service/Right"]
+shape = SubResource("ServiceRightShape")
+
+[node name="Top" type="StaticBody3D" parent="Service"]
+position = Vector3(0.27, 0.56, -0.14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Service/Top"]
+mesh = SubResource("ServiceTopMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Service/Top"]
+shape = SubResource("ServiceTopShape")
+
+[node name="Bottom" type="StaticBody3D" parent="Service"]
+position = Vector3(0.27, -0.02, -0.14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Service/Bottom"]
+mesh = SubResource("ServiceBottomMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Service/Bottom"]
+shape = SubResource("ServiceBottomShape")
+
+[node name="Cover" type="Node3D" parent="Service"]
+script = ExtResource("Cover")
+required_item_id = &"screwdriver"
+ready_prompt = "Release Service Fastener"
+missing_item_prompt = "Examine Service Fastener"
+
+[node name="Hinge" type="Node3D" parent="Service/Cover"]
+
+
+[node name="Panel" type="StaticBody3D" parent="Service/Cover/Hinge"]
+position = Vector3(0.27, 0.27, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Service/Cover/Hinge/Panel"]
+mesh = SubResource("ServiceCoverHingePanelMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Service/Cover/Hinge/Panel"]
+shape = SubResource("ServiceCoverHingePanelShape")
+
+[node name="Fastener" type="MeshInstance3D" parent="Service/Cover/Hinge"]
+position = Vector3(0.47, 0.27, 0.032)
+mesh = SubResource("ServiceCoverHingeFastenerMesh")
+
+[node name="Slot" type="MeshInstance3D" parent="Service/Cover/Hinge"]
+position = Vector3(0.47, 0.27, 0.043)
+mesh = SubResource("ServiceCoverHingeSlotMesh")
+
+[node name="Label" type="MeshInstance3D" parent="Service/Cover/Hinge"]
+position = Vector3(0.26, 0.41, 0.027)
+mesh = SubResource("ServiceCoverHingeLabel")
+
+[node name="Linkage" type="Node3D" parent="Service"]
+position = Vector3(0.27, 0.27, -0.16)
+script = ExtResource("Control")
+action = &"secondary"
+control_name = "Pull Secondary Linkage"
+
+[node name="Base" type="StaticBody3D" parent="Service/Linkage"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Service/Linkage/Base"]
+mesh = SubResource("ServiceLinkageBaseMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Service/Linkage/Base"]
+shape = SubResource("ServiceLinkageBaseShape")
+disabled = true
+
+[node name="Lever" type="MeshInstance3D" parent="Service/Linkage"]
+position = Vector3(0, 0.035, 0.065)
+mesh = SubResource("ServiceLinkageLeverMesh")
+
+[node name="FaultBacking" type="MeshInstance3D" parent="."]
+position = Vector3(15.6, 0.67, -3.13)
+mesh = SubResource("FaultBackingMesh")
+
+[node name="FaultText" type="MeshInstance3D" parent="."]
+position = Vector3(15.6, 0.67, -3.105)
+mesh = SubResource("FaultText")
+
+[node name="EvacuationPanel" type="Node3D" parent="."]
+position = Vector3(19.94, 1.45, -5.9)
+rotation = Vector3(0, -1.5707963, 0)
+
+[node name="Case" type="StaticBody3D" parent="EvacuationPanel"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="EvacuationPanel/Case"]
+mesh = SubResource("EvacuationPanelCaseMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="EvacuationPanel/Case"]
+shape = SubResource("EvacuationPanelCaseShape")
+
+[node name="CRT" type="MeshInstance3D" parent="EvacuationPanel"]
+position = Vector3(0, 0.24, 0.118)
+mesh = SubResource("EvacuationPanelCRTMesh")
+
+[node name="Readout" type="MeshInstance3D" parent="EvacuationPanel"]
+position = Vector3(0, 0.24, 0.131)
+mesh = SubResource("EvacuationPanelReadout")
+
+[node name="Observation" type="Node3D" parent="EvacuationPanel"]
+position = Vector3(-0.52, -0.3, 0.13)
+script = ExtResource("Control")
+action = &"observation"
+control_name = "Release Observation Cells"
+
+[node name="Base" type="StaticBody3D" parent="EvacuationPanel/Observation"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="EvacuationPanel/Observation/Base"]
+mesh = SubResource("EvacuationPanelObservationBaseMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="EvacuationPanel/Observation/Base"]
+shape = SubResource("EvacuationPanelObservationBaseShape")
+
+[node name="Lever" type="MeshInstance3D" parent="EvacuationPanel/Observation"]
+position = Vector3(0, 0.035, 0.065)
+mesh = SubResource("EvacuationPanelObservationLeverMesh")
+
+[node name="Label" type="MeshInstance3D" parent="EvacuationPanel/Observation"]
+position = Vector3(0, -0.22, 0.05)
+mesh = SubResource("EvacuationPanelObservationLabel")
+
+[node name="Maintenance" type="Node3D" parent="EvacuationPanel"]
+position = Vector3(0, -0.3, 0.13)
+script = ExtResource("Control")
+action = &"maintenance"
+control_name = "Release Maintenance Sector"
+
+[node name="Base" type="StaticBody3D" parent="EvacuationPanel/Maintenance"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="EvacuationPanel/Maintenance/Base"]
+mesh = SubResource("EvacuationPanelMaintenanceBaseMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="EvacuationPanel/Maintenance/Base"]
+shape = SubResource("EvacuationPanelMaintenanceBaseShape")
+
+[node name="Lever" type="MeshInstance3D" parent="EvacuationPanel/Maintenance"]
+position = Vector3(0, 0.035, 0.065)
+mesh = SubResource("EvacuationPanelMaintenanceLeverMesh")
+
+[node name="Label" type="MeshInstance3D" parent="EvacuationPanel/Maintenance"]
+position = Vector3(0, -0.22, 0.05)
+mesh = SubResource("EvacuationPanelMaintenanceLabel")
+
+[node name="Surface" type="Node3D" parent="EvacuationPanel"]
+position = Vector3(0.52, -0.3, 0.13)
+script = ExtResource("Control")
+action = &"surface"
+control_name = "Enable Surface Access"
+
+[node name="Base" type="StaticBody3D" parent="EvacuationPanel/Surface"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="EvacuationPanel/Surface/Base"]
+mesh = SubResource("EvacuationPanelSurfaceBaseMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="EvacuationPanel/Surface/Base"]
+shape = SubResource("EvacuationPanelSurfaceBaseShape")
+
+[node name="Lever" type="MeshInstance3D" parent="EvacuationPanel/Surface"]
+position = Vector3(0, 0.035, 0.065)
+mesh = SubResource("EvacuationPanelSurfaceLeverMesh")
+
+[node name="Label" type="MeshInstance3D" parent="EvacuationPanel/Surface"]
+position = Vector3(0, -0.22, 0.05)
+mesh = SubResource("EvacuationPanelSurfaceLabel")
+
+[node name="SurfaceDoor" type="Node3D" parent="."]
+position = Vector3(17.95, 2.4, -13.3)
+script = ExtResource("Door")
+starts_locked = true
+open_angle = 85.0
+animation_duration = 1.1
+
+[node name="Body" type="AnimatableBody3D" parent="SurfaceDoor"]
+sync_to_physics = false
+
+[node name="Panel" type="MeshInstance3D" parent="SurfaceDoor/Body"]
+position = Vector3(0.9, 1.325, 0)
+mesh = SubResource("SurfaceDoorBodyPanelMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="SurfaceDoor/Body"]
+position = Vector3(0.9, 1.325, 0)
+shape = SubResource("SurfaceDoorDoorShape")
+
+[node name="Handle" type="MeshInstance3D" parent="SurfaceDoor/Body"]
+position = Vector3(1.6, 1.15, 0.14)
+mesh = SubResource("SurfaceDoorBodyHandleMesh")
+
+[node name="Brace0" type="MeshInstance3D" parent="SurfaceDoor/Body"]
+position = Vector3(0.9, 0.5, 0.13)
+mesh = SubResource("SurfaceDoorBodyBrace0Mesh")
+
+[node name="Brace1" type="MeshInstance3D" parent="SurfaceDoor/Body"]
+position = Vector3(0.9, 1.8, 0.13)
+mesh = SubResource("SurfaceDoorBodyBrace1Mesh")
+
+[node name="SurfaceLeft" type="StaticBody3D" parent="."]
+position = Vector3(17.725, 4.05, -13.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="SurfaceLeft"]
+mesh = SubResource("SurfaceLeftMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="SurfaceLeft"]
+shape = SubResource("SurfaceLeftShape")
+
+[node name="SurfaceRight" type="StaticBody3D" parent="."]
+position = Vector3(19.975, 4.05, -13.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="SurfaceRight"]
+mesh = SubResource("SurfaceRightMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="SurfaceRight"]
+shape = SubResource("SurfaceRightShape")
+
+[node name="SurfaceHeader" type="StaticBody3D" parent="."]
+position = Vector3(18.85, 5.375, -13.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="SurfaceHeader"]
+mesh = SubResource("SurfaceHeaderMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="SurfaceHeader"]
+shape = SubResource("SurfaceHeaderShape")
+
+[node name="SurfaceSign" type="MeshInstance3D" parent="."]
+position = Vector3(18.85, 5.22, -13.15)
+mesh = SubResource("SurfaceSign")
+
+[node name="Fixture0" type="MeshInstance3D" parent="."]
+position = Vector3(18.85, 2.96, -5.4)
+mesh = SubResource("Fixture0Mesh")
+
+[node name="Diffuser0" type="MeshInstance3D" parent="."]
+position = Vector3(18.85, 2.895, -5.4)
+mesh = SubResource("Diffuser0Mesh")
+
+[node name="Light0" type="OmniLight3D" parent="."]
+position = Vector3(18.85, 2.76, -5.4)
+light_color = Color(0.78, 0.87, 0.70, 1)
+light_energy = 0.85
+omni_range = 4.2
+shadow_enabled = true
+
+[node name="Fixture1" type="MeshInstance3D" parent="."]
+position = Vector3(18.85, 4.08, -9.8)
+mesh = SubResource("Fixture1Mesh")
+
+[node name="Diffuser1" type="MeshInstance3D" parent="."]
+position = Vector3(18.85, 4.015, -9.8)
+mesh = SubResource("Diffuser1Mesh")
+
+[node name="Light1" type="OmniLight3D" parent="."]
+position = Vector3(18.85, 3.88, -9.8)
+light_color = Color(0.78, 0.87, 0.70, 1)
+light_energy = 0.85
+omni_range = 4.2
+shadow_enabled = true
+
+[node name="Fixture2" type="MeshInstance3D" parent="."]
+position = Vector3(18.85, 5.38, -14.4)
+mesh = SubResource("Fixture2Mesh")
+
+[node name="Diffuser2" type="MeshInstance3D" parent="."]
+position = Vector3(18.85, 5.315, -14.4)
+mesh = SubResource("Diffuser2Mesh")
+
+[node name="Light2" type="OmniLight3D" parent="."]
+position = Vector3(18.85, 5.18, -14.4)
+light_color = Color(0.95, 0.96, 0.90, 1)
+light_energy = 1.3
+omni_range = 4.2
+shadow_enabled = true
+
+[node name="FinalThreshold" type="Area3D" parent="."]
+position = Vector3(18.85, 3.8, -14.5)
+collision_layer = 0
+collision_mask = 1
+
+[node name="Collision" type="CollisionShape3D" parent="FinalThreshold"]
+shape = SubResource("ExitShape")
+
+[node name="MechanismSound" type="AudioStreamPlayer3D" parent="."]
+position = Vector3(18.7, 1.3, -3.1)
+max_distance = 12.0
+volume_db = -12.0
+
+[node name="LabelBacking" type="MeshInstance3D" parent="Primary"]
+position = Vector3(0, 0.29, 0)
+mesh = SubResource("PrimaryLabelBacking")

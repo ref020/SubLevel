@@ -121,4 +121,8 @@ The Milestone 10B radio investigation and Milestone 10C cooperative Main Power
 branch are implemented outside this static shell. Milestone 11B likewise adds
 card rewriting and access via a separate gameplay layer; see
 [security_access.md](security_access.md). [director_authorization.md](director_authorization.md) covers the 12A primary
-authorization layer. Secondary authorization and final escape remain unimplemented.
+authorization layer. [director_secondary.md](director_secondary.md) and
+[final_egress.md](final_egress.md) document the completed secondary/ending branches.
+Milestone 13 replaces the sealed Hub egress placeholder with a real opening and
+adds a compact vestibule, ascending route and final landing between the existing
+wings. Other facility portals and room dimensions remain unchanged.

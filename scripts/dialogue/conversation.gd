@@ -11,10 +11,10 @@ var current: Dictionary = {}
 var choices: Array[Dictionary] = []
 
 
-func start(npc: ConversationParticipant) -> bool:
+func start(npc: ConversationParticipant, entry_node: String = "") -> bool:
 	if is_instance_valid(participant) or not is_instance_valid(npc) or npc.dialogue == null:
 		return false
-	var entry: String = npc.dialogue.repeat_node if npc.contacted else npc.dialogue.first_node
+	var entry: String = entry_node if not entry_node.is_empty() else (npc.dialogue.repeat_node if npc.contacted else npc.dialogue.first_node)
 	if not npc.dialogue.nodes.has(entry):
 		return false
 	participant = npc

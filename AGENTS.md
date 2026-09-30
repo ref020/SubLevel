@@ -156,7 +156,12 @@ Build vertically.
 
 Do NOT attempt to construct the entire game immediately.
 
-Current prototype target:
+Current status: the intended gameplay progression is implemented through
+Milestone 13, including evacuation and physical departure. Remaining work is
+validation and requested polish; do not add further puzzles or systems without
+explicit instructions. See docs/final_egress.md.
+
+Initial vertical-slice target (completed):
 
 OBSERVATION ROOM
 

@@ -1,7 +1,8 @@
 # Milestone 12B: secondary Director authorization
 
 DIRECTOR AUTHORIZATION = IMPLEMENTED.
-FINAL EMERGENCY EGRESS RELEASE = FUTURE.
+FINAL EMERGENCY EGRESS RELEASE = IMPLEMENTED in Milestone 13; see [final_egress.md](final_egress.md).
+The following describes the earlier authorization stage.
 
 ## Physical documents and discovery
 

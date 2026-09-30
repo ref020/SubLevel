@@ -3,7 +3,8 @@
 PRIMARY AUTHORIZATION = IMPLEMENTED.
 SECONDARY / COMPLETE DIRECTOR AUTHORIZATION = IMPLEMENTED in Milestone 12B.
 See [director_secondary.md](director_secondary.md) for routing, relay and finalization.
-FINAL EMERGENCY EGRESS RELEASE = FUTURE.
+FINAL EMERGENCY EGRESS RELEASE = IMPLEMENTED in Milestone 13; see [final_egress.md](final_egress.md).
+The following describes the earlier authorization stage.
 
 The following describes the primary stage and its intermediate endpoint.
 
