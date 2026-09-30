@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=15 format=3]
 
 [ext_resource type="Script" path="res://scripts/player/first_person_player.gd" id="1_player"]
 [ext_resource type="Script" path="res://scripts/interaction/player_interaction.gd" id="2_interaction"]
@@ -14,6 +14,7 @@
 
 [ext_resource type="PackedScene" path="res://ui/recording_ui.tscn" id="Recording"]
 [ext_resource type="PackedScene" path="res://ui/encoder_ui.tscn" id="EncoderUI"]
+[ext_resource type="PackedScene" path="res://ui/symbol_lock_ui.tscn" id="SymbolUI"]
 [sub_resource type="CapsuleShape3D" id="Capsule_player"]
 radius = 0.3
 height = 1.8
@@ -70,6 +71,9 @@ input_session = NodePath("../ModalInput")
 input_session = NodePath("../ModalInput")
 
 [node name="EncoderUI" parent="." node_paths=PackedStringArray("input_session") instance=ExtResource("EncoderUI")]
+input_session = NodePath("../ModalInput")
+
+[node name="SymbolLockUI" parent="." node_paths=PackedStringArray("input_session") instance=ExtResource("SymbolUI")]
 input_session = NodePath("../ModalInput")
 
 [connection signal="prompt_changed" from="Head/Camera3D/InteractionRay" to="InteractionHUD" method="show_prompt"]

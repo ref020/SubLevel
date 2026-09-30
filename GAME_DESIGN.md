@@ -453,13 +453,34 @@ emits a signal: the Hub changes SECURITY CLEARANCE to VALID, the Director
 threshold unlocks for manual opening, and small local access lamps confirm it.
 Main Power remains ONLINE, Director Authorization REQUIRED, and EXIT SEALED.
 Inner Security has mundane monitor/equipment furnishings; the Director threshold
-is still an empty graybox, without its future puzzle chain. All state resets with
+is furnished in Milestone 12A (see below). All state resets with
 the scene. No clue-inspection flags are required.
 
 The deduction above is design documentation, never an automatic gameplay
 explanation. See docs/security_investigation.md and docs/security_access.md.
 
 ## Director Authorization
+
+Milestone 12A IMPLEMENTED: the Security-gated compact office contains an
+inspectable evacuation map with an alphabetical department-symbol legend.
+The separate inspectable incident-priority register is on the Archive north
+wall and may be discovered before Security progression. The physical symbol
+lock accepts the canonical sequence below without any clue-inspection flags;
+wrong attempts are retryable. Unlocking does not automatically open the cabinet.
+Its hardware Director Authorization Module uses E inspect / F take and is
+inaccessible until the cabinet physically opens. Deliberate installation in the
+mains-powered Director terminal removes it from carried inventory but retains
+the same item visibly in the socket. Brief validation sets the session flag
+director_primary_authorized, emits a signal, and identifies SERVICE CONTROL M-4
+with NETWORK LINK: OFFLINE. director_authorization_valid remains false; the Hub
+continues to show Director Authorization REQUIRED and EXIT SEALED.
+
+PRIMARY AUTHORIZATION is implemented. SECONDARY / COMPLETE DIRECTOR
+AUTHORIZATION remains FUTURE. A noninteractive M-4 designation is visible behind
+the existing Generator service grille. Routing, NPC relay, challenge-response,
+and final egress below remain canonical future design, not implemented gameplay.
+See docs/director_authorization.md.
+
 
 Security clearance permits access to the Director's Office. A Director document
 cabinet uses five symbols. Department mapping and incident priority are:

@@ -1,0 +1,305 @@
+[gd_scene load_steps=33 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/inspectable.gd" id="Script"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/halcyon_symbols.ttf" id="SymbolFont"]
+
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.73, 0.74, 0.63, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.065, 0.09, 0.07, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Route"]
+albedo_color = Color(0.26, 0.35, 0.28, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="PaperMesh"]
+size = Vector3(1.12, 0.82, 0.016)
+material = SubResource("Paper")
+
+[sub_resource type="BoxShape3D" id="PaperShape"]
+size = Vector3(1.12, 0.82, 0.016)
+
+[sub_resource type="TextMesh" id="TitleMesh"]
+text = "SUBLEVEL 6 / EVACUATION PLAN"
+font_size = 64
+pixel_size = 0.00065
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="LegendMesh"]
+text = "DEPARTMENTS"
+font_size = 64
+pixel_size = 0.00045
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Department0Mesh"]
+text = "ADMINISTRATION"
+font_size = 64
+pixel_size = 0.00036
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Symbol0Mesh"]
+text = "□"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.0008
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Department1Mesh"]
+text = "ARCHIVE"
+font_size = 64
+pixel_size = 0.00036
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Symbol1Mesh"]
+text = "+"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.0008
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Department2Mesh"]
+text = "CONTAINMENT"
+font_size = 64
+pixel_size = 0.00036
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Symbol2Mesh"]
+text = "◇"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.0008
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Department3Mesh"]
+text = "LABORATORY"
+font_size = 64
+pixel_size = 0.00036
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Symbol3Mesh"]
+text = "○"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.0008
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Department4Mesh"]
+text = "MAINTENANCE"
+font_size = 64
+pixel_size = 0.00036
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="Symbol4Mesh"]
+text = "△"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.0008
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="VerticalRouteMesh"]
+size = Vector3(0.018, 0.43, 0.001)
+material = SubResource("Route")
+
+[sub_resource type="BoxMesh" id="CrossRouteMesh"]
+size = Vector3(0.38, 0.018, 0.001)
+material = SubResource("Route")
+
+[sub_resource type="BoxMesh" id="Region0Mesh"]
+size = Vector3(0.115, 0.105, 0.002)
+material = SubResource("Paper")
+
+[sub_resource type="TextMesh" id="RegionGlyph0Mesh"]
+text = "◇"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.001
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="Region1Mesh"]
+size = Vector3(0.115, 0.105, 0.002)
+material = SubResource("Paper")
+
+[sub_resource type="TextMesh" id="RegionGlyph1Mesh"]
+text = "○"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.001
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="Region2Mesh"]
+size = Vector3(0.115, 0.105, 0.002)
+material = SubResource("Paper")
+
+[sub_resource type="TextMesh" id="RegionGlyph2Mesh"]
+text = "+"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.001
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="Region3Mesh"]
+size = Vector3(0.115, 0.105, 0.002)
+material = SubResource("Paper")
+
+[sub_resource type="TextMesh" id="RegionGlyph3Mesh"]
+text = "△"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.001
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="Region4Mesh"]
+size = Vector3(0.115, 0.105, 0.002)
+material = SubResource("Paper")
+
+[sub_resource type="TextMesh" id="RegionGlyph4Mesh"]
+text = "□"
+font = ExtResource("SymbolFont")
+font_size = 64
+pixel_size = 0.001
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="TextMesh" id="FooterMesh"]
+text = "SERVICE ROUTES / NOT TO SCALE"
+font_size = 64
+pixel_size = 0.0004
+depth = 0.0
+material = SubResource("Ink")
+
+[node name="DepartmentMap" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+interaction_prompt = "Inspect Evacuation Plan"
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Paper" type="StaticBody3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Visual/Paper"]
+mesh = SubResource("PaperMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Visual/Paper"]
+shape = SubResource("PaperShape")
+
+[node name="Title" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.34, 0.009)
+mesh = SubResource("TitleMesh")
+
+[node name="Legend" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.26, 0.24, 0.009)
+mesh = SubResource("LegendMesh")
+
+[node name="Department0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.28, 0.15, 0.009)
+mesh = SubResource("Department0Mesh")
+
+[node name="Symbol0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.06, 0.15, 0.009)
+mesh = SubResource("Symbol0Mesh")
+
+[node name="Department1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.28, 0.05499999999999999, 0.009)
+mesh = SubResource("Department1Mesh")
+
+[node name="Symbol1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.06, 0.05499999999999999, 0.009)
+mesh = SubResource("Symbol1Mesh")
+
+[node name="Department2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.28, -0.04000000000000001, 0.009)
+mesh = SubResource("Department2Mesh")
+
+[node name="Symbol2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.06, -0.04000000000000001, 0.009)
+mesh = SubResource("Symbol2Mesh")
+
+[node name="Department3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.28, -0.13500000000000004, 0.009)
+mesh = SubResource("Department3Mesh")
+
+[node name="Symbol3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.06, -0.13500000000000004, 0.009)
+mesh = SubResource("Symbol3Mesh")
+
+[node name="Department4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.28, -0.23, 0.009)
+mesh = SubResource("Department4Mesh")
+
+[node name="Symbol4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.06, -0.23, 0.009)
+mesh = SubResource("Symbol4Mesh")
+
+[node name="VerticalRoute" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.29, 0, 0.009)
+mesh = SubResource("VerticalRouteMesh")
+
+[node name="CrossRoute" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.29, 0, 0.009)
+mesh = SubResource("CrossRouteMesh")
+
+[node name="Region0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.45, 0, 0.010)
+mesh = SubResource("Region0Mesh")
+
+[node name="RegionGlyph0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.45, 0, 0.012)
+mesh = SubResource("RegionGlyph0Mesh")
+
+[node name="Region1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.29, 0.19, 0.010)
+mesh = SubResource("Region1Mesh")
+
+[node name="RegionGlyph1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.29, 0.19, 0.012)
+mesh = SubResource("RegionGlyph1Mesh")
+
+[node name="Region2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.29, -0.19, 0.010)
+mesh = SubResource("Region2Mesh")
+
+[node name="RegionGlyph2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.29, -0.19, 0.012)
+mesh = SubResource("RegionGlyph2Mesh")
+
+[node name="Region3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.1, 0.14, 0.010)
+mesh = SubResource("Region3Mesh")
+
+[node name="RegionGlyph3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.1, 0.14, 0.012)
+mesh = SubResource("RegionGlyph3Mesh")
+
+[node name="Region4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.1, -0.16, 0.010)
+mesh = SubResource("Region4Mesh")
+
+[node name="RegionGlyph4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.1, -0.16, 0.012)
+mesh = SubResource("RegionGlyph4Mesh")
+
+[node name="Footer" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.34, 0.009)
+mesh = SubResource("FooterMesh")

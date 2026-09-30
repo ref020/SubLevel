@@ -1,4 +1,4 @@
-[gd_scene load_steps=322 format=3]
+[gd_scene load_steps=324 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 
@@ -38,6 +38,9 @@
 
 [ext_resource type="PackedScene" path="res://scenes/levels/security_access.tscn" id="SecurityAccess"]
 [ext_resource type="Script" path="res://scripts/levels/security_access.gd" id="AccessWiring"]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/director_office.tscn" id="DirectorOffice"]
+[ext_resource type="Script" path="res://scripts/levels/director_office.gd" id="DirectorWiring"]
 
 [sub_resource type="StandardMaterial3D" id="Plaster"]
 albedo_color = Color(0.54, 0.53, 0.46, 1)
@@ -2595,3 +2598,11 @@ director_door = NodePath("../SecurityAccess/DirectorDoor")
 inventory = NodePath("../Player/Inventory")
 shell = NodePath("../Architecture/Facility")
 terminal = NodePath("../SecurityInvestigation/Terminal")
+
+[node name="DirectorOffice" parent="." instance=ExtResource("DirectorOffice")]
+
+[node name="DirectorWiring" type="Node" parent="." node_paths=PackedStringArray("office", "power", "inventory")]
+script = ExtResource("DirectorWiring")
+office = NodePath("../DirectorOffice")
+power = NodePath("../FacilitySystems/State")
+inventory = NodePath("../Player/Inventory")

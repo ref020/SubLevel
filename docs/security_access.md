@@ -1,9 +1,10 @@
 # Milestone 11B: credential rewriting and Security access
 
 The completed branch ends at **SECURITY CLEARANCE VALID** and an unlocked,
-manually openable Director threshold. The threshold remains an empty graybox;
-there is no Director puzzle, module, M-4 interaction, routing, authorization,
-or final egress release. All previous investigation clues remain unchanged.
+manually openable Director threshold. Milestone 12A now furnishes the office
+and implements primary authorization; see [director_authorization.md](director_authorization.md).
+M-4 interaction, routing, secondary authorization and final release remain future.
+All previous investigation clues remain unchanged.
 
 ## Placement and hardware
 

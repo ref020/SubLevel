@@ -1,0 +1,174 @@
+[gd_scene load_steps=23 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/cabinet.gd" id="Door"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/symbol_lock.tscn" id="Lock"]
+
+[ext_resource type="PackedScene" path="res://scenes/items/director_authorization_module.tscn" id="Module"]
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.28, 0.32, 0.29, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Paint"]
+albedo_color = Color(0.43, 0.45, 0.37, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.72, 0.74, 0.62, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="BackMesh"]
+size = Vector3(1.2, 1.9, 0.06)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="BackShape"]
+size = Vector3(1.2, 1.9, 0.06)
+
+[sub_resource type="BoxMesh" id="LeftMesh"]
+size = Vector3(0.06, 1.9, 0.7)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="LeftShape"]
+size = Vector3(0.06, 1.9, 0.7)
+
+[sub_resource type="BoxMesh" id="RightMesh"]
+size = Vector3(0.06, 1.9, 0.7)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="RightShape"]
+size = Vector3(0.06, 1.9, 0.7)
+
+[sub_resource type="BoxMesh" id="TopMesh"]
+size = Vector3(1.2, 0.06, 0.7)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="TopShape"]
+size = Vector3(1.2, 0.06, 0.7)
+
+[sub_resource type="BoxMesh" id="BottomMesh"]
+size = Vector3(1.2, 0.10, 0.7)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="BottomShape"]
+size = Vector3(1.2, 0.10, 0.7)
+
+[sub_resource type="BoxMesh" id="ShelfMesh"]
+size = Vector3(1.1, 0.06, 0.63)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="ShelfShape"]
+size = Vector3(1.1, 0.06, 0.63)
+
+[sub_resource type="BoxMesh" id="PanelMesh"]
+size = Vector3(1.08, 1.74, 0.06)
+material = SubResource("Paint")
+
+[sub_resource type="BoxShape3D" id="LeafShape"]
+size = Vector3(1.08, 1.74, 0.06)
+
+[sub_resource type="BoxMesh" id="HandleMesh"]
+size = Vector3(0.075, 0.18, 0.1)
+material = SubResource("Metal")
+
+[sub_resource type="TextMesh" id="LabelMesh"]
+text = "DIRECTOR / DOCUMENTS"
+font_size = 64
+pixel_size = 0.0006
+depth = 0.0
+material = SubResource("Ink")
+
+[node name="DocumentCabinet" type="Node3D"]
+
+[node name="Back" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.95, -0.32)
+
+[node name="Mesh" type="MeshInstance3D" parent="Back"]
+mesh = SubResource("BackMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Back"]
+shape = SubResource("BackShape")
+
+[node name="Left" type="StaticBody3D" parent="."]
+position = Vector3(-0.57, 0.95, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Left"]
+mesh = SubResource("LeftMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Left"]
+shape = SubResource("LeftShape")
+
+[node name="Right" type="StaticBody3D" parent="."]
+position = Vector3(0.57, 0.95, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Right"]
+mesh = SubResource("RightMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Right"]
+shape = SubResource("RightShape")
+
+[node name="Top" type="StaticBody3D" parent="."]
+position = Vector3(0, 1.87, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Top"]
+mesh = SubResource("TopMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Top"]
+shape = SubResource("TopShape")
+
+[node name="Bottom" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.05, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Bottom"]
+mesh = SubResource("BottomMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Bottom"]
+shape = SubResource("BottomShape")
+
+[node name="Shelf" type="StaticBody3D" parent="."]
+position = Vector3(0, 1.00, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Shelf"]
+mesh = SubResource("ShelfMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Shelf"]
+shape = SubResource("ShelfShape")
+
+[node name="Door" type="Node3D" parent="."]
+script = ExtResource("Door")
+starts_locked = true
+lock_id = &"director_document_cabinet"
+open_angle = -100.0
+
+[node name="Body" type="AnimatableBody3D" parent="Door"]
+position = Vector3(-0.54, 0, 0.365)
+sync_to_physics = false
+
+[node name="Panel" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(0.54, 0.96, 0)
+mesh = SubResource("PanelMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Door/Body"]
+position = Vector3(0.54, 0.96, 0)
+shape = SubResource("LeafShape")
+
+[node name="Handle" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(0.96, 0.94, 0.065)
+mesh = SubResource("HandleMesh")
+
+[node name="Label" type="MeshInstance3D" parent="Door/Body"]
+position = Vector3(0.54, 1.64, 0.032)
+mesh = SubResource("LabelMesh")
+
+[node name="Lock" parent="Door/Body" instance=ExtResource("Lock")]
+position = Vector3(0.54, 1.35, 0.065)
+
+[node name="Module" parent="." instance=ExtResource("Module")]
+position = Vector3(-0.09, 1.11, 0.03)
+
+[node name="Collision" parent="Module/Body" index="0"]
+disabled = true
+
+[connection signal="solved" from="Door/Body/Lock" to="Door" method="unlock"]
+
+[editable path="Module"]

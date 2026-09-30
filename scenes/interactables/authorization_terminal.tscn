@@ -1,0 +1,130 @@
+[gd_scene load_steps=17 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/authorization_terminal.gd" id="Script"]
+
+[ext_resource type="Script" path="res://scripts/interaction/powered_item_socket.gd" id="Socket"]
+
+[sub_resource type="StandardMaterial3D" id="Beige"]
+albedo_color = Color(0.59, 0.59, 0.48, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Screen"]
+albedo_color = Color(0.025, 0.04, 0.03, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.07, 0.09, 0.07, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Phosphor"]
+albedo_color = Color(0.66, 0.79, 0.56, 1)
+roughness = 0.92
+emission_enabled = true
+emission = Color(0.66, 0.79, 0.56, 1)
+emission_energy_multiplier = 0.25
+
+[sub_resource type="BoxMesh" id="HousingMesh"]
+size = Vector3(0.78, 0.60, 0.46)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="HousingShape"]
+size = Vector3(0.78, 0.60, 0.46)
+
+[sub_resource type="BoxMesh" id="ScreenMesh"]
+size = Vector3(0.69, 0.47, 0.008)
+material = SubResource("Screen")
+
+[sub_resource type="TextMesh" id="ReadoutMesh"]
+text = ""
+font_size = 64
+pixel_size = 0.0004
+depth = 0.0
+material = SubResource("Phosphor")
+
+[sub_resource type="TextMesh" id="PlateMesh"]
+text = "EMERGENCY AUTHORIZATION"
+font_size = 64
+pixel_size = 0.0004
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="PowerLampMesh"]
+size = Vector3(0.025, 0.014, 0.008)
+material = SubResource("Phosphor")
+
+[sub_resource type="BoxMesh" id="DockMesh"]
+size = Vector3(0.36, 0.24, 0.38)
+material = SubResource("Beige")
+
+[sub_resource type="BoxShape3D" id="DockShape"]
+size = Vector3(0.36, 0.24, 0.38)
+
+[sub_resource type="BoxMesh" id="SlotMesh"]
+size = Vector3(0.30, 0.185, 0.008)
+material = SubResource("Screen")
+
+[sub_resource type="TextMesh" id="DockLabelMesh"]
+text = "PRIMARY TOKEN"
+font_size = 64
+pixel_size = 0.00032
+depth = 0.0
+material = SubResource("Ink")
+
+[node name="AuthorizationTerminal" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+interaction_prompt = "Read Authorization Terminal"
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Housing" type="StaticBody3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Visual/Housing"]
+mesh = SubResource("HousingMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Visual/Housing"]
+shape = SubResource("HousingShape")
+
+[node name="Screen" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.035, 0.236)
+mesh = SubResource("ScreenMesh")
+
+[node name="Readout" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.035, 0.242)
+mesh = SubResource("ReadoutMesh")
+
+[node name="Plate" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, -0.25, 0.233)
+mesh = SubResource("PlateMesh")
+
+[node name="PowerLamp" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.32, -0.25, 0.24)
+mesh = SubResource("PowerLampMesh")
+
+[node name="Socket" type="Node3D" parent="."]
+position = Vector3(0.59, -0.18, 0.06)
+script = ExtResource("Socket")
+accepts_tag = &"director_primary_token"
+socket_label = "Primary Token"
+
+[node name="Dock" type="StaticBody3D" parent="Socket"]
+position = Vector3(0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Socket/Dock"]
+mesh = SubResource("DockMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Socket/Dock"]
+shape = SubResource("DockShape")
+
+[node name="Slot" type="MeshInstance3D" parent="Socket"]
+position = Vector3(0, 0, 0.195)
+mesh = SubResource("SlotMesh")
+
+[node name="DockLabel" type="MeshInstance3D" parent="Socket"]
+position = Vector3(0, 0.17, 0.196)
+mesh = SubResource("DockLabelMesh")
+
+[node name="Installed" type="Node3D" parent="Socket"]
+position = Vector3(0, 0, 0.15)

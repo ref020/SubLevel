@@ -1,0 +1,353 @@
+[gd_scene load_steps=46 format=3]
+
+[ext_resource type="Script" path="res://scripts/systems/facility_director.gd" id="State"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/department_map.tscn" id="Map"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/incident_priority.tscn" id="Incident"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/director_document_cabinet.tscn" id="Cabinet"]
+
+[ext_resource type="PackedScene" path="res://scenes/interactables/authorization_terminal.tscn" id="Terminal"]
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.28, 0.32, 0.29, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Wood"]
+albedo_color = Color(0.29, 0.20, 0.12, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Paper"]
+albedo_color = Color(0.64, 0.63, 0.49, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Beige"]
+albedo_color = Color(0.48, 0.47, 0.36, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Dark"]
+albedo_color = Color(0.09, 0.12, 0.10, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Tube"]
+albedo_color = Color(0.7, 0.76, 0.59, 1)
+roughness = 0.9
+emission_enabled = true
+emission = Color(0.5, 0.6, 0.4, 1)
+emission_energy_multiplier = 0.6
+
+[sub_resource type="BoxMesh" id="DeskTopMesh"]
+size = Vector3(2.0, 0.12, 0.95)
+material = SubResource("Wood")
+
+[sub_resource type="BoxShape3D" id="DeskTopShape"]
+size = Vector3(2.0, 0.12, 0.95)
+
+[sub_resource type="BoxMesh" id="DeskSupport0Mesh"]
+size = Vector3(0.12, 0.68, 0.8)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="DeskSupport0Shape"]
+size = Vector3(0.12, 0.68, 0.8)
+
+[sub_resource type="BoxMesh" id="DeskSupport1Mesh"]
+size = Vector3(0.12, 0.68, 0.8)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="DeskSupport1Shape"]
+size = Vector3(0.12, 0.68, 0.8)
+
+[sub_resource type="BoxMesh" id="ChairSeatMesh"]
+size = Vector3(0.55, 0.12, 0.55)
+material = SubResource("Dark")
+
+[sub_resource type="BoxShape3D" id="ChairSeatShape"]
+size = Vector3(0.55, 0.12, 0.55)
+
+[sub_resource type="BoxMesh" id="ChairBackMesh"]
+size = Vector3(0.55, 0.55, 0.1)
+material = SubResource("Wood")
+
+[sub_resource type="BoxShape3D" id="ChairBackShape"]
+size = Vector3(0.55, 0.55, 0.1)
+
+[sub_resource type="BoxMesh" id="ChairLeg0Mesh"]
+size = Vector3(0.06, 0.4, 0.5)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="ChairLeg1Mesh"]
+size = Vector3(0.06, 0.4, 0.5)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="PaperStackMesh"]
+size = Vector3(0.25, 0.025, 0.3)
+material = SubResource("Paper")
+
+[sub_resource type="BoxMesh" id="DictationUnitMesh"]
+size = Vector3(0.27, 0.09, 0.2)
+material = SubResource("Beige")
+
+[sub_resource type="BoxMesh" id="DictationSpeakerMesh"]
+size = Vector3(0.15, 0.005, 0.13)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="StorageMesh"]
+size = Vector3(1.3, 0.85, 0.45)
+material = SubResource("Metal")
+
+[sub_resource type="BoxShape3D" id="StorageShape"]
+size = Vector3(1.3, 0.85, 0.45)
+
+[sub_resource type="BoxMesh" id="Binder0Mesh"]
+size = Vector3(0.08, 0.3, 0.24)
+material = SubResource("Wood")
+
+[sub_resource type="BoxMesh" id="Binder1Mesh"]
+size = Vector3(0.08, 0.3, 0.24)
+material = SubResource("Beige")
+
+[sub_resource type="BoxMesh" id="Binder2Mesh"]
+size = Vector3(0.08, 0.3, 0.24)
+material = SubResource("Wood")
+
+[sub_resource type="BoxMesh" id="Binder3Mesh"]
+size = Vector3(0.08, 0.3, 0.24)
+material = SubResource("Beige")
+
+[sub_resource type="BoxMesh" id="Binder4Mesh"]
+size = Vector3(0.08, 0.3, 0.24)
+material = SubResource("Wood")
+
+[sub_resource type="BoxMesh" id="Binder5Mesh"]
+size = Vector3(0.08, 0.3, 0.24)
+material = SubResource("Beige")
+
+[sub_resource type="BoxMesh" id="Binder6Mesh"]
+size = Vector3(0.08, 0.3, 0.24)
+material = SubResource("Wood")
+
+[sub_resource type="BoxMesh" id="ClockBackingMesh"]
+size = Vector3(0.34, 0.34, 0.06)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="ClockFaceMesh"]
+size = Vector3(0.3, 0.3, 0.01)
+material = SubResource("Paper")
+
+[sub_resource type="BoxMesh" id="ClockHourMesh"]
+size = Vector3(0.08, 0.012, 0.008)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="ClockMinuteMesh"]
+size = Vector3(0.012, 0.115, 0.008)
+material = SubResource("Dark")
+
+[sub_resource type="BoxMesh" id="Fixture0Mesh"]
+size = Vector3(1.1, 0.1, 0.26)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="Tube0Mesh"]
+size = Vector3(0.94, 0.035, 0.12)
+material = SubResource("Tube")
+
+[sub_resource type="BoxMesh" id="Fixture1Mesh"]
+size = Vector3(1.1, 0.1, 0.26)
+material = SubResource("Metal")
+
+[sub_resource type="BoxMesh" id="Tube1Mesh"]
+size = Vector3(0.94, 0.035, 0.12)
+material = SubResource("Tube")
+
+[sub_resource type="BoxMesh" id="M4Plate"]
+size = Vector3(0.54, 0.17, 0.015)
+material = SubResource("Beige")
+
+[sub_resource type="TextMesh" id="M4Text"]
+text = "SERVICE CONTROL
+M-4"
+font_size = 64
+pixel_size = 0.0005
+depth = 0.0
+material = SubResource("Dark")
+
+[node name="DirectorOffice" type="Node3D"]
+
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("State")
+
+[node name="Map" parent="." instance=ExtResource("Map")]
+position = Vector3(23.65, 1.7, 11.65)
+rotation = Vector3(0, 1.5707963, 0)
+
+[node name="IncidentRegister" parent="." instance=ExtResource("Incident")]
+position = Vector3(16.15, 1.5, 8.84)
+rotation = Vector3(0, 0, 0)
+
+[node name="Cabinet" parent="." instance=ExtResource("Cabinet")]
+position = Vector3(28.99, 0, 11.75)
+rotation = Vector3(0, -1.5707963, 0)
+
+[node name="Terminal" parent="." instance=ExtResource("Terminal")]
+position = Vector3(27.05, 1.11, 12.57)
+rotation = Vector3(0, 3.14159265, 0)
+
+[node name="DeskTop" type="StaticBody3D" parent="."]
+position = Vector3(26.9, 0.74, 12.55)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeskTop"]
+mesh = SubResource("DeskTopMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="DeskTop"]
+shape = SubResource("DeskTopShape")
+
+[node name="DeskSupport0" type="StaticBody3D" parent="."]
+position = Vector3(26.05, 0.34, 12.55)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeskSupport0"]
+mesh = SubResource("DeskSupport0Mesh")
+
+[node name="Collision" type="CollisionShape3D" parent="DeskSupport0"]
+shape = SubResource("DeskSupport0Shape")
+
+[node name="DeskSupport1" type="StaticBody3D" parent="."]
+position = Vector3(27.75, 0.34, 12.55)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeskSupport1"]
+mesh = SubResource("DeskSupport1Mesh")
+
+[node name="Collision" type="CollisionShape3D" parent="DeskSupport1"]
+shape = SubResource("DeskSupport1Shape")
+
+[node name="ChairSeat" type="StaticBody3D" parent="."]
+position = Vector3(27, 0.45, 13)
+
+[node name="Mesh" type="MeshInstance3D" parent="ChairSeat"]
+mesh = SubResource("ChairSeatMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="ChairSeat"]
+shape = SubResource("ChairSeatShape")
+
+[node name="ChairBack" type="StaticBody3D" parent="."]
+position = Vector3(27, 0.78, 13.24)
+
+[node name="Mesh" type="MeshInstance3D" parent="ChairBack"]
+mesh = SubResource("ChairBackMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="ChairBack"]
+shape = SubResource("ChairBackShape")
+
+[node name="ChairLeg0" type="MeshInstance3D" parent="."]
+position = Vector3(26.79, 0.2, 13)
+mesh = SubResource("ChairLeg0Mesh")
+
+[node name="ChairLeg1" type="MeshInstance3D" parent="."]
+position = Vector3(27.21, 0.2, 13)
+mesh = SubResource("ChairLeg1Mesh")
+
+[node name="PaperStack" type="MeshInstance3D" parent="."]
+position = Vector3(26.13, 0.813, 12.39)
+mesh = SubResource("PaperStackMesh")
+
+[node name="DictationUnit" type="MeshInstance3D" parent="."]
+position = Vector3(27.63, 0.845, 12.62)
+mesh = SubResource("DictationUnitMesh")
+
+[node name="DictationSpeaker" type="MeshInstance3D" parent="."]
+position = Vector3(27.6, 0.893, 12.62)
+mesh = SubResource("DictationSpeakerMesh")
+
+[node name="Storage" type="StaticBody3D" parent="."]
+position = Vector3(24.45, 0.425, 13.23)
+
+[node name="Mesh" type="MeshInstance3D" parent="Storage"]
+mesh = SubResource("StorageMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Storage"]
+shape = SubResource("StorageShape")
+
+[node name="Binder0" type="MeshInstance3D" parent="."]
+position = Vector3(24.03, 1.0, 13.23)
+mesh = SubResource("Binder0Mesh")
+
+[node name="Binder1" type="MeshInstance3D" parent="."]
+position = Vector3(24.130000000000003, 1.0, 13.23)
+mesh = SubResource("Binder1Mesh")
+
+[node name="Binder2" type="MeshInstance3D" parent="."]
+position = Vector3(24.23, 1.0, 13.23)
+mesh = SubResource("Binder2Mesh")
+
+[node name="Binder3" type="MeshInstance3D" parent="."]
+position = Vector3(24.330000000000002, 1.0, 13.23)
+mesh = SubResource("Binder3Mesh")
+
+[node name="Binder4" type="MeshInstance3D" parent="."]
+position = Vector3(24.43, 1.0, 13.23)
+mesh = SubResource("Binder4Mesh")
+
+[node name="Binder5" type="MeshInstance3D" parent="."]
+position = Vector3(24.53, 1.0, 13.23)
+mesh = SubResource("Binder5Mesh")
+
+[node name="Binder6" type="MeshInstance3D" parent="."]
+position = Vector3(24.630000000000003, 1.0, 13.23)
+mesh = SubResource("Binder6Mesh")
+
+[node name="ClockBacking" type="MeshInstance3D" parent="."]
+position = Vector3(26.6, 2.38, 13.55)
+mesh = SubResource("ClockBackingMesh")
+
+[node name="ClockFace" type="MeshInstance3D" parent="."]
+position = Vector3(26.6, 2.38, 13.511)
+mesh = SubResource("ClockFaceMesh")
+
+[node name="ClockHour" type="MeshInstance3D" parent="."]
+position = Vector3(26.565, 2.38, 13.502)
+mesh = SubResource("ClockHourMesh")
+
+[node name="ClockMinute" type="MeshInstance3D" parent="."]
+position = Vector3(26.6, 2.43, 13.502)
+mesh = SubResource("ClockMinuteMesh")
+
+[node name="Fixture0" type="MeshInstance3D" parent="."]
+position = Vector3(25, 3.02, 11.4)
+mesh = SubResource("Fixture0Mesh")
+
+[node name="Tube0" type="MeshInstance3D" parent="."]
+position = Vector3(25, 2.957, 11.4)
+mesh = SubResource("Tube0Mesh")
+
+[node name="Light0" type="OmniLight3D" parent="."]
+position = Vector3(25, 2.85, 11.4)
+light_color = Color(0.76, 0.86, 0.67, 1)
+light_energy = 0.8
+omni_range = 4.0
+shadow_enabled = true
+
+[node name="Fixture1" type="MeshInstance3D" parent="."]
+position = Vector3(28, 3.02, 11.4)
+mesh = SubResource("Fixture1Mesh")
+
+[node name="Tube1" type="MeshInstance3D" parent="."]
+position = Vector3(28, 2.957, 11.4)
+mesh = SubResource("Tube1Mesh")
+
+[node name="Light1" type="OmniLight3D" parent="."]
+position = Vector3(28, 2.85, 11.4)
+light_color = Color(0.76, 0.86, 0.67, 1)
+light_energy = 0.8
+omni_range = 4.0
+shadow_enabled = true
+
+[node name="M4Designation" type="Node3D" parent="."]
+position = Vector3(33.638, 1.4, -12.3)
+rotation = Vector3(0, -1.5707963, 0)
+
+[node name="Plate" type="MeshInstance3D" parent="M4Designation"]
+mesh = SubResource("M4Plate")
+
+[node name="Label" type="MeshInstance3D" parent="M4Designation"]
+position = Vector3(0, 0, 0.009)
+mesh = SubResource("M4Text")

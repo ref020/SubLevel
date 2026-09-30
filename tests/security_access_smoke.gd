@@ -202,7 +202,7 @@ func _run() -> void:
 		security.establish_access()
 		_check(count[0] == 1, "Security completion is idempotent")
 		# No Director puzzle interactables/content have been introduced.
-		_check(level.get_node("Architecture/Facility/DirectorThreshold").find_children("*", "Interactable", true, false).is_empty(), "Director remains a minimal graybox threshold")
+		_check(level.get_node("Architecture/Facility/DirectorThreshold").find_children("*", "Interactable", true, false).is_empty(), "Director architectural shell stays separate from active props")
 		await _use(encoder, workstation)
 		await _click(ui.insert_button)
 		ui._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)

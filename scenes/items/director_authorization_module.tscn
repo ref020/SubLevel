@@ -1,0 +1,129 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/pickup_item.gd" id="Script"]
+
+[sub_resource type="StandardMaterial3D" id="Housing"]
+albedo_color = Color(0.31, 0.34, 0.29, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Plate"]
+albedo_color = Color(0.66, 0.66, 0.54, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Ink"]
+albedo_color = Color(0.055, 0.075, 0.055, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="Pins"]
+albedo_color = Color(0.51, 0.43, 0.26, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="CartridgeMesh"]
+size = Vector3(0.27, 0.16, 0.18)
+material = SubResource("Housing")
+
+[sub_resource type="BoxMesh" id="LabelMesh"]
+size = Vector3(0.235, 0.115, 0.003)
+material = SubResource("Plate")
+
+[sub_resource type="TextMesh" id="TitleMesh"]
+text = "DIRECTOR\nAUTHORIZATION\nMODULE"
+font_size = 64
+pixel_size = 0.00023
+depth = 0.0
+material = SubResource("Ink")
+
+[sub_resource type="BoxMesh" id="KeyRidgeMesh"]
+size = Vector3(0.035, 0.17, 0.12)
+material = SubResource("Plate")
+
+[sub_resource type="BoxMesh" id="PullMesh"]
+size = Vector3(0.09, 0.025, 0.055)
+material = SubResource("Housing")
+
+[sub_resource type="BoxMesh" id="Contact0Mesh"]
+size = Vector3(0.022, 0.014, 0.035)
+material = SubResource("Pins")
+
+[sub_resource type="BoxMesh" id="Contact1Mesh"]
+size = Vector3(0.022, 0.014, 0.035)
+material = SubResource("Pins")
+
+[sub_resource type="BoxMesh" id="Contact2Mesh"]
+size = Vector3(0.022, 0.014, 0.035)
+material = SubResource("Pins")
+
+[sub_resource type="BoxMesh" id="Contact3Mesh"]
+size = Vector3(0.022, 0.014, 0.035)
+material = SubResource("Pins")
+
+[sub_resource type="BoxMesh" id="Contact4Mesh"]
+size = Vector3(0.022, 0.014, 0.035)
+material = SubResource("Pins")
+
+[sub_resource type="BoxMesh" id="Contact5Mesh"]
+size = Vector3(0.022, 0.014, 0.035)
+material = SubResource("Pins")
+
+[sub_resource type="BoxShape3D" id="Hit"]
+size = Vector3(0.29, 0.18, 0.24)
+
+[node name="AuthorizationModule" type="Node3D" node_paths=PackedStringArray("visual_root")]
+script = ExtResource("Script")
+visual_root = NodePath("Visual")
+inspection_distance = 1.0
+item_id = &"director_authorization_module"
+display_name = "Director Authorization Module"
+description = "A hardware authorization token issued for the facility director's emergency terminal."
+installation_tags = Array[StringName]([&"director_primary_token"])
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Cartridge" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("CartridgeMesh")
+
+[node name="Label" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0.092)
+mesh = SubResource("LabelMesh")
+
+[node name="Title" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0, 0.095)
+mesh = SubResource("TitleMesh")
+
+[node name="KeyRidge" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.1, 0.005, 0)
+mesh = SubResource("KeyRidgeMesh")
+
+[node name="Pull" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0, 0.058, 0.117)
+mesh = SubResource("PullMesh")
+
+[node name="Contact0" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.095, -0.05, -0.102)
+mesh = SubResource("Contact0Mesh")
+
+[node name="Contact1" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.057, -0.05, -0.102)
+mesh = SubResource("Contact1Mesh")
+
+[node name="Contact2" type="MeshInstance3D" parent="Visual"]
+position = Vector3(-0.019000000000000003, -0.05, -0.102)
+mesh = SubResource("Contact2Mesh")
+
+[node name="Contact3" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.01899999999999999, -0.05, -0.102)
+mesh = SubResource("Contact3Mesh")
+
+[node name="Contact4" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.056999999999999995, -0.05, -0.102)
+mesh = SubResource("Contact4Mesh")
+
+[node name="Contact5" type="MeshInstance3D" parent="Visual"]
+position = Vector3(0.095, -0.05, -0.102)
+mesh = SubResource("Contact5Mesh")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+shape = SubResource("Hit")

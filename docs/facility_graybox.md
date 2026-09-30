@@ -46,7 +46,7 @@ Emergency Egress bulkhead and fixed status panel occupy the Hub's north wall.
 | Generator | 9 × 8 m | 3.8 m | Open via Maintenance and a 2 m link |
 | Security outer | 6 × 5 m | 3.2 m | Open, through a 2 m link |
 | Security inner | 5 × 5 m | 3.2 m | Restored Class IV credential unlocks its door |
-| Director threshold shell | 6 × 5 m | 3.2 m | Opens after Security acceptance; empty graybox |
+| Director threshold shell | 6 × 5 m | 3.2 m | Opens after Security acceptance; furnished office in 12A |
 | Generator service side | 3 × 8 m | 3.8 m | Visible through steel grille; blocked |
 
 Walls are approximately 0.2 m thick; portal headers leave 2.5 m clearance.
@@ -77,8 +77,8 @@ is shorter. No long transit tunnels are introduced.
   retained inner bench supports three mundane CRTs, with conduit/junction box.
   The existing inner fluorescent rises from 0.35 to 0.8 energy on Main Power.
 - Director: named threshold on the administrative side, unlocked by Security
-  acceptance and opened manually. The office
-  remains an empty reserved shell, without cabinet/terminal puzzle content.
+  acceptance and opened manually. The 6 x 5 m shell now houses the separate
+  DirectorOffice gameplay/furnishing layer, documented in director_authorization.md.
 
 Reserved locations are named Marker3D nodes visible in the editor only. They
 are not floating labels, interactables, or implemented clues. Future puzzle
@@ -92,7 +92,7 @@ direction. Signs have physical backing plates and normal depth testing.
 Emergency Egress starts OFF / INVALID / REQUIRED / EXIT SEALED regardless of
 Observation auxiliary power. Main Power changes OFF to ONLINE; Security reader
 acceptance changes INVALID to VALID. Separate scene-owned states drive those
-reactions; Director Authorization and final release remain unimplemented.
+reactions; complete Director Authorization and final release remain unimplemented.
 
 ## Validation and playtest concerns
 
@@ -120,5 +120,5 @@ boundaries; they are not exhaustive attempts at every jump or exploit.
 The Milestone 10B radio investigation and Milestone 10C cooperative Main Power
 branch are implemented outside this static shell. Milestone 11B likewise adds
 card rewriting and access via a separate gameplay layer; see
-[security_access.md](security_access.md). Director Authorization and final escape
-remain unimplemented.
+[security_access.md](security_access.md). [director_authorization.md](director_authorization.md) covers the 12A primary
+authorization layer. Secondary authorization and final escape remain unimplemented.

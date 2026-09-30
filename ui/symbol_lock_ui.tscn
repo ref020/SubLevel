@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://ui/symbol_lock_ui.gd" id="Script"]
+[sub_resource type="StyleBoxFlat" id="Case"]
+bg_color = Color(0.17, 0.19, 0.15, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.37, 0.38, 0.29, 1)
+
+[node name="SymbolLockUI" type="CanvasLayer"]
+layer = 12
+visible = false
+script = ExtResource("Script")
+[node name="Backdrop" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.025, 0.03, 0.02, 0.9)
+[node name="Center" type="CenterContainer" parent="Backdrop"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="Panel" type="PanelContainer" parent="Backdrop/Center"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("Case")
+[node name="Margin" type="MarginContainer" parent="Backdrop/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+[node name="Content" type="VBoxContainer" parent="Backdrop/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+[node name="Title" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "DOCUMENT SECURITY"
+horizontal_alignment = 1
+[node name="Display" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+custom_minimum_size = Vector2(620, 66)
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0.65, 0.9, 0.56, 1)
+horizontal_alignment = 1
+text = "____"
+[node name="Status" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "ENTER SEQUENCE"
+horizontal_alignment = 1
+[node name="Symbols" type="HBoxContainer" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+theme_override_constants/separation = 10
+[node name="Controls" type="HBoxContainer" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+[node name="Reset" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 44)
+text = "RESET"
+[node name="Submit" type="Button" parent="Backdrop/Center/Panel/Margin/Content/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 44)
+text = "SUBMIT"
+[node name="Hints" type="Label" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "1–5: symbols left to right   Backspace: erase\nC: reset   Enter: submit   Esc: return"
+horizontal_alignment = 1
+[node name="Return" type="Button" parent="Backdrop/Center/Panel/Margin/Content"]
+layout_mode = 2
+focus_mode = 0
+text = "RETURN"
